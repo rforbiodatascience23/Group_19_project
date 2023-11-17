@@ -1,8 +1,13 @@
-# Loads your data, e.g. combining multiple sheets from an excel file
-
+## Load library
+```{r}
 library("tidyverse")
+```
 
-cirrhosis_data <- read_csv(file =
-"~/projects/Group_19_project/data/PONE-D-18-29048R1_data_file.csv")
-
+## Load data
+```{r}
+cirrhosis_data<- read_csv(file =
+"\~/projects/Group_19_project/data/PONE-D-18-29048R1_data_file.csv", na
+= c("\_","NA", "NOT AVAILABLE", " "))
+ 
 cirrhosis_data
+```
