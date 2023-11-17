@@ -1,1 +1,61 @@
 # Cleans your data per your specifications and converts to tidy format
+
+library("tidyverse")
+
+cirrhosis_data <- read_csv(file = "~/projects/cirrhosis/data/PONE-D-18-29048R1_data_file.csv")
+cirrhosis_data
+
+cirrhosis_data1 <- subset(cirrhosis_data, select = -c(Race,
+                                                      Admissionroute,
+                                                      Ptlocationpriortoadm,
+                                                      Admitlevelofcare,
+                                                      Nondecompensationadmitreason,
+                                                      `Site coded`,
+                                                      `Liverdiseaseetiology  section responses are Yes=1 0=No`,
+                                                      he,
+                                                      Ascites,
+                                                      `Baselinecomplications  Yes=1 0=No`,
+                                                      hcc,
+                                                      sbp,
+                                                      Bleedingvarices,
+                                                      rrt,
+                                                      Livertransplantationstatus,
+                                                      `Comorbiditiespresent  Yes=1 0=No`,
+                                                      mi,
+                                                      chf,
+                                                      pvd,
+                                                      Cerebrovasculardisease,
+                                                      Dementia,
+                                                      Chronicpulmonorydisease,
+                                                      Rheumatologicaldisease,
+                                                      Pepticulcerdisease,
+                                                      Mildliverdisease,
+                                                      Diabetes,
+                                                      Diabeteswithchroniccomplications,
+                                                      Heiplegiaorparaplegia,
+                                                      Renaldisease,
+                                                      Anymalignancyincludinglymphomaor,
+                                                      Moderateorsevereliverdisease,
+                                                      aids,
+                                                      Metastaticsolidtumor,
+                                                      Dischargedispo,
+                                                      Codestatus,
+                                                      Dischargemednumber,
+                                                      Underwentlivertrasnplantationaft,
+                                                      SeeninGIclinicafterthisadm,
+                                                      Childsclassadmission,
+                                                      CPSsumofavaiable,
+                                                      Dischargedispo_CAT,
+                                                      `PATIENT_TIME_of total follow up`,
+                                                      READMISSION_INTERVAL,
+                                                      `READMISSION_30day Yes=1 0=No`,
+                                                      LT_INTERVAL,
+                                                      GI_CLINIC_interval,
+                                                      GI_CLINIC_TOTAL_FOLLOWUP_INTERVA,
+                                                      CHARLSON_CI,
+                                                      `Indications for care during hospitalization  Yes=1 0=No`,
+                                                      UGIB_primary_liver_dx,
+                                                      `NACSELD_ACLF_D1  Yes=1 0=No`
+                                                      )
+)
+cirrhosis_data1
