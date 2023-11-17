@@ -3,6 +3,6 @@
 library("tidyverse")
 
 cirrhosis_data <- read_csv(file =
-"~/projects/cirrhosis/data/PONE-D-18-29048R1_data_file.csv")
+"~/projects/Group_19_project/data/PONE-D-18-29048R1_data_file.csv")
 
 cirrhosis_data
