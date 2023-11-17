@@ -1,9 +1,10 @@
 library("tidyverse")
 
-cirrhosis_data <- read_csv(file = "~/projects/Group_19_project/data/PONE-D-18-29048R1_data_file.csv",
+cirrhosis_data <- read_csv(file = "~/projects/Group_19_project/data/PONE-D-18-29048R1_data_file.csv", # Loading of data
                            na = c("_", "NA", "NOT AVAILABLE", " "))
 cirrhosis_data
 
+# Removal of unused variables
 cirrhosis_data1 <- subset(cirrhosis_data, select = -c(Race,
                                                       Admissionroute,
                                                       Ptlocationpriortoadm,
