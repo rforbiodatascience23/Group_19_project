@@ -1,0 +1,13 @@
+## Load library
+```{r}
+library("tidyverse")
+```
+
+## Load data
+```{r}
+cirrhosis_data<- read_csv(file =
+"\~/projects/Group_19_project/data/PONE-D-18-29048R1_data_file.csv", na
+= c("\_","NA", "NOT AVAILABLE", " "))
+ 
+cirrhosis_data
+```
