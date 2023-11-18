@@ -6,64 +6,21 @@ editor:
 
 # Cleans your data per your specifications and converts to tidy format
 
-## Discard unused variables
 
-```{r}
-cirrhosis_data1 <- subset(cirrhosis_data, select = -c(Race,
-                                                       Admissionroute,
-                                                       Ptlocationpriortoadm, 
-                                                       Admitlevelofcare,
-                                                       Nondecompensationadmitreason, 
-                                                       `Site coded`,
-                                                       `Liverdiseaseetiology  section responses are Yes=1 0=No`,
-                                                       he, 
-                                                       Ascites,
-                                                       `Baselinecomplications  Yes=1 0=No`, 
-                                                       hcc, 
-                                                       sbp,
-                                                       Bleedingvarices, 
-                                                       rrt,
-                                                       Livertransplantationstatus,
-                                                       `Comorbiditiespresent  Yes=1 0=No`,
-                                                       Metastaticsolidtumor, 
-                                                       Dischargedispo, 
-                                                       Codestatus,
-                                                       Dischargemednumber,
-                                                       Underwentlivertrasnplantationaft, 
-                                                       SeeninGIclinicafterthisadm,
-                                                       Childsclassadmission, 
-                                                       CPSsumofavaiable, 
-                                                       Dischargedispo_CAT,
-                                                       `PATIENT_TIME_of total follow up`, 
-                                                       READMISSION_INTERVAL,
-                                                       `READMISSION_30day Yes=1 0=No`, 
-                                                       LT_INTERVAL,
-                                                       GI_CLINIC_interval,
-                                                       GI_CLINIC_TOTAL_FOLLOWUP_INTERVA,
-                                                       CHARLSON_CI,
-                                                       `Indications for care during hospitalization  Yes=1 0=No`,
-                                                       UGIB_primary_liver_dx, 
-                                                       `NACSELD_ACLF_D1  Yes=1 0=No` )
-                           )
-cirrhosis_data1
-
-```
-
-# Joining
+# Joining since we did not need to group together two dataset. We won't use the joined dataset for the rest of the project, 
+# it is just a demonstration of our joining skills
 
 ## Addition of an observation ID
 ```{r}
-cirrhosis_data1 <- cirrhosis_data1 |> 
+dat_load1 <- dat_load1 |> 
   mutate(ID = row_number()) |> 
   relocate(ID)
-
-cirrhosis_data1
   
 ```
 ## Separation of the dataset in two distinct datasets
 
 ```{r}
-df_Etiology <- cirrhosis_data1 |> 
+df_Etiology <- dat_load1 |> 
   select(ID,
          Alcohol,
          hcv,
@@ -76,7 +33,7 @@ df_Etiology <- cirrhosis_data1 |>
          Otherliverdiseaseetiology
          )
 
-df_Comorbidities <- cirrhosis_data1 |> 
+df_Comorbidities <- dat_load1 |> 
   select(ID,
          mi,
          chf,
@@ -86,17 +43,11 @@ df_Comorbidities <- cirrhosis_data1 |>
          Chronicpulmonorydisease,
          Rheumatologicaldisease,
          Pepticulcerdisease,
-         Mildliverdisease,
-         Diabetes,
-         Diabeteswithchroniccomplications,
-         Heiplegiaorparaplegia,
-         Renaldisease,
          Anymalignancyincludinglymphomaor,
          Moderateorsevereliverdisease,
          aids
          )
 ```
-
 
 ## Joining the two datasets
 
@@ -104,4 +55,98 @@ df_Comorbidities <- cirrhosis_data1 |>
 df_Etiology_and_Comorbidities <- left_join(df_Etiology, df_Comorbidities)
 df_Etiology_and_Comorbidities
 ```
+
+# Tidying of the data using pivot_longer
+
+```{r}
+
+dat_clean_02 <- dat_load_01 |> 
+  # Selection of correct variable 
+  select(Sex, 
+         `Age(Decade)atadmission`,
+         Liverrelateddiagnosis1, 
+         Alcohol, 
+         mi,
+         chf, 
+         pvd, 
+         Cerebrovasculardisease,
+         Dementia, 
+         Chronicpulmonorydisease, 
+         Rheumatologicaldisease,
+         Pepticulcerdisease,
+         Mildliverdisease,
+         Diabetes,
+         Diabeteswithchroniccomplications,
+         Heiplegiaorparaplegia,
+         Renaldisease,
+         Anymalignancyincludinglymphomaor, 
+         Moderateorsevereliverdisease,
+         Metastaticsolidtumor,
+         aids, 
+         cps, 
+         Mortality_InHospital, 
+         CHARLSON_CI,
+         MORTALITY_30_DAYS_postDC, 
+         MORTALITY_90_DAYS_postDC ) |> 
+         
+  mutate(C_Diabetes_with_without_complications = Diabetes + Diabeteswithchroniccomplications) |> 
+  select(-c(Diabetes, Diabeteswithchroniccomplications)) |> 
+  
+  # Change the name of variables 
+  rename(Age = `Age(Decade)atadmission`, 
+         Liver_disease = Liverrelateddiagnosis1, 
+         Alcohol_consumption = Alcohol, 
+         C_Myocardial_infarction = mi, 
+         C_Congestive_Heart_Failure = chf, 
+         C_Peripheral_vascular_disease = pvd, 
+         C_Cerebro_Vascular_disease = Cerebrovasculardisease, 
+         C_Dementia = Dementia, 
+         C_Chronic_pulmonary_disease = Chronicpulmonorydisease, 
+         C_Rheumatological_disease = Rheumatologicaldisease,
+         C_Pepticulcer_disease = Pepticulcerdisease, 
+         C_Mild_liver_disease = Mildliverdisease, 
+         C_Heiplegia_paraplegia = Heiplegiaorparaplegia, 
+         C_Renal_disease = Renaldisease, 
+         C_Malignancy = Anymalignancyincludinglymphomaor, 
+         C_Moderate_severe_liver_disease = Moderateorsevereliverdisease, 
+         C_Metastatic_solid_tumor = Metastaticsolidtumor, 
+         C_AIDS = aids, 
+         CPS = cps, 
+         Mortality_hospital = Mortality_InHospital, 
+         Charlson_CI = CHARLSON_CI, 
+         Mortality_30_days = MORTALITY_30_DAYS_postDC, 
+         Mortality_90_days = MORTALITY_90_DAYS_postDC, 
+         ) |> 
+
+  # Reordering columns 
+  relocate(C_Diabetes_with_without_complications, .after = C_AIDS) |> 
+  relocate(Charlson_CI, .after = CPS) |> 
+  
+  
+  # Change 1/0 into Yes/No
+  mutate(Alcohol_consumption = ifelse(Alcohol_consumption == 1, 'Yes', 'No')) |> 
+  mutate_at(vars(starts_with('C_')), ~ifelse(. == 1, 'Yes', 'No')) |> 
+  mutate_at(vars(starts_with('Mortality')), ~ifelse(. == 1, 'Yes', 'No')) |> 
+
+
+  # If mortalityH = yes -> mortality 30-90 = no 
+  mutate_at(vars(c(Mortality_30_days, Mortality_90_days)), ~ifelse(Mortality_hospital == 'Yes', 'No', .)) |> 
+  #If mortality30 = yes -> mortality 90 = no   
+  mutate_at(vars(Mortality_90_days), ~ifelse(Mortality_30_days == 'Yes', 'No', .)) |>
+  
+  # Create a id for each ind 
+  mutate(Id = row_number()) |>
+  relocate(Id, .before = Sex) |> 
+ 
+  # Create a column Comorbidities ou pivot longer ? definition de tidy
+  pivot_longer(
+    cols = starts_with("C_"), 
+    names_to = "Comorbidities", 
+    values_to = "Presence_of_comorbidities",
+    values_drop_na = TRUE) 
+
+```
+
+
+
 
