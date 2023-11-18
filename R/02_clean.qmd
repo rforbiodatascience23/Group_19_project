@@ -12,7 +12,7 @@ editor:
 
 ## Addition of an observation ID
 ```{r}
-dat_load1 <- dat_load1 |> 
+dat_load_01 <- dat_load_01 |> 
   mutate(ID = row_number()) |> 
   relocate(ID)
   
@@ -20,7 +20,7 @@ dat_load1 <- dat_load1 |>
 ## Separation of the dataset in two distinct datasets
 
 ```{r}
-df_Etiology <- dat_load1 |> 
+df_Etiology <- dat_load_01 |> 
   select(ID,
          Alcohol,
          hcv,
@@ -33,7 +33,7 @@ df_Etiology <- dat_load1 |>
          Otherliverdiseaseetiology
          )
 
-df_Comorbidities <- dat_load1 |> 
+df_Comorbidities <- dat_load_01 |> 
   select(ID,
          mi,
          chf,
@@ -120,8 +120,10 @@ dat_clean_02 <- dat_load_01 |>
 
   # Reordering columns 
   relocate(C_Diabetes_with_without_complications, .after = C_AIDS) |> 
-  relocate(Charlson_CI, .after = CPS) |> 
-  
+  relocate(Charlson_CI, .after = CPS) 
+```
+
+
   
   # Change 1/0 into Yes/No
   mutate(Alcohol_consumption = ifelse(Alcohol_consumption == 1, 'Yes', 'No')) |> 
@@ -145,8 +147,28 @@ dat_clean_02 <- dat_load_01 |>
     values_to = "Presence_of_comorbidities",
     values_drop_na = TRUE) 
 
+
+
+```{r}
+comorbidities <- function(){
+  c(num_range(5:20))
+}
+
+dat_clean <- dat_clean_02 |> 
+   mutate(C_none = is.null(comorbidities))
+
+#  mutate(C_none = ifelse(C_Dementia & C_Myocardial_infarction == 0, "Yes", "No"))
 ```
 
+
+#mutate(Count_comorbidities = rowSums(select(starts_with("C_"))))) 
+  #mutate(sum = sum(across(starts_with("C_"))))
+  #mutate(Total = select(starts_with("C_"))) |> 
+  #rowSums(na.rm = TRUE)
+  #mutate(C_none = ifelse(rowSums(select(cirrhosis_data,starts_with("C_")) == 'Yes') > 0, 'No', 'Yes'))  
+
+
+  #filter(Presence_of_comorbidities == 'Yes') |>
 
 
 
