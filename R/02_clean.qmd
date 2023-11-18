@@ -63,12 +63,8 @@ cirrhosis_data1
 ## Separation of the dataset in two distinct datasets
 
 ```{r}
-df <- cirrhosis_data1 |> 
-  select(c = ID,
-         Sex,
-         Medicalinsurance,
-         `Age(Decade)atadmission`,
-         Liverrelateddiagnosis1,
+df_Etiology <- cirrhosis_data1 |> 
+  select(ID,
          Alcohol,
          hcv,
          hbv,
@@ -77,27 +73,11 @@ df <- cirrhosis_data1 |>
          PrimarySclerosingCholangitis,
          Autoimmunehepatitis,
          pbc,
-         Otherliverdiseaseetiology,
-         wbc,
-         cps,
-         los,
-         readmissioninterrval,
-         inr_within1day,
-         bili_within1day,
-         creat_within1day,
-         albumin_within1day,
-         na_within1day,
-         MELD_within1day,
-         Mortality_InHospital,
-         `Mean arterial pressure`,
-         starts_with("DX_"),
-         MORTALITY_30_DAYS_postDC,
-         MORTALITY_90_DAYS_postDC,
-         `child Class 1=A 2=B 3=C`,
-         Mortality_InHospital)
+         Otherliverdiseaseetiology
+         )
 
 df_Comorbidities <- cirrhosis_data1 |> 
-  select(c = ID,
+  select(ID,
          mi,
          chf,
          pvd,
@@ -115,5 +95,13 @@ df_Comorbidities <- cirrhosis_data1 |>
          Moderateorsevereliverdisease,
          aids
          )
+```
+
+
+## Joining the two datasets
+
+```{r}
+df_Etiology_and_Comorbidities <- left_join(df_Etiology, df_Comorbidities)
+df_Etiology_and_Comorbidities
 ```
 
