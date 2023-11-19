@@ -3,6 +3,7 @@
 Introducting new variable "Mortality" which displays the combinations for Mortality 
 
 The combination are as follows:  
+
     H0 30 0 90 0 "Alive", 
     H 1 30 0 90 0 = "Dead_Hospital" 
     H 1 30 1 90 1 = "Dead_Hospital" 
@@ -10,6 +11,7 @@ The combination are as follows:
     H0 30 1 90 1 = "Dead_30"
 
 Introduction of a categorical variable - change Decades into age categories
+
 
     
 ```{r}
