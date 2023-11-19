@@ -22,7 +22,3 @@ box_plot_Charlson <- dat_aug_03 |>
 
 ```
 
-```{r}
-box_plot_Charlson
-```
-
