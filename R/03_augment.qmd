@@ -23,7 +23,7 @@ dat_aug_03 <- dat_clean_02 |>
 ```
 
 ```{r}
-dat_aug_03
+dat_aug_03 
 ```
 
 
