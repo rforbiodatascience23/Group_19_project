@@ -169,7 +169,8 @@ dat_clean_02 <- dat_load_01 |>
   
   filter(Presence_of_comorbidities == 'Yes') |> 
   select(-Presence_of_comorbidities) |> 
-  drop_na(CPS)
+  drop_na(CPS) |> 
+  mutate(Comorbidities = str_remove(Comorbidities, "C_"))
 
 ```
 
