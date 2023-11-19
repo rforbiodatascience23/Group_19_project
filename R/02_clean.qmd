@@ -6,17 +6,20 @@ editor:
 
 # Cleans your data per your specifications and converts to tidy format
 
+Joining since we did not need to group together two dataset. We won't
+use the joined dataset for the rest of the project,
 
-# Joining since we did not need to group together two dataset. We won't use the joined dataset for the rest of the project, 
-# it is just a demonstration of our joining skills
+it is just a demonstration of our joining skills
 
 ## Addition of an observation ID
+
 ```{r}
 dat_load_01 <- dat_load_01 |> 
   mutate(ID = row_number()) |> 
   relocate(ID)
   
 ```
+
 ## Separation of the dataset in two distinct datasets
 
 ```{r}
@@ -56,7 +59,7 @@ df_Etiology_and_Comorbidities <- left_join(df_Etiology, df_Comorbidities)
 df_Etiology_and_Comorbidities
 ```
 
-# Tidying of the data using pivot_longer
+## Tidying of the data using pivot_longer
 
 ```{r}
 
@@ -120,11 +123,28 @@ dat_clean_02 <- dat_load_01 |>
 
   # Reordering columns 
   relocate(C_Diabetes_with_without_complications, .after = C_AIDS) |> 
-  relocate(Charlson_CI, .after = CPS) 
-```
+  relocate(Charlson_CI, .after = CPS) |> 
+
+  # Add a column "C_none"
+  mutate(C_none = (C_AIDS == 0) &
+        (C_Cerebro_Vascular_disease ==0)&
+        (C_Congestive_Heart_Failure == 0) &
+        (C_Chronic_pulmonary_disease == 0) & 
+        (C_Dementia == 0) &
+        (C_Diabetes_with_without_complications == 0) & 
+        (C_Heiplegia_paraplegia == 0) & 
+        (C_Malignancy == 0) &
+        (C_Myocardial_infarction == 0) &
+        (C_Mild_liver_disease == 0) & 
+        (C_Moderate_severe_liver_disease == 0) & 
+        (C_Metastatic_solid_tumor == 0) & 
+        (C_Pepticulcer_disease == 0) & 
+        (C_Peripheral_vascular_disease == 0) & 
+        (C_Rheumatological_disease == 0) & 
+        (C_Renal_disease == 0)
+      ) |> 
 
 
-  
   # Change 1/0 into Yes/No
   mutate(Alcohol_consumption = ifelse(Alcohol_consumption == 1, 'Yes', 'No')) |> 
   mutate_at(vars(starts_with('C_')), ~ifelse(. == 1, 'Yes', 'No')) |> 
@@ -147,28 +167,13 @@ dat_clean_02 <- dat_load_01 |>
     values_to = "Presence_of_comorbidities",
     values_drop_na = TRUE) 
 
-
-
-```{r}
-comorbidities <- function(){
-  c(num_range(5:20))
-}
-
-dat_clean <- dat_clean_02 |> 
-   mutate(C_none = is.null(comorbidities))
-
-#  mutate(C_none = ifelse(C_Dementia & C_Myocardial_infarction == 0, "Yes", "No"))
 ```
 
+## Save data in the folder "data"
 
-#mutate(Count_comorbidities = rowSums(select(starts_with("C_"))))) 
-  #mutate(sum = sum(across(starts_with("C_"))))
-  #mutate(Total = select(starts_with("C_"))) |> 
-  #rowSums(na.rm = TRUE)
-  #mutate(C_none = ifelse(rowSums(select(cirrhosis_data,starts_with("C_")) == 'Yes') > 0, 'No', 'Yes'))  
-
-
-  #filter(Presence_of_comorbidities == 'Yes') |>
-
-
-
+```{r}
+write_tsv(
+  x= dat_clean_02, 
+  file = '~/projects/Group_19_project/data/02_dat_clean.tsv'
+  )
+```
