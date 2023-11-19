@@ -1,0 +1,30 @@
+```{r}
+dat_aug_03
+
+```
+
+
+
+```{r}
+ggplot(
+  data = dat_aug_03,
+  mapping = aes(x = CPS,
+                y = Charlson_CI,
+                color = Liver_disease,
+                na.rm = TRUE)
+) +
+  geom_point(alpha = 0.3) +
+  geom_smooth(method = "lm") +
+  scale_color_viridis_d() +
+  labs(
+  title = "Relationship between Child Pugh Score and Charlson score",
+  subtitle = "for each liver disease",
+  x = "CPS",
+  y = "Charlson CI"
+) +
+  facet_wrap(~Liver_disease) +
+  theme(
+  strip.background = element_blank(),
+  strip.text.x = element_blank()
+)
+```
