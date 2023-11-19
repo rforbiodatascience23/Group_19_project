@@ -9,3 +9,11 @@ dat_load_01 <- read_csv(file =
         "~/projects/Group_19_project/data/PONE-D-18-29048R1_data_file.csv", 
         na = c("_","NA", "NOT AVAILABLE", " "))
 ```
+
+```{r}
+write_tsv(
+  x= dat_load_01, 
+  file = '~/projects/Group_19_project/data/01_dat_load.tsv'
+  )
+```
+

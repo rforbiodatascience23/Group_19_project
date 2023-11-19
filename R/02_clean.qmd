@@ -126,7 +126,7 @@ dat_clean_02 <- dat_load_01 |>
   relocate(Charlson_CI, .after = CPS) |> 
 
   # Add a column "C_none"
-  mutate(C_none = (C_AIDS == 0) &
+  mutate(C_None = (C_AIDS == 0) &
         (C_Cerebro_Vascular_disease ==0)&
         (C_Congestive_Heart_Failure == 0) &
         (C_Chronic_pulmonary_disease == 0) & 
@@ -165,9 +165,17 @@ dat_clean_02 <- dat_load_01 |>
     cols = starts_with("C_"), 
     names_to = "Comorbidities", 
     values_to = "Presence_of_comorbidities",
-    values_drop_na = TRUE) 
+    values_drop_na = TRUE) |> 
+  
+  filter(Presence_of_comorbidities == 'Yes') |> 
+  select(-Presence_of_comorbidities) 
 
 ```
+
+```{r}
+dat_clean_02
+```
+
 
 ## Save data in the folder "data"
 
