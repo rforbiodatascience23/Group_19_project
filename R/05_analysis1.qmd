@@ -1,0 +1,41 @@
+```{r}
+dat_aug_03
+
+``` 
+
+```{r}
+ggplot(
+  data = dat_aug_03,
+  mapping = aes(x = Alcohol_consumption,
+                fill = Mortality,
+                na.rm = TRUE)
+) +
+  geom_bar(alpha = 0.6,
+           position = "stack") +
+  scale_fill_viridis_d() +
+  labs(
+  title = "Patient outcomes",
+  subtitle = "stratified by alcohol consumption",
+  x = "Alcohol consumption"
+)
+```
+
+```{r}
+ggplot(
+  data = dat_aug_03,
+  mapping = aes(x = Alcohol_consumption,
+                fill = Mortality,
+                na.rm = TRUE)
+) +
+  geom_bar(alpha = 0.6,
+           position = "fill") +
+  scale_fill_viridis_d() +
+  labs(
+  title = "Distribution of patient outcomes ",
+  subtitle = "stratified by alcohol consumption",
+  x = "Alcohol consumption",
+  y = "Proportions"
+)
+```
+
+
