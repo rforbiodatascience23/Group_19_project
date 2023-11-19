@@ -1,0 +1,35 @@
+---
+title: "07_analysis3"
+author: "s231932"
+format: html
+editor: visual
+---
+
+# Libraries
+
+```{r}
+library("tidyverse")
+```
+
+# Popula representation graph
+
+```{r}
+dat_aug_03
+```
+
+## Stacked bar plot for age distribution by gender
+
+```{r}
+ggplot(data = dat_aug_03, 
+       aes(x = Age, 
+           fill = Sex)) +
+  geom_bar(position = "stack", 
+           stat = "count", 
+           alpha = 0.7) +
+  labs(title = "Age Distribution by Gender",
+       x = "Age Group",
+       y = "Count") +
+  scale_fill_manual(values = c("Male" = "darkblue", "Female" = "red")) +
+  theme_minimal()
+
+```
