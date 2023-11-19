@@ -168,7 +168,8 @@ dat_clean_02 <- dat_load_01 |>
     values_drop_na = TRUE) |> 
   
   filter(Presence_of_comorbidities == 'Yes') |> 
-  select(-Presence_of_comorbidities) 
+  select(-Presence_of_comorbidities) |> 
+  drop_na(CPS)
 
 ```
 
