@@ -8,7 +8,8 @@ editor: visual
 ## Stacked bar plot for age distribution by gender
 
 ```{r}
-bar_plot_age_gender <- dat_aug_03 |> 
+
+bar_plot_age_gender <- dat_aug_03 |>
   ggplot(aes(x = Age, 
              fill = Sex)) +
   geom_bar(position = "stack", 
@@ -17,12 +18,37 @@ bar_plot_age_gender <- dat_aug_03 |>
   labs(title = "Overview of age and gender repartition for patients with cyrrhosis",
        x = "Age Group",
        y = "Count") +
-  scale_fill_manual(values = c("Male" = "darkblue", "Female" = "red")) +
-  theme_minimal()
+  scale_color_viridis(discrete = TRUE, option = "D") +
+  theme_minimal() 
 
+  
 ```
 
 ```{r}
 bar_plot_age_gender
+```
+
+
+
+# Overview of the disease they had 
+
+```{r}
+bar_plot_age_gender2 <- dat_aug_03 |> 
+  ggplot(aes(x = Liver_disease, 
+             fill = Mortality)) +
+  geom_bar(position = "stack", 
+           stat = "count", 
+           alpha = 0.7) +
+  labs(title = "Overview of cause of cyrrhosis repartition startified by mortality",
+       y = "Count") +
+  scale_fill_viridis(discrete = TRUE, option = "D") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+```
+
+
+```{r}
+bar_plot_age_gender2
 ```
 
