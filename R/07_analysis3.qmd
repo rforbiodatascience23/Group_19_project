@@ -5,31 +5,24 @@ format: html
 editor: visual
 ---
 
-# Libraries
-
-```{r}
-library("tidyverse")
-```
-
-# Popula representation graph
-
-```{r}
-dat_aug_03
-```
-
 ## Stacked bar plot for age distribution by gender
 
 ```{r}
-ggplot(data = dat_aug_03, 
-       aes(x = Age, 
-           fill = Sex)) +
+bar_plot_age_gender <- dat_aug_03 |> 
+  ggplot(aes(x = Age, 
+             fill = Sex)) +
   geom_bar(position = "stack", 
            stat = "count", 
            alpha = 0.7) +
-  labs(title = "Age Distribution by Gender",
+  labs(title = "Overview of age and gender repartition for patients with cyrrhosis",
        x = "Age Group",
        y = "Count") +
   scale_fill_manual(values = c("Male" = "darkblue", "Female" = "red")) +
   theme_minimal()
 
 ```
+
+```{r}
+bar_plot_age_gender
+```
+
