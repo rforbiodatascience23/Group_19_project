@@ -56,7 +56,6 @@ bar_plot_age_gender3 <- dat_aug_03 |>
   ggplot(aes(x = Comorbidities, 
              fill = Comorbidities)) +
   geom_bar(alpha = 0.7) +
-  labs(title = "Overview of comorbidities across patieents suffering from cyrrhosis ",
        y = "Count") +
   scale_fill_viridis(discrete = TRUE, option = "D") +
   theme_minimal() +
