@@ -21,7 +21,7 @@ bar_plot_age_gender <- dat_aug_03 |>
   labs(title = "Overview of age and gender repartition for patients with cyrrhosis",
        x = "Age Group",
        y = "Count") +
-  scale_color_viridis(discrete = TRUE, option = "D") +
+  scale_fill_viridis_d() +
   theme_minimal() 
   
 ```
@@ -43,10 +43,10 @@ bar_plot_age_gender2 <- dat_aug_03 |>
            alpha = 0.7) +
   labs(title = "Overview of cause of cyrrhosis repartition startified by mortality",
        y = "Count") +
-  scale_fill_viridis(discrete = TRUE, option = "D") +
+  scale_fill_viridis_d() +
   theme_minimal() +
   theme(axis.title.x=element_blank()) +
-  scale_x_discrete(guide = guide_axis(n.dodge=4))
+  scale_x_discrete(guide = guide_axis(angle = 25))
 
 ```
 
@@ -54,6 +54,24 @@ bar_plot_age_gender2 <- dat_aug_03 |>
 ```{r}
 bar_plot_age_gender2
 ```
+
+```{r}
+bar_plot_age_gender2 <- dat_aug_03 |> 
+  ggplot(aes(x = Liver_disease, 
+             fill = Mortality)) +
+  geom_bar(position = "fill", 
+           stat = "count", 
+           alpha = 0.7) +
+  labs(title = "Overview of cause of cyrrhosis repartition startified by mortality",
+       y = "Count") +
+  scale_fill_viridis_d() +
+  theme_minimal() +
+  theme(axis.title.x=element_blank()) +
+  scale_x_discrete(guide = guide_axis(angle = 25))
+
+bar_plot_age_gender2
+```
+
 
 # Overview of comorbities
 
@@ -64,7 +82,7 @@ bar_plot_age_gender3 <- dat_aug_03 |>
   geom_bar(alpha = 0.7) +
   labs(title = "Overview of comorbidities across patieents suffering from cyrrhosis ",
        y = "Count") +
-  scale_fill_viridis(discrete = TRUE, option = "D") +
+  scale_fill_viridis_d() +
   theme_minimal() +
   theme(axis.text.x=element_blank(), 
         legend.title=element_blank()) 
