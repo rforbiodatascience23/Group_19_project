@@ -1,12 +1,11 @@
-# Descriptive statistics, how many in each group, etc.
-
-
 ---
 title: "07_analysis3"
 author: "s231932"
 format: html
 editor: visual
 ---
+
+Descriptive statistics, how many in each group, etc.
 
 ## Stacked bar plot for age distribution by gender
 
@@ -27,60 +26,56 @@ bar_plot_age_gender <- dat_aug_03 |>
 ```
 
 ```{r}
+ggsave("Age_gender.png", 
+       path = "../results/plots/",
+       plot = bar_plot_age_gender,
+       width = 7,
+       height = 5)
+```
+
+```{r}
 bar_plot_age_gender
 ```
 
-
-
-# Overview of the disease they had 
+## Overview of the liver disease of the patient
 
 ```{r}
-bar_plot_age_gender2 <- dat_aug_03 |> 
-  ggplot(aes(x = Liver_disease, 
-             fill = Mortality)) +
-  geom_bar(position = "stack", 
-           stat = "count", 
-           alpha = 0.7) +
-  labs(title = "Overview of cause of cyrrhosis repartition startified by mortality",
-       y = "Count") +
-  scale_fill_viridis_d() +
-  theme_minimal() +
-  theme(axis.title.x=element_blank()) +
-  scale_x_discrete(guide = guide_axis(angle = 25))
-
-```
-
-
-```{r}
-bar_plot_age_gender2
-```
-
-```{r}
-bar_plot_age_gender2 <- dat_aug_03 |> 
+bar_plot_LD_Mortality<- dat_aug_03 |> 
   ggplot(aes(x = Liver_disease, 
              fill = Mortality)) +
   geom_bar(position = "fill", 
            stat = "count", 
            alpha = 0.7) +
-  labs(title = "Overview of cause of cyrrhosis repartition startified by mortality",
-       y = "Count") +
+  labs(title = "Liver disease repartition in cyrrhosis patients, stratified by mortality",
+       y = "Proportion") +
   scale_fill_viridis_d() +
   theme_minimal() +
   theme(axis.title.x=element_blank()) +
   scale_x_discrete(guide = guide_axis(angle = 25))
 
-bar_plot_age_gender2
+```
+
+```{r}
+ggsave("LD_Mortality.png", 
+       path = "../results/plots/",
+       plot = bar_plot_LD_Mortality,
+       width = 7,
+       height = 5)
+```
+
+```{r}
+bar_plot_LD_Mortality
 ```
 
 
-# Overview of comorbities
+# Overview of comorbities in the patients' population 
 
 ```{r}
-bar_plot_age_gender3 <- dat_aug_03 |> 
+bar_plot_comorbidities <- dat_aug_03 |> 
   ggplot(aes(x = Comorbidities, 
              fill = Comorbidities)) +
   geom_bar(alpha = 0.7) +
-  labs(title = "Overview of comorbidities across patieents suffering from cyrrhosis ",
+  labs(title = "Overview of comorbidities across patients suffering from cyrrhosis ",
        y = "Count") +
   scale_fill_viridis_d() +
   theme_minimal() +
@@ -90,6 +85,13 @@ bar_plot_age_gender3 <- dat_aug_03 |>
 ```
 
 ```{r}
-bar_plot_age_gender3
+ggsave("Comorbidities.png", 
+       path = "../results/plots/",
+       plot = bar_plot_comorbidities,
+       width = 7,
+       height = 5)
 ```
 
+```{r}
+bar_plot_comorbidities
+```
