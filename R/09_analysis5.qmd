@@ -1,0 +1,217 @@
+```{r}
+dat_aug_03
+
+```
+
+
+
+```{r}
+ggplot(
+  data = dat_aug_03,
+  mapping = aes(x = CPS,
+                y = Charlson_CI,
+                color = Liver_disease,
+                na.rm = TRUE)
+) +
+  geom_point(alpha = 0.3) +
+  geom_smooth(method = "lm") +
+  scale_color_viridis_d() +
+  labs(
+    title = "Relationship between Child Pugh Score and Charlson score",
+    subtitle = "for each liver disease",
+    x = "CPS",
+    y = "Charlson CI"
+  ) +
+  facet_wrap(~Liver_disease) +
+  theme(
+    strip.background = element_blank(),
+    strip.text.x = element_blank()
+)
+```
+
+```{r}
+ggplot(
+  data = dat_aug_03,
+  mapping = aes(x = CPS,
+                y = Charlson_CI,
+                na.rm = TRUE)
+) +
+  geom_point(alpha = 0.1) +
+  scale_color_viridis_d() +
+  geom_smooth(method = "lm")
+  labs(
+  title = "Relationship between Child Pugh Score and Charlson score",
+  x = "CPS",
+  y = "Charlson CI"
+)
+
+```
+
+# Linear regression
+## Load libraries for modelling 
+The aim is to determine which comorbidities or etiologies have an influence on
+the Child Pugh Score
+
+```{r}
+library(broom)
+library(ggplot2)
+```
+
+
+
+```{r}
+df_Etiology_and_Comorbidities <- df_Etiology_and_Comorbidities |>
+  select(-c(Otherliverdiseaseetiology))
+
+df_Etiology_and_Comorbidities
+```
+
+
+
+```{r}
+model <- lm(formula = Alcohol ~ cps,
+   data = df_Etiology_and_Comorbidities)
+model
+```
+
+```{r}
+df_Etiology_and_Comorbidities |> 
+  group_by(cps) |> 
+  summarise(mean = mean(Alcohol))
+```
+
+Summary of the model: by looking at the p-value, we can see if the variable 
+"Alcohol" is statistically significant or not.
+p-value > 0.05 so the variable is not statistically significant.
+```{r}
+model |> summary()
+```
+```{r}
+df_Etiology_and_Comorbidities_long <- df_Etiology_and_Comorbidities |> 
+  pivot_longer(
+    cols = -c(ID, cps),
+    names_to = "Etiologies_and_comorbidities",
+    values_to = "Presence"
+  )
+
+df_Etiology_and_Comorbidities_long
+```
+
+```{r}
+df_Etiology_and_Comorbidities_long_nested <- df_Etiology_and_Comorbidities_long |> 
+  group_by(Etiologies_and_comorbidities) |> 
+  nest() |> 
+  ungroup()
+
+df_Etiology_and_Comorbidities_long_nested |> 
+  group_by(Etiologies_and_comorbidities) |> 
+  mutate(
+    model_object = map(.x = data,
+                       .f = ~lm(formula = Presence ~ cps,
+                            data = .x))
+  ) |> 
+  filter(Etiologies_and_comorbidities == "Alcohol") |>
+  pull(model_object)
+```
+```{r}
+df_Etiology_and_Comorbidities_long_nested <- df_Etiology_and_Comorbidities_long_nested|> 
+  group_by(Etiologies_and_comorbidities) |> 
+  mutate(
+    model_object = map(.x = data,
+                       .f = ~lm(formula = Presence ~ cps,
+                                data = .x))
+  )
+
+df_Etiology_and_Comorbidities_long_nested |>
+  pull(model_object) |>
+  pluck(1) |>
+  tidy(conf.int = TRUE,
+       conf.level = 0.95)
+```
+```{r}
+df_Etiology_and_Comorbidities_long_nested <- df_Etiology_and_Comorbidities_long_nested |> 
+  mutate(model_object_tidy = map(.x = model_object,
+                                 .f = ~tidy(conf.int = TRUE,
+                                           conf.level = 0.95,
+                                           x = .x)
+  )
+)
+df_Etiology_and_Comorbidities_long_nested
+```
+
+```{r}
+estimate <- df_Etiology_and_Comorbidities_long_nested |>
+  unnest( model_object_tidy
+  )
+
+estimate
+```
+
+```{r}
+estimate <- estimate|> 
+  filter(term == "cps") |> 
+  ungroup(Etiologies_and_comorbidities)
+
+estimate
+```
+
+```{r}
+estimate <- estimate |> 
+  mutate(
+    q.value = p.adjust(p.value),
+    is.significant = case_when(
+      p.value < 0.05 ~ "yes",
+      p.value >= 0.05 ~ "no"
+    )
+  )
+
+sample_n(estimate,10)
+```
+
+```{r}
+if (!requireNamespace("forcats", quietly = TRUE)) {
+  install.packages("forcats")
+}
+library(forcats)
+
+
+estimate |> 
+  ggplot( 
+    mapping = aes(x = estimate,
+                  y = Etiologies_and_comorbidities)) +
+  geom_errorbarh(aes(xmin = conf.low,
+                 xmax = conf.high,
+                 y = fct_reorder(Etiologies_and_comorbidities,estimate))) +
+  geom_point()+
+  geom_hline(yintercept = 0, linetype = "dashed", color = "black", size = 0.5) +
+  labs(
+    title = "Comorbidities and ethiologies associated with CPS ",
+    x = "Estimates(95% CIs)",
+    y ="") +
+  theme(plot.title = element_text(size = 12.5))
+```
+
+```{r}
+estimate |> 
+  select(q.value <= 0.05) |> 
+  mutate(
+    label = Ethiologies_and_comorbidities
+    ) |> 
+  ggplot(
+    data = estimate,
+    mapping = aes(x = estimate, 
+                  y = - log10(p.value), 
+                  color = is.significant, 
+                  label = ifelse(- log10(p.value) > 1,
+                                 Etiologies_and_comorbidities,
+                                 "")
+                  ) 
+    ) +
+  geom_point(alpha = 0.8) +
+  geom_text(hjust=0.5, vjust=-0.5) +
+  labs(
+    title = "Comorbidities and ethiologies associated with CPS ",
+    x = "Estimates(95% CIs)",
+    y ="") +
+  expand_limits(x = c(-0.03,0.05))
+```
