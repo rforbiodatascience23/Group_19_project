@@ -22,3 +22,33 @@ box_plot_Charlson <- dat_aug_03 |>
 
 ```
 
+```{r}
+box_plot_Charlson
+```
+
+
+```{r}
+
+library(viridis)
+
+box_plot_Charlson2 <- dat_aug_03 |> 
+  ggplot(mapping = aes(x = Liver_disease,
+                       y = Charlson_CI, 
+                       color = Liver_disease)) +
+  geom_boxplot() +
+  scale_color_viridis(discrete = TRUE, option = "D") +
+  labs(title = 'Impact of diverse liver diseases on the 10 year life expectancy of patients',
+       y = 'Charlson Comorbidity Index') +
+  theme_minimal() +
+  theme(axis.text.x=element_blank(), 
+        legend.title = element_blank(), 
+        legend.text = element_text(size = 7))
+
+```
+
+```{r}
+
+box_plot_Charlson2
+```
+
+

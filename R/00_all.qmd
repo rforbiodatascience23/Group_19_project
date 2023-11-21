@@ -1,1 +1,157 @@
 ##  The master document, capable of running the entire project in one go
+
+## Load library
+```{r}
+library("tidyverse")
+```
+
+## Load data
+```{r}
+dat_load_01 <- read_csv(file = 
+        "~/projects/Group_19_project/data/PONE-D-18-29048R1_data_file.csv", 
+        na = c("_","NA", "NOT AVAILABLE", " ", ""))
+```
+
+```{r}
+write_tsv(
+  x= dat_load_01, 
+  file = '~/projects/Group_19_project/data/01_dat_load.tsv'
+  )
+```
+
+## Tidying of the data using pivot_longer
+
+```{r}
+
+dat_clean_02 <- dat_load_01 |> 
+  # Selection of correct variable 
+  select(Sex, 
+         `Age(Decade)atadmission`,
+         Liverrelateddiagnosis1, 
+         Alcohol, 
+         mi,
+         chf, 
+         pvd, 
+         Cerebrovasculardisease,
+         Dementia, 
+         Chronicpulmonorydisease, 
+         Rheumatologicaldisease,
+         Pepticulcerdisease,
+         Mildliverdisease,
+         Diabetes,
+         Diabeteswithchroniccomplications,
+         Heiplegiaorparaplegia,
+         Renaldisease,
+         Anymalignancyincludinglymphomaor, 
+         Moderateorsevereliverdisease,
+         Metastaticsolidtumor,
+         aids, 
+         cps, 
+         Mortality_InHospital, 
+         CHARLSON_CI,
+         MORTALITY_30_DAYS_postDC, 
+         MORTALITY_90_DAYS_postDC ) |> 
+         
+  mutate(C_Diabetes_with_without_complications = Diabetes + Diabeteswithchroniccomplications) |> 
+  select(-c(Diabetes, Diabeteswithchroniccomplications)) |> 
+  
+  # Change the name of variables 
+  rename(Age = `Age(Decade)atadmission`, 
+         Liver_disease = Liverrelateddiagnosis1, 
+         Alcohol_consumption = Alcohol, 
+         C_Myocardial_infarction = mi, 
+         C_Congestive_Heart_Failure = chf, 
+         C_Peripheral_vascular_disease = pvd, 
+         C_Cerebro_Vascular_disease = Cerebrovasculardisease, 
+         C_Dementia = Dementia, 
+         C_Chronic_pulmonary_disease = Chronicpulmonorydisease, 
+         C_Rheumatological_disease = Rheumatologicaldisease,
+         C_Pepticulcer_disease = Pepticulcerdisease, 
+         C_Mild_liver_disease = Mildliverdisease, 
+         C_Heiplegia_paraplegia = Heiplegiaorparaplegia, 
+         C_Renal_disease = Renaldisease, 
+         C_Malignancy = Anymalignancyincludinglymphomaor, 
+         C_Moderate_severe_liver_disease = Moderateorsevereliverdisease, 
+         C_Metastatic_solid_tumor = Metastaticsolidtumor, 
+         C_AIDS = aids, 
+         CPS = cps, 
+         Mortality_hospital = Mortality_InHospital, 
+         Charlson_CI = CHARLSON_CI, 
+         Mortality_30_days = MORTALITY_30_DAYS_postDC, 
+         Mortality_90_days = MORTALITY_90_DAYS_postDC, 
+         ) |> 
+
+  # Reordering columns 
+  relocate(C_Diabetes_with_without_complications, .after = C_AIDS) |> 
+  relocate(Charlson_CI, .after = CPS) |> 
+
+  # Add a column "C_none"
+  mutate(C_None = (C_AIDS == 0) &
+        (C_Cerebro_Vascular_disease ==0)&
+        (C_Congestive_Heart_Failure == 0) &
+        (C_Chronic_pulmonary_disease == 0) & 
+        (C_Dementia == 0) &
+        (C_Diabetes_with_without_complications == 0) & 
+        (C_Heiplegia_paraplegia == 0) & 
+        (C_Malignancy == 0) &
+        (C_Myocardial_infarction == 0) &
+        (C_Mild_liver_disease == 0) & 
+        (C_Moderate_severe_liver_disease == 0) & 
+        (C_Metastatic_solid_tumor == 0) & 
+        (C_Pepticulcer_disease == 0) & 
+        (C_Peripheral_vascular_disease == 0) & 
+        (C_Rheumatological_disease == 0) & 
+        (C_Renal_disease == 0)
+      ) |> 
+
+
+  # Change 1/0 into Yes/No
+  mutate(Alcohol_consumption = ifelse(Alcohol_consumption == 1, 'Yes', 'No')) |> 
+  mutate_at(vars(starts_with('C_')), ~ifelse(. == 1, 'Yes', 'No')) |> 
+  mutate_at(vars(starts_with('Mortality')), ~ifelse(. == 1, 'Yes', 'No')) |> 
+
+
+  # If mortalityH = yes -> mortality 30-90 = no 
+  mutate_at(vars(c(Mortality_30_days, Mortality_90_days)), ~ifelse(Mortality_hospital == 'Yes', 'No', .)) |> 
+  #If mortality30 = yes -> mortality 90 = no   
+  mutate_at(vars(Mortality_90_days), ~ifelse(Mortality_30_days == 'Yes', 'No', .)) |>
+  
+  # Create a id for each ind 
+  mutate(Id = row_number()) |>
+  relocate(Id, .before = Sex) |> 
+ 
+  # Create a column Comorbidities ou pivot longer ? definition de tidy
+  pivot_longer(
+    cols = starts_with("C_"), 
+    names_to = "Comorbidities", 
+    values_to = "Presence_of_comorbidities",
+    values_drop_na = TRUE) |> 
+  
+  filter(Presence_of_comorbidities == 'Yes') |> 
+  select(-Presence_of_comorbidities) |> 
+  drop_na(CPS) |> 
+  drop_na(Sex) |> 
+  mutate(Comorbidities = str_remove(Comorbidities, "C_"))
+
+```
+
+```{r}
+dat_clean_02
+```
+
+# Augment
+
+    
+```{r}
+dat_aug_03 <- dat_clean_02 |> 
+   mutate(Mortality = case_when(Mortality_hospital == 'Yes' ~ "Death_in_hospital", 
+                                Mortality_hospital == 'No' & Mortality_30_days == 'Yes' & Mortality_90_days == 'No' ~ "Death_in_first_30_days", 
+                                Mortality_hospital == 'No' & Mortality_30_days == 'No' & Mortality_90_days == 'Yes' ~ "Death_between_30_and_90_days", 
+                               .default = "No death")) |> 
+   select(-c(Mortality_30_days, Mortality_90_days, Mortality_hospital)) |> 
+   mutate(Age = str_c('[', Age*10, '; ', (Age + 1)*10, ']'))
+```
+
+```{r}
+dat_aug_03 
+```

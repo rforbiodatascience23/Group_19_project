@@ -7,7 +7,7 @@ library("tidyverse")
 ```{r}
 dat_load_01 <- read_csv(file = 
         "~/projects/Group_19_project/data/PONE-D-18-29048R1_data_file.csv", 
-        na = c("_","NA", "NOT AVAILABLE", " "))
+        na = c("_","NA", "NOT AVAILABLE", " ", ""))
 ```
 
 ```{r}
