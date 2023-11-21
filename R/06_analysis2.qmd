@@ -1,13 +1,12 @@
-# Relation between Charlson value and the type of Liver disease
+# Relation between Charlson value and the type of comorbidities
 
 Charlson value represents a comorbidity index that predicts 10y life expectancy 
 for people with multiple comorbidities
 
 
 ```{r}
-library(viridisLite)
 
-box_plot_Charlson <- dat_aug_03 |> 
+box_plot_Charlson_Comorbidities <- dat_aug_03 |> 
   ggplot(mapping = aes(x = Comorbidities,
                        y = Charlson_CI, 
                        color = Comorbidities)) +
@@ -23,15 +22,21 @@ box_plot_Charlson <- dat_aug_03 |>
 ```
 
 ```{r}
-box_plot_Charlson
+box_plot_Charlson_Comorbidities
+```
+```{r}
+ggsave("Charlson_comorbidities.png", 
+       path = "../results/plots/",
+       plot = box_plot_Charlson_Comorbidities,
+       width = 7,
+       height = 5)
 ```
 
+# Relation between Charlson value and the type of liver disease
 
 ```{r}
 
-library(viridis)
-
-box_plot_Charlson2 <- dat_aug_03 |> 
+box_plot_Charlson_LD <- dat_aug_03 |> 
   ggplot(mapping = aes(x = Liver_disease,
                        y = Charlson_CI, 
                        color = Liver_disease)) +
@@ -47,8 +52,6 @@ box_plot_Charlson2 <- dat_aug_03 |>
 ```
 
 ```{r}
-
-box_plot_Charlson2
+box_plot_Charlson_LD
 ```
-
 

@@ -17,7 +17,7 @@ bar_plot_age_gender <- dat_aug_03 |>
   geom_bar(position = "stack", 
            stat = "count", 
            alpha = 0.7) +
-  labs(title = "Overview of age and gender repartition for patients with cyrrhosis",
+  labs(title = "Overview of age and gender repartition for patients with cirrhosis",
        x = "Age Group",
        y = "Count") +
   scale_fill_viridis_d() +
@@ -75,7 +75,7 @@ bar_plot_comorbidities <- dat_aug_03 |>
   ggplot(aes(x = Comorbidities, 
              fill = Comorbidities)) +
   geom_bar(alpha = 0.7) +
-  labs(title = "Overview of comorbidities across patients suffering from cyrrhosis ",
+  labs(title = "Overview of comorbidities across patients suffering from cirrhosis ",
        y = "Count") +
   scale_fill_viridis_d() +
   theme_minimal() +
@@ -85,7 +85,7 @@ bar_plot_comorbidities <- dat_aug_03 |>
 ```
 
 ```{r}
-ggsave("Comorbidities.png", 
+ggsave("Overrview_Comorbidities.png", 
        path = "../results/plots/",
        plot = bar_plot_comorbidities,
        width = 7,
@@ -94,4 +94,32 @@ ggsave("Comorbidities.png",
 
 ```{r}
 bar_plot_comorbidities
+```
+
+# Overview of ethiology factor across population 
+
+```{r}
+bar_plot_ethiology <- dat_aug_03 |> 
+  ggplot(aes(x = Etiologies, 
+             fill = Etiologies)) +
+  geom_bar(alpha = 0.7) +
+  labs(title = "Overview of etiologies across patients suffering from cirrhosis ",
+       y = "Count") +
+  scale_fill_viridis_d() +
+  theme_minimal() +
+  theme(axis.text.x=element_blank(), 
+        legend.title=element_blank()) 
+
+```
+
+```{r}
+ggsave("Overview_Ethiology.png", 
+       path = "../results/plots/",
+       plot = bar_plot_ethiology,
+       width = 7,
+       height = 5)
+```
+
+```{r}
+bar_plot_ethiology
 ```
