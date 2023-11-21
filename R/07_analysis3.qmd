@@ -18,7 +18,7 @@ bar_plot_age_gender <- dat_aug_03 |>
   labs(title = "Overview of age and gender repartition for patients with cyrrhosis",
        x = "Age Group",
        y = "Count") +
-  scale_color_viridis(discrete = TRUE, option = "D") +
+  scale_fill_viridis_d() +
   theme_minimal() 
   
 ```
@@ -27,9 +27,7 @@ bar_plot_age_gender <- dat_aug_03 |>
 bar_plot_age_gender
 ```
 
-
-
-# Overview of the disease they had 
+# Overview of the disease they had
 
 ```{r}
 bar_plot_age_gender2 <- dat_aug_03 |> 
@@ -46,7 +44,6 @@ bar_plot_age_gender2 <- dat_aug_03 |>
   scale_x_discrete(guide = guide_axis(n.dodge=4))
 
 ```
-
 
 ```{r}
 bar_plot_age_gender2
@@ -70,4 +67,3 @@ bar_plot_age_gender3 <- dat_aug_03 |>
 ```{r}
 bar_plot_age_gender3
 ```
-

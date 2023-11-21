@@ -1,7 +1,7 @@
 ```{r}
 dat_aug_03
 
-``` 
+```
 
 ```{r}
 ggplot(
@@ -36,6 +36,8 @@ Alcohol_impact_mortality <- ggplot(
   x = "Alcohol consumption",
   y = "Proportions"
 )
+
+Alcohol_impact_mortality
 ```
 
 # Saving the plot
@@ -47,5 +49,3 @@ ggsave("Alcohol_impact_mortality.png",
        width = 7,
        height = 5)
 ```
-
-
