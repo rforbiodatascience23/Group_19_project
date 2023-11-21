@@ -7,9 +7,9 @@ dat_aug_03
 
 ```{r}
 ggplot(
-  data = dat_aug_03,
-  mapping = aes(x = CPS,
-                y = Charlson_CI,
+  data = dat_load_01,
+  mapping = aes(x = MELD_within1day,
+                y = CHARLSON_CI,
                 color = Liver_disease,
                 na.rm = TRUE)
 ) +
@@ -31,9 +31,9 @@ ggplot(
 
 ```{r}
 ggplot(
-  data = dat_aug_03,
-  mapping = aes(x = CPS,
-                y = Charlson_CI,
+  data = dat_load_01,
+  mapping = aes(x = MELD_within1day,
+                y = CHARLSON_CI,
                 na.rm = TRUE)
 ) +
   geom_point(alpha = 0.1) +
