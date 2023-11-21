@@ -60,22 +60,22 @@ library(ggplot2)
 
 
 ```{r}
-df_Etiology_and_Comorbidities <- df_Etiology_and_Comorbidities |>
+df <- df_Etiology |>
   select(-c(Otherliverdiseaseetiology))
 
-df_Etiology_and_Comorbidities
+df
 ```
 
 
 
 ```{r}
 model <- lm(formula = Alcohol ~ cps,
-   data = df_Etiology_and_Comorbidities)
+   data = df)
 model
 ```
 
 ```{r}
-df_Etiology_and_Comorbidities |> 
+df |> 
   group_by(cps) |> 
   summarise(mean = mean(Alcohol))
 ```
@@ -87,7 +87,7 @@ p-value > 0.05 so the variable is not statistically significant.
 model |> summary()
 ```
 ```{r}
-df_Etiology_and_Comorbidities_long <- df_Etiology_and_Comorbidities |> 
+df_Etiology_and_Comorbidities_long <- df |> 
   pivot_longer(
     cols = -c(ID, cps),
     names_to = "Etiologies_and_comorbidities",
@@ -165,7 +165,7 @@ estimate <- estimate |>
     )
   )
 
-sample_n(estimate,10)
+estimate
 ```
 
 ```{r}
