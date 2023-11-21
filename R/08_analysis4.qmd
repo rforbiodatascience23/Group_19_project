@@ -50,3 +50,75 @@ ggplot(stacked_bar_liverDisease,
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 ```
 
+
+
+
+
+# LD + Etiology by count 
+
+```{r}
+dat_aug_03_1 <- dat_aug_03 |> 
+  group_by(Liver_disease, Etiologies) |> 
+  summarise(count1 = n()) |> 
+  ungroup()
+
+```
+
+```{r}
+ggplot(dat_aug_03_1, 
+       aes(x = Liver_disease, 
+           y = Etiologies, 
+           fill = count/nrow(dat_aug_03))) +
+  geom_tile()+
+  labs(title = "Hospitalizations by Liver Disease and their Etiology",
+       x = "Liver Disease",
+       y = "Etiologies", 
+       fill = "Percent of patients") +
+  scale_fill_viridis()+
+  theme_classic()+ 
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+
+```
+
+# LD + Etiology by mortality  
+
+
+```{r}
+dat_aug_03_1
+```
+
+```{r}
+dat_aug_03_2 <- dat_aug_03 |> 
+  filter(Mortality != 'No death') |> 
+  group_by(Liver_disease, Etiologies, Mortality) |> 
+  summarise(count2 = n())
+
+```
+```{r}
+dat_aug_03_2
+```
+```{r}
+dat_aug_03_join <- left_join(dat_aug_03_1, dat_aug_03_2, by = c("Liver_disease", "Etiologies"))
+```
+
+```{r}
+dat_aug_03_join <- dat_aug_03_join |> 
+  replace_na(list(count2 = 0))
+```
+
+```{r}
+ggplot(dat_aug_03_join, 
+       aes(x = Liver_disease, 
+           y = Etiologies, 
+           fill = count2/count1)) +
+  geom_tile() +
+  labs(title = "Repartition of death according to Liver Disease and Etiology",
+       x = "Liver Disease",
+       y = "Etiologies", 
+       fill = "Percent of dead patients") +
+  scale_fill_viridis()+
+  theme_classic()+ 
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+
+```
+

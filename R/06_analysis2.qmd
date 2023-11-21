@@ -5,7 +5,7 @@ for people with multiple comorbidities
 
 
 ```{r}
-library(viridis)
+library(viridisLite)
 
 box_plot_Charlson <- dat_aug_03 |> 
   ggplot(mapping = aes(x = Comorbidities,
