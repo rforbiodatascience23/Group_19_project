@@ -171,6 +171,9 @@ dat_clean_02 <- dat_load_01 |>
   select(-Presence_of_comorbidities) |> 
   drop_na(CPS) |> 
   drop_na(Sex) |> 
+  drop_na(Mortality_hospital) |> 
+  drop_na(Mortality_30_days) |> 
+  drop_na(Mortality_90_days) |> 
   mutate(Comorbidities = str_remove(Comorbidities, "C_"))
 
 ```
