@@ -21,7 +21,7 @@ ggplot(
 ```
 
 ```{r}
-ggplot(
+Alcohol_impact_mortality <- ggplot(
   data = dat_aug_03,
   mapping = aes(x = Alcohol_consumption,
                 fill = Mortality,
@@ -36,6 +36,16 @@ ggplot(
   x = "Alcohol consumption",
   y = "Proportions"
 )
+```
+
+# Saving the plot
+
+```{r}
+ggsave("Alcohol_impact_mortality.png", 
+       path = "../results/plots/",
+       plot = Alcohol_impact_mortality,
+       width = 7,
+       height = 5)
 ```
 
 
