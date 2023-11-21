@@ -1,0 +1,179 @@
+```{r}
+dat_aug_03
+
+```
+
+```{r}
+library(broom)
+library(ggplot2)
+```
+
+```{r}
+df <- dat_aug_03 |>
+  mutate(`Mortality (1 = y/0 = n)` = ifelse(Mortality == "No death", 0, 1)) |> 
+  pivot_wider(
+    names_from = Liver_disease,
+    values_from = Liver_disease
+  ) |> 
+  mutate(across(11:20, ~ifelse(is.na(.), 0, 1)))
+df
+```
+
+```{r}
+model <- lm(formula = Ascites ~ `Mortality (1 = y/0 = n)`,
+   data = df)
+model
+```
+
+
+```{r}
+df |> 
+  group_by(`Mortality (1 = y/0 = n)`) |> 
+  summarise(mean = mean(Ascites))
+```
+
+Summary of the model: by looking at the p-value, we can see if the variable 
+"Ascites" is statistically significant or not.
+p-value < 0.05 so the variable is statistically significant.
+```{r}
+model |> summary()
+```
+```{r}
+df_long <- df |> 
+  pivot_longer(
+    cols = c(`Hepatic encephalopathy`, 
+             SBP,
+             Ascites,
+             `Other fluid overload`,
+             AKI,
+             `UGIB due to portal hypertension`,
+             `HCC or cholangioca.`,
+             `Alcoholic hepatitis`,
+             `Jaundice- as isolated presentation`,
+             `Hepato-hydrothorax`
+             ),
+    names_to = "Liver diseases",
+    values_to = "Presence"
+  )
+
+df_long
+```
+
+```{r}
+df_long_nested <- df_long |> 
+  group_by(`Liver diseases`) |> 
+  nest() |> 
+  ungroup()
+
+df_long_nested |> 
+  group_by(`Liver diseases`) |> 
+  mutate(
+    model_object = map(.x = data,
+                       .f = ~lm(formula = Presence ~ `Mortality (1 = y/0 = n)`,
+                            data = .x))
+  ) |> 
+  filter(`Liver diseases` == "Ascites") |>
+  pull(model_object)
+```
+
+```{r}
+df_long_nested <- df_long_nested|> 
+  group_by(`Liver diseases`) |> 
+  mutate(
+    model_object = map(.x = data,
+                       .f = ~lm(formula = Presence ~ `Mortality (1 = y/0 = n)`,
+                                data = .x))
+  )
+
+df_long_nested |>
+  pull(model_object) |>
+  pluck(1) |>
+  tidy(conf.int = TRUE,
+       conf.level = 0.95)
+```
+```{r}
+df_long_nested <- df_long_nested |> 
+  mutate(model_object_tidy = map(.x = model_object,
+                                 .f = ~tidy(conf.int = TRUE,
+                                           conf.level = 0.95,
+                                           x = .x)
+  )
+)
+df_long_nested
+```
+```{r}
+estimate <- df_long_nested |>
+  unnest( model_object_tidy)
+
+estimate
+```
+```{r}
+estimate <- estimate|> 
+  filter(term == "`Mortality (1 = y/0 = n)`") |> 
+  ungroup(`Liver diseases`)
+
+estimate
+```
+```{r}
+estimate <- estimate |> 
+  mutate(
+    q.value = p.adjust(p.value),
+    is.significant = case_when(
+      p.value < 0.05 ~ "yes",
+      p.value >= 0.05 ~ "no"
+    )
+  )
+
+estimate
+```
+
+```{r}
+if (!requireNamespace("forcats", quietly = TRUE)) {
+  install.packages("forcats")
+}
+library(forcats)
+
+
+estimate |> 
+  ggplot( 
+    mapping = aes(x = estimate,
+                  y = `Liver diseases`)) +
+  geom_errorbarh(aes(xmin = conf.low,
+                 xmax = conf.high,
+                 y = fct_reorder(`Liver diseases`,estimate))) +
+  geom_point()+
+  geom_hline(yintercept = 0, linetype = "dashed", color = "black", size = 0.5) +
+  labs(
+    title = "Liver diseases associated with mortality ",
+    x = "Estimates(95% CIs)",
+    y ="") +
+  theme(plot.title = element_text(size = 12.5))
+```
+
+
+
+```{r}
+estimate |> 
+  select(q.value <= 0.05) |> 
+  mutate(
+    label = `Liver diseases`
+    ) |> 
+  ggplot(
+    data = estimate,
+    mapping = aes(x = estimate, 
+                  y = - log10(p.value), 
+                  color = is.significant, 
+                  label = ifelse(- log10(p.value) > 1,
+                                 `Liver diseases`,
+                                 "")
+                  ) 
+    ) +
+  geom_point(alpha = 0.8) +
+  geom_text(hjust=0.5, vjust=-0.5) +
+  labs(
+    title = "Liver diseases associated with mortality",
+    x = "Estimates(95% CIs)",
+    y ="") +
+  expand_limits(x = c(-0.05,0.13))
+```
+
