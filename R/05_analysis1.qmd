@@ -1,12 +1,60 @@
 ```{r}
-dat_aug_03
+dat_mortality <- dat_aug_03 |> 
+  mutate(Alcohol = ifelse(Etiologies == "Alcohol_consumption", "yes", "no")) |> 
+  mutate(NAFLD = ifelse(Etiologies == "Non_alcoolic_fatty_LD", "yes", "no")) |> 
+  mutate(Cryptogenic = ifelse(Etiologies == "Cryptogenic", "yes", "no")) 
+
+```
+
+## Age impact on mortality
+
+```{r}
+
+ggplot(
+  data = dat_mortality,
+  mapping = aes(x = Age,
+                fill = Mortality,
+                na.rm = TRUE)
+) +
+  geom_bar(alpha = 0.6,
+           position = "stack") +
+  scale_fill_viridis_d() +
+  labs(
+  title = "Distribution of patient outcomes ",
+  subtitle = "stratified by age",
+  x = "Age",
+  y = "Count"
+)
 
 ```
 
 ```{r}
+Age_impact_mortality <- ggplot(
+  data = dat_aug_03,
+  mapping = aes(x = Age,
+                fill = Mortality,
+                na.rm = TRUE)
+) +
+  geom_bar(alpha = 0.6,
+           position = "fill") +
+  scale_fill_viridis_d() +
+  labs(
+  title = "Distribution of patient outcomes ",
+  subtitle = "stratified by age",
+  x = "Age",
+  y = "Proportions"
+)
+
+Age_impact_mortality
+```
+
+
+## Alcohol consumption impact on mortality
+
+```{r}
 ggplot(
   data = dat_aug_03,
-  mapping = aes(x = Alcohol_consumption,
+  mapping = aes(x = Alcohol,
                 fill = Mortality,
                 na.rm = TRUE)
 ) +
@@ -22,8 +70,8 @@ ggplot(
 
 ```{r}
 Alcohol_impact_mortality <- ggplot(
-  data = dat_aug_03,
-  mapping = aes(x = Alcohol_consumption,
+  data = dat_mortality,
+  mapping = aes(x = Alcohol,
                 fill = Mortality,
                 na.rm = TRUE)
 ) +
@@ -34,6 +82,50 @@ Alcohol_impact_mortality <- ggplot(
   title = "Distribution of patient outcomes ",
   subtitle = "stratified by alcohol consumption",
   x = "Alcohol consumption",
+  y = "Proportions"
+)
+
+Alcohol_impact_mortality
+```
+
+## Comparing effects of different etiologies on mortality
+
+ 
+
+```{r}
+Alcohol_impact_mortality <- ggplot(
+  data = dat_mortality,
+  mapping = aes(x = NAFLD,
+                fill = Mortality,
+                na.rm = TRUE)
+) +
+  geom_bar(alpha = 0.6,
+           position = "fill") +
+  scale_fill_viridis_d() +
+  labs(
+  title = "Distribution of patient outcomes ",
+  subtitle = "stratified by age",
+  x = "Age",
+  y = "Proportions"
+)
+
+Alcohol_impact_mortality
+```
+
+```{r}
+Alcohol_impact_mortality <- ggplot(
+  data = dat_mortality,
+  mapping = aes(x = Cryptogenic,
+                fill = Mortality,
+                na.rm = TRUE)
+) +
+  geom_bar(alpha = 0.6,
+           position = "fill") +
+  scale_fill_viridis_d() +
+  labs(
+  title = "Distribution of patient outcomes ",
+  subtitle = "stratified by age",
+  x = "Age",
   y = "Proportions"
 )
 
