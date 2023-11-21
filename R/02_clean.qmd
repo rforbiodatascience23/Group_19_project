@@ -69,6 +69,13 @@ dat_clean_02 <- dat_load_01 |>
          `Age(Decade)atadmission`,
          Liverrelateddiagnosis1, 
          Alcohol, 
+         hcv, 
+         hbv, 
+         nafld, 
+         Cryptogenic, 
+         PrimarySclerosingCholangitis, 
+         Autoimmunehepatitis, 
+         pbc,
          mi,
          chf, 
          pvd, 
@@ -98,7 +105,14 @@ dat_clean_02 <- dat_load_01 |>
   # Change the name of variables 
   rename(Age = `Age(Decade)atadmission`, 
          Liver_disease = Liverrelateddiagnosis1, 
-         Alcohol_consumption = Alcohol, 
+         E_Alcohol_consumption = Alcohol, 
+         E_Hepathitis_c = hcv, 
+         E_Hepathitis_b = hbv, 
+         E_Non_alcoolic_fatty_LD = nafld, 
+         E_Cryptogenic = Cryptogenic, 
+         E_Primary_sclerosing_cholangitis =  PrimarySclerosingCholangitis, 
+         E_Autoimmune_hepatitis = Autoimmunehepatitis, 
+         E_Primary_biliary_cholangitis = pbc,
          C_Myocardial_infarction = mi, 
          C_Congestive_Heart_Failure = chf, 
          C_Peripheral_vascular_disease = pvd, 
@@ -146,8 +160,8 @@ dat_clean_02 <- dat_load_01 |>
 
 
   # Change 1/0 into Yes/No
-  mutate(Alcohol_consumption = ifelse(Alcohol_consumption == 1, 'Yes', 'No')) |> 
   mutate_at(vars(starts_with('C_')), ~ifelse(. == 1, 'Yes', 'No')) |> 
+  mutate_at(vars(starts_with('E_')), ~ifelse(. == 1, 'Yes', 'No')) |> 
   mutate_at(vars(starts_with('Mortality')), ~ifelse(. == 1, 'Yes', 'No')) |> 
 
 
@@ -160,21 +174,31 @@ dat_clean_02 <- dat_load_01 |>
   mutate(Id = row_number()) |>
   relocate(Id, .before = Sex) |> 
  
-  # Create a column Comorbidities ou pivot longer ? definition de tidy
+  # Create a column Comorbidities 
   pivot_longer(
     cols = starts_with("C_"), 
     names_to = "Comorbidities", 
     values_to = "Presence_of_comorbidities",
     values_drop_na = TRUE) |> 
   
+  # create a column Etiology
+  pivot_longer(
+    cols = starts_with("E_"), 
+    names_to = "Etiologies", 
+    values_to = "Presence_of_etiologies",
+    values_drop_na = TRUE) |> 
+  
   filter(Presence_of_comorbidities == 'Yes') |> 
   select(-Presence_of_comorbidities) |> 
+  filter(Presence_of_etiologies == 'Yes') |> 
+  select(-Presence_of_etiologies) |> 
   drop_na(CPS) |> 
   drop_na(Sex) |> 
   drop_na(Mortality_hospital) |> 
   drop_na(Mortality_30_days) |> 
   drop_na(Mortality_90_days) |> 
-  mutate(Comorbidities = str_remove(Comorbidities, "C_"))
+  mutate(Comorbidities = str_remove(Comorbidities, "C_")) |> 
+  mutate(Etiologies = str_remove(Etiologies, "E_"))
 
 ```
 
