@@ -67,3 +67,5 @@ bar_plot_age_gender3 <- dat_aug_03 |>
 ```{r}
 bar_plot_age_gender3
 ```
+
+
