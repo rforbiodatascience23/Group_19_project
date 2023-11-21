@@ -1,1 +1,10 @@
 # Descriptive statistics, how many in each group, etc.
+
+
+```{r}
+
+nAnalysis4|>
+  group_by(Comorbidities)|>
+  count()
+```
+

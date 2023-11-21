@@ -1,64 +1,26 @@
-```{r}
-nAnalysis4 <- dat_aug_03
-```
-```{r}
-
-```
-
+# Liver disease and comordities relations 
 
 ```{r}
-nAnalysis4
-```
-```{r}
-stacked_bar_liverDisease <- nAnalysis4 |>
-  select(Liver_disease, Comorbidities)
-```
-
-```{r}
-nAnalysis4|>
-  group_by(Comorbidities)|>
-  count()
-```
-
-```{r}
-stacked_bar_liverDisease <- stacked_bar_liverDisease |>
+stacked_bar_liverDisease <- dat_aug_03 |>
+  select(Liver_disease, Comorbidities) |> 
   count(Liver_disease, Comorbidities)|>
-  rename(d_c_count = n)
-```
-
-```{r}
-library(viridis)
-```
-
-```{r}
-stacked_bar_liverDisease|>
-  view()
-```
-
-```{r}
-stacked_bar_liverDisease <-stacked_bar_liverDisease |>
-  arrange(Liver_disease,d_c_count)
-```
-
-```{r}
-stacked_bar_liverDisease <- stacked_bar_liverDisease |>
+  rename(d_c_count = n) |> 
   arrange(Liver_disease, desc(d_c_count)) |>
   mutate(Comorbidities = fct_inorder(Comorbidities))
 ```
 
 ```{r}
-stacked_bar_liverDisease|>
-  view()
+stacked_bar_liverDisease 
 ```
 
 
 ```{r}
-ggplot(stacked_bar_liverDisease, aes(x = Liver_disease,
-                 y = d_c_count,
-                 fill = Comorbidities)) +
-  geom_bar(position="stack",
-           stat="identity") +
-  scale_fill_viridis(discrete = T) +
+
+ggplot(dat_aug_03, 
+       aes(x = Liver_disease,
+           fill = Comorbidities)) +
+  geom_bar() +
+  scale_fill_viridis(discrete = TRUE, option = "D") +
   labs(title = "Hospitalizations by Liver Disease and Comorbidities",
        x = "Liver Disease",
        y = "Hospitalizations") +
@@ -68,6 +30,7 @@ ggplot(stacked_bar_liverDisease, aes(x = Liver_disease,
         legend.key.width= unit(0.2, 'cm')) +
   coord_flip()
 ```
+
 ```{r}
 test2 <- stacked_bar_liverDisease |>
   filter(d_c_count<87)
@@ -75,10 +38,15 @@ test2 <- stacked_bar_liverDisease |>
 
 
 ```{r}
-ggplot(test2, aes(Liver_disease, Comorbidities)) +
+ggplot(stacked_bar_liverDisease, 
+       aes(Liver_disease, Comorbidities)) +
   geom_tile(aes(fill= d_c_count))+
+  labs(fill = "Count" ,
+       title = "Hospitalizations by Liver Disease and Comorbidities",
+       x = "Liver Disease",
+       y = "Comorbidities") +
   scale_fill_viridis() +
-  theme_minimal()+ 
+  theme_classic()+ 
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 ```
 
