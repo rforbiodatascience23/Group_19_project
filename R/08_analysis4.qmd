@@ -122,3 +122,25 @@ ggplot(dat_aug_03_join,
 
 ```
 
+```{r}
+install.packages("treemapify")
+library(treemapify)
+```
+
+
+```{r}
+ggplot(stacked_bar_liverDisease, aes(area = d_c_count, fill = Liver_disease)) +
+  geom_treemap()
+```
+
+```{r}
+ggplot(stacked_bar_liverDisease, aes(area = d_c_count,
+                      fill = Liver_disease,
+                      label = Comorbidities,
+                      subgroup = Liver_disease)) +
+       geom_treemap() +
+			 geom_treemap_subgroup_border() +
+			 geom_treemap_text(colour = "white", place = "topleft", reflow = T)
+```
+
+
