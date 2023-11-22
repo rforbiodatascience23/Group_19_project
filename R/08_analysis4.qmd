@@ -1,6 +1,11 @@
 # Liver disease and comordities relations 
 
 ```{r}
+library(viridis)
+```
+
+
+```{r}
 stacked_bar_liverDisease <- dat_aug_03 |>
   select(Liver_disease, Comorbidities) |> 
   count(Liver_disease, Comorbidities)|>
@@ -49,9 +54,6 @@ ggplot(stacked_bar_liverDisease,
   theme_classic()+ 
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 ```
-
-
-
 
 
 # LD + Etiology by count 
@@ -135,12 +137,13 @@ ggplot(stacked_bar_liverDisease, aes(area = d_c_count, fill = Liver_disease)) +
 
 ```{r}
 ggplot(stacked_bar_liverDisease, aes(area = d_c_count,
-                      fill = Liver_disease,
-                      label = Comorbidities,
-                      subgroup = Liver_disease)) +
-       geom_treemap() +
-			 geom_treemap_subgroup_border() +
-			 geom_treemap_text(colour = "white", place = "topleft", reflow = T)
+                                     fill = Liver_disease,
+                                     label = Comorbidities, 
+                                     subgroup = Liver_disease)) +
+  geom_treemap() +
+	geom_treemap_subgroup_border() +
+	geom_treemap_text(colour = "white", place = "topleft", reflow = T) +
+  scale_color_viridis_d()
 ```
 
 ```{r}
@@ -172,6 +175,7 @@ ggplot(bubble_chart,
             colour = "white", 
             size = 3) +
   scale_x_discrete(position = "top") +
+  scale_color_viridis_d() +
   scale_size_continuous(range = c(3, 9)) +
   labs(x = NULL, y = NULL, title= "Comorbidities by Liver Disease") +
   theme(legend.position = "none",
