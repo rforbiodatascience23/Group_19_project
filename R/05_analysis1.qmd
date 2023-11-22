@@ -1,12 +1,22 @@
+# Effect of different variables on mortality
+
+During that part, we will investigate to determine in what extent some variables affect the mortality of the patients.
+
+We start by adding three variables to the dataset. The three variable are three different etiologies and their significance concerning Child Pugh score was assessed with a linear regression model in the file `09_analysis.qmd`. Because the Child Pugh Score indicates the severity of the cirrhosis, it could be related to the mortality, and we will verify that hypothesis with the following plots.
+
 ```{r}
 dat_mortality <- dat_aug_03 |> 
   mutate(Alcohol = ifelse(Etiologies == "Alcohol_consumption", "yes", "no")) |> 
   mutate(NAFLD = ifelse(Etiologies == "Non_alcoolic_fatty_LD", "yes", "no")) |> 
   mutate(Cryptogenic = ifelse(Etiologies == "Cryptogenic", "yes", "no")) 
 
+dat_mortality
+
 ```
 
 ## Age impact on mortality
+
+First, we will see how the age of the patients impact their mortality by plotting the distribution of patient outcomes stratified by age.
 
 ```{r}
 
@@ -39,7 +49,7 @@ Age_impact_mortality <- ggplot(
            position = "fill") +
   scale_fill_viridis_d() +
   labs(
-  title = "Distribution of patient outcomes ",
+  title = "Proportions of patient outcomes ",
   subtitle = "stratified by age",
   x = "Age",
   y = "Proportions"
@@ -48,12 +58,15 @@ Age_impact_mortality <- ggplot(
 Age_impact_mortality
 ```
 
+The plot showing the proportions of patient outcomes is more relevant than the one showing their distribution, because it is relative to the count of patients. Nonetheless, the distribution plot allows us to see that the age categories \[30,40\] and \[90,100\] don't contain enough patients to be statistically relevant. Therefore, if we only take the other age categories into consideration, we can see slight increase in mortality when the age of the patients is increasing.
 
 ## Alcohol consumption impact on mortality
 
+To determine if alcohol consumption impacts mortality, we plot the distribution and the proportions of patient outcomes stratified by alcohol consumption.
+
 ```{r}
-ggplot(
-  data = dat_aug_03,
+Alcohol_distribution <- ggplot(
+  data = dat_mortality,
   mapping = aes(x = Alcohol,
                 fill = Mortality,
                 na.rm = TRUE)
@@ -65,11 +78,12 @@ ggplot(
   title = "Patient outcomes",
   subtitle = "stratified by alcohol consumption",
   x = "Alcohol consumption"
-)
+) + 
+  theme(legend.position = "none")
 ```
 
 ```{r}
-Alcohol_impact_mortality <- ggplot(
+Alcohol_proportions <- ggplot(
   data = dat_mortality,
   mapping = aes(x = Alcohol,
                 fill = Mortality,
@@ -79,60 +93,19 @@ Alcohol_impact_mortality <- ggplot(
            position = "fill") +
   scale_fill_viridis_d() +
   labs(
-  title = "Distribution of patient outcomes ",
+  title = "Proportions of patient outcomes ",
   subtitle = "stratified by alcohol consumption",
   x = "Alcohol consumption",
   y = "Proportions"
 )
 
+Alcohol_impact_mortality <- Alcohol_distribution | Alcohol_proportions
 Alcohol_impact_mortality
 ```
 
-## Comparing effects of different etiologies on mortality
+The proportions plot shows a small increase in mortality when the patients are alcohol consumers.
 
- 
-
-```{r}
-Alcohol_impact_mortality <- ggplot(
-  data = dat_mortality,
-  mapping = aes(x = NAFLD,
-                fill = Mortality,
-                na.rm = TRUE)
-) +
-  geom_bar(alpha = 0.6,
-           position = "fill") +
-  scale_fill_viridis_d() +
-  labs(
-  title = "Distribution of patient outcomes ",
-  subtitle = "stratified by age",
-  x = "Age",
-  y = "Proportions"
-)
-
-Alcohol_impact_mortality
-```
-
-```{r}
-Alcohol_impact_mortality <- ggplot(
-  data = dat_mortality,
-  mapping = aes(x = Cryptogenic,
-                fill = Mortality,
-                na.rm = TRUE)
-) +
-  geom_bar(alpha = 0.6,
-           position = "fill") +
-  scale_fill_viridis_d() +
-  labs(
-  title = "Distribution of patient outcomes ",
-  subtitle = "stratified by age",
-  x = "Age",
-  y = "Proportions"
-)
-
-Alcohol_impact_mortality
-```
-
-# Saving the plot
+### Saving the plot
 
 ```{r}
 ggsave("Alcohol_impact_mortality.png", 
@@ -142,8 +115,7 @@ ggsave("Alcohol_impact_mortality.png",
        height = 5)
 ```
 
-# LD Mortality 
-
+# LD Mortality
 
 ```{r}
 bar_plot_LD_Mortality<- dat_aug_03 |> 
@@ -173,7 +145,7 @@ ggsave("LD_Mortality.png",
 bar_plot_LD_Mortality
 ```
 
-# CPS Mortality 
+# CPS Mortality
 
 ```{r}
 bar_plot_CPS_Mortality<- dat_aug_03 |> 
@@ -192,5 +164,3 @@ bar_plot_CPS_Mortality<- dat_aug_03 |>
 bar_plot_CPS_Mortality
 
 ```
-
-
