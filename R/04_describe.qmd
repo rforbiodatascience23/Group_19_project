@@ -7,6 +7,7 @@ editor: visual
 
 # Descriptive statistics
 
+## General information on the dataset
 
 ```{r}
 dim_desc(dat_aug_03)
@@ -15,43 +16,16 @@ dim_desc(dat_load_01)
 
 We have a final dataset of 1,065 observations with 9 variables, after tidying a dataset of 733 patients suffering from cirrhosis.
 
+## Sex and Age group of the patients' population
+
 ```{r}
 dat_aug_03 |> 
   count(Sex)
 ```
 
-## Stacked bar plot for age distribution by gender
+The patient population is mainly male dominated (2/3).
 
-```{r}
-
-bar_plot_age_gender <- dat_aug_03 |>
-  ggplot(aes(x = Age, 
-             fill = Sex)) +
-  geom_bar(position = "stack", 
-           stat = "count", 
-           alpha = 0.7) +
-  labs(title = "Overview of age and gender repartition for patients with cirrhosis",
-       x = "Age Group",
-       y = "Count") +
-  scale_fill_viridis_d() +
-  theme_minimal() 
-  
-```
-
-```{r}
-ggsave("Age_gender.png", 
-       path = "../results/plots/",
-       plot = bar_plot_age_gender,
-       width = 7,
-       height = 5)
-```
-
-```{r}
-bar_plot_age_gender
-```
-The patient population is mainly male dominated (2/3) with a mean age average of [60;70].
-
-## Stacked bar plot for age distribution by gender
+To observe the age and sex repartition, a stacked bar plot for age distribution stratified by gender can be used
 
 ```{r}
 
@@ -81,54 +55,66 @@ ggsave("Age_gender.png",
 bar_plot_age_gender
 ```
 
-## Overview of the liver disease of the patient
+FABIAN
+
+## Overview of the liver disease in the patients' population
 
 ```{r}
-bar_plot_LD_Mortality<- dat_aug_03 |> 
-  ggplot(aes(x = Liver_disease, 
-             fill = Mortality)) +
-  geom_bar(position = "fill", 
-           stat = "count", 
-           alpha = 0.7) +
-  labs(title = "Liver disease repartition in cyrrhosis patients, stratified by mortality",
-       y = "Proportion") +
+dat_LD <- dat_aug_03 |> 
+  count(Liver_disease)
+```
+
+Ascites and hepatic encephalopathy are the two main liver diseases diagnosed. Ascites, representing 40% of liver diseases, is a build up of fluid in the abdomen, often as a consequence of cirrhosis. Hepatic encephalopathy is also a common pathology in patients with cirrhosis due to deficiencies in their neurological system, here representing 33% of the study.
+
+```{r}
+bar_plot_LD<- dat_LD |> 
+  ggplot(aes(x = reorder(Liver_disease,-n), 
+             y = n, 
+             fill = Liver_disease)) +
+  geom_bar(stat = 'identity', 
+           alpha = 0.7, 
+           show.legend = FALSE) +
+  labs(title = "Liver disease repartition in cyrrhosis patients",
+       y = "Count") +
   scale_fill_viridis_d() +
   theme_minimal() +
   theme(axis.title.x=element_blank()) +
   scale_x_discrete(guide = guide_axis(angle = 25))
-
 ```
 
 ```{r}
-ggsave("LD_Mortality.png", 
-       path = "../results/plots/",
-       plot = bar_plot_LD_Mortality,
-       width = 7,
-       height = 5)
-```
-
-```{r}
-bar_plot_LD_Mortality
+bar_plot_LD
 ```
 
 ## Overview of comorbities in the patients' population
 
+Comorbidities are additional disease that can interact and coexist simultaneously with the cirrhosis. The study of comorbidities is pertinent since it can explain some of the patients' complications and can play a role in their recovery.
+
 ```{r}
-bar_plot_comorbidities <- dat_aug_03 |> 
-  ggplot(aes(x = Comorbidities, 
+dat_comorb <- dat_aug_03 |> 
+  count(Comorbidities) 
+```
+
+```{r}
+bar_plot_comorbidities <- dat_comorb |> 
+  ggplot(aes(x = reorder(Comorbidities,-n), 
+             y = n,
              fill = Comorbidities)) +
-  geom_bar(alpha = 0.7) +
+  geom_bar(stat = 'identity', 
+           alpha = 0.7, 
+           show.legend = FALSE) +
   labs(title = "Overview of comorbidities across patients suffering from cirrhosis ",
        y = "Count") +
   scale_fill_viridis_d() +
   theme_minimal() +
-  theme(axis.text.x=element_blank(), 
-        legend.title=element_blank()) 
+  theme(legend.title=element_blank(), 
+        axis.title.x = element_blank()) +
+  scale_x_discrete(guide = guide_axis(angle = 63))
 
 ```
 
 ```{r}
-ggsave("Overrview_Comorbidities.png", 
+ggsave("Overview_Comorbidities.png", 
        path = "../results/plots/",
        plot = bar_plot_comorbidities,
        width = 7,
@@ -139,39 +125,57 @@ ggsave("Overrview_Comorbidities.png",
 bar_plot_comorbidities
 ```
 
+FABIAN
+
 ## Overview of ethiology factor across population
 
+Ethiology is the study of the factors that come together leading to a disease.
+
 ```{r}
-bar_plot_ethiology <- dat_aug_03 |> 
-  ggplot(aes(x = Etiologies, 
+dat_etio <- dat_aug_03 |> 
+  count(Etiologies)
+```
+
+```{r}
+bar_plot_etiology <- dat_etio |> 
+  ggplot(aes(x = reorder(Etiologies,-n), 
+             y = n,
              fill = Etiologies)) +
-  geom_bar(alpha = 0.7) +
-  labs(title = "Overview of etiologies across patients suffering from cirrhosis ",
+  geom_bar(stat = 'identity', 
+           alpha = 0.7, 
+           show.legend = FALSE) +
+  labs(title = "Overview of cirrhosis etiology across patients' population",
        y = "Count") +
   scale_fill_viridis_d() +
   theme_minimal() +
-  theme(axis.text.x=element_blank(), 
-        legend.title=element_blank()) 
+  theme(legend.title=element_blank(), 
+        axis.title.x = element_blank()) +
+  scale_x_discrete(guide = guide_axis(angle = 30))
+
 
 ```
 
 ```{r}
-ggsave("Overview_Ethiology.png", 
+bar_plot_etiology
+```
+
+```{r}
+ggsave("Overview_Etiology.png", 
        path = "../results/plots/",
-       plot = bar_plot_ethiology,
+       plot = bar_plot_etiology,
        width = 7,
        height = 5)
 ```
 
-```{r}
-bar_plot_ethiology
-```
-
-```{r}
-dat_aug_03
-```
+FABIAN
 
 ## Overview of two important numerical values: CPS and Charlson_CI
+
+The dataset chosen featured two variables:
+
+-   **CPS or Child-Pugh Score** for Cirrhosis Mortality: useful in the determination of the prognosis of patients suffering from a cirrhosis. With a maximum value of 15, it is based on the presence of ascites, the concentratin of some proteins in the blood (bilirubin, albumin)...
+
+-   **Charlson Comorbidity index**: useful to predict the mortality of patients suffering from comorbidities. Depends on the presence of comorbidities and the age of the patient
 
 ```{r}
 library(patchwork)
@@ -193,3 +197,20 @@ box_plot_CPS_Charlson <- box_plot_CPS_ | box_plot_Charlson_
 
 box_plot_CPS_Charlson
 ```
+
+```{r}
+mean_CPS <- dat_aug_03 |> 
+  summarize(mean(CPS))
+
+mean_CPS
+```
+
+```{r}
+mean_Charlson <- dat_aug_03 |> 
+  summarize(mean(Charlson_CI))
+
+mean_Charlson
+```
+
+
+The average value of the CPS and the Charlson comorbidity index are reciprocally 8.39 and 4.81. It is in the group B of CPS which implies a 80% 1-year survival rate and 60% 2-year survival rate.
