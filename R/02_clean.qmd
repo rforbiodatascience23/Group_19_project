@@ -23,7 +23,7 @@ dat_load_01 <- dat_load_01 |>
 ## Separation of the dataset in two distinct datasets
 
 ```{r}
-df_Etiology <- dat_load_01 |> 
+df_Etiology <- dat_load_01 |> # First dataset containing etiologies
   select(ID,
          Alcohol,
          hcv,
@@ -36,7 +36,7 @@ df_Etiology <- dat_load_01 |>
          Otherliverdiseaseetiology
          )
 
-df_Comorbidities <- dat_load_01 |> 
+df_Comorbidities <- dat_load_01 |> # Second dataset containing comorbidities
   select(ID,
          mi,
          chf,
@@ -192,6 +192,7 @@ dat_clean_02 <- dat_load_01 |>
   select(-Presence_of_comorbidities) |> 
   filter(Presence_of_etiologies == 'Yes') |> 
   select(-Presence_of_etiologies) |> 
+  # Getting rid of observations with NA values
   drop_na(CPS) |> 
   drop_na(Sex) |> 
   drop_na(Mortality_hospital) |> 

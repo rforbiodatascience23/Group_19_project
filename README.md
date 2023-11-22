@@ -6,6 +6,14 @@ Our project is based on the study of the following dataset: Mukthinuthlalapati, 
 
 ## To load the dataset onto the project
 
-1) Create a /data folder in the project 
-2) Go to the website where the dataset can be found (<https://doi.org/10.5061/dryad.6gt88dv>) and download the .csv file 
-3) Upload it in the /data folder 
+1)  Create a /data folder in the project
+2)  Go to the website where the dataset can be found (<https://doi.org/10.5061/dryad.6gt88dv>) and download the .csv file
+3)  Upload it in the /data folder
+
+## Packages to install
+
+Before running the files that can be found in the "R" folder, a few packages should be installed and the following command lines should be run in your terminal:
+
+-   `install.packages('tidyverse')`
+-   `install.packages('ggplot2')`
+-   `install.packages('patchwork')`
