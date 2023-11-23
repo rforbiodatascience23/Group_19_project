@@ -3,13 +3,15 @@ dat_aug_03
 
 ```
 
+# Effects of comorbidities on Child Pugh Score
 
+The Child Pugh Score is a variable used to indicate the severity of a cirrhosis. In the first plot, we tried to see if there is a correlation between the Child Pugh Score and the Charlson Comorbidity Index, which predicts the mortality of patients suffering from comorbidities:
 
 ```{r}
-ggplot(
-  data = dat_load_01,
-  mapping = aes(x = MELD_within1day,
-                y = CHARLSON_CI,
+Charlson_vs_CPS_LV <- ggplot(
+  data = dat_aug_03,
+  mapping = aes(x = CPS,
+                y = Charlson_CI,
                 color = Liver_disease,
                 na.rm = TRUE)
 ) +
@@ -27,12 +29,26 @@ ggplot(
     strip.background = element_blank(),
     strip.text.x = element_blank()
 )
+
+Charlson_vs_CPS_LV
 ```
+On that plot, we can see that the relationship between CPS and Charlson CI can be totally different depending on the liver disease from which the patients suffer. There is no clear pattern that can be deducted from these graphs or from the plot of Charlson CI versus CPS. 
+
+### Saving the plot
 
 ```{r}
-ggplot(
+ggsave("Charlson_vs_CPS_LV.png", 
+       path = "../results/plots/",
+       plot = Charlson_vs_CPS_LV,
+       width = 7,
+       height = 5)
+```
+
+
+```{r}
+Charlson_vs_CPS <- ggplot(
   data = dat_load_01,
-  mapping = aes(x = MELD_within1day,
+  mapping = aes(x = cps,
                 y = CHARLSON_CI,
                 na.rm = TRUE)
 ) +
@@ -45,12 +61,22 @@ ggplot(
   y = "Charlson CI"
 )
 
+Charlson_vs_CPS
+```
+### Saving the plot
+
+```{r}
+ggsave("Charlson_vs_CPS.png", 
+       path = "../results/plots/",
+       plot = Charlson_vs_CPS,
+       width = 7,
+       height = 5)
 ```
 
-# Linear regression
-## Load libraries for modelling 
-The aim is to determine which comorbidities or etiologies have an influence on
-the Child Pugh Score
+# Effects of different etiologies on Child Pugh Score
+Because the comorbidities don't seem to be related to the CPS, we are now interested in investigating which etiologies are significantly more or less present in patients with different CPS. In order to do that, we use a linear regression model:
+
+## Load libraries for modelling
 
 ```{r}
 library(broom)
@@ -58,103 +84,110 @@ library(ggplot2)
 ```
 
 
-
 ```{r}
 df <- df_Etiology |>
-  select(-c(Otherliverdiseaseetiology))
+  select(-c(Otherliverdiseaseetiology,
+            PrimarySclerosingCholangitis))
 
 df
 ```
-
-
-
+### Creation of a first model using the 'lm()' function
 ```{r}
 model <- lm(formula = Alcohol ~ cps,
    data = df)
 model
 ```
-
+calculation of the mean values of the presence of the etiology "Alcohol" stratified on Child Pugh Score:
 ```{r}
 df |> 
   group_by(cps) |> 
   summarise(mean = mean(Alcohol))
 ```
 
-Summary of the model: by looking at the p-value, we can see if the variable 
-"Alcohol" is statistically significant or not.
-p-value > 0.05 so the variable is not statistically significant.
+### Summary of the model
+
 ```{r}
 model |> summary()
 ```
+by looking at the p-value, we can see if the variable "Alcohol" is statistically significant or not. p-value \> 0.05 so the variable is not statistically significant.
+
+Pivoting the data to get a long dataset, so that all the etiologies are defined in one column:
 ```{r}
-df_Etiology_and_Comorbidities_long <- df |> 
+df_Etiology_long <- df |> 
   pivot_longer(
     cols = -c(ID, cps),
-    names_to = "Etiologies_and_comorbidities",
+    names_to = "Etiologies",
     values_to = "Presence"
   )
 
-df_Etiology_and_Comorbidities_long
+df_Etiology_long
 ```
-
+### Addition of a new variable model_object
+This variable will be computed per etiology and will contain the result to the call to the 'map()' function.
 ```{r}
-df_Etiology_and_Comorbidities_long_nested <- df_Etiology_and_Comorbidities_long |> 
-  group_by(Etiologies_and_comorbidities) |> 
+df_Etiology_long_nested <- df_Etiology_long |> 
+  group_by(Etiologies) |> # group_by() function to work per etiology
   nest() |> 
   ungroup()
 
-df_Etiology_and_Comorbidities_long_nested |> 
-  group_by(Etiologies_and_comorbidities) |> 
+df_Etiology_long_nested |> 
+  group_by(Etiologies) |> 
   mutate(
     model_object = map(.x = data,
                        .f = ~lm(formula = Presence ~ cps,
                             data = .x))
   ) |> 
-  filter(Etiologies_and_comorbidities == "Alcohol") |>
+  filter(Etiologies == "Alcohol") |>
   pull(model_object)
 ```
+
+### Use of the broom-package to tidy the fitted model
 ```{r}
-df_Etiology_and_Comorbidities_long_nested <- df_Etiology_and_Comorbidities_long_nested|> 
-  group_by(Etiologies_and_comorbidities) |> 
+df_Etiology_long_nested <- df_Etiology_long_nested|> 
+  group_by(Etiologies) |> 
   mutate(
     model_object = map(.x = data,
                        .f = ~lm(formula = Presence ~ cps,
                                 data = .x))
   )
 
-df_Etiology_and_Comorbidities_long_nested |>
+df_Etiology_long_nested |>
   pull(model_object) |>
   pluck(1) |>
   tidy(conf.int = TRUE,
        conf.level = 0.95)
 ```
+To apply the 'tidy()' function per model_object:
 ```{r}
-df_Etiology_and_Comorbidities_long_nested <- df_Etiology_and_Comorbidities_long_nested |> 
+df_Etiology_long_nested <- df_Etiology_long_nested |> 
   mutate(model_object_tidy = map(.x = model_object,
                                  .f = ~tidy(conf.int = TRUE,
                                            conf.level = 0.95,
                                            x = .x)
   )
 )
-df_Etiology_and_Comorbidities_long_nested
+df_Etiology_long_nested
 ```
 
+Use of the 'unnest()' function to unpack the model_object_tidy:
 ```{r}
-estimate <- df_Etiology_and_Comorbidities_long_nested |>
+estimate <- df_Etiology_long_nested |>
   unnest( model_object_tidy
   )
 
 estimate
 ```
 
+Un-grouping the data:
 ```{r}
 estimate <- estimate|> 
   filter(term == "cps") |> 
-  ungroup(Etiologies_and_comorbidities)
+  ungroup(Etiologies)
 
 estimate
 ```
 
+Adding the variable q-value and an indicator variable denoting if a given etiology is significant or not:
 ```{r}
 estimate <- estimate |> 
   mutate(
@@ -168,6 +201,7 @@ estimate <- estimate |>
 estimate
 ```
 
+### Visualization
 ```{r}
 if (!requireNamespace("forcats", quietly = TRUE)) {
   install.packages("forcats")
@@ -178,14 +212,14 @@ library(forcats)
 estimate |> 
   ggplot( 
     mapping = aes(x = estimate,
-                  y = Etiologies_and_comorbidities)) +
+                  y = Etiologies)) +
   geom_errorbarh(aes(xmin = conf.low,
                  xmax = conf.high,
-                 y = fct_reorder(Etiologies_and_comorbidities,estimate))) +
+                 y = fct_reorder(Etiologies,estimate))) +
   geom_point()+
   geom_hline(yintercept = 0, linetype = "dashed", color = "black", size = 0.5) +
   labs(
-    title = "Comorbidities and ethiologies associated with CPS ",
+    title = "Ethiologies associated with CPS ",
     x = "Estimates(95% CIs)",
     y ="") +
   theme(plot.title = element_text(size = 12.5))
@@ -195,7 +229,7 @@ estimate |>
 estimate |> 
   select(q.value <= 0.05) |> 
   mutate(
-    label = Ethiologies_and_comorbidities
+    label = Ethiologies
     ) |> 
   ggplot(
     data = estimate,
@@ -203,16 +237,18 @@ estimate |>
                   y = - log10(p.value), 
                   color = is.significant, 
                   label = ifelse(- log10(p.value) > 1,
-                                 Etiologies_and_comorbidities,
+                                 Etiologies,
                                  "")
                   ) 
     ) +
   geom_point(alpha = 0.8) +
   geom_text(hjust=0.5, vjust=-0.5) +
   labs(
-    title = "Comorbidities and ethiologies associated with CPS ",
+    title = "Ethiologies associated with CPS ",
     x = "Estimates(95% CIs)",
     y ="") +
   expand_limits(x = c(-0.03,0.05))
 ```
 
+In these plots, we can see that only one etiology is considered as having a significant correlation with CPS. This etiology is the Non-Alcoholic Fatty Liver Disease and a patient with this etiology has more chances of having a low CPS than a patient with another etiology. 
+These results are also consistent with the results shown in the file '05_analysis1.qmd' because we saw in that file that nafld has a greater impact on mortality than alcohol or cryptogenic diseases. 

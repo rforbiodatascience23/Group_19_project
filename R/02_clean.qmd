@@ -25,6 +25,7 @@ dat_load_01 <- dat_load_01 |>
 ```{r}
 df_Etiology <- dat_load_01 |> # First dataset containing etiologies
   select(ID,
+         cps,
          Alcohol,
          hcv,
          hbv,
