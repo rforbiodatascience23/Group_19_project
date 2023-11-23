@@ -4,7 +4,7 @@ Introduction of a new variable "Mortality" which displays the combinations for M
 We need to be careful since there is an 'error' in the database where people that died at time t are written as dead at t + 1. However, we want the mortality to assess the exact mortality time.
 The combination are as follows:  
 
-    H No 30 No 90 No "Alive", 
+    H No 30 No 90 No = "Alive", 
     H Yes 30 No 90 No = "Dead_Hospital" 
     H Yes 30 Yes 90 Yes = "Dead_Hospital" 
     H No 30 No 90 Yes = "Dead_90" 
