@@ -1,8 +1,10 @@
-# Group_19_project
+# Group_19_project: A study of early predictors (Comorbidities and Etiology) of cirrhosis' patients mortality
 
 ## Dataset
 
 Our project is based on the study of the following dataset: Mukthinuthlalapati, VV Pavan Kedar et al. (2019). Data from: Early predictors of outcomes of hospitalization for cirrhosis and assessment of the impact of race and ethnicity at safety-net hospitals [Dataset]. Dryad. <https://doi.org/10.5061/dryad.6gt88dv>
+We discarded the the race and ethnicity variable since they were considered non-significant variable to determine patient's outcome. We, therefore, chose to focus ouor study on Comorbidities and Etiology, and their according numerical value: Child Pugh Score (CPS) and Charlson Comorbidity Index.
+
 
 ## To load the dataset onto the project
 
