@@ -1,34 +1,30 @@
-# Adds new variables, like e.g. computing a BMI
+# Adds new variables
 
-Introducting new variable "Mortality" which displays the combinations for Mortality 
-
+Introduction of a new variable "Mortality" which displays the combinations for Mortality.
+We need to be careful since there is an 'error' in the database where people that died at time t are written as dead at t + 1. However, we want the mortality to assess the exact mortality time.
 The combination are as follows:  
 
-    H0 30 0 90 0 "Alive", 
-    H 1 30 0 90 0 = "Dead_Hospital" 
-    H 1 30 1 90 1 = "Dead_Hospital" 
-    H0 30 0 90 1 = "Dead_90" 
-    H0 30 1 90 1 = "Dead_30"
+    H No 30 No 90 No = "Alive", 
+    H Yes 30 No 90 No = "Dead_Hospital" 
+    H Yes 30 Yes 90 Yes = "Dead_Hospital" 
+    H No 30 No 90 Yes = "Dead_90" 
+    H No 30 Yes 90 Yes = "Dead_30"
 
-Introduction of a categorical variable - change Decades into age categories
-
-
-    
 ```{r}
 dat_aug_03 <- dat_clean_02 |> 
    mutate(Mortality = case_when(Mortality_hospital == 'Yes' ~ "Death_in_hospital", 
                                 Mortality_hospital == 'No' & Mortality_30_days == 'Yes' & Mortality_90_days == 'No' ~ "Death_in_first_30_days", 
                                 Mortality_hospital == 'No' & Mortality_30_days == 'No' & Mortality_90_days == 'Yes' ~ "Death_between_30_and_90_days", 
                                .default = "No death")) |> 
-   select(-c(Mortality_30_days, Mortality_90_days, Mortality_hospital)) |> 
-   mutate(Age = str_c('[', Age*10, '; ', (Age + 1)*10, ']'))
+   select(-c(Mortality_30_days, Mortality_90_days, Mortality_hospital))
 ```
+
+Introduction of a categorical variable - change Decades into age categories
 
 ```{r}
-dat_aug_03 
+dat_aug_03 <- dat_aug_03 |>
+  mutate(Age = str_c('[', Age*10, '; ', (Age + 1)*10, ']'))
 ```
-
-
 
 ## Save data in the folder "data"
 

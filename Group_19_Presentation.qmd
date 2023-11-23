@@ -1,0 +1,67 @@
+---
+title: "Group_19_Presentation"
+format: revealjs
+author: "Eva Frossard, Pauline Charpentier, Noy Tabul, Fabian Ziegler"
+---
+
+## \# Title Page
+
+## 
+
+ 
+
+ 
+
+ 
+
+# Your Presentation Title
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Eva Frossard
+
+\tex
+
+Pauline Charpentier
+
+\tex
+
+Noy Tabul
+
+\tex
+
+Fabian Ziegler
+
+------------------------------------------------------------------------
+
+# Introduction
+
+-   Brief introduction to the topic
+
+------------------------------------------------------------------------
+
+# Materials and Methods
+
+-   Overview of the setup
+-   Description of methods and materials used
+
+------------------------------------------------------------------------
+
+# Results (And)
+
+-   Presentation of results
+
+------------------------------------------------------------------------
+
+# Discussion
+
+-   Analysis and interpretation of results
+-   Conclusions and implications
