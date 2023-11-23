@@ -98,8 +98,11 @@ dat_clean_02 <- dat_load_01 |>
          CHARLSON_CI,
          MORTALITY_30_DAYS_postDC, 
          MORTALITY_90_DAYS_postDC ) |> 
-         
-  mutate(C_Diabetes_with_without_complications = Diabetes + Diabeteswithchroniccomplications) |> 
+    
+  # Create a general diabetes variable with and without chronic complications
+  mutate(C_Diabetes_with_without_complications = Diabetes + 
+           Diabeteswithchroniccomplications) |> 
+  # Discard the previous diabetes variables
   select(-c(Diabetes, Diabeteswithchroniccomplications)) |> 
   
   # Change the name of variables 
@@ -159,45 +162,51 @@ dat_clean_02 <- dat_load_01 |>
       ) |> 
 
 
-  # Change 1/0 into Yes/No
+  # Change numerical (1/0) into categorical (Yes/No)
   mutate_at(vars(starts_with('C_')), ~ifelse(. == 1, 'Yes', 'No')) |> 
   mutate_at(vars(starts_with('E_')), ~ifelse(. == 1, 'Yes', 'No')) |> 
   mutate_at(vars(starts_with('Mortality')), ~ifelse(. == 1, 'Yes', 'No')) |> 
 
 
-  # If mortalityH = yes -> mortality 30-90 = no 
-  mutate_at(vars(c(Mortality_30_days, Mortality_90_days)), ~ifelse(Mortality_hospital == 'Yes', 'No', .)) |> 
-  #If mortality30 = yes -> mortality 90 = no   
-  mutate_at(vars(Mortality_90_days), ~ifelse(Mortality_30_days == 'Yes', 'No', .)) |>
+  # If mortalityH = yes -> Mortality 30&90 = no 
+  #mutate_at(vars(c(Mortality_30_days, Mortality_90_days)), 
+  #          ~ifelse(Mortality_hospital == 'Yes', 'No', .)) |> 
+  #If mortality30 = yes -> mortality90 = no   
+  #mutate_at(vars(Mortality_90_days), 
+  #          ~ifelse(Mortality_30_days == 'Yes', 'No', .)) |>
   
   # Create a id for each ind 
   mutate(Id = row_number()) |>
   relocate(Id, .before = Sex) |> 
  
-  # Create a column Comorbidities 
+  # TIDYING = Create a column Comorbidities using the pivot_longer (one column / one line / one observation)
   pivot_longer(
     cols = starts_with("C_"), 
     names_to = "Comorbidities", 
     values_to = "Presence_of_comorbidities",
     values_drop_na = TRUE) |> 
   
-  # create a column Etiology
+  # TIDYING = Create a column Etiology
   pivot_longer(
     cols = starts_with("E_"), 
     names_to = "Etiologies", 
     values_to = "Presence_of_etiologies",
     values_drop_na = TRUE) |> 
   
+  # Only select the patients that have comorbidity + the one that have C_none = Yes
   filter(Presence_of_comorbidities == 'Yes') |> 
   select(-Presence_of_comorbidities) |> 
   filter(Presence_of_etiologies == 'Yes') |> 
   select(-Presence_of_etiologies) |> 
+  
   # Getting rid of observations with NA values
   drop_na(CPS) |> 
   drop_na(Sex) |> 
   drop_na(Mortality_hospital) |> 
   drop_na(Mortality_30_days) |> 
   drop_na(Mortality_90_days) |> 
+  
+  # Change the name of the observations to make it more digest
   mutate(Comorbidities = str_remove(Comorbidities, "C_")) |> 
   mutate(Etiologies = str_remove(Etiologies, "E_"))
 
