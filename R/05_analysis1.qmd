@@ -13,6 +13,37 @@ dat_mortality <- dat_aug_03 |>
 dat_mortality
 
 ```
+# CPS Mortality
+
+```{r}
+bar_plot_CPS_Mortality<- dat_aug_03 |> 
+  ggplot(aes(x = Mortality,
+             y = CPS,
+             fill = Mortality)) +
+  geom_boxplot(alpha = 0.7) +
+  labs(title = "Boxplot chart of CPS values",
+       subtitle = "stratified by mortality",
+       y = "CPS") +
+  scale_fill_viridis_d() +
+  theme_minimal() +
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank()) +
+  scale_x_discrete(guide = guide_axis(angle = 25))
+
+bar_plot_CPS_Mortality
+
+```
+This plot proves the fact that CPS value accurately describes the mortality of cirrhosis patients. It shows that a low CPS is correlated to a higher survival rate. On the other side, a patient with a high CPS has more chances of dying of cirrhosis.
+
+### Saving the plot
+
+```{r}
+ggsave("CPS_and_mortality_boxplot", 
+       path = "../results/plots/",
+       plot = bar_plot_CPS_Mortality,
+       width = 7,
+       height = 5)
+```
 
 ## Age impact on mortality
 
@@ -59,6 +90,48 @@ Age_impact_mortality
 ```
 
 The plot showing the proportions of patient outcomes is more relevant than the one showing their distribution, because it is relative to the count of patients. Nonetheless, the distribution plot allows us to see that the age categories \[30,40\] and \[90,100\] don't contain enough patients to be statistically relevant. Therefore, if we only take the other age categories into consideration, we can see slight increase in mortality when the age of the patients is increasing.
+
+### Saving the plot
+```{r}
+ggsave("Age_Mortality.png", 
+       path = "../results/plots/",
+       plot = Age_impact_mortality,
+       width = 7,
+       height = 5)
+```
+
+## Effect of different liver diseases on mortality
+
+```{r}
+bar_plot_LD_Mortality<- dat_aug_03 |> 
+  ggplot(aes(x = Liver_disease, 
+             fill = Mortality)) +
+  geom_bar(position = "fill", 
+           stat = "count", 
+           alpha = 0.7) +
+  labs(title = "Liver disease repartition in cyrrhosis patients, stratified by mortality",
+       y = "Proportion") +
+  scale_fill_viridis_d() +
+  theme_minimal() +
+  theme(axis.title.x=element_blank()) +
+  scale_x_discrete(guide = guide_axis(angle = 25))
+
+bar_plot_LD_Mortality
+```
+By looking at the mortality of patients with different liver diseases, we can see the type of liver disease impacts greatly the mortality of patients. The size of the samples "Hepato-hydrothorax" and "Jaundice- as isolated presentation" being small (less than 15 patients), the data concerning these liver disease should not be taken into account for the analysis. 
+This plot also provides some information about how fulminant the different liver diseases are. For instance, the categories "Other fluid overload" and "SBP" have approximately the same proportions of overall mortality, but the category "Other fluid overload" seems to be more fulminant because all of the patients that died after contracting that disease died in hospital, when the majority of the patient that died after contracting SBP died more than 30 days after leaving the hospital.
+
+### Saving the plot
+```{r}
+ggsave("LD_Mortality.png", 
+       path = "../results/plots/",
+       plot = bar_plot_LD_Mortality,
+       width = 7,
+       height = 5)
+```
+
+
+# Effect of different etiologies on mortality
 
 ## Alcohol consumption impact on mortality
 
@@ -115,52 +188,106 @@ ggsave("Alcohol_impact_mortality.png",
        height = 5)
 ```
 
-# LD Mortality
+## Non-alcoholic fatty liver disease impact on mortality
 
 ```{r}
-bar_plot_LD_Mortality<- dat_aug_03 |> 
-  ggplot(aes(x = Liver_disease, 
-             fill = Mortality)) +
-  geom_bar(position = "fill", 
-           stat = "count", 
-           alpha = 0.7) +
-  labs(title = "Liver disease repartition in cyrrhosis patients, stratified by mortality",
-       y = "Proportion") +
+NAFLD_distribution <- ggplot(
+  data = dat_mortality,
+  mapping = aes(x = NAFLD,
+                fill = Mortality,
+                na.rm = TRUE)
+) +
+  geom_bar(alpha = 0.6,
+           position = "stack") +
   scale_fill_viridis_d() +
-  theme_minimal() +
-  theme(axis.title.x=element_blank()) +
-  scale_x_discrete(guide = guide_axis(angle = 25))
+  labs(
+  title = "Patient outcomes",
+  subtitle = "stratified by presence of NAFLD",
+  x = "Patient suffers of NAFLD"
+) + 
+  theme(legend.position = "none")
 
+NAFLD_proportions <- ggplot(
+  data = dat_mortality,
+  mapping = aes(x = NAFLD,
+                fill = Mortality,
+                na.rm = TRUE)
+) +
+  geom_bar(alpha = 0.6,
+           position = "fill") +
+  scale_fill_viridis_d() +
+  labs(
+  title = "Proportions of patient outcomes ",
+  subtitle = "stratified by presence of NAFLD",
+  x = "Patient suffers of NAFLD",
+  y = "Proportions"
+)
+
+NAFLD_impact_mortality <- NAFLD_distribution | NAFLD_proportions
+NAFLD_impact_mortality
 ```
+On the proportions plot, we can see that the presence of NAFLD does have an impact on mortality, even though we still have to consider the small size of the population sample with NAFLD. By looking at the mortality of patients that suffer of NAFLD, we could say that the other liver disease etiologies have a more negative effect on the patients health.
+
+### Saving the plot
 
 ```{r}
-ggsave("LD_Mortality.png", 
+ggsave("NAFLD_impact_mortality.png", 
        path = "../results/plots/",
-       plot = bar_plot_LD_Mortality,
+       plot = NAFLD_impact_mortality,
        width = 7,
        height = 5)
 ```
 
-```{r}
-bar_plot_LD_Mortality
-```
-
-# CPS Mortality
+## Cryptogenic impact on mortality
 
 ```{r}
-bar_plot_CPS_Mortality<- dat_aug_03 |> 
-  ggplot(aes(x = Mortality,
-             y = CPS,
-             fill = Mortality)) +
-  geom_boxplot(alpha = 0.7) +
-  labs(title = "CPS value accuratly describe the mortality of cirrhosis' patients ",
-       y = "CPS") +
+Cryptogenic_distribution <- ggplot(
+  data = dat_mortality,
+  mapping = aes(x = Cryptogenic,
+                fill = Mortality,
+                na.rm = TRUE)
+) +
+  geom_bar(alpha = 0.6,
+           position = "stack") +
   scale_fill_viridis_d() +
-  theme_minimal() +
-  theme(axis.title.x=element_blank(),
-        axis.text.x=element_blank()) +
-  scale_x_discrete(guide = guide_axis(angle = 25))
+  labs(
+  title = "Patient outcomes",
+  subtitle = "stratified by presence of Cryptogenic disease",
+  x = "Patient suffers of a cryptogenic disease"
+) + 
+  theme(legend.position = "none")
 
-bar_plot_CPS_Mortality
+Cryptogenic_proportions <- ggplot(
+  data = dat_mortality,
+  mapping = aes(x = Cryptogenic,
+                fill = Mortality,
+                na.rm = TRUE)
+) +
+  geom_bar(alpha = 0.6,
+           position = "fill") +
+  scale_fill_viridis_d() +
+  labs(
+  title = "Proportions of patient outcomes ",
+  subtitle = "stratified by presence of Cryptogenic disease",
+  x = "Patient suffers of a cryptogenic disease",
+  y = "Proportions"
+)
 
+Cryptogenic_impact_mortality <- Cryptogenic_distribution | Cryptogenic_proportions
+Cryptogenic_impact_mortality
 ```
+The mortality proportions plotted on this figure show that the fact that a patient suffers or not of a cryptogenic disease does not have a significant impact on this patient's mortality.
+
+
+### Saving the plot
+
+```{r}
+ggsave("Cryptogenic_impact_mortality.png", 
+       path = "../results/plots/",
+       plot = Cryptogenic_impact_mortality,
+       width = 7,
+       height = 5)
+```
+
+
+
