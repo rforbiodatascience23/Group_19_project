@@ -19,3 +19,13 @@ Before running the files that can be found in the "R" folder, a few packages sho
 -   `install.packages('tidyverse')`
 -   `install.packages('ggplot2')`
 -   `install.packages('patchwork')`
+
+## Structure of the project 
+
+- [00_all.qmd](https://github.com/rforbiodatascience23/Group_19_project/blob/main/R/00_all.qmd): can be run to run the whole project - loading, cleaning, tidying, addition of new_variable, description
+- [01_load.qmd](https://github.com/rforbiodatascience23/Group_19_project/blob/main/R/01_load.qmd):loading of the files. Write in the [/data](https://github.com/rforbiodatascience23/Group_19_project/blob/main/data) folder : 01_dat_load.tsv
+- [02_clean.qmd](https://github.com/rforbiodatascience23/Group_19_project/blob/main/R/02_clean.qmd): tidying of the dataset. Write in the [/data](https://github.com/rforbiodatascience23/Group_19_project/blob/main/data) folder : 02_dat_clean.tsv
+- [03_augment.qmd](https://github.com/rforbiodatascience23/Group_19_project/blob/main/R/03_augment.qmd): augmentation of the dataset, creation of new variable. Write in the [/data](https://github.com/rforbiodatascience23/Group_19_project/blob/main/data) folder : 03_dat_augment.tsv
+- [04_describe.qmd](https://github.com/rforbiodatascience23/Group_19_project/blob/main/R/04_describe.qmd): creation of introduction graphs giving stats information about the dataset.
+- [05_analysis1.qmd](https://github.com/rforbiodatascience23/Group_19_project/blob/main/R/05_anaalysis1.qmd)
+
