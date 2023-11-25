@@ -279,6 +279,40 @@ mean_Charlson
 
 The average value of the CPS and the Charlson comorbidity index are reciprocally 8.39 and 4.81. It is in the group B of CPS which implies a 80% 1-year survival rate and 60% 2-year survival rate.
 
+### Relation between Charlson value and the type of comorbidities
+
+Charlson value represents a comorbidity index that predicts 10y life expectancy 
+for people with multiple comorbidities. This graph shows the weight of 
+varioous Comorbidiities in the Charlson Index
+
+
+```{r}
+
+box_plot_Charlson_Comorbidities <- dat_aug_03 |> 
+  ggplot(mapping = aes(x = Comorbidities,
+                       y = Charlson_CI, 
+                       color = Comorbidities)) +
+  geom_boxplot() +
+  scale_color_viridis(discrete = TRUE, option = "D") +
+  labs(title = 'Impact of diverse comorbidities on the 10 year life expectancy of patients',
+       y = 'Charlson Comorbidity Index') +
+  theme_minimal() +
+  theme(axis.text.x=element_blank(), 
+        legend.title = element_blank(), 
+        legend.text = element_text(size = 7))
+
+box_plot_Charlson_Comorbidities
+```
+
+```{r}
+ggsave("Charlson_comorbidities.png", 
+       path = "../results/plots/",
+       plot = box_plot_Charlson_Comorbidities,
+       width = 7,
+       height = 5)
+```
+
+From the boxplot, we can deduce that AIDS and Metastatic solid tumor are 2 of the major comorbidities that have an important weight on the Charlson CI, and tha. On the opposite side of the spectrum, mild liver disease and rheumatological have a limited impact on the variable. Less weight means that the diseaseis not severe enough to affect directly and significantly the life expectancy of the patient.
 
 ## Overview of comorbidities and liver disease 
 
