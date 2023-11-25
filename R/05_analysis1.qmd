@@ -2,7 +2,7 @@
 
 During that part, we will investigate to determine in what extent some variables affect the mortality of the patients.
 
-We start by adding three variables to the dataset. The three variable are three different etiologies and their significance concerning Child Pugh score was assessed with a linear regression model in the file `09_analysis.qmd`. Because the Child Pugh Score indicates the severity of the cirrhosis, it could be related to the mortality, and we will verify that hypothesis with the following plots.
+We start by adding three variables to the dataset. The three variable are three different etiologies and their significance concerning Child Pugh score was assessed with a linear regression model in the file 08. Because the Child Pugh Score indicates the severity of the cirrhosis, it could be related to the mortality, and we will verify that hypothesis with the following plots.
 
 ```{r}
 dat_mortality <- dat_aug_03 |> 
