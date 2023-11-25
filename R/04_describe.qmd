@@ -1,6 +1,5 @@
 ---
-title: "07_analysis3"
-author: "s231932"
+title: "04_describe"
 format: html
 editor: visual
 ---
@@ -281,10 +280,7 @@ The average value of the CPS and the Charlson comorbidity index are reciprocally
 
 ### Relation between Charlson value and the type of comorbidities
 
-Charlson value represents a comorbidity index that predicts 10y life expectancy 
-for people with multiple comorbidities. This graph shows the weight of 
-varioous Comorbidiities in the Charlson Index
-
+Charlson value represents a comorbidity index that predicts 10y life expectancy for people with multiple comorbidities. This graph shows the weight of varioous Comorbidiities in the Charlson Index
 
 ```{r}
 
@@ -314,7 +310,7 @@ ggsave("Charlson_comorbidities.png",
 
 From the boxplot, we can deduce that AIDS and Metastatic solid tumor are 2 of the major comorbidities that have an important weight on the Charlson CI, and tha. On the opposite side of the spectrum, mild liver disease and rheumatological have a limited impact on the variable. Less weight means that the diseaseis not severe enough to affect directly and significantly the life expectancy of the patient.
 
-## Overview of comorbidities and liver disease 
+## Overview of comorbidities and liver disease
 
 ```{r}
 stacked_bar_liverDisease <- dat_aug_03 |>
@@ -324,7 +320,6 @@ stacked_bar_liverDisease <- dat_aug_03 |>
   arrange(Liver_disease, desc(d_c_count)) |>
   mutate(Comorbidities = fct_inorder(Comorbidities))
 ```
-
 
 ```{r}
 bubble_order <- c("UGIB due to portal hypertension",
@@ -362,5 +357,4 @@ ggplot(bubble_chart,
         axis.text.x = element_text(angle = 45, hjust = 0))
 ```
 
-From this visualisation graph, it appears that Hepatic Encephalopaty liver disease has the greatest amount of comorbidities observed. On the opposite, we observe fewer Comorbidities for for jaundice and Hepato-hydrothorax. Additionally, the most 
-common combination is Ascites with Moderate Liver disease as a comorbidity. 
+From this visualisation graph, it appears that Hepatic Encephalopaty liver disease has the greatest amount of comorbidities observed. On the opposite, we observe fewer Comorbidities for for jaundice and Hepato-hydrothorax. Additionally, the most common combination is Ascites with Moderate Liver disease as a comorbidity.

@@ -1,7 +1,10 @@
-```{r}
-dat_aug_03
+---
+title: "08_analysis_liver_disease"
+format: html
+editor: visual
+---
 
-```
+
 # Impact of different liver diseases on mortality
 
 ### Load libraries for modelling
