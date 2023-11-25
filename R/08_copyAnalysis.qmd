@@ -1,139 +1,130 @@
-# Liver disease and comordities relations
+# Liver disease and comordities/etiologies relations
 
+## Library installation 
 ```{r}
 library(viridis)
 library(treemapify)
 ```
 
-Seeking to understand the relation between comorbidities and the liver disease, we would like to show the number of comorbidities per liver disease. 
-```{r}
-stacked_bar_liverDisease <- dat_aug_03 |>
-  select(Liver_disease, Comorbidities) |> 
-  count(Liver_disease, Comorbidities)|>
-  rename(d_c_count = n) |> 
-  arrange(Liver_disease, desc(d_c_count)) |>
-  mutate(Comorbidities = fct_inorder(Comorbidities))
-```
+## Liver disease and Comorbidities 
+
+Seeking to understand the relation between comorbidities and the patient's liver disease, it would be helpful to visualize 
+if some liver diseases have peculiar relationships with some comorbidities. To do so, a tile plot with the variables Liver disease, Comorbidities and ratio of patients of a certain liver disease with comorbidities was created 
+
+### Creation of a dataset with count of patients with same disease and same comorbidities
 
 ```{r}
-ggplot(stacked_bar_liverDisease, 
-       aes(x = Liver_disease,
-           y=d_c_count,
-           fill = Comorbidities)) +
-  geom_bar(position = "stack",
-           stat = "identity") +
-  scale_fill_viridis(discrete = TRUE, option = "D") +
-  labs(title = "Hospitalizations by Liver Disease and Comorbidities",
-       x = "Liver Disease",
-       y = "Hospitalizations") +
-  theme_minimal() +
-  theme(legend.position = "right",
-        legend.key.height= unit(0.4, 'cm'),
-        legend.key.width= unit(0.2, 'cm')) +
-  coord_flip()
+grouped_LD_C <- dat_aug_03 |>
+  group_by(Liver_disease, Comorbidities) |> 
+  summarise(count = n()) |> 
+  arrange(Liver_disease, desc(count)) 
+
+grouped_LD_C
 ```
-By observing the number of hospitalizations by liver disease and comorbidities we can see that for all of the liver diseases in the data set, the major comorbidity was Moderate-severe liver disease, as it is the biggest partition for every liver disease. Additionally, the plot shows us the most common liver diseases: Ascites, Hepatic encephalopathy, and UGIB.
+
+### Creation of a dataset with total count of patients with same disease 
 
 ```{r}
-ggplot(stacked_bar_liverDisease, 
-       aes(Liver_disease, Comorbidities)) +
-  geom_tile(aes(fill= d_c_count))+
-  labs(fill = "Count" ,
-       title = "Hospitalizations by Liver Disease and Comorbidities",
+grouped_LD <- dat_aug_03 |>
+  group_by(Liver_disease) |> 
+  summarise(count_LD = n())
+
+grouped_LD
+```
+
+### Joining of the two dataset according to Liver_disease
+```{r}
+merged_dat1 <- inner_join(grouped_LD_C, grouped_LD, by = 'Liver_disease')
+
+# Calculate the ratio of count to total count
+merged_dat1 <- merged_dat1|>
+  mutate(Ratio = count / count_LD)
+
+merged_dat1
+```
+
+
+```{r}
+tile_plot_comorb <- merged_dat1 |>
+  ggplot(aes(Liver_disease, 
+             Comorbidities)) +
+  geom_tile(aes(fill= Ratio))+
+  labs(fill = "Ratio" ,
+       title = "Moderate to severe liver disease is the main comorbidity for all liver diseases ",
        x = "Liver Disease",
        y = "Comorbidities") +
   scale_fill_viridis() +
   theme_classic()+ 
-  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1), 
+        plot.title = element_text(hjust = 0.73, face = "bold", size = 14))
+
+tile_plot_comorb
 ```
+Each column adds up to 100%.
+From this graph, we can state that Moderate to severe liver disease is an important comorbidities for all liver diseases. This comorbidity.
+meaning was left very vague in the study, so it is hard to give an actual explanation. 
+However, what we can say is that close to 60% of patients suffering from a Hepato-hydrothorax have a moderate to severe liver diseasse in addition. A lot of Comorbidities are not clustered for a particular liver disease, except for Malignancy and Diabetes which seem to be present in around 30% of patients suffering respectively from HCC and Jaundice. 
+On the other side of the spectrum Heiplegia/Paraplegia and Dementia have very low incidence in the cirrhosis' patients population.
 
 
+# Liver disease and etiology 
+
+After tackling the subject comorbidities that can aggrevate some cases of cirrhosis, the etiology or causes of the 
+liver disease is also a useful tool, botth for treatment and prevention. 
+
+### Creation of a new dataset counting patients with same disease and same etiology 
 ```{r}
-ggplot(stacked_bar_liverDisease, aes(area = d_c_count,
-                      fill = Liver_disease,
-                      label = Comorbidities, 
-                      subgroup = Liver_disease)) +
-       geom_treemap() +
-	                       geom_treemap_subgroup_border() +
-	                       geom_treemap_text(colour = "white", place = "topleft", reflow = T) +
-  scale_color_viridis_d()
-```
-```{r}
-bubble_order <- c("UGIB due to portal hypertension",
-                  "Jaundice- as isolated presentation",
-                  "Hepatic encephalopathy",
-                  "Hepato-hydrothorax",
-                  "HCC or cholangioca.",
-                  "Alcoholic hepatitis",
-                  "Other fluid overload",
-                  "Ascites",
-                  "SBP",
-                  "AKI")
-bubble_chart <- stacked_bar_liverDisease |>
-  arrange(match(Liver_disease,bubble_order))
-```
-
-```{r}
-ggplot(bubble_chart,
-       aes(x = factor(Liver_disease, bubble_order), 
-           y = Comorbidities,
-           colour = Liver_disease,
-           size = d_c_count)) +
-  geom_point() +
-  geom_text(aes(label = d_c_count), 
-            colour = "white", 
-            size = 3) +
-  scale_x_discrete(position = "top") +
-  scale_color_viridis_d() +
-  scale_size_continuous(range = c(3, 9)) +
-  labs(x = NULL, y = NULL, title= "Comorbidities by Liver Disease") +
-  theme(legend.position = "none",
-        panel.background = element_blank(),
-        panel.grid = element_blank(),
-        axis.ticks = element_blank(),
-        axis.text.x = element_text(angle = 45, hjust = 0))
-```
-When zooming into the comorbidities and the liver disease numbers, we can see that Hepatic Encephalopaty liver disease has the greatest amount of comorbidities observed.
-
-# LD + Etiology by count 
-
-```{r}
-dat_aug_03_1 <- dat_aug_03 |> 
+grouped_LD_E <- dat_aug_03 |> 
   group_by(Liver_disease, Etiologies) |> 
-  summarise(count1 = n()) |> 
-  ungroup()
+  summarise(count = n()) 
+
+grouped_LD_E
 ```
+### Joining of the two dataset according to Liver_disease
+
 ```{r}
-ggplot(dat_aug_03_1, 
+merged_dat2 <- inner_join(grouped_LD_E, grouped_LD, by = 'Liver_disease')
+
+# Calculate the ratio of count to total count
+merged_dat2 <- merged_dat2|>
+  mutate(Ratio = count / count_LD)
+
+merged_dat2
+```
+
+```{r}
+ggplot(merged_dat2, 
        aes(x = Liver_disease, 
            y = Etiologies, 
-           fill = count1/nrow(dat_aug_03))) +
+           fill = Ratio)) +
   geom_tile()+
-  labs(title = "Hospitalizations by Liver Disease and their Etiology",
+  labs(title = "Alcohol consumption and Hepathitis C as main etiologies for cirrhosis' patients",
        x = "Liver Disease",
        y = "Etiologies", 
-       fill = "Percent of patients") +
+       fill = "Percent of patients") + 
   scale_fill_viridis()+
   theme_classic()+ 
-  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1), 
+        plot.title = element_text(hjust = 0.50, face = "bold", size = 13))
 
 ```
-Our next step in the analysis was to figure out the relation between liver diseases and their associated etiologies. By the tile chart above, we found that alcohol consumption associated with approximately 30% of the top 3 liver diseases (Ascites, Hepatic encephalopathy, and UGIB). In addition to that, alcohol consumption is associated with all the liver diseases observed, as well as Hepathitis C. On the contrary, the etiology that is associated the least with the liver diseases in the dataset was primary biliary cholangitis, which was associated with less than 2% of the observations.
+Each column adds up to 100%.
 
-# LD + Etiology by mortality  
+From this tile chart, Hepathitis C and alcohol consumption appear like the two main ethiologies for the liver disease, especially for Alcoholic hepatitis where nearly 80% is caused by alcohol consumption. Hepathitis C is also responsible for half of the cases of HCC of patients in this study. Those two ethiologies usually share the stage for each liver disease. Ascites, Hepatic encephalopathy and UGIB have multiple etiologies possible at few percentages like Autoimmune hepatitis, cryptogenic disease, Hepathitis B and Non AAlcoolic fatty liver disease. However, Primary biliary cholangitis seems like a very rare etiology, since it is only present in a very few percent (arouond 1%) for patients suffering from Fluid overload.
+
+# Does etiology have influences on the mortality of patients for he same liver disease ? 
+
 
 ```{r}
 dat_aug_03_2 <- dat_aug_03 |> 
   filter(Mortality != 'No death') |> 
   group_by(Liver_disease, Etiologies, Mortality) |> 
   summarise(count2 = n())
-
-```
-```{r}
 dat_aug_03_2
 ```
+
 ```{r}
-dat_aug_03_join <- left_join(dat_aug_03_1, dat_aug_03_2, by = c("Liver_disease", "Etiologies"))
+dat_aug_03_join <- left_join(grouped_LD_E, dat_aug_03_2, by = c("Liver_disease", "Etiologies"))
 ```
 
 ```{r}
@@ -145,16 +136,16 @@ dat_aug_03_join <- dat_aug_03_join |>
 ggplot(dat_aug_03_join, 
        aes(x = Liver_disease, 
            y = Etiologies, 
-           fill = count2/count1)) +
+           fill = count2/count)) +
   geom_tile() +
-  labs(title = "Repartition of death according to Liver Disease and Etiology",
+  labs(title = "Patients outcome depending in theit liver disease and etiology ",
        x = "Liver Disease",
        y = "Etiologies", 
-       fill = "Percent of dead patients") +
+       fill = "Death ratio") +
   scale_fill_viridis()+
   theme_classic()+ 
-  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1), 
+        plot.title = element_text(hjust = 0.50, face = "bold", size = 13))
 ```
-After inspecting the etiologies associations with the liver diseases, we used the tile chart above to show the death rate for each liver disease and its associated etiology. The plot indicates that although autoimmune hepatitis is one of the lowest observed etiology, when associating with hepatic encephalopathy liver disease, it has the highest death rate per liver disease of all ethiologies. In addition, alcohol and hepathitis C has the highest death rate amongst the various liver diseases. 
-
-
+After inspecting the etiologies associations with the liver diseases, we used the tile chart above to show the death raatioo for each liver disease and its associated etiology. 
+From this plot, we can deduce that all patients that suffered from Hepatic encephalopathy with auto-immune hepatitis died of cyrrhosis. The combination AKI/cryptogenic disease (70%), Hepato-hydrothorax/Alcohol-consumption (80%), Jaundice/Hepathitis C (80%) have the strongest deatah ratio. On the opposite, it seems that ethiologies like Hepathitis B, Non-alcoolic fatty liver disease and liver disease like Alcoholic hepatitis, Ascites, HCC, Fluid overload, SBP and UGIB have lower dath ratio (less thann 25%).
