@@ -1,3 +1,9 @@
+---
+title: "06_analysis_comorbidities_etiologies"
+format: html
+editor: visual
+---
+
 # Liver disease and comordities/etiologies relations
 
 ## Liver disease and Comorbidities 

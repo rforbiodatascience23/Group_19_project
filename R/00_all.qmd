@@ -21,17 +21,11 @@ quarto::render("~/projects/Group_19_project/R/09.qmd")
 
 # Introduction
 
-The aim of this project is to study the early predictors of cirrhosis' patients 
-mortality. To do that, we investigate the effect of the different comorbidities,
-etiologies and liver diseases on the mortality, the Charlson Comorbidity Index 
-and the Child Pugh Score of the patients.
+The aim of this project is to study the early predictors of cirrhosis' patients mortality. To do that, we investigate the effect of the different comorbidities, etiologies and liver diseases on the mortality, the Charlson Comorbidity Index and the Child Pugh Score of the patients.
 
 ## Loading the data
 
-The dataset we used comes from the study "Early predictors of outcomes of 
-hospitalization for cirrhosis and assessment of the impact of race and ethnicity
-at safety-net hospitals". The data can be downloaded by following the guideline
-that can be found in the 'README.md'.
+The dataset we used comes from the study "Early predictors of outcomes of hospitalization for cirrhosis and assessment of the impact of race and ethnicity at safety-net hospitals". The data can be downloaded by following the guideline that can be found in the 'README.md'.
 
 ```{quarto}
 # Include content from subdocument1.qmd
@@ -40,24 +34,16 @@ quarto::include("01_load.qmd")
 
 ## Cleaning the data
 
-In order to make the dataset tidy, we did a few manipulations. This include 
-selecting the relevant variables, reordering the columns, creating an ID for 
-each patient and pivotting the data twice in order to get a longer dataset, 
-with only two variables corresponding respectively to the etiologies and the 
-comorbidities.
+In order to make the dataset tidy, we did a few manipulations. This include selecting the relevant variables, reordering the columns, creating an ID for each patient and pivotting the data twice in order to get a longer dataset, with only two variables corresponding respectively to the etiologies and the comorbidities.
 
 ```{quarto}
 # Include content from subdocument1.qmd
 quarto::include("02_clean.qmd")
 ```
 
-
 ## Augmenting the data
-In the file '03_augment.qmd', we created two categorical variables: one 
-corresponds to the age, and the other one to the mortality to indicate if a 
-patient survived the cirrhosis, died at the hospital, died after less than 30 
-days after leaving the hospital, or died 30 to 90 days after leaving the 
-hospital.
+
+In the file '03_augment.qmd', we created two categorical variables: one corresponds to the age, and the other one to the mortality to indicate if a patient survived the cirrhosis, died at the hospital, died after less than 30 days after leaving the hospital, or died 30 to 90 days after leaving the hospital.
 
 ```{quarto}
 # Include content from subdocument1.qmd
@@ -66,8 +52,7 @@ quarto::include("03_augment.qmd")
 
 ## Describing the data
 
-The aim of that part of the project is to give general informations about the 
-dataset, in order to get a better overview of the studied sample of patients.
+The aim of that part of the project is to give general informations about the dataset, in order to get a better overview of the studied sample of patients.
 
 ```{quarto}
 # Include content from subdocument1.qmd
@@ -76,37 +61,30 @@ quarto::include("04_describe.qmd")
 
 ## Data analysis
 
-In the first file of the analysis, we try to determine how the patients' 
-mortality can be affected by some variables, for example the age, the type of 
-liver disease or the type of etiology.
+In the first file of the analysis, we try to determine how the patients' mortality can be affected by some variables, for example the age, the type of liver disease or the type of etiology.
 
 ```{quarto}
 # Include content from subdocument1.qmd
 quarto::include("05_analysis_mortality.qmd")
 ```
 
-
-
 ```{quarto}
 # Include content from subdocument1.qmd
 quarto::include("06_")
 ```
 
-In that file, we study the effect of the different etiologies and comorbidities 
-on the Child Pugh Score.
+In that file, we study the effect of the different etiologies and comorbidities on the Child Pugh Score.
 
 ```{quarto}
 # Include content from subdocument1.qmd
 quarto::include("07")
 ```
 
-In the last file of the project, we use a linear regression model to describe 
-the impact of the different liver diseases on mortality.
+In the last file of the project, we use a linear regression model to describe the impact of the different liver diseases on mortality.
 
 ```{quarto}
 # Include content from subdocument1.qmd
 quarto::include("08")
 ```
-
 
 ## Conclusion

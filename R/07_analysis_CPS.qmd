@@ -1,7 +1,8 @@
-```{r}
-dat_aug_03
-
-```
+---
+title: "07_analysis_CPS"
+format: html
+editor: visual
+---
 
 # Effects of comorbidities on Child Pugh Score
 

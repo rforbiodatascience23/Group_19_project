@@ -1,4 +1,14 @@
+<<<<<<< HEAD
 ## Load libraries
+=======
+---
+title: "01_load"
+format: html
+editor: visual
+---
+
+## Load library
+>>>>>>> 01327115ea43eb47447eaa0d91ed22fd7496bb60
 ```{r}
 library("tidyverse")
 library("patchwork")
