@@ -286,16 +286,12 @@ Charlson value represents a comorbidity index that predicts 10y life expectancy 
 
 box_plot_Charlson_Comorbidities <- dat_aug_03 |> 
   ggplot(mapping = aes(x = Comorbidities,
-                       y = Charlson_CI, 
-                       color = Comorbidities)) +
+                       y = Charlson_CI)) +
   geom_boxplot() +
-  scale_color_viridis(discrete = TRUE, option = "D") +
   labs(title = 'Impact of diverse comorbidities on the 10 year life expectancy of patients',
        y = 'Charlson Comorbidity Index') +
   theme_minimal() +
-  theme(axis.text.x=element_blank(), 
-        legend.title = element_blank(), 
-        legend.text = element_text(size = 7))
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 
 box_plot_Charlson_Comorbidities
 ```
