@@ -4,7 +4,6 @@ format: html
 editor: visual
 ---
 
-
 # Impact of different liver diseases on mortality
 
 ### Data widening

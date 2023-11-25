@@ -219,7 +219,7 @@ boxplot_model_etiologies <-  ggplot(
   geom_point()+
   geom_hline(yintercept = 0, linetype = "dashed", color = "black", size = 0.5) +
   labs(
-    title = "Ethiologies associated with CPS ",
+    title = "Etiologies associated with CPS ",
     x = "Estimates(95% CIs)",
     y ="") +
   theme(plot.title = element_text(size = 12.5))
@@ -227,28 +227,43 @@ boxplot_model_etiologies <-  ggplot(
 boxplot_model_etiologies
 ```
 
+### Save plot
+```{r}
+ggsave("Estimates_CPS_Etiologies.png", 
+       path = "../results/plots/",
+       plot = boxplot_model_etiologies,
+       width = 7,
+       height = 5)
+```
+
+
 ```{r}
 estimate |> 
   select(q.value <= 0.05) |> 
-  mutate(
-    label = Ethiologies
-    ) |> 
-  ggplot(
-    data = estimate,
-    mapping = aes(x = estimate, 
-                  y = - log10(p.value), 
-                  color = is.significant, 
-                  label = ifelse(- log10(p.value) > 1,
-                                 Etiologies,
-                                 "")
-                  ) 
-    ) +
+  mutate(label = Etiologies)
+
+Significance_plot_CPS <- estimate |>
+  ggplot(mapping = aes(x = estimate, 
+                       y = - log10(p.value), 
+                       color = is.significant, 
+                       label = ifelse(- log10(p.value) > 1,
+                                      Etiologies,
+                                      ""))) +
   geom_point(alpha = 0.8) +
   geom_text(hjust=0.5, vjust=-0.5) +
   labs(
-    title = "Ethiologies associated with CPS ",
+    title = "Etiologies associated with CPS ",
     x = "Estimates(95% CIs)",
     y ="") 
+```
+
+### Save plot
+```{r}
+ggsave("Significance_plot_CPS.png", 
+       path = "../results/plots/",
+       plot = estimate,
+       width = 7,
+       height = 5)
 ```
 
 In these plots, we can see that only one etiology is considered as having a significant correlation with CPS: Non-Alcoholic Fatty Liver Disease (NAFLD). Therefore, a patient with this etiology has more chances of having a low CPS than a patient with any other etiology. 
