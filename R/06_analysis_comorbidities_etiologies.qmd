@@ -6,12 +6,6 @@ editor: visual
 
 # Liver disease and comordities/etiologies relations
 
-## Library installation 
-```{r}
-library(viridis)
-library(treemapify)
-```
-
 ## Liver disease and Comorbidities 
 
 Seeking to understand the relation between comorbidities and the patient's liver disease, it would be helpful to visualize 

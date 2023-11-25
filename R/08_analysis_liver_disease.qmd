@@ -7,12 +7,6 @@ editor: visual
 
 # Impact of different liver diseases on mortality
 
-### Load libraries for modelling
-```{r}
-library(broom)
-library(ggplot2)
-```
-
 ### Data widening
 ```{r}
 df <- dat_aug_03 |>

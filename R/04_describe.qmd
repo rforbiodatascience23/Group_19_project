@@ -242,8 +242,6 @@ The dataset chosen featured two variables:
 -   **Charlson Comorbidity index**: useful to predict the mortality of patients suffering from comorbidities. Depends on the presence of comorbidities and the age of the patient
 
 ```{r}
-library(patchwork)
-
 box_plot_CPS_ <- dat_aug_03 |> 
   ggplot(aes(x = CPS)) +
   geom_boxplot(alpha = 0.7) +

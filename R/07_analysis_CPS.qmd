@@ -77,13 +77,6 @@ ggsave("Charlson_vs_CPS.png",
 # Effects of different etiologies on Child Pugh Score
 Because the comorbidities don't seem to be related to the CPS, we are now interested in investigating which etiologies are significantly more or less present in patients with different CPS. In order to do that, we use a linear regression model:
 
-### Load libraries for modelling
-
-```{r}
-library(broom)
-library(ggplot2)
-```
-
 
 ```{r}
 df <- df_Etiology |>
