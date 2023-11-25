@@ -209,9 +209,9 @@ if (!requireNamespace("forcats", quietly = TRUE)) {
 library(forcats)
 
 
-estimate |> 
-  ggplot( 
-    mapping = aes(x = estimate,
+boxplot_model_etiologies <-  ggplot( 
+  data = estimate,
+  mapping = aes(x = estimate,
                   y = Etiologies)) +
   geom_errorbarh(aes(xmin = conf.low,
                  xmax = conf.high,
@@ -223,6 +223,8 @@ estimate |>
     x = "Estimates(95% CIs)",
     y ="") +
   theme(plot.title = element_text(size = 12.5))
+
+boxplot_model_etiologies
 ```
 
 ```{r}
@@ -252,3 +254,4 @@ estimate |>
 
 In these plots, we can see that only one etiology is considered as having a significant correlation with CPS. This etiology is the Non-Alcoholic Fatty Liver Disease and a patient with this etiology has more chances of having a low CPS than a patient with another etiology. 
 These results are also consistent with the results shown in the file '05_analysis1.qmd' because we saw in that file that nafld has a greater impact on mortality than alcohol or cryptogenic diseases. 
+

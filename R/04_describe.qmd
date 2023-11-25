@@ -7,40 +7,74 @@ editor: visual
 
 # Descriptive statistics
 
-## General information on the dataset
+## General information on the data set
 
 ```{r}
 dim_desc(dat_aug_03)
 dim_desc(dat_load_01)
 ```
 
-We have a final dataset of 1,065 observations with 9 variables, after tidying a dataset of 733 patients suffering from cirrhosis.
+We have a final data set of 1,065 observations with 9 variables, after tidying a data set of 733 patients suffering from cirrhosis.
 
 ## Sex and Age group of the patients' population
 
+The total number of patients stratified by gender can be visualized with the following plots.
+
 ```{r}
-dat_aug_03 |> 
-  count(Sex)
+bar_plot_total_by_gender <- dat_aug_03 |> 
+  ggplot(aes(x = "Overall", 
+             fill = Sex)) +
+  geom_bar(position = "stack", 
+           stat = "count", 
+           alpha = 0.7) +
+  labs(title = "Total Count",
+       x = "Patients",
+       y = "Count") +
+  scale_fill_viridis_d() +
+  theme_minimal()
+
+bar_plot_total_by_gender_facet <- bar_plot_total_by_gender +
+  facet_grid(. ~ Sex, 
+             scales = "free_y") +
+  theme(strip.text.y = element_blank(), 
+        strip.background = element_blank(), 
+        axis.text.x = element_text(size = 7))
 ```
 
-The patient population is mainly male dominated (2/3).
+```{r}
+ggsave("Total_by_gender.png", 
+       path = "../results/plots/",
+       plot = bar_plot_total_by_gender,
+       width = 7,
+       height = 5)
+ggsave("Total_by_gender(facet).png", 
+       path = "../results/plots/",
+       plot = bar_plot_total_by_gender_facet,
+       width = 7,)
+```
 
-To observe the age and sex repartition, a stacked bar plot for age distribution stratified by gender can be used
+To observe the age and gender distribution, a stacked bar plot for the age distribution, stratified by gender, can be used.\
+To better illustrate that both have their mode at \[60;70\], the plot is also shown faceted.
 
 ```{r}
-
 bar_plot_age_gender <- dat_aug_03 |>
   ggplot(aes(x = Age, 
              fill = Sex)) +
   geom_bar(position = "stack", 
            stat = "count", 
            alpha = 0.7) +
-  labs(title = "Overview of age and gender repartition for patients with cirrhosis",
+  labs(title = "Overview of the age and gender distribution of patients with liver cirrhosis",
        x = "Age Group",
        y = "Count") +
   scale_fill_viridis_d() +
-  theme_minimal() 
-  
+  theme_minimal()
+
+bar_plot_age_gender_facet <- bar_plot_age_gender +
+  facet_grid(. ~ Sex, 
+             scales = "free_y") +
+  theme(strip.text.y = element_blank(), 
+        strip.background = element_blank(), 
+        axis.text.x = element_text(size = 7))
 ```
 
 ```{r}
@@ -49,13 +83,44 @@ ggsave("Age_gender.png",
        plot = bar_plot_age_gender,
        width = 7,
        height = 5)
+ggsave("Age_gender(facet).png", 
+       path = "../results/plots/",
+       plot = bar_plot_age_gender_facet,
+       width = 7,
+       height = 5)
+```
+
+All plots provide a visual representation of the distribution of patients with cirrhosis based on age and gender.
+
+-   the x-axis always represents the age groups and the y-axis is always the count for the patients
+
+-   the gender is illustrated by different colors - yellow for male and purple for female
+
+Description
+
+-   Mode: The mode is for both women and men in the 60 to 70 age group. The number of patients in this age group is 517 (Female: 150, Male 367).
+
+-   Gender Representation: Women make up about 29.67 percent of patients and men about 70.33 percent. This means that the number of patients is predominantly male.
+
+```{r}
+mode_of_age <- dat_aug_03 |> 
+  filter(str_detect(Age, "\\[60;|70]" )) |> 
+  summarise(count = n())
+print(mode_of_age)
 ```
 
 ```{r}
-bar_plot_age_gender
+mode_of_age_sex <- dat_aug_03 |> 
+  filter(str_detect(Age, "\\[60;|70]" )) |> 
+  group_by(Sex) |> 
+  summarise(count = n())
+print(mode_of_age_sex)
 ```
 
-FABIAN
+```{r}
+dat_aug_03 |> 
+  count(Sex)
+```
 
 ## Overview of the liver disease in the patients' population
 
