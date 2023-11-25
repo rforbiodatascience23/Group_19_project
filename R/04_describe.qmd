@@ -236,6 +236,9 @@ bar_plot_comorbidities <- dat_comorb |>
   geom_bar(stat = 'identity', 
            alpha = 0.7, 
            show.legend = FALSE) +
+  geom_text(aes(label = n), 
+            vjust = -0.5, 
+            size = 2) +
   labs(title = "Overview of comorbidities across patients suffering from cirrhosis ",
        y = "Count") +
   scale_fill_viridis_d() +
@@ -258,7 +261,15 @@ ggsave("Overview_Comorbidities.png",
 bar_plot_comorbidities
 ```
 
-FABIAN
+The plot illustrates the various concomitant diseases of the patients and provides an overview of the number of each condition.
+
+-   the x-axis represents the comorbidities and the y-axis is the count of patients
+
+-   In addition, each comorbidity is listed in different colors and the exact number is indicated above the respective bar.
+
+-   The mode are moderately severe liver diseases with a comparatively high count of 509.
+
+-   The majority of patients suffer from concomitant diseases. Only 8 patients suffer only from liver cirrhosis.
 
 ## Overview of ethiology factor across population
 
