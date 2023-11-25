@@ -1,6 +1,10 @@
-## Load library
+## Load libraries
 ```{r}
 library("tidyverse")
+library("patchwork")
+library("viridis")
+library("broom")
+library("ggplot2")
 ```
 
 ## Load data
