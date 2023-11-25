@@ -38,7 +38,7 @@ This plot proves the fact that CPS value accurately describes the mortality of c
 ### Saving the plot
 
 ```{r}
-ggsave("CPS_and_mortality_boxplot", 
+ggsave("CPS_and_mortality_boxplot.png", 
        path = "../results/plots/",
        plot = bar_plot_CPS_Mortality,
        width = 7,

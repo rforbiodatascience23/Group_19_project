@@ -170,11 +170,11 @@ dat_clean_02 <- dat_load_01 |>
 
 
   # If mortalityH = yes -> Mortality 30&90 = no 
-  #mutate_at(vars(c(Mortality_30_days, Mortality_90_days)), 
-  #          ~ifelse(Mortality_hospital == 'Yes', 'No', .)) |> 
-  #If mortality30 = yes -> mortality90 = no   
-  #mutate_at(vars(Mortality_90_days), 
-  #          ~ifelse(Mortality_30_days == 'Yes', 'No', .)) |>
+  mutate_at(vars(c(Mortality_30_days, Mortality_90_days)), 
+           ~ifelse(Mortality_hospital == 'Yes', 'No', .)) |> 
+  # If mortality30 = yes -> mortality90 = no   
+  mutate_at(vars(Mortality_90_days), 
+            ~ifelse(Mortality_30_days == 'Yes', 'No', .)) |>
   
   # Create a id for each ind 
   mutate(Id = row_number()) |>
