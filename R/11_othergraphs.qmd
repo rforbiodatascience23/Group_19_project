@@ -1,0 +1,29 @@
+```{r}
+ggplot(stacked_bar_liverDisease, 
+       aes(x = Liver_disease,
+           y=d_c_count,
+           fill = Comorbidities)) +
+  geom_bar(position = "stack",
+           stat = "identity") +
+  scale_fill_viridis(discrete = TRUE, option = "D") +
+  labs(title = "Hospitalizations by Liver Disease and Comorbidities",
+       x = "Liver Disease",
+       y = "Hospitalizations") +
+  theme_minimal() +
+  theme(legend.position = "right",
+        legend.key.height= unit(0.4, 'cm'),
+        legend.key.width= unit(0.2, 'cm')) +
+  coord_flip()
+```
+
+
+```{r}
+ggplot(stacked_bar_liverDisease, aes(area = d_c_count,
+                      fill = Liver_disease,
+                      label = Comorbidities, 
+                      subgroup = Liver_disease)) +
+       geom_treemap() +
+	                       geom_treemap_subgroup_border() +
+	                       geom_treemap_text(colour = "white", place = "topleft", reflow = T) +
+  scale_color_viridis_d()
+```

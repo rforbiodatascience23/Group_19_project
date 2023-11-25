@@ -1,3 +1,9 @@
+---
+title: "05_analysis_mortality"
+format: html
+editor: visual
+---
+
 # Effect of different variables on mortality
 
 During that part, we will investigate to determine in what extent some variables affect the mortality of the patients.

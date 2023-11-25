@@ -1,3 +1,9 @@
+---
+title: "03_augment"
+format: html
+editor: visual
+---
+
 # Adds new variables
 
 Introduction of a new variable "Mortality" which displays the combinations for Mortality.

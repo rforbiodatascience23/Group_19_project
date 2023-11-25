@@ -1,7 +1,7 @@
 ---
-editor: 
-  markdown: 
-    wrap: 72
+title: "02_clean"
+format: html
+editor: visual
 ---
 
 # Cleans your data per your specifications and converts to tidy format
