@@ -38,6 +38,36 @@ bar_plot_total_by_gender_facet <- bar_plot_total_by_gender +
   theme(strip.text.y = element_blank(), 
         strip.background = element_blank(), 
         axis.text.x = element_text(size = 7))
+
+```
+
+Patch of both plots
+
+```{r}
+bar_plot_total_by_gender_2 <- dat_aug_03 |> 
+  ggplot(aes(x = "Overall", 
+             fill = Sex)) +
+  geom_bar(position = "stack", 
+           stat = "count", 
+           alpha = 0.7) +
+  labs(x = "Patients",
+       y = "Count") +
+  scale_fill_viridis_d() +
+  theme_minimal() +
+    theme(strip.text.y = element_blank(), 
+        strip.background = element_blank(), 
+        axis.text.x = element_text(size = 7))
+
+bar_plot_total_by_gender_facet_2 <- bar_plot_total_by_gender_2 +
+  facet_grid(. ~ Sex, 
+             scales = "free_y") +
+  theme(strip.text.y = element_blank(), 
+        strip.background = element_blank(), 
+        axis.text.x = element_text(size = 7))
+
+combined_plot_2 <- bar_plot_total_by_gender_2 + 
+  bar_plot_total_by_gender_facet_2 + 
+  plot_annotation(title = "Total Count")
 ```
 
 ```{r}
@@ -50,6 +80,11 @@ ggsave("Total_by_gender(facet).png",
        path = "../results/plots/",
        plot = bar_plot_total_by_gender_facet,
        width = 7,)
+ggsave("Total_by_gender(patch).png", 
+       path = "../results/plots/",
+       plot = combined_plot_2,
+       width = 7,
+       height = 5)
 ```
 
 To observe the age and gender distribution, a stacked bar plot for the age distribution, stratified by gender, can be used.\
@@ -76,6 +111,35 @@ bar_plot_age_gender_facet <- bar_plot_age_gender +
         axis.text.x = element_text(size = 7))
 ```
 
+Patch of both plots
+
+```{r}
+bar_plot_age_gender_2 <- dat_aug_03 |>
+  ggplot(aes(x = Age, 
+             fill = Sex)) +
+  geom_bar(position = "stack", 
+           stat = "count", 
+           alpha = 0.7) +
+  labs(x = "Age Group",
+       y = "Count") +
+  scale_fill_viridis_d() +
+  theme_minimal() +
+  theme(strip.text.y = element_blank(), 
+        strip.background = element_blank(), 
+        axis.text.x = element_text(size = 5))
+
+bar_plot_age_gender_facet_2 <- bar_plot_age_gender_2 +
+  facet_grid(. ~ Sex, 
+             scales = "free_y") +
+  theme(strip.text.y = element_blank(), 
+        strip.background = element_blank(), 
+        axis.text.x = element_text(size = 3))
+
+combined_plot_1 <- bar_plot_age_gender_2 + 
+  bar_plot_age_gender_facet_2 + 
+  plot_annotation(title = "Overview of the age and gender distribution of patients with liver cirrhosis")
+```
+
 ```{r}
 ggsave("Age_gender.png", 
        path = "../results/plots/",
@@ -85,6 +149,11 @@ ggsave("Age_gender.png",
 ggsave("Age_gender(facet).png", 
        path = "../results/plots/",
        plot = bar_plot_age_gender_facet,
+       width = 7,
+       height = 5)
+ggsave("Age_gender(patch).png", 
+       path = "../results/plots/",
+       plot = combined_plot_1,
        width = 7,
        height = 5)
 ```
@@ -242,8 +311,6 @@ The dataset chosen featured two variables:
 -   **Charlson Comorbidity index**: useful to predict the mortality of patients suffering from comorbidities. Depends on the presence of comorbidities and the age of the patient
 
 ```{r}
-library(patchwork)
-
 box_plot_CPS_ <- dat_aug_03 |> 
   ggplot(aes(x = CPS)) +
   geom_boxplot(alpha = 0.7) +
@@ -286,16 +353,12 @@ Charlson value represents a comorbidity index that predicts 10y life expectancy 
 
 box_plot_Charlson_Comorbidities <- dat_aug_03 |> 
   ggplot(mapping = aes(x = Comorbidities,
-                       y = Charlson_CI, 
-                       color = Comorbidities)) +
+                       y = Charlson_CI)) +
   geom_boxplot() +
-  scale_color_viridis(discrete = TRUE, option = "D") +
   labs(title = 'Impact of diverse comorbidities on the 10 year life expectancy of patients',
        y = 'Charlson Comorbidity Index') +
   theme_minimal() +
-  theme(axis.text.x=element_blank(), 
-        legend.title = element_blank(), 
-        legend.text = element_text(size = 7))
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 
 box_plot_Charlson_Comorbidities
 ```
