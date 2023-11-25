@@ -1,5 +1,11 @@
 # Group_19_project: A study of early predictors (Comorbidities and Etiology) of cirrhosis' patients mortality
 
+## Project Contributors 
+- Pauline Charpentier - @Linepocharpe - s231663
+- Eva Frossard - @EvaFrossard - s231701
+- Noy Tabul - @NoyTii - s232743
+- Fabian Ziegler - @fabianhz1 - s231932
+
 ## Dataset
 
 Our project is based on the study of the following dataset: Mukthinuthlalapati, VV Pavan Kedar et al. (2019). Data from: Early predictors of outcomes of hospitalization for cirrhosis and assessment of the impact of race and ethnicity at safety-net hospitals [Dataset]. Dryad. <https://doi.org/10.5061/dryad.6gt88dv>

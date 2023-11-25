@@ -1,0 +1,160 @@
+# Liver disease and comordities relations
+
+```{r}
+library(viridis)
+library(treemapify)
+```
+
+Seeking to understand the relation between comorbidities and the liver disease, we would like to show the number of comorbidities per liver disease. 
+```{r}
+stacked_bar_liverDisease <- dat_aug_03 |>
+  select(Liver_disease, Comorbidities) |> 
+  count(Liver_disease, Comorbidities)|>
+  rename(d_c_count = n) |> 
+  arrange(Liver_disease, desc(d_c_count)) |>
+  mutate(Comorbidities = fct_inorder(Comorbidities))
+```
+
+```{r}
+ggplot(stacked_bar_liverDisease, 
+       aes(x = Liver_disease,
+           y=d_c_count,
+           fill = Comorbidities)) +
+  geom_bar(position = "stack",
+           stat = "identity") +
+  scale_fill_viridis(discrete = TRUE, option = "D") +
+  labs(title = "Hospitalizations by Liver Disease and Comorbidities",
+       x = "Liver Disease",
+       y = "Hospitalizations") +
+  theme_minimal() +
+  theme(legend.position = "right",
+        legend.key.height= unit(0.4, 'cm'),
+        legend.key.width= unit(0.2, 'cm')) +
+  coord_flip()
+```
+By observing the number of hospitalizations by liver disease and comorbidities we can see that for all of the liver diseases in the data set, the major comorbidity was Moderate-severe liver disease, as it is the biggest partition for every liver disease. Additionally, the plot shows us the most common liver diseases: Ascites, Hepatic encephalopathy, and UGIB.
+
+```{r}
+ggplot(stacked_bar_liverDisease, 
+       aes(Liver_disease, Comorbidities)) +
+  geom_tile(aes(fill= d_c_count))+
+  labs(fill = "Count" ,
+       title = "Hospitalizations by Liver Disease and Comorbidities",
+       x = "Liver Disease",
+       y = "Comorbidities") +
+  scale_fill_viridis() +
+  theme_classic()+ 
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+```
+
+
+```{r}
+ggplot(stacked_bar_liverDisease, aes(area = d_c_count,
+                      fill = Liver_disease,
+                      label = Comorbidities, 
+                      subgroup = Liver_disease)) +
+       geom_treemap() +
+	                       geom_treemap_subgroup_border() +
+	                       geom_treemap_text(colour = "white", place = "topleft", reflow = T) +
+  scale_color_viridis_d()
+```
+```{r}
+bubble_order <- c("UGIB due to portal hypertension",
+                  "Jaundice- as isolated presentation",
+                  "Hepatic encephalopathy",
+                  "Hepato-hydrothorax",
+                  "HCC or cholangioca.",
+                  "Alcoholic hepatitis",
+                  "Other fluid overload",
+                  "Ascites",
+                  "SBP",
+                  "AKI")
+bubble_chart <- stacked_bar_liverDisease |>
+  arrange(match(Liver_disease,bubble_order))
+```
+
+```{r}
+ggplot(bubble_chart,
+       aes(x = factor(Liver_disease, bubble_order), 
+           y = Comorbidities,
+           colour = Liver_disease,
+           size = d_c_count)) +
+  geom_point() +
+  geom_text(aes(label = d_c_count), 
+            colour = "white", 
+            size = 3) +
+  scale_x_discrete(position = "top") +
+  scale_color_viridis_d() +
+  scale_size_continuous(range = c(3, 9)) +
+  labs(x = NULL, y = NULL, title= "Comorbidities by Liver Disease") +
+  theme(legend.position = "none",
+        panel.background = element_blank(),
+        panel.grid = element_blank(),
+        axis.ticks = element_blank(),
+        axis.text.x = element_text(angle = 45, hjust = 0))
+```
+When zooming into the comorbidities and the liver disease numbers, we can see that Hepatic Encephalopaty liver disease has the greatest amount of comorbidities observed.
+
+# LD + Etiology by count 
+
+```{r}
+dat_aug_03_1 <- dat_aug_03 |> 
+  group_by(Liver_disease, Etiologies) |> 
+  summarise(count1 = n()) |> 
+  ungroup()
+```
+```{r}
+ggplot(dat_aug_03_1, 
+       aes(x = Liver_disease, 
+           y = Etiologies, 
+           fill = count1/nrow(dat_aug_03))) +
+  geom_tile()+
+  labs(title = "Hospitalizations by Liver Disease and their Etiology",
+       x = "Liver Disease",
+       y = "Etiologies", 
+       fill = "Percent of patients") +
+  scale_fill_viridis()+
+  theme_classic()+ 
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+
+```
+Our next step in the analysis was to figure out the relation between liver diseases and their associated etiologies. By the tile chart above, we found that alcohol consumption associated with approximately 30% of the top 3 liver diseases (Ascites, Hepatic encephalopathy, and UGIB). In addition to that, alcohol consumption is associated with all the liver diseases observed, as well as Hepathitis C. On the contrary, the etiology that is associated the least with the liver diseases in the dataset was primary biliary cholangitis, which was associated with less than 2% of the observations.
+
+# LD + Etiology by mortality  
+
+```{r}
+dat_aug_03_2 <- dat_aug_03 |> 
+  filter(Mortality != 'No death') |> 
+  group_by(Liver_disease, Etiologies, Mortality) |> 
+  summarise(count2 = n())
+
+```
+```{r}
+dat_aug_03_2
+```
+```{r}
+dat_aug_03_join <- left_join(dat_aug_03_1, dat_aug_03_2, by = c("Liver_disease", "Etiologies"))
+```
+
+```{r}
+dat_aug_03_join <- dat_aug_03_join |> 
+  replace_na(list(count2 = 0))
+```
+
+```{r}
+ggplot(dat_aug_03_join, 
+       aes(x = Liver_disease, 
+           y = Etiologies, 
+           fill = count2/count1)) +
+  geom_tile() +
+  labs(title = "Repartition of death according to Liver Disease and Etiology",
+       x = "Liver Disease",
+       y = "Etiologies", 
+       fill = "Percent of dead patients") +
+  scale_fill_viridis()+
+  theme_classic()+ 
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+```
+After inspecting the etiologies associations with the liver diseases, we used the tile chart above to show the death rate for each liver disease and its associated etiology. The plot indicates that although autoimmune hepatitis is one of the lowest observed etiology, when associating with hepatic encephalopathy liver disease, it has the highest death rate per liver disease of all ethiologies. In addition, alcohol and hepathitis C has the highest death rate amongst the various liver diseases. 
+
+
