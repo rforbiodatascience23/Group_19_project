@@ -83,7 +83,7 @@ Fabian Ziegler
 
 -   
 
--   
+-   <img src="../results/plots/Age_gender.png" style="width: 130%;"/>
 ------------------------------------------------------------------------
 
 # Results
