@@ -4,10 +4,9 @@ format: html
 editor: visual
 ---
 
-# Cleans your data per your specifications and converts to tidy format
+# Joining demonstration
 
-Joining since we did not need to group together two dataset. We won't
-use the joined dataset for the rest of the project,
+Joining since we did not need to group together two data set. We won't use the joined data set for the rest of the project,
 
 it is just a demonstration of our joining skills
 
@@ -60,10 +59,9 @@ df_Etiology_and_Comorbidities <- left_join(df_Etiology, df_Comorbidities)
 df_Etiology_and_Comorbidities
 ```
 
-## Tidying of the data using pivot_longer
+# Cleaning of the dataset 
 
 ```{r}
-
 dat_clean_02 <- dat_load_01 |> 
   # Selection of correct variable 
   select(Sex, 
@@ -178,9 +176,25 @@ dat_clean_02 <- dat_load_01 |>
   
   # Create a id for each ind 
   mutate(Id = row_number()) |>
-  relocate(Id, .before = Sex) |> 
+  relocate(Id, .before = Sex) |>
+  relocate(C_None, .before = CPS) |>
+
+  # Getting rid of observations with NA values
+  drop_na(CPS) |> 
+  drop_na(Sex) |> 
+  drop_na(Mortality_hospital) |> 
+  drop_na(Mortality_30_days) |> 
+  drop_na(Mortality_90_days)
  
-  # TIDYING = Create a column Comorbidities using the pivot_longer (one column /
+dat_clean_02
+```
+
+## Tidying of the data using pivot_longer
+
+```{r}
+
+dat_tidy_02 <- dat_clean_02 |>
+  # Create a column Comorbidities using the pivot_longer (one column /
   # one line / one observation)
   pivot_longer(
     cols = starts_with("C_"), 
@@ -188,7 +202,7 @@ dat_clean_02 <- dat_load_01 |>
     values_to = "Presence_of_comorbidities",
     values_drop_na = TRUE) |> 
   
-  # TIDYING = Create a column Etiology
+  # Create a column Etiology
   pivot_longer(
     cols = starts_with("E_"), 
     names_to = "Etiologies", 
@@ -202,23 +216,12 @@ dat_clean_02 <- dat_load_01 |>
   filter(Presence_of_etiologies == 'Yes') |> 
   select(-Presence_of_etiologies) |> 
   
-  # Getting rid of observations with NA values
-  drop_na(CPS) |> 
-  drop_na(Sex) |> 
-  drop_na(Mortality_hospital) |> 
-  drop_na(Mortality_30_days) |> 
-  drop_na(Mortality_90_days) |> 
-  
   # Change the name of the observations to make it more digest
   mutate(Comorbidities = str_remove(Comorbidities, "C_")) |> 
   mutate(Etiologies = str_remove(Etiologies, "E_"))
 
+dat_tidy_02
 ```
-
-```{r}
-dat_clean_02
-```
-
 
 ## Save data in the folder "data"
 
@@ -226,5 +229,12 @@ dat_clean_02
 write_tsv(
   x= dat_clean_02, 
   file = '~/projects/Group_19_project/data/02_dat_clean.tsv'
+  )
+```
+
+```{r}
+write_tsv(
+  x= dat_tidy_02, 
+  file = '~/projects/Group_19_project/data/02_dat_tidy.tsv'
   )
 ```
