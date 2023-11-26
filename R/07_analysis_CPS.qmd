@@ -238,12 +238,11 @@ ggsave("Estimates_CPS_Etiologies.png",
 
 
 ```{r}
-estimate |> 
+Significance_plot_CPS <- estimate |> 
   select(q.value <= 0.05) |> 
-  mutate(label = Etiologies)
-
-Significance_plot_CPS <- estimate |>
-  ggplot(mapping = aes(x = estimate, 
+  mutate(label = Etiologies) |> 
+  ggplot(data = estimate, 
+         mapping = aes(x = estimate, 
                        y = - log10(p.value), 
                        color = is.significant, 
                        label = ifelse(- log10(p.value) > 1,
@@ -255,13 +254,14 @@ Significance_plot_CPS <- estimate |>
     title = "Etiologies associated with CPS ",
     x = "Estimates(95% CIs)",
     y ="") 
+
 ```
 
 ### Save plot
 ```{r}
 ggsave("Significance_plot_CPS.png", 
        path = "../results/plots/",
-       plot = estimate,
+       plot = Significance_plot_CPS,
        width = 7,
        height = 5)
 ```

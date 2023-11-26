@@ -150,7 +150,7 @@ if (!requireNamespace("forcats", quietly = TRUE)) {
 library(forcats)
 
 
-estimate |> 
+Estimates_LV_Mortality <- estimate |> 
   ggplot( 
     mapping = aes(x = estimate,
                   y = `Liver diseases`)) +
@@ -166,10 +166,16 @@ estimate |>
   theme(plot.title = element_text(size = 12.5))
 ```
 
-
+```{r}
+ggsave("Estimates_LV_Mortality.png", 
+       path = "../results/plots/",
+       plot = Estimates_LV_Mortality,
+       width = 7,
+       height = 5)
+```
 
 ```{r}
-estimate |> 
+Significance_plot_LV_mortality <- estimate |> 
   select(q.value <= 0.05) |> 
   mutate(
     label = `Liver diseases`
@@ -192,6 +198,16 @@ estimate |>
     y ="") +
   scale_fill_viridis_d() +
   expand_limits(x = c(-0.05,0.13))
+
+Significance_plot_LV_mortality
+```
+
+```{r}
+ggsave("Significance_plot_LV_mortality.png", 
+       path = "../results/plots/",
+       plot = Significance_plot_LV_mortality,
+       width = 7,
+       height = 5)
 ```
 According to these two plots, three of the observed liver diseases have are 
 significantly associated with mortality. These diseases are Hepato-hydrothorax,
