@@ -149,6 +149,7 @@ if (!requireNamespace("forcats", quietly = TRUE)) {
 }
 library(forcats)
 
+estimate
 
 Estimates_LV_Mortality <- estimate |> 
   ggplot( 

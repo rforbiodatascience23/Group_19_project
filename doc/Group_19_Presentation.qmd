@@ -1,53 +1,53 @@
 ---
-title: "Group 19"
-subtitle: "A study of early predictors (Comorbidities and Etiologies) of cirrhosis' patients mortality"
+title: "A study of early predictors (Comorbidities and Etiology) of patient's outcome after cirrhosis hospitalization"
+subtitle: "Group 19"
 format: 
   revealjs:
     embed-resources: true
-author: |
-  "Eva" Frossard,
+    theme: moon
+    slide-number: c/t
+    width: 1600
+    height: 900
+    mainfont: avenir
+author:
+  "Eva Frossard,
   Pauline Charpentier,
   Noy Tabul,
   Fabian Ziegler"
+  
 ---
 
-# Introduction {.smaller}
+## Introduction 
 
--   The purpose of our analysis is to understand patterns and correlations for early predictors (Comorbidities and Etiologies) of cirrhosis' patients mortality.
+- Purpose of our analysis is to understand patterns and correlations of early predictors of (Comorbidities and Etiologies) of cirrhosis' patients mortality.   
 
--   The dataset was taken from the study: Early predictors of outcomes of hospitalization for cirrhosis and assessment of the impact of race and ethnicity at safety-net hospitals
+-   Cirrhosis is a condition in which the liver is scarred and permanently damaged. A liver that’s affected by cirrhosis is unable to function properly, which causes serious health problems.   
 
--   Cirrhosis is a condition in which the liver is scarred and permanently damaged. A liver that’s affected by cirrhosis is unable to function properly, which causes serious health problems.
 
--   In 2017, cirrhosis caused more than 1·32 million deaths, including 440,000 in females and 883,000 in males.
 
-------------------------------------------------------------------------
+## Materials - Dataset
 
-# Materials and Methods
-## Definitions {.smaller}
+:::: {.columns}
 
--   Etiology is the study of the factors that come together leading to a disease.
+::: {.column width="50%"}
+Data set used: [Early predictors of outcomes of hospitalization for cirrhosis and assessment of the impact of race and ethnicity at safety-net hospitals](https://datadryad.org/stash/dataset/doi:10.5061/dryad.6gt88dv)   
 
--   Comorbidity is an additional disease that can interact and coexist simultaneously with cirrhosis.
+<\div>
 
--   Child-Pugh Score (CPS) for Cirrhosis Mortality: useful in the determination of the prognosis of patients suffering from cirrhosis.
+Study performed on X patients from 4 safety-net hospitals in the US    
 
--   Charlson Comorbidity Index: useful to predict the mortality of patients suffering from comorbidities.
+Focused in the early predictors of outcomes like **comorbidities** and **etiologies**    
+:::
 
-------------------------------------------------------------------------
+::: {.column width="50%"}
+![](../results/plots/Age_gender.png)
 
-## Data Description {.smaller}
+![](../results/plots/Overview_LD.png){width=100%} 
+:::
 
--   
+:::: 
 
--   
-
--   
-
-![Age_gender](../results/plots/Age_gender.png){width=45%} ![Age_gender2](../results/plots/Age_gender.png){width=45%}
-------------------------------------------------------------------------
-
-## Data Wrangling - Cleaning and Augmenting {.smaller}
+## Methods
 
 <b>Cleaning:</b>
 
@@ -57,40 +57,51 @@ author: |
 
 -   Renamed columns, reordered them, and assigned classes to etiology and comorbidities.
 
+<b>tidying:</b>
+
 <b>Augmenting:</b>
 
 -   Created categories for Mortality: no death, death in hospital, after 30 days, after 90 days.
 
 -   Creating age bins instead decade
 
-------------------------------------------------------------------------
+## Overview of comorbidities and etiologies
 
-# Results
-## Analysis 1 {.smaller}
+-   **Etiology** is the study of the factors that come together leading to a disease.
 
--   
+-   **Comorbidity** is an additional disease that can interact and coexist simultaneously with cirrhosis.
 
-------------------------------------------------------------------------
+:::: {.columns}
 
-## Analysis 1 {.smaller}
+::: {.column width="50%"}
 
--   
+![](../results/plots/Overview_Etiology.png){width=50%} 
+:::
 
-------------------------------------------------------------------------
+::: {.column width="50%"}
+![](../results/plots/Overview_Comorbidities.png){width=50%} 
+:::
+::::
 
-## Analysis 2 {.smaller}
 
--   
+## Liver disease repartition in cirrhosis patients, stratified by mortality
 
-------------------------------------------------------------------------
+![](../results/plots/LD_Mortality.png){width=50%} 
 
-## Analysis 2 {.smaller}
+## Model 1 
 
--   
+![](../results/plots/Significance_plot_CPS.png){width=50%} 
 
-------------------------------------------------------------------------
 
-# Discussion
+## Model 2
 
--   Analysis and interpretation of results
--   Conclusions and implications
+![](../results/plots/Significance_plot_LV_mortality.png){width=50%} 
+
+
+## Death ratios of every Etiology/Liver disease combination
+
+![](../results/plots/Tile_plot_mortality.png){width=50%} 
+
+
+
+## Conclusion

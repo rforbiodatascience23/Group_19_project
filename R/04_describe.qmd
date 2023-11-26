@@ -23,7 +23,7 @@ To observe the age and gender distribution, a stacked bar plot for the age distr
 To better illustrate that both have their mode at \[60;70\], the plot is also shown faceted.
 
 ```{r}
-bar_plot_age_gender <- dat_aug_03 |>
+bar_plot_age_gender <- dat_aug_clean_03 |>
   ggplot(aes(x = Age, 
              fill = Sex)) +
   geom_bar(position = "stack", 
@@ -34,7 +34,10 @@ bar_plot_age_gender <- dat_aug_03 |>
        x = "Age Group",
        y = "Count") +
   scale_fill_viridis_d() +
-  theme_minimal()
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold", size = 14))
+
+bar_plot_age_gender
 
 bar_plot_age_gender_facet <- bar_plot_age_gender +
   facet_grid(. ~ Sex, 
@@ -80,8 +83,8 @@ combined_plot_1
 ggsave("Age_gender.png", 
        path = "../results/plots/",
        plot = bar_plot_age_gender,
-       width = 9,
-       height = 5)
+       width = 15,
+       height = 10)
 ggsave("Age_gender(facet).png", 
        path = "../results/plots/",
        plot = bar_plot_age_gender_facet,

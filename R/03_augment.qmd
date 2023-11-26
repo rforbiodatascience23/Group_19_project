@@ -33,7 +33,6 @@ f <- function() {
 
 ### Clean data set
 ```{r}
-
 dat_aug_clean_03 <- dat_clean_02 |> 
    mutate(Mortality = case_when(Mortality_hospital == 'Yes' ~ 
                                 "Death_in_hospital", 
