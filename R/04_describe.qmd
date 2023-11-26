@@ -6,14 +6,14 @@ editor: visual
 
 # Descriptive statistics
 
-## General information on the data set
+## General information on the data sets
 
 ```{r}
 dim_desc(dat_aug_03)
 dim_desc(dat_load_01)
 ```
 
-We have a final data set of 1,065 observations with 9 variables, after tidying a data set of 733 patients suffering from cirrhosis.
+We have the dat_aug_03 data set with a total of 468 observations with 32 variables, after tidying a data set of 733 patients suffering from cirrhosis.
 
 ## Sex and Age group of the patients' population
 
@@ -94,7 +94,7 @@ ggsave("Age_gender(patch).png",
        height = 5)
 ```
 
-All plots provide a visual representation of the distribution of patients with cirrhosis based on age and gender.
+The plots provide a visual representation of the distribution of patients with cirrhosis based on age and gender.
 
 -   the x-axis always represents the age groups and the y-axis is always the count for the patients
 
@@ -102,9 +102,9 @@ All plots provide a visual representation of the distribution of patients with c
 
 Description
 
--   Mode: The mode is for both women and men in the 60 to 70 age group. The number of patients in this age group is 517 (Female: 150, Male 367).
+-   Mode: The mode is for both women and men in the 60 to 70 age group. The number of patients in this age group is 217 (Female: 69, Male 148).
 
--   Gender Representation: Women make up about 29.67 percent of patients and men about 70.33 percent. This means that the number of patients is predominantly male.
+-   Gender Representation: Women make up about 32.69 % of patients and men about 67.31 %. This means that the number of patients is predominantly male.
 
 ```{r}
 mode_of_age <- dat_aug_03 |> 
@@ -143,6 +143,10 @@ bar_plot_LD<- dat_LD |>
   geom_bar(stat = 'identity', 
            alpha = 0.7, 
            show.legend = FALSE) +
+  geom_text(aes(label = n), 
+            vjust = -0.5,  
+            color = "black", 
+            size = 3) +  
   labs(title = "Liver disease repartition in cyrrhosis patients",
        y = "Count") +
   scale_fill_viridis_d() +
@@ -256,18 +260,18 @@ The plot illustrates the various etiologies which lead to diseases and counts th
 
 -   The etiologies are listed in different colors and the exact number is indicated above the respective bar.
 
--   The mode isthe consumption of alcohol with a count of 549 followed by hepatitis C with a count of 357. Both are likely major factors at causing liver cirrhosis.
+-   The mode is the consumption of alcohol with a count of 549 followed by hepatitis C with a count of 357. Both are likely major factors at causing liver cirrhosis.
 
 ## Overview of two important numerical values: CPS and Charlson_CI
 
-The dataset chosen featured two variables:
+The data set chosen featured two variables:
 
 -   **CPS or Child-Pugh Score** for Cirrhosis Mortality: useful in the determination of the prognosis of patients suffering from a cirrhosis. With a maximum value of 15, it is based on the presence of ascites, the concentratin of some proteins in the blood (bilirubin, albumin)...
 
 -   **Charlson Comorbidity index**: useful to predict the mortality of patients suffering from comorbidities. Depends on the presence of comorbidities and the age of the patient
 
 ```{r}
-box_plot_CPS <- dat_aug_03 |> 
+box_plot_CPS <- dat_aug_C_03 |> 
   ggplot(aes(x = CPS)) +
   geom_boxplot(alpha = 0.7) +
   labs(title = "CPS and Charlson_CI") +
@@ -300,14 +304,14 @@ ggsave("Boxplot_Charlson.png",
 ```
 
 ```{r}
-mean_CPS <- dat_aug_clean_03 |> 
+mean_CPS <- dat_aug_C_03 |> 
   summarize(mean(CPS))
 
 mean_CPS
 ```
 
 ```{r}
-mean_Charlson <- dat_aug_clean_03 |> 
+mean_Charlson <- dat_aug_C_03 |> 
   summarize(mean(Charlson_CI))
 
 mean_Charlson
@@ -321,7 +325,7 @@ Charlson value represents a comorbidity index that predicts 10y life expectancy 
 
 ```{r}
 
-box_plot_Charlson_Comorbidities <- dat_aug_03 |> 
+box_plot_Charlson_Comorbidities <- dat_aug_C_03 |> 
   ggplot(mapping = aes(x = Comorbidities,
                        y = Charlson_CI)) +
   geom_boxplot() +
@@ -347,7 +351,7 @@ From the boxplot, we can deduce that AIDS and Metastatic solid tumor are 2 of th
 ## Overview of comorbidities and liver disease
 
 ```{r}
-stacked_bar_liverDisease <- dat_aug_03 |>
+stacked_bar_liverDisease <- dat_aug_C_03 |>
   select(Liver_disease, Comorbidities) |> 
   count(Liver_disease, Comorbidities)|>
   rename(d_c_count = n) |> 
