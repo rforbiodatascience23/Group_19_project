@@ -13,7 +13,7 @@ dim_desc(dat_aug_03)
 dim_desc(dat_load_01)
 ```
 
-We have a final data set of 468 observations with 32 variables, after tidying a data set of 733 patients suffering from cirrhosis.
+We have the dat_aug_03 data set with a total of 468 observations with 32 variables, after tidying a data set of 733 patients suffering from cirrhosis.
 
 ## Sex and Age group of the patients' population
 
