@@ -39,6 +39,8 @@ Fabian Ziegler
 
 # Introduction
 
+-   A study of early predictors (Comorbidities and Etiologies) of cirrhosis' patients mortality
+
 -   Cirrhosis is a condition in which the liver is scarred and permanently damaged.
 
 -   A liver that’s affected by cirrhosis is unable to function properly, which causes serious health problems.
@@ -48,6 +50,7 @@ Fabian Ziegler
 ------------------------------------------------------------------------
 
 # Materials and Methods
+## Definitions {.smaller}
 
 -   Etiology is the study of the factors that come together leading to a disease.
 
@@ -55,12 +58,56 @@ Fabian Ziegler
 
 -   Child-Pugh Score (CPS) for Cirrhosis Mortality: useful in the determination of the prognosis of patients suffering from cirrhosis.
 
--   Child-Pugh Score (CPS) for Cirrhosis Mortality: useful in the determination of the prognosis of patients suffering from cirrhosis.
+-   Charlson Comorbidity Index: useful to predict the mortality of patients suffering from comorbidities.
 ------------------------------------------------------------------------
 
-# Results (And)
+# Materials and Methods
+## Data Wrangling - Cleaning and Augmenting {.smaller}
 
--   Presentation of results
+-   
+
+-   
+
+-   
+
+-   
+------------------------------------------------------------------------
+
+# Materials and Methods
+## Data Description {.smaller}
+
+-   
+
+-   
+
+-   
+
+-   
+------------------------------------------------------------------------
+
+# Results
+## Analysis 1 {.smaller}
+
+-   
+
+------------------------------------------------------------------------
+
+# Results
+## Analysis 1 {.smaller}
+
+-   
+
+------------------------------------------------------------------------
+# Results
+## Analysis 2 {.smaller}
+
+-   
+
+------------------------------------------------------------------------
+# Results
+## Analysis 2 {.smaller}
+
+-   
 
 ------------------------------------------------------------------------
 
