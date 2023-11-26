@@ -16,16 +16,27 @@ The combination are as follows:
     H No 30 No 90 Yes = "Dead_90" 
     H No 30 Yes 90 Yes = "Dead_30"
 
-### Clean data set
 ```{r}
-dat_aug_clean_03 <- dat_clean_02 |> 
-   mutate(Mortality = case_when(Mortality_hospital == 'Yes' ~ "Death_in_hospital", 
+f <- function() {
+  mutate(Mortality = case_when(Mortality_hospital == 'Yes' ~ "Death_in_hospital", 
                                 Mortality_hospital == 'No' & Mortality_30_days == 'Yes' & Mortality_90_days == 'No' ~ "Death_in_first_30_days", 
                                 Mortality_hospital == 'No' & Mortality_30_days == 'No' & Mortality_90_days == 'Yes' ~ "Death_between_30_and_90_days", 
                                .default = "No death")) |> 
    select(-c(Mortality_30_days, Mortality_90_days, Mortality_hospital))
-dat_aug_clean_03
+}
 ```
+
+### Clean data set
+```{r}
+dat_aug_clean_03 <- dat_clean_02 |> 
+  mutate(Mortality = case_when(Mortality_hospital == 'Yes' ~ "Death_in_hospital", 
+                                Mortality_hospital == 'No' & Mortality_30_days == 'Yes' & Mortality_90_days == 'No' ~ "Death_in_first_30_days", 
+                                Mortality_hospital == 'No' & Mortality_30_days == 'No' & Mortality_90_days == 'Yes' ~ "Death_between_30_and_90_days", 
+                               .default = "No death")) |> 
+   select(-c(Mortality_30_days, Mortality_90_days, Mortality_hospital))
+
+dat_aug_clean_03
+```  
 
 
 ### Tidy data set
@@ -38,7 +49,30 @@ dat_aug_03 <- dat_tidy_02 |>
    select(-c(Mortality_30_days, Mortality_90_days, Mortality_hospital))
 dat_aug_03
 ```
+### Tidy Comorbidities data set 
+```{r}
+dat_aug_C_03 <- dat_tidy_C_02 |> 
+   mutate(Mortality = case_when(Mortality_hospital == 'Yes' ~ "Death_in_hospital", 
+                                Mortality_hospital == 'No' & Mortality_30_days == 'Yes' & Mortality_90_days == 'No' ~ "Death_in_first_30_days", 
+                                Mortality_hospital == 'No' & Mortality_30_days == 'No' & Mortality_90_days == 'Yes' ~ "Death_between_30_and_90_days", 
+                               .default = "No death")) |> 
+   select(-c(Mortality_30_days, Mortality_90_days, Mortality_hospital))
 
+dat_aug_C_03
+```
+
+### Tidy Etiologies data set 
+
+```{r}
+dat_aug_E_03 <- dat_tidy_E_02 |> 
+   mutate(Mortality = case_when(Mortality_hospital == 'Yes' ~ "Death_in_hospital", 
+                                Mortality_hospital == 'No' & Mortality_30_days == 'Yes' & Mortality_90_days == 'No' ~ "Death_in_first_30_days", 
+                                Mortality_hospital == 'No' & Mortality_30_days == 'No' & Mortality_90_days == 'Yes' ~ "Death_between_30_and_90_days", 
+                               .default = "No death")) |> 
+   select(-c(Mortality_30_days, Mortality_90_days, Mortality_hospital))
+
+dat_aug_E_03
+```
 ## Introduction of a categorical variable - change Decades into age categories
 
 ### Clean

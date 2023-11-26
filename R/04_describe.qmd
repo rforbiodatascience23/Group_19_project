@@ -224,19 +224,22 @@ bar_plot_LD
 Comorbidities are additional disease that can interact and coexist simultaneously with the cirrhosis. The study of comorbidities is pertinent since it can explain some of the patients' complications and can play a role in their recovery.
 
 ```{r}
-dat_comorb <- dat_aug_03 |> 
-  count(Comorbidities) 
+dat_comorb <- dat_aug_C_03 |> 
+  group_by(Comorbidities) |> 
+  summarise(count = n()) 
+
+dat_comorb
 ```
 
 ```{r}
 bar_plot_comorbidities <- dat_comorb |> 
-  ggplot(aes(x = reorder(Comorbidities,-n), 
-             y = n,
+  ggplot(aes(x = reorder(Comorbidities,-count), 
+             y = count,
              fill = Comorbidities)) +
   geom_bar(stat = 'identity', 
            alpha = 0.7, 
            show.legend = FALSE) +
-  geom_text(aes(label = n), 
+  geom_text(aes(label = count), 
             vjust = -0.5, 
             size = 2) +
   labs(title = "Overview of comorbidities across patients suffering from cirrhosis ",
@@ -274,23 +277,22 @@ The plot illustrates the various concomitant diseases of the patients and provid
 Ethiology is the study of the factors that come together leading to a disease.
 
 ```{r}
-dat_etio <- dat_aug_03 |> 
-  count(Etiologies)
-```
+dat_etio <- dat_aug_E_03 |> 
+  group_by(Etiologies) |> 
+  summarise(count = n()) 
 
-```{r}
 dat_etio
 ```
 
 ```{r}
 bar_plot_etiology <- dat_etio |> 
-  ggplot(aes(x = reorder(Etiologies,-n), 
-             y = n,
+  ggplot(aes(x = reorder(Etiologies,-count), 
+             y = count,
              fill = Etiologies)) +
   geom_bar(stat = 'identity', 
            alpha = 0.7, 
            show.legend = FALSE) +
-  geom_text(aes(label = n), 
+  geom_text(aes(label = count), 
             vjust = -0.5, 
             size = 3) +
   labs(title = "Overview of cirrhosis etiology across patients' population",
@@ -362,20 +364,20 @@ ggsave("Boxplot_Charlson.png",
 ```
 
 ```{r}
-mean_CPS <- dat_aug_03 |> 
+mean_CPS <- dat_aug_clean_03 |> 
   summarize(mean(CPS))
 
 mean_CPS
 ```
 
 ```{r}
-mean_Charlson <- dat_aug_03 |> 
+mean_Charlson <- dat_aug_clean_03 |> 
   summarize(mean(Charlson_CI))
 
 mean_Charlson
 ```
 
-The average value of the CPS and the Charlson comorbidity index are reciprocally 8.39 and 4.81. It is in the group B of CPS which implies a 80% 1-year survival rate and 60% 2-year survival rate.
+The average value of the CPS and the Charlson comorbidity index are reciprocally 8.6 and 3.83. It is in the group B of CPS which implies a 80% 1-year survival rate and 60% 2-year survival rate.
 
 ### Relation between Charlson value and the type of comorbidities
 
