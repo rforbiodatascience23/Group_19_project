@@ -67,6 +67,15 @@ tile_plot_comorb <- merged_dat1 |>
 tile_plot_comorb
 ```
 
+```{r}
+ggsave("Tile_plot_comorbidities.png", 
+       path = "../results/plots/",
+       plot = tile_plot_comorb,
+       width = 7,
+       height = 5)
+```
+
+
 Each column adds up to 100%. From this graph, we can state that Moderate to
 severe liver disease is an important comorbidities for all liver diseases. This 
 comorbidity. meaning was left very vague in the study, so it is hard to give an 
@@ -108,7 +117,7 @@ merged_dat2
 ```
 
 ```{r}
-ggplot(merged_dat2, 
+tile_plot_etiologies <- ggplot(merged_dat2, 
        aes(x = Liver_disease, 
            y = Etiologies, 
            fill = Ratio)) +
@@ -122,7 +131,17 @@ ggplot(merged_dat2,
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1), 
         plot.title = element_text(hjust = 0.50, face = "bold", size = 13))
 
+tile_plot_etiologies
+
 ```
+```{r}
+ggsave("Tile_plot_etiologies", 
+       path = "../results/plots/",
+       plot = tile_plot_etiologies,
+       width = 7,
+       height = 5)
+```
+
 
 Each column adds up to 100%.
 
@@ -161,7 +180,7 @@ dat_aug_03_join <- dat_aug_03_join |>
 ```
 
 ```{r}
-ggplot(dat_aug_03_join, 
+tile_plot_mortality <- ggplot(dat_aug_03_join, 
        aes(x = Liver_disease, 
            y = Etiologies, 
            fill = count2/count)) +
@@ -174,7 +193,18 @@ ggplot(dat_aug_03_join,
   theme_classic()+ 
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1), 
         plot.title = element_text(hjust = 0.50, face = "bold", size = 13))
+
+tile_plot_mortality
 ```
+
+```{r}
+ggsave("Tile_plot_mortality.png", 
+       path = "../results/plots/",
+       plot = tile_plot_mortality,
+       width = 7,
+       height = 5)
+```
+
 
 After inspecting the etiologies associations with the liver diseases, we used 
 the tile chart above to show the death ratio for each liver disease and its 
