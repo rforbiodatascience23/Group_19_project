@@ -281,6 +281,10 @@ dat_etio <- dat_aug_03 |>
 ```
 
 ```{r}
+dat_etio
+```
+
+```{r}
 bar_plot_etiology <- dat_etio |> 
   ggplot(aes(x = reorder(Etiologies,-n), 
              y = n,
@@ -288,6 +292,9 @@ bar_plot_etiology <- dat_etio |>
   geom_bar(stat = 'identity', 
            alpha = 0.7, 
            show.legend = FALSE) +
+  geom_text(aes(label = n), 
+            vjust = -0.5, 
+            size = 3) +
   labs(title = "Overview of cirrhosis etiology across patients' population",
        y = "Count") +
   scale_fill_viridis_d() +
@@ -311,7 +318,13 @@ ggsave("Overview_Etiology.png",
        height = 5)
 ```
 
-FABIAN
+The plot illustrates the various etiologies which lead to diseases and counts them.
+
+-   the x-axis represents the etiologies and the y-axis is the count of patients
+
+-   The etiologies are listed in different colors and the exact number is indicated above the respective bar.
+
+-   The mode isthe consumption of alcohol with a count of 549 followed by hepatitis C with a count of 357. Both are likely major factors at causing liver cirrhosis.
 
 ## Overview of two important numerical values: CPS and Charlson_CI
 
