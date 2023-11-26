@@ -288,6 +288,94 @@ ggsave("NAFLD_impact_mortality.png",
        height = 5)
 ```
 
+# Effect of the number of etiologies and comorbidities
+
+Another hypothesis that can be made could be that the number of etiologies and comorbidities that a patient has impacts the mortality of that patient. 
+
+## Analysis number of etiologies
+
+```{r}
+dat_aug_E_03 <- dat_aug_E_03 |> 
+    group_by(Id) |> 
+    mutate(number_etiologies = n()) |> 
+    ungroup()
+
+dat_aug_E_03
+
+```
+
+```{r}
+nb_etiologies <- dat_aug_E_03 |> 
+  ggplot(mapping = aes(x = number_etiologies,
+                       fill = Mortality,
+                       na.rm = TRUE)) +
+  geom_bar(alpha = 0.6,
+           position = "fill") +
+  scale_fill_viridis_d() +
+  labs(title = "Patient outcomes",
+       subtitle = "stratified by the number of etiologies",
+       x = "Number of etiologies", 
+       y = "Count") 
+nb_etiologies
+
+```
+
+## Analysis number of comorbidities
+
+```{r}
+dat_aug_C_03 <- dat_aug_C_03 |> 
+    group_by(Id) |> 
+    mutate(number_comorbidities = n()) |> 
+    ungroup()
+
+dat_aug_C_03
+
+```
+
+```{r}
+nb_comorbidities <- dat_aug_C_03 |> 
+  ggplot(mapping = aes(x = number_comorbidities,
+                       fill = Mortality,
+                       na.rm = TRUE)) +
+  geom_bar(alpha = 0.6,
+           position = "fill") +
+  scale_fill_viridis_d() +
+  labs(title = "Patient outcomes",
+       subtitle = "stratified by the number of comorbidities",
+       x = "Number of comorbidities", 
+       y = "Count") 
+nb_comorbidities
+
+```
+
+```{r}
+distinct_E<- dat_aug_E_03 |>
+  # to count the patients with many etiologies only once
+  distinct(Id, .keep_all = TRUE) 
+
+E_table <- distinct_E %>%
+  group_by(number_etiologies) %>%
+  summarise(number_of_patients = n())
+
+
+print(E_table)
+```
+
+```{r}
+distinct_C<- dat_aug_C_03 |>
+  # to count the patients with many comorbidities only once
+  distinct(Id, .keep_all = TRUE) 
+
+C_table <- distinct_C %>%
+  group_by(number_comorbidities) %>%
+  summarise(number_of_patients = n())
+
+
+print(C_table)
+```
+
+
+
 ## Conclusion 
 
 This analysis allows to conclude that CPS and the type of liver disease have a

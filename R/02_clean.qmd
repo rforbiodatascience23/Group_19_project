@@ -187,7 +187,7 @@ dat_clean_02 <- dat_load_01 |>
   drop_na(Sex) |> 
   drop_na(Mortality_hospital) |> 
   drop_na(Mortality_30_days) |> 
-  drop_na(Mortality_90_days)s
+  drop_na(Mortality_90_days)
  
 dat_clean_02
 ```
