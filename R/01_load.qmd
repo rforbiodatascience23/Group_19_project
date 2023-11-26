@@ -15,6 +15,7 @@ library("viridis")
 library("broom")
 library("ggplot2")
 library("forcats")
+library("patchwork")
 ```
 
 ## Load data
