@@ -319,6 +319,14 @@ nb_etiologies <- dat_aug_E_03 |>
 nb_etiologies
 
 ```
+```{r}
+ggsave("Number_of_E_mortality.png", 
+       path = "../results/plots/",
+       plot = nb_etiologies,
+       width = 7,
+       height = 5)
+```
+
 
 ## Analysis number of comorbidities
 
@@ -349,6 +357,14 @@ nb_comorbidities
 ```
 
 ```{r}
+ggsave("Number_of_C_mortality.png", 
+       path = "../results/plots/",
+       plot = nb_comorbidities,
+       width = 7,
+       height = 5)
+```
+
+```{r}
 distinct_E<- dat_aug_E_03 |>
   # to count the patients with many etiologies only once
   distinct(Id, .keep_all = TRUE) 
@@ -373,7 +389,16 @@ C_table <- distinct_C %>%
 
 print(C_table)
 ```
-
+By looking at the number of patients present in each sample, we can see that 
+there is only one patient that has six comorbidities, so we choose not to take 
+that category into account for the analysis of the bar charts.
+The bar chart stratified on the number of etiologies shows that this number is 
+proportional to the mortality: the more etiologies a patient has, the more 
+likely he is to die of cirrhosis.
+Concerning the bar chart stratified on the number of comorbidities, there is no 
+such trend in the mortality proportions, but we can still see that the 
+proportion of death that occur in the hospital increases, so the severity of the 
+disease might increase with the number of comorbidities.
 
 
 ## Conclusion 
@@ -383,3 +408,6 @@ major impact on patient's outcome, whereas age has a slight impact. We also got
 to test the linear regression significant results, noticing that NAFLD seems to
 have a positive impact on the mortality, whereas alcohol consumption doesn't 
 seem to play a role in the patients outcome.
+Regardless of the type of early predictors, their number also has an effect on 
+the observed mortality. Indeed, an important number of etiologies tends to 
+increase the mortality of the patients.
