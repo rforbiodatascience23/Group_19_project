@@ -4,9 +4,12 @@ subtitle: "A study of early predictors (Comorbidities and Etiologies) of cirrhos
 format: 
   revealjs:
     embed-resources: true
-author: "Eva Frossard, Pauline Charpentier, Noy Tabul, Fabian Ziegler"
+author: |
+  Eva Frossard,
+  Pauline Charpentier,
+  Noy Tabul,
+  Fabian Ziegler
 ---
-
 ------------------------------------------------------------------------
 
 # Introduction
