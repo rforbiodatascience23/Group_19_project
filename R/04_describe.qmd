@@ -6,14 +6,14 @@ editor: visual
 
 # Descriptive statistics
 
-## General information on the data set
+## General information on the data sets
 
 ```{r}
 dim_desc(dat_aug_03)
 dim_desc(dat_load_01)
 ```
 
-We have a final data set of 1,065 observations with 9 variables, after tidying a data set of 733 patients suffering from cirrhosis.
+We have a final data set of 468 observations with 32 variables, after tidying a data set of 733 patients suffering from cirrhosis.
 
 ## Sex and Age group of the patients' population
 
@@ -94,7 +94,7 @@ ggsave("Age_gender(patch).png",
        height = 5)
 ```
 
-All plots provide a visual representation of the distribution of patients with cirrhosis based on age and gender.
+The plots provide a visual representation of the distribution of patients with cirrhosis based on age and gender.
 
 -   the x-axis always represents the age groups and the y-axis is always the count for the patients
 
@@ -102,9 +102,9 @@ All plots provide a visual representation of the distribution of patients with c
 
 Description
 
--   Mode: The mode is for both women and men in the 60 to 70 age group. The number of patients in this age group is 517 (Female: 150, Male 367).
+-   Mode: The mode is for both women and men in the 60 to 70 age group. The number of patients in this age group is 217 (Female: 69, Male 148).
 
--   Gender Representation: Women make up about 29.67 percent of patients and men about 70.33 percent. This means that the number of patients is predominantly male.
+-   Gender Representation: Women make up about 32.69 % of patients and men about 67.31 %. This means that the number of patients is predominantly male.
 
 ```{r}
 mode_of_age <- dat_aug_03 |> 
