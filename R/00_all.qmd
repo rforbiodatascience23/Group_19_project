@@ -61,30 +61,32 @@ quarto::include("04_describe.qmd")
 
 ## Data analysis
 
-In the first file of the analysis, we try to determine how the patients' mortality can be affected by some variables, for example the age, the type of liver disease or the type of etiology.
+In the first file of the analysis, we study the effect of the different etiologies and comorbidities on the Child Pugh Score. 
 
 ```{quarto}
 # Include content from subdocument1.qmd
-quarto::include("05_analysis_mortality.qmd")
+quarto::include("05_analysis_CPS.qmd")
 ```
 
+In the next analysis, we try to determine how the patients' mortality can be affected by some variables, for example the age, the type of liver disease or the type of etiology.
+
 ```{quarto}
 # Include content from subdocument1.qmd
-quarto::include("06_")
+quarto::include("06_analysis_mortality.qmd")
 ```
 
-In that file, we study the effect of the different etiologies and comorbidities on the Child Pugh Score.
+Then, we also try to visualize the relationship between liver diseases and comorbidities, in order to see if some of them are correlated.
 
 ```{quarto}
 # Include content from subdocument1.qmd
-quarto::include("07")
+quarto::include("07_analysis_comorbidities_etiologies.qmd")
 ```
 
 In the last file of the project, we use a linear regression model to describe the impact of the different liver diseases on mortality.
 
 ```{quarto}
 # Include content from subdocument1.qmd
-quarto::include("08")
+quarto::include("08_analysis_liver_disease.qmd")
 ```
 
 ## Conclusion
