@@ -60,9 +60,9 @@ included
 
 ```{r}
 Charlson_vs_CPS <- ggplot(
-  data = dat_load_01,
-  mapping = aes(x = cps,
-                y = CHARLSON_CI,
+  data = dat_aug_03,
+  mapping = aes(x = CPS,
+                y = Charlson_CI,
                 na.rm = TRUE)
 ) +
   geom_point(alpha = 0.1) +
