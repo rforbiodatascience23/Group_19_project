@@ -187,12 +187,47 @@ dat_clean_02 <- dat_load_01 |>
   drop_na(Sex) |> 
   drop_na(Mortality_hospital) |> 
   drop_na(Mortality_30_days) |> 
-  drop_na(Mortality_90_days)
+  drop_na(Mortality_90_days)s
  
 dat_clean_02
 ```
 
-## Tidying of the data using pivot_longer
+## Tidying of the data using pivot_longer - Only tidying the comorbidities 
+
+Tidying only comorbidities to be able to count them properly in 04_describe
+```{r}
+dat_tidy_C_02 <- dat_clean_02 |>
+  # Create a column Comorbidities using the pivot_longer (one column /
+  # one line / one observation)
+  pivot_longer(
+    cols = starts_with("C_"), 
+    names_to = "Comorbidities", 
+    values_to = "Presence_of_comorbidities",
+    values_drop_na = TRUE) |> 
+  filter(Presence_of_comorbidities == 'Yes') |> 
+  select(-Presence_of_comorbidities) |> 
+  mutate(Comorbidities = str_remove(Comorbidities, "C_"))
+
+dat_tidy_C_02 
+```
+
+## Tidying of the data using pivot_longer - Only tidying the etiologies
+
+```{r}
+dat_tidy_E_02 <- dat_clean_02 |>
+  pivot_longer(
+    cols = starts_with("E_"), 
+    names_to = "Etiologies", 
+    values_to = "Presence_of_etiologies",
+    values_drop_na = TRUE) |> 
+  filter(Presence_of_etiologies == 'Yes') |> 
+  select(-Presence_of_etiologies) |> 
+  mutate(Etiologies = str_remove(Etiologies, "E_"))
+```
+
+
+
+## Tidying of the data using pivot_longer 
 
 ```{r}
 
