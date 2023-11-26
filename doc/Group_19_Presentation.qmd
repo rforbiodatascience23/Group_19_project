@@ -2,6 +2,7 @@
 title: "Group 19"
 subtitle: "A study of early predictors (Comorbidities and Etiology) of cirrhosis' patients mortality"
 format: revealjs
+  embed-resources: true
 author: "Eva Frossard, Pauline Charpentier, Noy Tabul, Fabian Ziegler"
 ---
 
