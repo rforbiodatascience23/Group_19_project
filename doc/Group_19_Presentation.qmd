@@ -7,36 +7,6 @@ format:
 author: "Eva Frossard, Pauline Charpentier, Noy Tabul, Fabian Ziegler"
 ---
 
-## Introduction {.smaller}
-
-
-
-# Your Presentation Title
-
- 
-
- 
-
- 
-
- 
-
- 
-
-Eva Frossard
-
-\tex
-
-Pauline Charpentier
-
-\tex
-
-Noy Tabul
-
-\tex
-
-Fabian Ziegler
-
 ------------------------------------------------------------------------
 
 # Introduction
@@ -63,7 +33,6 @@ Fabian Ziegler
 -   Charlson Comorbidity Index: useful to predict the mortality of patients suffering from comorbidities.
 ------------------------------------------------------------------------
 
-# Materials and Methods
 ## Data Wrangling - Cleaning and Augmenting {.smaller}
 
 -   
@@ -75,7 +44,6 @@ Fabian Ziegler
 -   
 ------------------------------------------------------------------------
 
-# Materials and Methods
 ## Data Description {.smaller}
 
 -   
@@ -94,19 +62,18 @@ Fabian Ziegler
 
 ------------------------------------------------------------------------
 
-# Results
 ## Analysis 1 {.smaller}
 
 -   
 
 ------------------------------------------------------------------------
-# Results
+
 ## Analysis 2 {.smaller}
 
 -   
 
 ------------------------------------------------------------------------
-# Results
+
 ## Analysis 2 {.smaller}
 
 -   
