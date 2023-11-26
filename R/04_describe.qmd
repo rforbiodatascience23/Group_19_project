@@ -247,6 +247,7 @@ bar_plot_comorbidities <- dat_comorb |>
         axis.title.x = element_blank()) +
   scale_x_discrete(guide = guide_axis(angle = 63))
 
+bar_plot_comorbidities
 ```
 
 ```{r}
@@ -257,9 +258,6 @@ ggsave("Overview_Comorbidities.png",
        height = 5)
 ```
 
-```{r}
-bar_plot_comorbidities
-```
 
 The plot illustrates the various concomitant diseases of the patients and provides an overview of the number of each condition.
 
@@ -303,10 +301,6 @@ bar_plot_etiology <- dat_etio |>
         axis.title.x = element_blank()) +
   scale_x_discrete(guide = guide_axis(angle = 30))
 
-
-```
-
-```{r}
 bar_plot_etiology
 ```
 
@@ -335,14 +329,14 @@ The dataset chosen featured two variables:
 -   **Charlson Comorbidity index**: useful to predict the mortality of patients suffering from comorbidities. Depends on the presence of comorbidities and the age of the patient
 
 ```{r}
-box_plot_CPS_ <- dat_aug_03 |> 
+box_plot_CPS <- dat_aug_03 |> 
   ggplot(aes(x = CPS)) +
   geom_boxplot(alpha = 0.7) +
   labs(title = "CPS and Charlson_CI") +
   theme_minimal() +
   coord_flip()
 
-box_plot_Charlson_ <- dat_aug_03 |> 
+box_plot_Charlson <- dat_aug_03 |> 
   ggplot(aes(x = Charlson_CI)) +
   geom_boxplot(alpha = 0.7) +
   theme_minimal() +
@@ -351,6 +345,20 @@ box_plot_Charlson_ <- dat_aug_03 |>
 box_plot_CPS_Charlson <- box_plot_CPS_ | box_plot_Charlson_ 
 
 box_plot_CPS_Charlson
+```
+
+```{r}
+ggsave("Boxplot_CPS.png", 
+       path = "../results/plots/",
+       plot = box_plot_CPS,
+       width = 7,
+       height = 5)
+
+ggsave("Boxplot_Charlson.png", 
+       path = "../results/plots/",
+       plot = box_plot_Charlson,
+       width = 7,
+       height = 5)
 ```
 
 ```{r}
@@ -424,7 +432,7 @@ bubble_chart <- stacked_bar_liverDisease |>
 ```
 
 ```{r}
-ggplot(bubble_chart,
+bubble_comorbiditie_by_LD <- ggplot(bubble_chart,
        aes(x = factor(Liver_disease, bubble_order), 
            y = Comorbidities,
            colour = Liver_disease,
@@ -442,6 +450,16 @@ ggplot(bubble_chart,
         panel.grid = element_blank(),
         axis.ticks = element_blank(),
         axis.text.x = element_text(angle = 45, hjust = 0))
+
+bubble_comorbiditie_by_LD
+```
+
+```{r}
+ggsave("Bubble_plot.png", 
+       path = "../results/plots/",
+       plot = bubble_comorbiditie_by_LD,
+       width = 7,
+       height = 5)
 ```
 
 From this visualisation graph, it appears that Hepatic Encephalopaty liver disease has the greatest amount of comorbidities observed. On the opposite, we observe fewer Comorbidities for for jaundice and Hepato-hydrothorax. Additionally, the most common combination is Ascites with Moderate Liver disease as a comorbidity.
