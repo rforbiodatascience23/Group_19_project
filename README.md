@@ -19,11 +19,12 @@ Our project is based on the study of the following dataset: Mukthinuthlalapati, 
 
 ## Packages to install
 
-Before running the files that can be found in the "R" folder, a few packages should be installed and the following command lines should be run in your terminal:
+Before running the files that can be found in the "R" folder, a few packages should be installed and the following command lines should be run in your console:
 
 -   `install.packages('tidyverse')`
 -   `install.packages('ggplot2')`
--   `install.packages('patchwork')`
+-   `install.packages('ggpubr')`
+-   `install.packages('forcats')`
 
 ## Structure of the project
 

@@ -8,13 +8,14 @@ editor: visual
 ---
 
 ## Load library
->>>>>>> 01327115ea43eb47447eaa0d91ed22fd7496bb60
 ```{r}
 library("tidyverse")
-library("patchwork")
+library("ggpubr")
 library("viridis")
 library("broom")
 library("ggplot2")
+library("forcats")
+library("patchwork")
 ```
 
 ## Load data
