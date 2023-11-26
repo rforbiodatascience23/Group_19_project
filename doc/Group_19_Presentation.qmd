@@ -5,12 +5,11 @@ format:
   revealjs:
     embed-resources: true
 author: |
-  Eva Frossard,
+  "Eva" Frossard,
   Pauline Charpentier,
   Noy Tabul,
-  Fabian Ziegler
+  Fabian Ziegler"
 ---
-------------------------------------------------------------------------
 
 # Introduction
 
