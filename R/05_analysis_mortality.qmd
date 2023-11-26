@@ -6,21 +6,9 @@ editor: visual
 
 # Effect of different variables on mortality
 
-During that part, we will investigate to determine in what extent some variables affect the mortality of the patients.
+During that part, we will investigate to determine to what extent some variables like CPS, age and liver disease affect the mortality of the patients before investigating specific and relevant etiologies that have been picked using a linear regression performed in file 07_analysis_CPS.qmd.
 
-
-We start by adding three variables to the dataset. The three variable are three different etiologies and their significance concerning Child Pugh score was assessed with a linear regression model in the file 08. Because the Child Pugh Score indicates the severity of the cirrhosis, it could be related to the mortality, and we will verify that hypothesis with the following plots.
-
-```{r}
-dat_mortality <- dat_aug_03 |> 
-  mutate(Alcohol = ifelse(Etiologies == "Alcohol_consumption", "yes", "no")) |> 
-  mutate(NAFLD = ifelse(Etiologies == "Non_alcoolic_fatty_LD", "yes", "no")) |> 
-  mutate(Cryptogenic = ifelse(Etiologies == "Cryptogenic", "yes", "no")) 
-
-dat_mortality
-
-```
-# CPS Mortality
+## CPS Mortality
 
 ```{r}
 bar_plot_CPS_Mortality<- dat_aug_03 |> 
@@ -40,6 +28,7 @@ bar_plot_CPS_Mortality<- dat_aug_03 |>
 bar_plot_CPS_Mortality
 
 ```
+
 This plot proves the fact that CPS value accurately describes the mortality of cirrhosis patients. It shows that a low CPS is correlated to a higher survival rate. On the other side, a patient with a high CPS has more chances of dying of cirrhosis.
 
 ### Saving the plot
@@ -57,62 +46,57 @@ ggsave("CPS_and_mortality_boxplot.png",
 First, we will see how the age of the patients impact their mortality by plotting the distribution of patient outcomes stratified by age.
 
 ```{r}
-
-Age_mortality <-ggplot(
-  data = dat_mortality,
-  mapping = aes(x = Age,
-                fill = Mortality,
-                na.rm = TRUE)
-) +
+Age_impact_mortality1 <- dat_aug_03 |> 
+  ggplot(mapping = aes(x = Age,
+                       fill = Mortality,
+                       na.rm = TRUE)) +
   geom_bar(alpha = 0.6,
            position = "stack") +
   scale_fill_viridis_d() +
-  labs(
-  title = "Distribution of patient outcomes ",
-  subtitle = "stratified by age",
-  x = "Age",
-  y = "Count"
-)
+  labs(title = "Distribution of patient outcomes ",
+       subtitle = "stratified by age",
+       x = "Age",
+       y = "Count") +
+  theme_minimal()
 
-Age_mortality
-
+Age_impact_mortality1
 ```
 
 ```{r}
-Age_impact_mortality <- ggplot(
-  data = dat_aug_03,
-  mapping = aes(x = Age,
-                fill = Mortality,
-                na.rm = TRUE)
-) +
+Age_impact_mortality2 <- dat_aug_03 |> 
+  ggplot(mapping = aes(x = Age,
+                       fill = Mortality,
+                       na.rm = TRUE)) +
   geom_bar(alpha = 0.6,
            position = "fill") +
   scale_fill_viridis_d() +
-  labs(
-  title = "Proportions of patient outcomes ",
-  subtitle = "stratified by age",
-  x = "Age",
-  y = "Proportions"
+  labs(title = "Proportions of patient outcomes ",
+       subtitle = "stratified by age",
+       x = "Age",
+       y = "Proportions"
 )
 
-Age_impact_mortality
+Age_impact_mortality2
 ```
 
 The plot showing the proportions of patient outcomes is more relevant than the one showing their distribution, because it is relative to the count of patients. Nonetheless, the distribution plot allows us to see that the age categories \[30,40\] and \[90,100\] don't contain enough patients to be statistically relevant. Therefore, if we only take the other age categories into consideration, we can see slight increase in mortality when the age of the patients is increasing.
 
+
 ### Saving the plots
 ```{r}
-ggsave("Age_Mortality_proportions.png", 
+ggsave("Age_Mortality_count.png", 
+
        path = "../results/plots/",
-       plot = Age_impact_mortality,
+       plot = Age_impact_mortality1,
        width = 7,
        height = 5)
 
-ggsave("Age_Mortality.png", 
+ggsave("Age_Mortality_prop.png", 
        path = "../results/plots/",
-       plot = Age_mortality,
+       plot = Age_impact_mortality2,
        width = 7,
        height = 5)
+
 ```
 
 ## Effect of different liver diseases on mortality
@@ -133,10 +117,11 @@ bar_plot_LD_Mortality<- dat_aug_03 |>
 
 bar_plot_LD_Mortality
 ```
-By looking at the mortality of patients with different liver diseases, we can see the type of liver disease impacts greatly the mortality of patients. The size of the samples "Hepato-hydrothorax" and "Jaundice- as isolated presentation" being small (less than 15 patients), the data concerning these liver disease should not be taken into account for the analysis. 
-This plot also provides some information about how fulminant the different liver diseases are. For instance, the categories "Other fluid overload" and "SBP" have approximately the same proportions of overall mortality, but the category "Other fluid overload" seems to be more fulminant because all of the patients that died after contracting that disease died in hospital, when the majority of the patient that died after contracting SBP died more than 30 days after leaving the hospital.
+
+By looking at the mortality of patients with different liver diseases, we can see the type of liver disease impacts greatly the mortality of patients. The size of the samples "Hepato-hydrothorax" and "Jaundice- as isolated presentation" being small (less than 15 patients), the data concerning these liver disease should not be taken into account for the analysis. This plot also provides some information about how fulminant the different liver diseases are. For instance, the categories "Other fluid overload" and "SBP" have approximately the same proportions of overall mortality, but the category "Other fluid overload" seems to be more fulminant because all of the patients that died after contracting that disease died in hospital, when the majority of the patient that died after contracting SBP died more than 30 days after leaving the hospital.
 
 ### Saving the plot
+
 ```{r}
 ggsave("LD_Mortality.png", 
        path = "../results/plots/",
@@ -148,50 +133,59 @@ ggsave("LD_Mortality.png",
 
 # Effect of different etiologies on mortality
 
-## Alcohol consumption impact on mortality
-
-To determine if alcohol consumption impacts mortality, we plot the distribution and the proportions of patient outcomes stratified by alcohol consumption.
+We start by creating a new data set where we add three variables. The three variable are three different etiologies and their significance concerning Child Pugh score was assessed with a linear regression model in the file 07. Because the Child Pugh Score indicates the severity of the cirrhosis, it could be related to the mortality, and we will verify that hypothesis with the following plots.
 
 ```{r}
-Alcohol_distribution <- ggplot(
-  data = dat_mortality,
-  mapping = aes(x = Alcohol,
-                fill = Mortality,
-                na.rm = TRUE)
-) +
+dat_mortality <- dat_aug_03 |> 
+  mutate(Alcohol = ifelse(Etiologies == "Alcohol_consumption", "yes", "no")) |> 
+  mutate(NAFLD = ifelse(Etiologies == "Non_alcoolic_fatty_LD", "yes", "no")) |> 
+  mutate(Cryptogenic = ifelse(Etiologies == "Cryptogenic", "yes", "no")) 
+
+dat_mortality
+
+```
+
+## Alcohol consumption impact on mortality
+
+To determine if alcohol consumption impacts mortality, we plot the distribution and the proportions of patient outcomes stratified by alcohol consumption. Alcohol was considered by the linear regression as a non-significant etiology, we therefore expect to see very few changes in the proportions. We will here plot the distribution (with normal counts) and the proportion of the etiology in the population to be able to have a relative comparison. 
+
+```{r}
+Alcohol_distribution <- dat_mortality |> 
+  ggplot(mapping = aes(x = Alcohol,
+                       fill = Mortality,
+                       na.rm = TRUE)) +
   geom_bar(alpha = 0.6,
            position = "stack") +
   scale_fill_viridis_d() +
-  labs(
-  title = "Patient outcomes",
-  subtitle = "stratified by alcohol consumption",
-  x = "Alcohol consumption"
-) + 
+  labs(title = "Patient outcomes",
+       subtitle = "stratified by alcohol consumption",
+       x = "Alcohol consumption", 
+       y = "Count") + 
   theme(legend.position = "none")
-```
 
-```{r}
-Alcohol_proportions <- ggplot(
-  data = dat_mortality,
-  mapping = aes(x = Alcohol,
-                fill = Mortality,
-                na.rm = TRUE)
-) +
+
+Alcohol_proportions <- dat_mortality |> 
+  ggplot(mapping = aes(x = Alcohol,
+                       fill = Mortality,
+                       na.rm = TRUE)) +
   geom_bar(alpha = 0.6,
            position = "fill") +
   scale_fill_viridis_d() +
   labs(
-  title = "Proportions of patient outcomes ",
-  subtitle = "stratified by alcohol consumption",
-  x = "Alcohol consumption",
-  y = "Proportions"
-)
+    title = "Proportions of patient outcomes ",
+    subtitle = "stratified by alcohol consumption",
+    x = "Alcohol consumption",
+    y = "Proportions")
 
-Alcohol_impact_mortality <- Alcohol_distribution | Alcohol_proportions
-Alcohol_impact_mortality
+Alcohol_impact_mortality <- ggarrange(Alcohol_distribution,
+                                      Alcohol_proportions, 
+                                      legend = 'bottom',
+                                      common.legend = TRUE)
+                                
+Alcohol_impact_mortality 
 ```
 
-The proportions plot shows a small increase in mortality when the patients are alcohol consumers.
+The proportions plot shows a very slight/ unsignificant increase in mortality when the patients are alcohol consumers, therefore we can't notice a big mortality difference between the two populations. 
 
 ### Saving the plot
 
@@ -205,43 +199,44 @@ ggsave("Alcohol_impact_mortality.png",
 
 ## Non-alcoholic fatty liver disease impact on mortality
 
+On the contrary to alcohol consumption, NAFLD was considered a significant etiology. 
+
 ```{r}
-NAFLD_distribution <- ggplot(
-  data = dat_mortality,
-  mapping = aes(x = NAFLD,
-                fill = Mortality,
-                na.rm = TRUE)
-) +
+NAFLD_distribution <- dat_mortality |> 
+  ggplot(mapping = aes(x = NAFLD,
+                       fill = Mortality,
+                       na.rm = TRUE)) +
   geom_bar(alpha = 0.6,
            position = "stack") +
   scale_fill_viridis_d() +
-  labs(
-  title = "Patient outcomes",
-  subtitle = "stratified by presence of NAFLD",
-  x = "Patient suffers of NAFLD"
-) + 
+  labs(title = "Patient outcomes",
+       subtitle = "stratified by presence of NAFLD",
+       x = "Patient suffering from NAFLD", 
+       y = "Count") + 
   theme(legend.position = "none")
 
-NAFLD_proportions <- ggplot(
-  data = dat_mortality,
-  mapping = aes(x = NAFLD,
-                fill = Mortality,
-                na.rm = TRUE)
-) +
+NAFLD_proportions <- dat_mortality |> 
+  ggplot(mapping = aes(x = NAFLD,
+                       fill = Mortality,
+                       na.rm = TRUE)) +
   geom_bar(alpha = 0.6,
            position = "fill") +
   scale_fill_viridis_d() +
-  labs(
-  title = "Proportions of patient outcomes ",
-  subtitle = "stratified by presence of NAFLD",
-  x = "Patient suffers of NAFLD",
-  y = "Proportions"
+  labs(title = "Proportions of patient outcomes",
+       subtitle = "stratified by presence of NAFLD",
+       x = "Patient suffering from NAFLD",
+       y = "Proportions"
 )
 
-NAFLD_impact_mortality <- NAFLD_distribution | NAFLD_proportions
+NAFLD_impact_mortality <- ggarrange(NAFLD_distribution,
+                                      NAFLD_proportions, 
+                                      legend = 'bottom',
+                                      common.legend = TRUE)
 NAFLD_impact_mortality
 ```
-On the proportions plot, we can see that the presence of NAFLD does have an impact on mortality, even though we still have to consider the small size of the population sample with NAFLD. By looking at the mortality of patients that suffer of NAFLD, we could say that the other liver disease etiologies have a more negative effect on the patients health.
+ 
+On the proportions plot, we can see that patients with NAFLD seem to have more chance to survive to cirrhosis. However, we can't reach any specific conclusion due to the small population of patients with NAFLD.
+NAFLD, significant etiology, has therefore a 'positive' impact on cirrhosis patients, which seems hard to understand.
 
 ### Saving the plot
 
@@ -253,56 +248,6 @@ ggsave("NAFLD_impact_mortality.png",
        height = 5)
 ```
 
-## Cryptogenic impact on mortality
+## Conclusion 
 
-```{r}
-Cryptogenic_distribution <- ggplot(
-  data = dat_mortality,
-  mapping = aes(x = Cryptogenic,
-                fill = Mortality,
-                na.rm = TRUE)
-) +
-  geom_bar(alpha = 0.6,
-           position = "stack") +
-  scale_fill_viridis_d() +
-  labs(
-  title = "Patient outcomes",
-  subtitle = "stratified by presence of Cryptogenic disease",
-  x = "Patient suffers of a cryptogenic disease"
-) + 
-  theme(legend.position = "none")
-
-Cryptogenic_proportions <- ggplot(
-  data = dat_mortality,
-  mapping = aes(x = Cryptogenic,
-                fill = Mortality,
-                na.rm = TRUE)
-) +
-  geom_bar(alpha = 0.6,
-           position = "fill") +
-  scale_fill_viridis_d() +
-  labs(
-  title = "Proportions of patient outcomes ",
-  subtitle = "stratified by presence of Cryptogenic disease",
-  x = "Patient suffers of a cryptogenic disease",
-  y = "Proportions"
-)
-
-Cryptogenic_impact_mortality <- Cryptogenic_distribution | Cryptogenic_proportions
-Cryptogenic_impact_mortality
-```
-The mortality proportions plotted on this figure show that the fact that a patient suffers or not of a cryptogenic disease does not have a significant impact on this patient's mortality.
-
-
-### Saving the plot
-
-```{r}
-ggsave("Cryptogenic_impact_mortality.png", 
-       path = "../results/plots/",
-       plot = Cryptogenic_impact_mortality,
-       width = 7,
-       height = 5)
-```
-
-
-
+This analysis allows to conclude that CPS and the type of liver disease have a major impact on patient's outcome, whereas age has a slight impact. We also got to test the linear regression significant results, noticing that NAFLD seems to have a positive impact on the mortality, whereas alcohol consumption doesn't seem to play a role in the patients outcome.
