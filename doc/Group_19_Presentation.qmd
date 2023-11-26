@@ -1,17 +1,13 @@
 ---
 title: "Group 19"
-subtitle: "A study of early predictors (Comorbidities and Etiology) of cirrhosis' patients mortality"
+subtitle: "A study of early predictors (Comorbidities and Etiologies) of cirrhosis' patients mortality"
 format: revealjs
 author: "Eva Frossard, Pauline Charpentier, Noy Tabul, Fabian Ziegler"
 ---
 
-## Overview of the original dataset
+## Introduction {.smaller}
 
- 
 
- 
-
- 
 
 # Your Presentation Title
 
@@ -43,15 +39,23 @@ Fabian Ziegler
 
 # Introduction
 
--   Brief introduction to the topic
+-   Cirrhosis is a condition in which the liver is scarred and permanently damaged.
+
+-   A liver that’s affected by cirrhosis is unable to function properly, which causes serious health problems.
+
+-   In 2017, cirrhosis caused more than 1·32 million deaths, including 440,000 in females and 883,000 in males.
 
 ------------------------------------------------------------------------
 
 # Materials and Methods
 
--   Overview of the setup
--   Description of methods and materials used
+-   Etiology is the study of the factors that come together leading to a disease.
 
+-   Comorbidity is an additional disease that can interact and coexist simultaneously with cirrhosis.
+
+-   Child-Pugh Score (CPS) for Cirrhosis Mortality: useful in the determination of the prognosis of patients suffering from cirrhosis.
+
+-   Child-Pugh Score (CPS) for Cirrhosis Mortality: useful in the determination of the prognosis of patients suffering from cirrhosis.
 ------------------------------------------------------------------------
 
 # Results (And)

@@ -81,10 +81,11 @@ Age_impact_mortality2
 
 The plot showing the proportions of patient outcomes is more relevant than the one showing their distribution, because it is relative to the count of patients. Nonetheless, the distribution plot allows us to see that the age categories \[30,40\] and \[90,100\] don't contain enough patients to be statistically relevant. Therefore, if we only take the other age categories into consideration, we can see slight increase in mortality when the age of the patients is increasing.
 
-### Saving the plot
 
+### Saving the plots
 ```{r}
 ggsave("Age_Mortality_count.png", 
+
        path = "../results/plots/",
        plot = Age_impact_mortality1,
        width = 7,
@@ -95,6 +96,7 @@ ggsave("Age_Mortality_prop.png",
        plot = Age_impact_mortality2,
        width = 7,
        height = 5)
+
 ```
 
 ## Effect of different liver diseases on mortality
@@ -106,7 +108,7 @@ bar_plot_LD_Mortality<- dat_aug_03 |>
   geom_bar(position = "fill", 
            stat = "count", 
            alpha = 0.7) +
-  labs(title = "Liver disease repartition in cyrrhosis patients, stratified by mortality",
+  labs(title = "Liver disease repartition in cirrhosis patients, stratified by mortality",
        y = "Proportion") +
   scale_fill_viridis_d() +
   theme_minimal() +
