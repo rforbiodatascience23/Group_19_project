@@ -6,7 +6,8 @@ editor: visual
 
 # Joining demonstration
 
-Joining since we did not need to group together two data set. We won't use the joined data set for the rest of the project,
+Joining since we did not need to group together two data set. We won't use the 
+joined data set for the rest of the project,
 
 it is just a demonstration of our joining skills
 
@@ -20,6 +21,8 @@ dat_load_01 <- dat_load_01 |>
 ```
 
 ## Separation of the dataset in two distinct datasets
+
+
 
 ```{r}
 df_Etiology <- dat_load_01 |> # First dataset containing etiologies

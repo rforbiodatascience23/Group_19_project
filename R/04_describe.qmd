@@ -13,11 +13,13 @@ dim_desc(dat_aug_03)
 dim_desc(dat_load_01)
 ```
 
-We have a final data set of 1,065 observations with 9 variables, after tidying a data set of 733 patients suffering from cirrhosis.
+We have a final data set of 1,065 observations with 9 variables, after tidying a
+data set of 733 patients suffering from cirrhosis.
 
 ## Sex and Age group of the patients' population
 
-The total number of patients stratified by gender can be visualized with the following plots.
+The total number of patients stratified by gender can be visualized with the 
+following plots:
 
 ```{r}
 bar_plot_total_by_gender <- dat_aug_03 |> 
@@ -68,6 +70,10 @@ bar_plot_total_by_gender_facet_2 <- bar_plot_total_by_gender_2 +
 combined_plot_2 <- bar_plot_total_by_gender_2 + 
   bar_plot_total_by_gender_facet_2 + 
   plot_annotation(title = "Total Count")
+
+bar_plot_total_by_gender_2
+bar_plot_total_by_gender_facet_2
+combined_plot_2
 ```
 
 ```{r}
@@ -87,8 +93,10 @@ ggsave("Total_by_gender(patch).png",
        height = 5)
 ```
 
-To observe the age and gender distribution, a stacked bar plot for the age distribution, stratified by gender, can be used.\
-To better illustrate that both have their mode at \[60;70\], the plot is also shown faceted.
+To observe the age and gender distribution, a stacked bar plot for the age 
+distribution, stratified by gender, can be used.\
+To better illustrate that both have their mode at \[60;70\], the plot is also 
+shown faceted.
 
 ```{r}
 bar_plot_age_gender <- dat_aug_03 |>
@@ -97,7 +105,8 @@ bar_plot_age_gender <- dat_aug_03 |>
   geom_bar(position = "stack", 
            stat = "count", 
            alpha = 0.7) +
-  labs(title = "Overview of the age and gender distribution of patients with liver cirrhosis",
+  labs(title = "Overview of the age and gender distribution of patients with 
+       liver cirrhosis",
        x = "Age Group",
        y = "Count") +
   scale_fill_viridis_d() +
@@ -126,7 +135,7 @@ bar_plot_age_gender_2 <- dat_aug_03 |>
   theme_minimal() +
   theme(strip.text.y = element_blank(), 
         strip.background = element_blank(), 
-        axis.text.x = element_text(size = 5))
+        axis.text.x = element_text(size = 4))
 
 bar_plot_age_gender_facet_2 <- bar_plot_age_gender_2 +
   facet_grid(. ~ Sex, 
@@ -136,39 +145,48 @@ bar_plot_age_gender_facet_2 <- bar_plot_age_gender_2 +
         axis.text.x = element_text(size = 3))
 
 combined_plot_1 <- bar_plot_age_gender_2 + 
-  bar_plot_age_gender_facet_2 + 
-  plot_annotation(title = "Overview of the age and gender distribution of patients with liver cirrhosis")
+  bar_plot_age_gender_facet_2 
+
+bar_plot_age_gender_2
+bar_plot_age_gender_facet_2
+combined_plot_1 
 ```
 
 ```{r}
 ggsave("Age_gender.png", 
        path = "../results/plots/",
        plot = bar_plot_age_gender,
-       width = 7,
+       width = 9,
        height = 5)
 ggsave("Age_gender(facet).png", 
        path = "../results/plots/",
        plot = bar_plot_age_gender_facet,
-       width = 7,
+       width = 9,
        height = 5)
 ggsave("Age_gender(patch).png", 
        path = "../results/plots/",
        plot = combined_plot_1,
-       width = 7,
+       width = 9,
        height = 5)
 ```
 
-All plots provide a visual representation of the distribution of patients with cirrhosis based on age and gender.
+All plots provide a visual representation of the distribution of patients with 
+cirrhosis based on age and gender.
 
--   the x-axis always represents the age groups and the y-axis is always the count for the patients
+-   the x-axis always represents the age groups and the y-axis is always the 
+count for the patients
 
--   the gender is illustrated by different colors - yellow for male and purple for female
+-   the gender is illustrated by different colors - yellow for male and purple 
+for female
 
 Description
 
--   Mode: The mode is for both women and men in the 60 to 70 age group. The number of patients in this age group is 517 (Female: 150, Male 367).
+-   Mode: The mode is for both women and men in the 60 to 70 age group. The 
+number of patients in this age group is 517 (Female: 150, Male 367).
 
--   Gender Representation: Women make up about 29.67 percent of patients and men about 70.33 percent. This means that the number of patients is predominantly male.
+-   Gender Representation: Women make up about 29.67 percent of patients and men
+about 70.33 percent. This means that the number of patients is predominantly 
+male.
 
 ```{r}
 mode_of_age <- dat_aug_03 |> 
@@ -197,7 +215,11 @@ dat_LD <- dat_aug_03 |>
   count(Liver_disease)
 ```
 
-Ascites and hepatic encephalopathy are the two main liver diseases diagnosed. Ascites, representing 40% of liver diseases, is a build up of fluid in the abdomen, often as a consequence of cirrhosis. Hepatic encephalopathy is also a common pathology in patients with cirrhosis due to deficiencies in their neurological system, here representing 33% of the study.
+Ascites and hepatic encephalopathy are the two main liver diseases diagnosed. 
+Ascites, representing 40% of liver diseases, is a build up of fluid in the 
+abdomen, often as a consequence of cirrhosis. Hepatic encephalopathy is also a
+common pathology in patients with cirrhosis due to deficiencies in their 
+neurological system, here representing 33% of the study.
 
 ```{r}
 bar_plot_LD<- dat_LD |> 
@@ -221,7 +243,10 @@ bar_plot_LD
 
 ## Overview of comorbities in the patients' population
 
-Comorbidities are additional disease that can interact and coexist simultaneously with the cirrhosis. The study of comorbidities is pertinent since it can explain some of the patients' complications and can play a role in their recovery.
+Comorbidities are additional disease that can interact and coexist 
+simultaneously with the cirrhosis. The study of comorbidities is pertinent since
+it can explain some of the patients' complications and can play a role in their
+recovery.
 
 ```{r}
 dat_comorb <- dat_aug_C_03 |> 
@@ -242,7 +267,8 @@ bar_plot_comorbidities <- dat_comorb |>
   geom_text(aes(label = count), 
             vjust = -0.5, 
             size = 2) +
-  labs(title = "Overview of comorbidities across patients suffering from cirrhosis ",
+  labs(title = "Overview of comorbidities across patients suffering from 
+       cirrhosis ",
        y = "Count") +
   scale_fill_viridis_d() +
   theme_minimal() +
@@ -262,15 +288,21 @@ ggsave("Overview_Comorbidities.png",
 ```
 
 
-The plot illustrates the various concomitant diseases of the patients and provides an overview of the number of each condition.
+The plot illustrates the various concomitant diseases of the patients and 
+provides an overview of the number of each condition.
 
--   the x-axis represents the comorbidities and the y-axis is the count of patients
 
--   In addition, each comorbidity is listed in different colors and the exact number is indicated above the respective bar.
+-   the x-axis represents the comorbidities and the y-axis is the count of 
+patients
 
--   The mode are moderately severe liver diseases with a comparatively high count of 509.
+-   In addition, each comorbidity is listed in different colors and the exact 
+number is indicated above the respective bar.
 
--   The majority of patients suffer from concomitant diseases. Only 8 patients suffer only from liver cirrhosis.
+-   The mode are moderately severe liver diseases with a comparatively high 
+count of 509.
+
+-   The majority of patients suffer from concomitant diseases. Only 8 patients 
+suffer only from liver cirrhosis.
 
 ## Overview of ethiology factor across population
 
@@ -314,21 +346,30 @@ ggsave("Overview_Etiology.png",
        height = 5)
 ```
 
-The plot illustrates the various etiologies which lead to diseases and counts them.
+The plot illustrates the various etiologies which lead to diseases and counts 
+them.
 
 -   the x-axis represents the etiologies and the y-axis is the count of patients
 
--   The etiologies are listed in different colors and the exact number is indicated above the respective bar.
+-   The etiologies are listed in different colors and the exact number is 
+indicated above the respective bar.
 
--   The mode isthe consumption of alcohol with a count of 549 followed by hepatitis C with a count of 357. Both are likely major factors at causing liver cirrhosis.
+-   The mode isthe consumption of alcohol with a count of 549 followed by 
+hepatitis C with a count of 357. Both are likely major factors at causing liver
+cirrhosis.
 
 ## Overview of two important numerical values: CPS and Charlson_CI
 
 The dataset chosen featured two variables:
 
--   **CPS or Child-Pugh Score** for Cirrhosis Mortality: useful in the determination of the prognosis of patients suffering from a cirrhosis. With a maximum value of 15, it is based on the presence of ascites, the concentratin of some proteins in the blood (bilirubin, albumin)...
+-   **CPS or Child-Pugh Score** for Cirrhosis Mortality: useful in the 
+determination of the prognosis of patients suffering from a cirrhosis. With a 
+maximum value of 15, it is based on the presence of ascites, the concentratin of
+some proteins in the blood (bilirubin, albumin)...
 
--   **Charlson Comorbidity index**: useful to predict the mortality of patients suffering from comorbidities. Depends on the presence of comorbidities and the age of the patient
+-   **Charlson Comorbidity index**: useful to predict the mortality of patients 
+suffering from comorbidities. Depends on the presence of comorbidities and the 
+age of the patient
 
 ```{r}
 box_plot_CPS <- dat_aug_03 |> 
@@ -377,11 +418,16 @@ mean_Charlson <- dat_aug_clean_03 |>
 mean_Charlson
 ```
 
-The average value of the CPS and the Charlson comorbidity index are reciprocally 8.6 and 3.83. It is in the group B of CPS which implies a 80% 1-year survival rate and 60% 2-year survival rate.
+The average value of the CPS and the Charlson comorbidity index are reciprocally 
+8.6 and 3.83. It is in the group B of CPS which implies a 80% 1-year survival 
+rate and 60% 2-year survival rate.
+
 
 ### Relation between Charlson value and the type of comorbidities
 
-Charlson value represents a comorbidity index that predicts 10y life expectancy for people with multiple comorbidities. This graph shows the weight of varioous Comorbidiities in the Charlson Index
+Charlson value represents a comorbidity index that predicts 10y life expectancy 
+for people with multiple comorbidities. This graph shows the weight of varioous 
+Comorbidiities in the Charlson Index
 
 ```{r}
 
@@ -389,7 +435,8 @@ box_plot_Charlson_Comorbidities <- dat_aug_03 |>
   ggplot(mapping = aes(x = Comorbidities,
                        y = Charlson_CI)) +
   geom_boxplot() +
-  labs(title = 'Impact of diverse comorbidities on the 10 year life expectancy of patients',
+  labs(title = 'Impact of diverse comorbidities on the 10 year life expectancy
+       of patients',
        y = 'Charlson Comorbidity Index') +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
@@ -405,7 +452,11 @@ ggsave("Charlson_comorbidities.png",
        height = 5)
 ```
 
-From the boxplot, we can deduce that AIDS and Metastatic solid tumor are 2 of the major comorbidities that have an important weight on the Charlson CI, and tha. On the opposite side of the spectrum, mild liver disease and rheumatological have a limited impact on the variable. Less weight means that the diseaseis not severe enough to affect directly and significantly the life expectancy of the patient.
+From the boxplot, we can deduce that AIDS and Metastatic solid tumor are 2 of 
+the major comorbidities that have an important weight on the Charlson CI. On the 
+opposite side of the spectrum, mild liver disease and rheumatological have a 
+limited impact on the variable. Less weight means that the diseaseis not severe
+enough to affect directly and significantly the life expectancy of the patient.
 
 ## Overview of comorbidities and liver disease
 
@@ -464,4 +515,8 @@ ggsave("Bubble_plot.png",
        height = 5)
 ```
 
-From this visualisation graph, it appears that Hepatic Encephalopaty liver disease has the greatest amount of comorbidities observed. On the opposite, we observe fewer Comorbidities for for jaundice and Hepato-hydrothorax. Additionally, the most common combination is Ascites with Moderate Liver disease as a comorbidity.
+From this visualisation graph, it appears that Hepatic Encephalopaty liver 
+disease has the greatest amount of comorbidities observed. On the opposite, we
+observe fewer Comorbidities for for jaundice and Hepato-hydrothorax. 
+Additionally, the most common combination is Ascites with Moderate Liver disease
+as a comorbidity.
