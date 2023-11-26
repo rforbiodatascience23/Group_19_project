@@ -22,6 +22,8 @@ dat_load_01 <- dat_load_01 |>
 
 ## Separation of the dataset in two distinct datasets
 
+
+
 ```{r}
 df_Etiology <- dat_load_01 |> # First dataset containing etiologies
   select(ID,
@@ -180,7 +182,7 @@ dat_clean_02 <- dat_load_01 |>
   relocate(Id, .before = Sex) |>
   relocate(C_None, .before = CPS) |>
 
-  # Getting rid of observations with NA values
+  # Getting rid of observations with NA values: data set goes from 733 patients to
   drop_na(CPS) |> 
   drop_na(Sex) |> 
   drop_na(Mortality_hospital) |> 
