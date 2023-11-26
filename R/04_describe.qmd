@@ -38,6 +38,36 @@ bar_plot_total_by_gender_facet <- bar_plot_total_by_gender +
   theme(strip.text.y = element_blank(), 
         strip.background = element_blank(), 
         axis.text.x = element_text(size = 7))
+
+```
+
+Patch of both plots
+
+```{r}
+bar_plot_total_by_gender_2 <- dat_aug_03 |> 
+  ggplot(aes(x = "Overall", 
+             fill = Sex)) +
+  geom_bar(position = "stack", 
+           stat = "count", 
+           alpha = 0.7) +
+  labs(x = "Patients",
+       y = "Count") +
+  scale_fill_viridis_d() +
+  theme_minimal() +
+    theme(strip.text.y = element_blank(), 
+        strip.background = element_blank(), 
+        axis.text.x = element_text(size = 7))
+
+bar_plot_total_by_gender_facet_2 <- bar_plot_total_by_gender_2 +
+  facet_grid(. ~ Sex, 
+             scales = "free_y") +
+  theme(strip.text.y = element_blank(), 
+        strip.background = element_blank(), 
+        axis.text.x = element_text(size = 7))
+
+combined_plot_2 <- bar_plot_total_by_gender_2 + 
+  bar_plot_total_by_gender_facet_2 + 
+  plot_annotation(title = "Total Count")
 ```
 
 ```{r}
@@ -50,6 +80,11 @@ ggsave("Total_by_gender(facet).png",
        path = "../results/plots/",
        plot = bar_plot_total_by_gender_facet,
        width = 7,)
+ggsave("Total_by_gender(patch).png", 
+       path = "../results/plots/",
+       plot = combined_plot_2,
+       width = 7,
+       height = 5)
 ```
 
 To observe the age and gender distribution, a stacked bar plot for the age distribution, stratified by gender, can be used.\
@@ -76,6 +111,35 @@ bar_plot_age_gender_facet <- bar_plot_age_gender +
         axis.text.x = element_text(size = 7))
 ```
 
+Patch of both plots
+
+```{r}
+bar_plot_age_gender_2 <- dat_aug_03 |>
+  ggplot(aes(x = Age, 
+             fill = Sex)) +
+  geom_bar(position = "stack", 
+           stat = "count", 
+           alpha = 0.7) +
+  labs(x = "Age Group",
+       y = "Count") +
+  scale_fill_viridis_d() +
+  theme_minimal() +
+  theme(strip.text.y = element_blank(), 
+        strip.background = element_blank(), 
+        axis.text.x = element_text(size = 5))
+
+bar_plot_age_gender_facet_2 <- bar_plot_age_gender_2 +
+  facet_grid(. ~ Sex, 
+             scales = "free_y") +
+  theme(strip.text.y = element_blank(), 
+        strip.background = element_blank(), 
+        axis.text.x = element_text(size = 3))
+
+combined_plot_1 <- bar_plot_age_gender_2 + 
+  bar_plot_age_gender_facet_2 + 
+  plot_annotation(title = "Overview of the age and gender distribution of patients with liver cirrhosis")
+```
+
 ```{r}
 ggsave("Age_gender.png", 
        path = "../results/plots/",
@@ -85,6 +149,11 @@ ggsave("Age_gender.png",
 ggsave("Age_gender(facet).png", 
        path = "../results/plots/",
        plot = bar_plot_age_gender_facet,
+       width = 7,
+       height = 5)
+ggsave("Age_gender(patch).png", 
+       path = "../results/plots/",
+       plot = combined_plot_1,
        width = 7,
        height = 5)
 ```
@@ -167,6 +236,9 @@ bar_plot_comorbidities <- dat_comorb |>
   geom_bar(stat = 'identity', 
            alpha = 0.7, 
            show.legend = FALSE) +
+  geom_text(aes(label = n), 
+            vjust = -0.5, 
+            size = 2) +
   labs(title = "Overview of comorbidities across patients suffering from cirrhosis ",
        y = "Count") +
   scale_fill_viridis_d() +
@@ -189,7 +261,15 @@ ggsave("Overview_Comorbidities.png",
 bar_plot_comorbidities
 ```
 
-FABIAN
+The plot illustrates the various concomitant diseases of the patients and provides an overview of the number of each condition.
+
+-   the x-axis represents the comorbidities and the y-axis is the count of patients
+
+-   In addition, each comorbidity is listed in different colors and the exact number is indicated above the respective bar.
+
+-   The mode are moderately severe liver diseases with a comparatively high count of 509.
+
+-   The majority of patients suffer from concomitant diseases. Only 8 patients suffer only from liver cirrhosis.
 
 ## Overview of ethiology factor across population
 
