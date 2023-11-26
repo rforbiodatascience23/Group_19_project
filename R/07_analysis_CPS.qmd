@@ -10,7 +10,9 @@ The Child Pugh Score is a variable used to indicate the severity of a cirrhosis.
 
 ### Effects of comorbidities on Child Pugh Score depending on the liver disease 
 
-In the first plot, we tried to see if there is a correlation between the Child Pugh Score and the Charlson Comorbidity Index, which predicts the mortality of patients suffering from comorbidities:
+In the first plot, we tried to see if there is a correlation between the Child 
+Pugh Score and the Charlson Comorbidity Index, which predicts the mortality of 
+patients suffering from comorbidities:
 
 ```{r}
 Charlson_vs_CPS_LV <- ggplot(
@@ -37,7 +39,11 @@ Charlson_vs_CPS_LV <- ggplot(
 
 Charlson_vs_CPS_LV
 ```
-On that plot, we can see that the relationship between CPS and Charlson CI can be totally different depending on the liver disease from which the patients suffer. There is no clear pattern that can be deducted from these graphs or from the plot of Charlson CI versus CPS. However, we can't conclude that they are absolutely not correlated.
+On that plot, we can see that the relationship between CPS and Charlson CI can 
+be totally different depending on the liver disease from which the patients 
+suffer. There is no clear pattern that can be deducted from these graphs or from
+the plot of Charlson CI versus CPS. However, we can't conclude that they are 
+absolutely not correlated.
 
 ### Saving the plot
 
@@ -49,7 +55,8 @@ ggsave("Charlson_vs_CPS_LV.png",
        height = 5)
 ```
 
-### Effects of comorbidities on Child Pugh Score with all liver diseases included 
+### Effects of comorbidities on Child Pugh Score with all liver diseases 
+included 
 
 ```{r}
 Charlson_vs_CPS <- ggplot(
@@ -81,7 +88,10 @@ ggsave("Charlson_vs_CPS.png",
 
 # Effects of different etiologies on Child Pugh Score
 
-Because the comorbidities don't seem to be related to the CPS, we are now interested in investigating which etiologies are significantly more or less present in patients with different CPS. In order to do that, we use a linear regression model:
+Because the comorbidities don't seem to be related to the CPS, we are now 
+interested in investigating which etiologies are significantly more or less 
+present in patients with different CPS. In order to do that, we use a linear 
+regression model:
 
 
 ```{r}
@@ -97,7 +107,8 @@ model <- lm(formula = Alcohol ~ cps,
    data = df)
 model
 ```
-calculation of the mean values of the presence of the etiology "Alcohol" stratified on Child Pugh Score:
+calculation of the mean values of the presence of the etiology "Alcohol" 
+stratified on Child Pugh Score:
 ```{r}
 df |> 
   group_by(cps) |> 
@@ -109,9 +120,12 @@ df |>
 ```{r}
 model |> summary()
 ```
-By looking at the p-value, we can see if the variable "Alcohol" is statistically significant or not. p-value \> 0.05 so the variable is not statistically significant.
+By looking at the p-value, we can see if the variable "Alcohol" is statistically 
+significant or not. p-value \> 0.05 so the variable is not statistically 
+significant.
 
-Pivoting the data to get a long dataset, so that all the etiologies are defined in one column:
+Pivoting the data to get a long dataset, so that all the etiologies are defined 
+in one column:
 ```{r}
 df_Etiology_long <- df |> 
   pivot_longer(
@@ -123,7 +137,8 @@ df_Etiology_long <- df |>
 df_Etiology_long
 ```
 ### Addition of a new variable model_object
-This variable will be computed per etiology and will contain the result to the call to the 'map()' function.
+This variable will be computed per etiology and will contain the result to the 
+call to the 'map()' function.
 ```{r}
 df_Etiology_long_nested <- df_Etiology_long |> 
   group_by(Etiologies) |> # group_by() function to work per etiology
@@ -187,7 +202,8 @@ estimate <- estimate|>
 estimate
 ```
 
-Adding the variable q-value and an indicator variable denoting if a given etiology is significant or not:
+Adding the variable q-value and an indicator variable denoting if a given
+etiology is significant or not:
 ```{r}
 estimate <- estimate |> 
   mutate(
@@ -266,5 +282,8 @@ ggsave("Significance_plot_CPS.png",
        height = 5)
 ```
 
-In these plots, we can see that only one etiology is considered as having a significant correlation with CPS: Non-Alcoholic Fatty Liver Disease (NAFLD). Therefore, a patient with this etiology has more chances of having a low CPS than a patient with any other etiology. 
+In these plots, we can see that only one etiology is considered as having a 
+significant correlation with CPS: Non-Alcoholic Fatty Liver Disease (NAFLD).
+Therefore, a patient with this etiology has more chances of having a low CPS
+than a patient with any other etiology. 
 

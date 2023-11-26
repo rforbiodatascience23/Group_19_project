@@ -6,7 +6,8 @@ editor: visual
 
 # Joining demonstration
 
-Joining since we did not need to group together two data set. We won't use the joined data set for the rest of the project,
+Joining since we did not need to group together two data set. We won't use the 
+joined data set for the rest of the project,
 
 it is just a demonstration of our joining skills
 
