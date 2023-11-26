@@ -1,4 +1,4 @@
-# Group_19_project: A study of early predictors (Comorbidities and Etiology) of cirrhosis' patients mortality
+# Group_19_project: A study of early predictors (Comorbidities and Etiology) of patient's outcome after cirrhosis hospitalization 
 
 ## Project Contributors
 
