@@ -16,7 +16,6 @@ ggplot(stacked_bar_liverDisease,
   coord_flip()
 ```
 
-
 ```{r}
 ggplot(stacked_bar_liverDisease, aes(area = d_c_count,
                       fill = Liver_disease,
@@ -26,4 +25,79 @@ ggplot(stacked_bar_liverDisease, aes(area = d_c_count,
 	                       geom_treemap_subgroup_border() +
 	                       geom_treemap_text(colour = "white", place = "topleft", reflow = T) +
   scale_color_viridis_d()
+```
+
+1.  Total population stacked bar plot stratified by sex (one time faceted)
+
+```{r}
+bar_plot_total_by_gender <- dat_aug_03 |> 
+  ggplot(aes(x = "Overall", 
+             fill = Sex)) +
+  geom_bar(position = "stack", 
+           stat = "count", 
+           alpha = 0.7) +
+  labs(title = "Total Count",
+       x = "Patients",
+       y = "Count") +
+  scale_fill_viridis_d() +
+  theme_minimal()
+
+bar_plot_total_by_gender_facet <- bar_plot_total_by_gender +
+  facet_grid(. ~ Sex, 
+             scales = "free_y") +
+  theme(strip.text.y = element_blank(), 
+        strip.background = element_blank(), 
+        axis.text.x = element_text(size = 7))
+```
+
+2.  Stacked and faceted plots patched together
+
+```{r}
+bar_plot_total_by_gender_2 <- dat_aug_03 |> 
+  ggplot(aes(x = "Overall", 
+             fill = Sex)) +
+  geom_bar(position = "stack", 
+           stat = "count", 
+           alpha = 0.7) +
+  labs(x = "Patients",
+       y = "Count") +
+  scale_fill_viridis_d() +
+  theme_minimal() +
+    theme(strip.text.y = element_blank(), 
+        strip.background = element_blank(), 
+        axis.text.x = element_text(size = 7))
+
+bar_plot_total_by_gender_facet_2 <- bar_plot_total_by_gender_2 +
+  facet_grid(. ~ Sex, 
+             scales = "free_y") +
+  theme(strip.text.y = element_blank(), 
+        strip.background = element_blank(), 
+        axis.text.x = element_text(size = 7))
+
+combined_plot_2 <- bar_plot_total_by_gender_2 + 
+  bar_plot_total_by_gender_facet_2 + 
+  plot_annotation(title = "Total Count")
+
+bar_plot_total_by_gender_2
+bar_plot_total_by_gender_facet_2
+combined_plot_2
+```
+
+3.  Save in results if necessary
+
+```{r}
+ggsave("Total_by_gender.png", 
+       path = "../results/plots/",
+       plot = bar_plot_total_by_gender,
+       width = 7,
+       height = 5)
+ggsave("Total_by_gender(facet).png", 
+       path = "../results/plots/",
+       plot = bar_plot_total_by_gender_facet,
+       width = 7,)
+ggsave("Total_by_gender(patch).png", 
+       path = "../results/plots/",
+       plot = combined_plot_2,
+       width = 7,
+       height = 5)
 ```
