@@ -16,6 +16,7 @@ library("broom")
 library("ggplot2")
 library("forcats")
 library("patchwork")
+library("dplyr")
 ```
 
 ## Load data
