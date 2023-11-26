@@ -54,7 +54,7 @@ dat_aug_clean_03
 
 ### Tidy data set
 ```{r}
-dat_aug_03 <- dat_clean_02 |> 
+dat_aug_03 <- dat_tidy_02 |> 
    mutate(Mortality = case_when(Mortality_hospital == 'Yes' ~ "Death_in_hospital", 
                                 Mortality_hospital == 'No' & Mortality_30_days == 'Yes' & Mortality_90_days == 'No' ~ "Death_in_first_30_days", 
                                 Mortality_hospital == 'No' & Mortality_30_days == 'No' & Mortality_90_days == 'Yes' ~ "Death_between_30_and_90_days", 
