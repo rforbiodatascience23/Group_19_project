@@ -44,7 +44,7 @@ Graph eva BioRender explaining the relatins between the index, etiologies...
 ## Materials - Dataset
 
 :::: {.columns}
-::: {.column width="50%"}
+::: {.column width="60%"}
 <u> Data set used: </u> [Early predictors of outcomes of hospitalization for cirrhosis and assessment of the impact of race and ethnicity at safety-net hospitals](https://datadryad.org/stash/dataset/doi:10.5061/dryad.6gt88dv)
 
 - 733 patients 
@@ -57,7 +57,7 @@ Graph eva BioRender explaining the relatins between the index, etiologies...
   * UGIB (19.9%)
 :::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 ![](../results/plots/Age_gender.png){width="100%"}
 ![](../results/plots/Overview_LD.png){width="100%"}
 :::
@@ -72,9 +72,8 @@ Graph eva BioRender explaining the relatins between the index, etiologies...
 
 <b>Cleaning: </b>
 
-- Extracting necessary columns
-- Renaming columns, reordering
-- Dropping non-available values them, and assigned classes to etiology and comorbidities.
+- Extracting, renaming, reordering columns
+- Dropping non-available values them
 
 <b>Tidying:</b>
 
@@ -126,6 +125,23 @@ Graph eva BioRender explaining the relatins between the index, etiologies...
 :::
 ::::
 
+## Death ratios of every Etiology/Liver disease combination
+
+:::: {.columns}
+
+::: {.column width="60%"}
+![](../results/plots/Tile_plot_mortality.png){width="100%"}
+
+:::
+
+::: {.column width="40%"}
+- 
+- 
+- 
+:::
+::::
+
+
 ## Model 1 - Logistic regression 
 
 :::: {.columns}
@@ -158,24 +174,6 @@ Graph eva BioRender explaining the relatins between the index, etiologies...
 - 
 :::
 ::::
-
-
-## Death ratios of every Etiology/Liver disease combination
-
-:::: {.columns}
-
-::: {.column width="60%"}
-![](../results/plots/Tile_plot_mortality.png){width="100%"}
-
-:::
-
-::: {.column width="40%"}
-- 
-- 
-- 
-:::
-::::
-
 
 ## Conclusion
 
