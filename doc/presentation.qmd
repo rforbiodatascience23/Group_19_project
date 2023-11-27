@@ -142,39 +142,49 @@ investigate the possible outcome of patients.
 ::::
 
 
-## Model 1 - Logistic regression 
+## Model 1 - Logistic regression
 
-:::: {.columns}
-
-::: {.column width="50%"}
-![](../results/plots/){width="100%"}
-
+::: columns
+::: {.column width="33%"}
+![](../results/plots/boxplot_logistic_confidence_interval){width="100%"}
 :::
 
-::: {.column width="50%"}
-- 
-- 
-- 
+::: {.column width="33%"}
+![](../results/plots/mortality_CPS){width="100%"}
 :::
-::::
 
+::: {.column width="33%"}
+-   Overview: Logistic regression model
+
+-   Variables: CPS & Mortality
+
+-   Results: For every increased CPS unit, the likelihood for mortality increase by 50 %
+:::
+:::
 
 ## Model 2 - Linear regression
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="60%"}
 ![](../results/plots/Significance_plot_CPS.png){width="100%"}
-
 :::
 
 ::: {.column width="40%"}
-- 
-- 
-- 
+-   Overview: Linear regression model
+
+-   Variables: CPS & Etiologies
+
+-   Results: Statistically significant result for nafld associated with low CPS
 :::
-::::
+:::
 
 ## Conclusion
 
+-   
+
+- 
+
+-   
+
+- 
 
