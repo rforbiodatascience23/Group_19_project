@@ -8,12 +8,10 @@ editor: visual
 ```{r}
 library("tidyverse")
 library("ggpubr")
-library(forcats)
-library(purrr)
-library(broom)
-library("viridis")
+library("forcats")
+library("purrr")
+library("broom")
 library("ggplot2")
-library("patchwork")
 library("dplyr")
 ```
 
