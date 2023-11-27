@@ -19,6 +19,11 @@ quarto::render("~/projects/Group_19_project/R/08.qmd")
 quarto::render("~/projects/Group_19_project/R/09.qmd")
 ```
 
+```{r}
+library(quarto)
+```
+
+
 # Introduction
 
 The aim of this project is to study the early predictors of cirrhosis' patients mortality. To do that, we investigate the effect of the different comorbidities, etiologies and liver diseases on the mortality, the Charlson Comorbidity Index and the Child Pugh Score of the patients.
@@ -29,8 +34,9 @@ The dataset we used comes from the study "Early predictors of outcomes of hospit
 
 ```{quarto}
 # Include content from subdocument1.qmd
-quarto::include("01_load.qmd")
+{{< include 01_load.qmd >}}
 ```
+{{< include 01_load.qmd >}}
 
 ## Cleaning the data
 
