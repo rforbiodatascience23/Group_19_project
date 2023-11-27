@@ -135,7 +135,7 @@ tile_plot_etiologies
 
 ```
 ```{r}
-ggsave("Tile_plot_etiologies", 
+ggsave("Tile_plot_etiologies.png", 
        path = "../results/plots/",
        plot = tile_plot_etiologies,
        width = 7,

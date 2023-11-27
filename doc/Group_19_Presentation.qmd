@@ -14,38 +14,33 @@ author:
   Pauline Charpentier,
   Noy Tabul,
   Fabian Ziegler"
-  
 ---
 
-## Introduction 
+## Introduction
 
-- Purpose of our analysis is to understand patterns and correlations of early predictors of (Comorbidities and Etiologies) of cirrhosis' patients mortality.   
+-   Purpose of our analysis is to understand patterns and correlations of early predictors of (Comorbidities and Etiologies) of cirrhosis' patients mortality.
 
--   Cirrhosis is a condition in which the liver is scarred and permanently damaged. A liver that’s affected by cirrhosis is unable to function properly, which causes serious health problems.   
-
-
+-   Cirrhosis is a condition in which the liver is scarred and permanently damaged. A liver that's affected by cirrhosis is unable to function properly, which causes serious health problems.
 
 ## Materials - Dataset
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="50%"}
-Data set used: [Early predictors of outcomes of hospitalization for cirrhosis and assessment of the impact of race and ethnicity at safety-net hospitals](https://datadryad.org/stash/dataset/doi:10.5061/dryad.6gt88dv)   
+Data set used: [Early predictors of outcomes of hospitalization for cirrhosis and assessment of the impact of race and ethnicity at safety-net hospitals](https://datadryad.org/stash/dataset/doi:10.5061/dryad.6gt88dv)
 
-<\div>
+\<\div\>
 
-Study performed on X patients from 4 safety-net hospitals in the US    
+Study performed on X patients from 4 safety-net hospitals in the US
 
-Focused in the early predictors of outcomes like **comorbidities** and **etiologies**    
+Focused in the early predictors of outcomes like **comorbidities** and **etiologies**
 :::
 
 ::: {.column width="50%"}
 ![](../results/plots/Age_gender.png)
 
-![](../results/plots/Overview_LD.png){width=100%} 
+![](../results/plots/Overview_LD.png){width="100%"}
 :::
-
-:::: 
+:::
 
 ## Methods
 
@@ -71,37 +66,30 @@ Focused in the early predictors of outcomes like **comorbidities** and **etiolog
 
 -   **Comorbidity** is an additional disease that can interact and coexist simultaneously with cirrhosis.
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="50%"}
-
-![](../results/plots/Overview_Etiology.png){width=50%} 
+![](../results/plots/Overview_Etiology.png){width="50%"}
 :::
 
 ::: {.column width="50%"}
-![](../results/plots/Overview_Comorbidities.png){width=50%} 
+![](../results/plots/Overview_Comorbidities.png){width="50%"}
 :::
-::::
-
+:::
 
 ## Liver disease repartition in cirrhosis patients, stratified by mortality
 
-![](../results/plots/LD_Mortality.png){width=50%} 
+![](../results/plots/LD_Mortality.png){width="50%"}
 
-## Model 1 
+## Model 1
 
-![](../results/plots/Significance_plot_CPS.png){width=50%} 
-
+![](../results/plots/Significance_plot_CPS.png){width="50%"}
 
 ## Model 2
 
-![](../results/plots/Significance_plot_LV_mortality.png){width=50%} 
-
+![](../results/plots/Significance_plot_LV_mortality.png){width="50%"}
 
 ## Death ratios of every Etiology/Liver disease combination
 
-![](../results/plots/Tile_plot_mortality.png){width=50%} 
-
-
+![](../results/plots/Tile_plot_mortality.png){width="50%"}
 
 ## Conclusion
