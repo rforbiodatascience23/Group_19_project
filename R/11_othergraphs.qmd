@@ -1,3 +1,59 @@
+---
+title: "11_othergraphs"
+format: html
+editor: visual
+---
+
+- Facetted age/gender plot
+
+```{r}
+bar_plot_age_gender_facet <- bar_plot_age_gender +
+  facet_grid(. ~ Sex, 
+             scales = "free_y") +
+  theme(strip.text.y = element_blank(), 
+        strip.background = element_blank(), 
+        axis.text.x = element_text(size = 7))
+
+bar_plot_age_gender_facet
+```
+
+- Patch of both plot (facetted and not)
+
+```{r}
+bar_plot_age_gender_2 <- dat_aug_03 |>
+  ggplot(aes(x = Age, 
+             fill = Sex)) +
+  geom_bar(position = "stack", 
+           stat = "count", 
+           alpha = 0.7) +
+  labs(x = "Age Group",
+       y = "Count") +
+  scale_fill_viridis_d() +
+  theme_minimal() +
+  theme(strip.text.y = element_blank(), 
+        strip.background = element_blank(), 
+        axis.text.x = element_text(size = 4))
+
+bar_plot_age_gender_facet_2 <- bar_plot_age_gender_2 +
+  facet_grid(. ~ Sex, 
+             scales = "free_y") +
+  theme(strip.text.y = element_blank(), 
+        strip.background = element_blank(), 
+        axis.text.x = element_text(size = 3))
+
+combined_plot_1 <- bar_plot_age_gender_2 + 
+  bar_plot_age_gender_facet_2 
+
+bar_plot_age_gender_2
+bar_plot_age_gender_facet_2
+combined_plot_1 
+```
+
+
+
+
+
+
 ```{r}
 ggplot(stacked_bar_liverDisease, 
        aes(x = Liver_disease,

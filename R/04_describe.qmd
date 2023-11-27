@@ -48,46 +48,9 @@ bar_plot_age_gender <- dat_aug_clean_03 |>
         axis.title=element_text(size=14,face="bold"))
 
 bar_plot_age_gender
-
-bar_plot_age_gender_facet <- bar_plot_age_gender +
-  facet_grid(. ~ Sex, 
-             scales = "free_y") +
-  theme(strip.text.y = element_blank(), 
-        strip.background = element_blank(), 
-        axis.text.x = element_text(size = 7))
 ```
 
-Patch of both plots
-
-```{r}
-bar_plot_age_gender_2 <- dat_aug_03 |>
-  ggplot(aes(x = Age, 
-             fill = Sex)) +
-  geom_bar(position = "stack", 
-           stat = "count", 
-           alpha = 0.7) +
-  labs(x = "Age Group",
-       y = "Count") +
-  scale_fill_viridis_d() +
-  theme_minimal() +
-  theme(strip.text.y = element_blank(), 
-        strip.background = element_blank(), 
-        axis.text.x = element_text(size = 4))
-
-bar_plot_age_gender_facet_2 <- bar_plot_age_gender_2 +
-  facet_grid(. ~ Sex, 
-             scales = "free_y") +
-  theme(strip.text.y = element_blank(), 
-        strip.background = element_blank(), 
-        axis.text.x = element_text(size = 3))
-
-combined_plot_1 <- bar_plot_age_gender_2 + 
-  bar_plot_age_gender_facet_2 
-
-bar_plot_age_gender_2
-bar_plot_age_gender_facet_2
-combined_plot_1 
-```
+### Save plot
 
 ```{r}
 ggsave("Age_gender.png", 
@@ -95,16 +58,6 @@ ggsave("Age_gender.png",
        plot = bar_plot_age_gender,
        width = 15,
        height = 10)
-ggsave("Age_gender(facet).png", 
-       path = "../results/plots/",
-       plot = bar_plot_age_gender_facet,
-       width = 9,
-       height = 5)
-ggsave("Age_gender(patch).png", 
-       path = "../results/plots/",
-       plot = combined_plot_1,
-       width = 9,
-       height = 5)
 ```
 
 The plots provide a visual representation of the distribution of patients with cirrhosis based on age and gender.
@@ -113,32 +66,31 @@ The plots provide a visual representation of the distribution of patients with c
 
 -   the gender is illustrated by different colors - yellow for male and purple for female
 
-Description
-
--   Mode: The mode is for both women and men in the 60 to 70 age group. The number of patients in this age group is 217 (Female: 69, Male 148).
-
--   Gender Representation: Women make up about 32.69 % of patients and men about 67.31 %. This means that the number of patients is predominantly male.
-
 ```{r}
-mode_of_age <- dat_aug_03 |> 
+mode_of_age <- dat_aug_clean_03 |> 
   filter(str_detect(Age, "\\[60;|70]" )) |> 
   summarise(count = n())
 print(mode_of_age)
 ```
 
 ```{r}
-mode_of_age_sex <- dat_aug_03 |> 
+mode_of_age_sex <- dat_aug_clean_03 |> 
   filter(str_detect(Age, "\\[60;|70]" )) |> 
   group_by(Sex) |> 
   summarise(count = n())
-print(mode_of_age_sex)
+
+mode_of_age_sex
 ```
 
 ```{r}
 dat_aug_clean_03 |> 
   count(Sex)
-  
 ```
+
+-   **Mode**: The mode is for both women and men in the 60 to 70 age group. The number of patients in this age group is 217 (Female: 69, Male 148).
+
+-   **Gender Representation**: Women make up about 32.69 % of patients and men about 67.31 %. This means that the number of patients is predominantly male.
+
 
 ## Overview of the liver disease in the patients' population
 
@@ -148,9 +100,9 @@ dat_LD <- dat_aug_clean_03 |>
   mutate(proportion = n/sum(n))
 ```
 
-Ascites and hepatic encephalopathy are the two main liver diseases diagnosed. Ascites, representing 40% of liver diseases, is a build up of fluid in the abdomen, often as a consequence of cirrhosis. Hepatic encephalopathy is also a common pathology in patients with cirrhosis due to deficiencies in their neurological system, here representing 33% of the study.
+Ascites and hepatic encephalopathy are the two main liver diseases diagnosed. Ascites, representing 31% of liver diseases, is a build up of fluid in the abdomen, often as a consequence of cirrhosis. Hepatic encephalopathy is also a common pathology in patients with cirrhosis due to deficiencies in their neurological system, here representing 21.2% of the study.
 
-# Bar plot version
+### Bar plot version
 ```{r}
 bar_plot_LD<- dat_LD |> 
   ggplot(aes(x = reorder(Liver_disease,-n), 
@@ -170,7 +122,7 @@ bar_plot_LD<- dat_LD |>
   scale_x_discrete(guide = guide_axis(angle = 25))
 ```
 
-# Pie char version
+### Pie char version
 ```{r}
 pie_chart_LD<- dat_LD |> 
   ggplot(aes(x = "", 
@@ -192,7 +144,6 @@ pie_chart_LD<- dat_LD |>
 pie_chart_LD
 ```
 ```{r}
-
 ggsave("Overview_LD.png", 
        path = "../results/plots/",
        plot = bar_plot_LD,

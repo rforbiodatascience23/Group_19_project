@@ -86,7 +86,7 @@ Data set used: [Early predictors of outcomes of hospitalization for cirrhosis an
 
 ::: {.column width="50%"}
 
-
+![](../doc/workflow.png){width="100%"}
 :::
 
 ::::
