@@ -18,6 +18,10 @@ Our project is based on the study of the following dataset: Mukthinuthlalapati, 
 3)  Go to the website where the dataset can be found (<https://doi.org/10.5061/dryad.6gt88dv>) and download the .csv file
 4)  Upload it in the /data/raw folder
 
+## To run the project
+
+To run the project, run the [00_all.qmd](https://github.com/rforbiodatascience23/Group_19_project/blob/main/R/00_all.qmd)
+
 ## Packages to install
 
 Before running the files that can be found in the "R" folder, a few packages should be installed and the following command lines should be run in your console:
