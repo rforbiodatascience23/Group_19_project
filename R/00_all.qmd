@@ -5,24 +5,24 @@ editor: visual
 message: false
 ---
 
-```{quarto, include=FALSE}
+``{quarto, include=FALSE}
 
+```{r}
 # Generation of the sub-documents when the main document is run
-quarto::render("~/projects/Group_19_project/R/01_load.qmd")
-quarto::render("~/projects/Group_19_project/R/02_clean.qmd")
-quarto::render("~/projects/Group_19_project/R/03_augment.qmd")
-quarto::render("~/projects/Group_19_project/R/04_describe.qmd")
-quarto::render("~/projects/Group_19_project/R/05_analysis_mortality.qmd")
-quarto::render("~/projects/Group_19_project/R/06_analysis.qmd")
-quarto::render("~/projects/Group_19_project/R/07_.qmd")
-quarto::render("~/projects/Group_19_project/R/08.qmd")
-quarto::render("~/projects/Group_19_project/R/09.qmd")
+quarto::quarto_render("~/projects/Group_19_project/R/01_load.qmd")
+quarto::quarto_render("~/projects/Group_19_project/R/02_clean.qmd")
+quarto::quarto_render("~/projects/Group_19_project/R/03_augment.qmd")
+quarto::quarto_render("~/projects/Group_19_project/R/04_describe.qmd")
+quarto::quarto_render("~/projects/Group_19_project/R/05_analysis_mortality.qmd")
+quarto::quarto_render("~/projects/Group_19_project/R/06_analysis_comorbidities_etiologies.qmd")
+quarto::quarto_render("~/projects/Group_19_project/R/07_analysis_CPS.qmd")
+quarto::quarto_render("~/projects/Group_19_project/R/08_analysis_liver_disease.qmd")
+quarto::quarto_render("~/projects/Group_19_project/R/09_logistic_analysis.qmd")
 ```
 
 ```{r}
 library(quarto)
 ```
-
 
 # Introduction
 
@@ -32,67 +32,53 @@ The aim of this project is to study the early predictors of cirrhosis' patients 
 
 The dataset we used comes from the study "Early predictors of outcomes of hospitalization for cirrhosis and assessment of the impact of race and ethnicity at safety-net hospitals". The data can be downloaded by following the guideline that can be found in the 'README.md'.
 
-```{quarto}
-# Include content from subdocument1.qmd
-{{< include 01_load.qmd >}}
+```{r}
+ file.rename(from = "~/projects/Group_19_project/R/01_load.html",
+             to = "~/projects/Group_19_project/results/01_load.html" )
 ```
-{{< include 01_load.qmd >}}
 
 ## Cleaning the data
 
-In order to make the dataset tidy, we did a few manipulations. This include selecting the relevant variables, reordering the columns, creating an ID for each patient and pivotting the data twice in order to get a longer dataset, with only two variables corresponding respectively to the etiologies and the comorbidities.
-
-```{quarto}
-# Include content from subdocument1.qmd
-quarto::include("02_clean.qmd")
+```{r}
+ file.rename(from = "~/projects/Group_19_project/R/02_clean-html",
+             to = "~/projects/Group_19_project/results/02_clean_html" )
 ```
 
 ## Augmenting the data
 
-In the file '03_augment.qmd', we created two categorical variables: one corresponds to the age, and the other one to the mortality to indicate if a patient survived the cirrhosis, died at the hospital, died after less than 30 days after leaving the hospital, or died 30 to 90 days after leaving the hospital.
-
-```{quarto}
-# Include content from subdocument1.qmd
-quarto::include("03_augment.qmd")
+```{r}
+ file.rename(from = "~/projects/Group_19_project/R/03_augment.html",
+             to = "~/projects/Group_19_project/results/03_augment.html" )
 ```
 
 ## Describing the data
 
-The aim of that part of the project is to give general informations about the dataset, in order to get a better overview of the studied sample of patients.
-
-```{quarto}
-# Include content from subdocument1.qmd
-quarto::include("04_describe.qmd")
+```{r}
+ file.rename(from = "~/projects/Group_19_project/R/04_describe.html",
+             to = "~/projects/Group_19_project/results/04_describe.html" )
 ```
 
 ## Data analysis
 
-In the first file of the analysis, we study the effect of the different etiologies and comorbidities on the Child Pugh Score. 
-
-```{quarto}
-# Include content from subdocument1.qmd
-quarto::include("05_analysis_CPS.qmd")
+```{r}
+ file.rename(from = "~/projects/Group_19_project/R/05_analysis_mortality.html",
+             to = "~/projects/Group_19_project/results/05_analysis_mortality.html" )
 ```
 
-In the next analysis, we try to determine how the patients' mortality can be affected by some variables, for example the age, the type of liver disease or the type of etiology.
 
-```{quarto}
-# Include content from subdocument1.qmd
-quarto::include("06_analysis_mortality.qmd")
+```{r}
+ file.rename(from = "~/projects/Group_19_project/R/06_analysis_comorbidities_etiologies.html",
+             to = "~/projects/Group_19_project/results/06_analysis_comorbidities_etiologies.html" )
 ```
 
-Then, we also try to visualize the relationship between liver diseases and comorbidities, in order to see if some of them are correlated.
 
-```{quarto}
-# Include content from subdocument1.qmd
-quarto::include("07_analysis_comorbidities_etiologies.qmd")
+```{r}
+ file.rename(from = "~/projects/Group_19_project/R/08_analysis_liver_disease.html",
+             to = "~/projects/Group_19_project/results/08_analysis_liver_disease.html" )
 ```
 
-In the last file of the project, we use a linear regression model to describe the impact of the different liver diseases on mortality.
-
-```{quarto}
-# Include content from subdocument1.qmd
-quarto::include("08_analysis_liver_disease.qmd")
+```{r}
+ file.rename(from = "~/projects/Group_19_project/R/09_logistic_analysis.html",
+             to = "~/projects/Group_19_project/results/09_logistic_analysis.html" )
 ```
 
-## Conclusion
