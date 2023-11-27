@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.475">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>03_augment</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="03_augment_files/libs/clipboard/clipboard.min.js"></script>
+<script src="03_augment_files/libs/quarto-html/quarto.js"></script>
+<script src="03_augment_files/libs/quarto-html/popper.min.js"></script>
+<script src="03_augment_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="03_augment_files/libs/quarto-html/anchor.min.js"></script>
+<link href="03_augment_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="03_augment_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="03_augment_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="03_augment_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="03_augment_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">03_augment</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.2     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.0
+✔ ggplot2   3.4.4     ✔ tibble    3.2.1
+✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dat_clean_02 <span class="ot">&lt;-</span> <span class="fu">read_tsv</span>(<span class="st">"~/projects/Group_19_project/data/02_dat_clean.tsv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 468 Columns: 34
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr (30): Sex, Liver_disease, E_Alcohol_consumption, E_Hepatitis_c, E_Hepati...
+dbl  (4): Id, Age, CPS, Charlson_CI
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>dat_tidy_02 <span class="ot">&lt;-</span> <span class="fu">read_tsv</span>(<span class="st">"~/projects/Group_19_project/data/02_dat_tidy.tsv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 1065 Columns: 11
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr (7): Sex, Liver_disease, Mortality_hospital, Mortality_30_days, Mortalit...
+dbl (4): Id, Age, CPS, Charlson_CI
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dat_tidy_C_02 <span class="ot">&lt;-</span> <span class="fu">read_tsv</span>(<span class="st">"~/projects/Group_19_project/data/02_dat_tidy_C.tsv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 819 Columns: 18
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr (14): Sex, Liver_disease, E_Alcohol_consumption, E_Hepatitis_c, E_Hepati...
+dbl  (4): Id, Age, CPS, Charlson_CI
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>dat_tidy_E_02 <span class="ot">&lt;-</span> <span class="fu">read_tsv</span>(<span class="st">"~/projects/Group_19_project/data/02_dat_tidy_E.tsv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 611 Columns: 27
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: "\t"
+chr (23): Sex, Liver_disease, C_Myocardial_infarction, C_Congestive_Heart_Fa...
+dbl  (4): Id, Age, CPS, Charlson_CI
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+<section id="introduction-of-a-new-variable-mortality" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-of-a-new-variable-mortality">Introduction of a new variable “Mortality”</h2>
+<p>We have two data sets available: a clean and a tidy one. We will augment both of them simultaneously. We need to be careful since there is an ‘error’ in the database where people that died at time t are written as dead at t + 1. However, we want the mortality to assess the exact mortality time.</p>
+<p>The combination are as follows:</p>
+<pre><code>H No 30 No 90 No = "Alive", 
+H Yes 30 No 90 No = "Dead_Hospital" 
+H Yes 30 Yes 90 Yes = "Dead_Hospital" 
+H No 30 No 90 Yes = "Dead_90" 
+H No 30 Yes 90 Yes = "Dead_30"</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Mortality =</span> <span class="fu">case_when</span>(Mortality_hospital <span class="sc">==</span> <span class="st">'Yes'</span> <span class="sc">~</span> </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"Death_in_hospital"</span>, </span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>                                Mortality_hospital <span class="sc">==</span> <span class="st">'No'</span> <span class="sc">&amp;</span> </span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>                                 Mortality_30_days <span class="sc">==</span> <span class="st">'Yes'</span> <span class="sc">&amp;</span> </span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>                                 Mortality_90_days <span class="sc">==</span> <span class="st">'No'</span> <span class="sc">~</span> </span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"Death_in_first_30_days"</span>, </span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>                                Mortality_hospital <span class="sc">==</span> <span class="st">'No'</span> <span class="sc">&amp;</span> </span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>                                 Mortality_30_days <span class="sc">==</span> <span class="st">'No'</span> <span class="sc">&amp;</span> </span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>                                 Mortality_90_days <span class="sc">==</span> <span class="st">'Yes'</span> <span class="sc">~</span> </span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"Death_between_30_and_90_days"</span>, </span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>                               <span class="at">.default =</span> <span class="st">"No death"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>   <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(Mortality_30_days, Mortality_90_days, Mortality_hospital))</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="clean-data-set" class="level3">
+<h3 class="anchored" data-anchor-id="clean-data-set">Clean data set</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>dat_aug_clean_03 <span class="ot">&lt;-</span> dat_clean_02 <span class="sc">|&gt;</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">mutate</span>(<span class="at">Mortality =</span> <span class="fu">case_when</span>(Mortality_hospital <span class="sc">==</span> <span class="st">'Yes'</span> <span class="sc">~</span> </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"Death_in_hospital"</span>, </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>                                Mortality_hospital <span class="sc">==</span> <span class="st">'No'</span> <span class="sc">&amp;</span> </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>                                Mortality_30_days <span class="sc">==</span> <span class="st">'Yes'</span> <span class="sc">&amp;</span> </span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>                                Mortality_90_days <span class="sc">==</span> <span class="st">'No'</span> <span class="sc">~</span> </span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"Death_in_first_30_days"</span>, </span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>                                Mortality_hospital <span class="sc">==</span> <span class="st">'No'</span> <span class="sc">&amp;</span> </span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>                                Mortality_30_days <span class="sc">==</span> <span class="st">'No'</span> <span class="sc">&amp;</span> </span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>                                Mortality_90_days <span class="sc">==</span> <span class="st">'Yes'</span> <span class="sc">~</span> </span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"Death_between_30_and_90_days"</span>,</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>                               <span class="at">.default =</span> <span class="st">"No death"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>   <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(Mortality_30_days, Mortality_90_days, Mortality_hospital))</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>dat_aug_clean_03</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 468 × 32
+      Id Sex      Age Liver_disease          E_Alcohol_consumption E_Hepatitis_c
+   &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;                  &lt;chr&gt;                 &lt;chr&gt;        
+ 1     1 Female     9 Hepatic encephalopathy No                    No           
+ 2     2 Male       6 SBP                    Yes                   Yes          
+ 3     3 Female     8 Ascites                No                    No           
+ 4     4 Female     7 Other fluid overload   No                    No           
+ 5     5 Male       7 Hepatic encephalopathy Yes                   No           
+ 6     6 Male       8 AKI                    No                    No           
+ 7     7 Male       7 UGIB due to portal hy… Yes                   No           
+ 8     8 Male       6 Other fluid overload   Yes                   Yes          
+ 9     9 Male       6 Hepatic encephalopathy Yes                   Yes          
+10    13 Female     6 UGIB due to portal hy… Yes                   No           
+# ℹ 458 more rows
+# ℹ 26 more variables: E_Hepatitis_b &lt;chr&gt;, E_Non_alcoolic_fatty_LD &lt;chr&gt;,
+#   E_Cryptogenic &lt;chr&gt;, E_Primary_sclerosing_cholangitis &lt;chr&gt;,
+#   E_Autoimmune_hepatitis &lt;chr&gt;, E_Primary_biliary_cholangitis &lt;chr&gt;,
+#   C_Myocardial_infarction &lt;chr&gt;, C_Congestive_Heart_Failure &lt;chr&gt;,
+#   C_Peripheral_vascular_disease &lt;chr&gt;, C_Cerebro_Vascular_disease &lt;chr&gt;,
+#   C_Dementia &lt;chr&gt;, C_Chronic_pulmonary_disease &lt;chr&gt;, …</code></pre>
+</div>
+</div>
+</section>
+<section id="tidy-data-set" class="level3">
+<h3 class="anchored" data-anchor-id="tidy-data-set">Tidy data set</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>dat_aug_03 <span class="ot">&lt;-</span> dat_tidy_02 <span class="sc">|&gt;</span> </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">mutate</span>(<span class="at">Mortality =</span> <span class="fu">case_when</span>(Mortality_hospital <span class="sc">==</span> <span class="st">'Yes'</span> <span class="sc">~</span> </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">"Death_in_hospital"</span>, </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>                                Mortality_hospital <span class="sc">==</span> <span class="st">'No'</span> <span class="sc">&amp;</span> </span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>                                  Mortality_30_days <span class="sc">==</span> <span class="st">'Yes'</span> <span class="sc">&amp;</span> </span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>                                  Mortality_90_days <span class="sc">==</span> <span class="st">'No'</span> <span class="sc">~</span> </span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">"Death_in_first_30_days"</span>, </span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>                                Mortality_hospital <span class="sc">==</span> <span class="st">'No'</span> <span class="sc">&amp;</span> </span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>                                  Mortality_30_days <span class="sc">==</span> <span class="st">'No'</span> <span class="sc">&amp;</span> </span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>                                  Mortality_90_days <span class="sc">==</span> <span class="st">'Yes'</span> <span class="sc">~</span> </span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">"Death_between_30_and_90_days"</span>, </span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>                               <span class="at">.default =</span> <span class="st">"No death"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>   <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(Mortality_30_days, Mortality_90_days, Mortality_hospital))</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>dat_aug_03</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,065 × 9
+      Id Sex      Age Liver_disease     CPS Charlson_CI Comorbidities Etiologies
+   &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;     
+ 1     1 Female     9 Hepatic enceph…     9           0 None          Cryptogen…
+ 2     2 Male       6 SBP                 9           3 Moderate_sev… Alcohol_c…
+ 3     2 Male       6 SBP                 9           3 Moderate_sev… Hepatitis…
+ 4     3 Female     8 Ascites             6           2 Mild_liver_d… Non_alcoo…
+ 5     3 Female     8 Ascites             6           2 Diabetes_wit… Non_alcoo…
+ 6     4 Female     7 Other fluid ov…     8           9 Myocardial_i… Cryptogen…
+ 7     4 Female     7 Other fluid ov…     8           9 Congestive_H… Cryptogen…
+ 8     4 Female     7 Other fluid ov…     8           9 Renal_disease Cryptogen…
+ 9     4 Female     7 Other fluid ov…     8           9 Moderate_sev… Cryptogen…
+10     4 Female     7 Other fluid ov…     8           9 Diabetes_wit… Cryptogen…
+# ℹ 1,055 more rows
+# ℹ 1 more variable: Mortality &lt;chr&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="tidy-comorbidities-data-set" class="level3">
+<h3 class="anchored" data-anchor-id="tidy-comorbidities-data-set">Tidy Comorbidities data set</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>dat_aug_C_03 <span class="ot">&lt;-</span> dat_tidy_C_02 <span class="sc">|&gt;</span> </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">mutate</span>(<span class="at">Mortality =</span> <span class="fu">case_when</span>(Mortality_hospital <span class="sc">==</span> <span class="st">'Yes'</span> <span class="sc">~</span> </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">"Death_in_hospital"</span>, </span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>                                Mortality_hospital <span class="sc">==</span> <span class="st">'No'</span> <span class="sc">&amp;</span> </span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>                                  Mortality_30_days <span class="sc">==</span> <span class="st">'Yes'</span> <span class="sc">&amp;</span> </span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>                                  Mortality_90_days <span class="sc">==</span> <span class="st">'No'</span> <span class="sc">~</span> </span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">"Death_in_first_30_days"</span>, </span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>                                Mortality_hospital <span class="sc">==</span> <span class="st">'No'</span> <span class="sc">&amp;</span> </span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>                                  Mortality_30_days <span class="sc">==</span> <span class="st">'No'</span> <span class="sc">&amp;</span> </span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>                                  Mortality_90_days <span class="sc">==</span> <span class="st">'Yes'</span> <span class="sc">~</span> </span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">"Death_between_30_and_90_days"</span>, </span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>                               <span class="at">.default =</span> <span class="st">"No death"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>   <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(Mortality_30_days, Mortality_90_days, Mortality_hospital))</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>dat_aug_C_03</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 819 × 16
+      Id Sex      Age Liver_disease          E_Alcohol_consumption E_Hepatitis_c
+   &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;                  &lt;chr&gt;                 &lt;chr&gt;        
+ 1     1 Female     9 Hepatic encephalopathy No                    No           
+ 2     2 Male       6 SBP                    Yes                   Yes          
+ 3     3 Female     8 Ascites                No                    No           
+ 4     3 Female     8 Ascites                No                    No           
+ 5     4 Female     7 Other fluid overload   No                    No           
+ 6     4 Female     7 Other fluid overload   No                    No           
+ 7     4 Female     7 Other fluid overload   No                    No           
+ 8     4 Female     7 Other fluid overload   No                    No           
+ 9     4 Female     7 Other fluid overload   No                    No           
+10     5 Male       7 Hepatic encephalopathy Yes                   No           
+# ℹ 809 more rows
+# ℹ 10 more variables: E_Hepatitis_b &lt;chr&gt;, E_Non_alcoolic_fatty_LD &lt;chr&gt;,
+#   E_Cryptogenic &lt;chr&gt;, E_Primary_sclerosing_cholangitis &lt;chr&gt;,
+#   E_Autoimmune_hepatitis &lt;chr&gt;, E_Primary_biliary_cholangitis &lt;chr&gt;,
+#   CPS &lt;dbl&gt;, Charlson_CI &lt;dbl&gt;, Comorbidities &lt;chr&gt;, Mortality &lt;chr&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="tidy-etiologies-data-set" class="level3">
+<h3 class="anchored" data-anchor-id="tidy-etiologies-data-set">Tidy Etiologies data set</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>dat_aug_E_03 <span class="ot">&lt;-</span> dat_tidy_E_02 <span class="sc">|&gt;</span> </span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">mutate</span>(<span class="at">Mortality =</span> <span class="fu">case_when</span>(Mortality_hospital <span class="sc">==</span> <span class="st">'Yes'</span> <span class="sc">~</span> </span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">"Death_in_hospital"</span>, </span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>                                Mortality_hospital <span class="sc">==</span> <span class="st">'No'</span> <span class="sc">&amp;</span> </span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>                                  Mortality_30_days <span class="sc">==</span> <span class="st">'Yes'</span> <span class="sc">&amp;</span> </span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>                                  Mortality_90_days <span class="sc">==</span> <span class="st">'No'</span> <span class="sc">~</span> </span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">"Death_in_first_30_days"</span>, </span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>                                Mortality_hospital <span class="sc">==</span> <span class="st">'No'</span> <span class="sc">&amp;</span> </span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>                                  Mortality_30_days <span class="sc">==</span> <span class="st">'No'</span> <span class="sc">&amp;</span> </span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>                                  Mortality_90_days <span class="sc">==</span> <span class="st">'Yes'</span> <span class="sc">~</span> </span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">"Death_between_30_and_90_days"</span>, </span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>                               <span class="at">.default =</span> <span class="st">"No death"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>   <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(Mortality_30_days, Mortality_90_days, Mortality_hospital))</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>dat_aug_E_03</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 611 × 25
+      Id Sex     Age Liver_disease C_Myocardial_infarct…¹ C_Congestive_Heart_F…²
+   &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;                  &lt;chr&gt;                 
+ 1     1 Fema…     9 Hepatic ence… No                     No                    
+ 2     2 Male      6 SBP           No                     No                    
+ 3     2 Male      6 SBP           No                     No                    
+ 4     3 Fema…     8 Ascites       No                     No                    
+ 5     4 Fema…     7 Other fluid … Yes                    Yes                   
+ 6     5 Male      7 Hepatic ence… No                     No                    
+ 7     6 Male      8 AKI           Yes                    Yes                   
+ 8     7 Male      7 UGIB due to … No                     No                    
+ 9     8 Male      6 Other fluid … No                     No                    
+10     8 Male      6 Other fluid … No                     No                    
+# ℹ 601 more rows
+# ℹ abbreviated names: ¹​C_Myocardial_infarction, ²​C_Congestive_Heart_Failure
+# ℹ 19 more variables: C_Peripheral_vascular_disease &lt;chr&gt;,
+#   C_Cerebro_Vascular_disease &lt;chr&gt;, C_Dementia &lt;chr&gt;,
+#   C_Chronic_pulmonary_disease &lt;chr&gt;, C_Rheumatological_disease &lt;chr&gt;,
+#   C_Pepticulcer_disease &lt;chr&gt;, C_Mild_liver_disease &lt;chr&gt;,
+#   C_Heiplegia_paraplegia &lt;chr&gt;, C_Renal_disease &lt;chr&gt;, C_Malignancy &lt;chr&gt;, …</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="introduction-of-a-categorical-variable---change-decades-into-age-categories" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-of-a-categorical-variable---change-decades-into-age-categories">Introduction of a categorical variable - change Decades into age categories</h2>
+<section id="clean" class="level3">
+<h3 class="anchored" data-anchor-id="clean">Clean</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>dat_aug_clean_03 <span class="ot">&lt;-</span> dat_aug_clean_03 <span class="sc">|&gt;</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Age =</span> <span class="fu">str_c</span>(<span class="st">'['</span>, Age<span class="sc">*</span><span class="dv">10</span>, <span class="st">'; '</span>, (Age <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">*</span><span class="dv">10</span>, <span class="st">']'</span>))</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>dat_aug_clean_03</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 468 × 32
+      Id Sex    Age       Liver_disease      E_Alcohol_consumption E_Hepatitis_c
+   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;              &lt;chr&gt;                 &lt;chr&gt;        
+ 1     1 Female [90; 100] Hepatic encephalo… No                    No           
+ 2     2 Male   [60; 70]  SBP                Yes                   Yes          
+ 3     3 Female [80; 90]  Ascites            No                    No           
+ 4     4 Female [70; 80]  Other fluid overl… No                    No           
+ 5     5 Male   [70; 80]  Hepatic encephalo… Yes                   No           
+ 6     6 Male   [80; 90]  AKI                No                    No           
+ 7     7 Male   [70; 80]  UGIB due to porta… Yes                   No           
+ 8     8 Male   [60; 70]  Other fluid overl… Yes                   Yes          
+ 9     9 Male   [60; 70]  Hepatic encephalo… Yes                   Yes          
+10    13 Female [60; 70]  UGIB due to porta… Yes                   No           
+# ℹ 458 more rows
+# ℹ 26 more variables: E_Hepatitis_b &lt;chr&gt;, E_Non_alcoolic_fatty_LD &lt;chr&gt;,
+#   E_Cryptogenic &lt;chr&gt;, E_Primary_sclerosing_cholangitis &lt;chr&gt;,
+#   E_Autoimmune_hepatitis &lt;chr&gt;, E_Primary_biliary_cholangitis &lt;chr&gt;,
+#   C_Myocardial_infarction &lt;chr&gt;, C_Congestive_Heart_Failure &lt;chr&gt;,
+#   C_Peripheral_vascular_disease &lt;chr&gt;, C_Cerebro_Vascular_disease &lt;chr&gt;,
+#   C_Dementia &lt;chr&gt;, C_Chronic_pulmonary_disease &lt;chr&gt;, …</code></pre>
+</div>
+</div>
+</section>
+<section id="tidy" class="level3">
+<h3 class="anchored" data-anchor-id="tidy">Tidy</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>dat_aug_03 <span class="ot">&lt;-</span> dat_aug_03 <span class="sc">|&gt;</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Age =</span> <span class="fu">str_c</span>(<span class="st">'['</span>, Age<span class="sc">*</span><span class="dv">10</span>, <span class="st">'; '</span>, (Age <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">*</span><span class="dv">10</span>, <span class="st">']'</span>))</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>dat_aug_03</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,065 × 9
+      Id Sex    Age     Liver_disease   CPS Charlson_CI Comorbidities Etiologies
+   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;         &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;     
+ 1     1 Female [90; 1… Hepatic ence…     9           0 None          Cryptogen…
+ 2     2 Male   [60; 7… SBP               9           3 Moderate_sev… Alcohol_c…
+ 3     2 Male   [60; 7… SBP               9           3 Moderate_sev… Hepatitis…
+ 4     3 Female [80; 9… Ascites           6           2 Mild_liver_d… Non_alcoo…
+ 5     3 Female [80; 9… Ascites           6           2 Diabetes_wit… Non_alcoo…
+ 6     4 Female [70; 8… Other fluid …     8           9 Myocardial_i… Cryptogen…
+ 7     4 Female [70; 8… Other fluid …     8           9 Congestive_H… Cryptogen…
+ 8     4 Female [70; 8… Other fluid …     8           9 Renal_disease Cryptogen…
+ 9     4 Female [70; 8… Other fluid …     8           9 Moderate_sev… Cryptogen…
+10     4 Female [70; 8… Other fluid …     8           9 Diabetes_wit… Cryptogen…
+# ℹ 1,055 more rows
+# ℹ 1 more variable: Mortality &lt;chr&gt;</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="save-data-in-the-folder-data" class="level2">
+<h2 class="anchored" data-anchor-id="save-data-in-the-folder-data">Save data in the folder “data”</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_tsv</span>(</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">x=</span> dat_aug_clean_03, </span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">file =</span> <span class="st">'~/projects/Group_19_project/data/03_dat_aug_clean.tsv'</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="fu">write_tsv</span>(</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">x=</span> dat_aug_03, </span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">file =</span> <span class="st">'~/projects/Group_19_project/data/03_dat_aug.tsv'</span></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a><span class="fu">write_tsv</span>(</span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">x=</span> dat_aug_C_03, </span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">file =</span> <span class="st">'~/projects/Group_19_project/data/03_dat_aug_C.tsv'</span></span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a><span class="fu">write_tsv</span>(</span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">x=</span> dat_aug_E_03, </span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">file =</span> <span class="st">'~/projects/Group_19_project/data/03_dat_aug_E.tsv'</span></span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
