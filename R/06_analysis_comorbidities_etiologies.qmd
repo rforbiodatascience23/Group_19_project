@@ -23,9 +23,7 @@ dat_aug_03 <- read_tsv("~/projects/Group_19_project/data/03_dat_aug.tsv")
 
 Seeking to understand the relation between comorbidities and the patient's liver disease, it would be helpful to visualize if some liver diseases have peculiar relationships with some comorbidities. To do so, a tile plot with the variables Liver disease, Comorbidities and ratio of patients of a certain liver disease with comorbidities was created.
 
-### Creation of a dataset with count of patients with same disease and same
-
-comorbidities
+### Creation of a dataset with count of patients with same disease and same comorbidities
 
 ```{r}
 grouped_LD_C <- dat_aug_03 |>
@@ -89,9 +87,7 @@ Each column adds up to 100%. From this graph, we can state that Moderate to seve
 
 After tackling the subject comorbidities that can enhance some cases of cirrhosis, the etiology or causes of the liver disease is also a useful tool, both for treatment and prevention.
 
-### Creation of a new dataset counting patients with same disease and same
-
-etiology
+### Creation of a new dataset counting patients with same disease and same etiology
 
 ```{r}
 grouped_LD_E <- dat_aug_03 |> 
@@ -132,21 +128,11 @@ tile_plot_etiologies
 
 ```
 
-```{r}
-ggsave("Tile_plot_etiologies.png", 
-       path = "../results/plots/",
-       plot = tile_plot_etiologies,
-       width = 7,
-       height = 5)
-```
-
 Each column adds up to 100%.
 
 From this tile chart, Hepathitis C and alcohol consumption appear like the two main ethiologies for the liver disease, especially for Alcoholic hepatitis where nearly 80% is caused by alcohol consumption. Hepathitis C is also responsible for half of the cases of HCC of patients in this study. Those two ethiologies usually share the stage for each liver disease. Ascites, Hepatic encephalopathy and UGIB have multiple etiologies possible at few percentages like Autoimmune hepatitis, cryptogenic disease, Hepathitis B and Non Alcoholic fatty liver disease. However, Primary biliary cholangitis seems like a very rare etiology, since it is only present in a very few percent (arouond 1%) for patients suffering from Fluid overload.
 
-# Does etiology have influences on the mortality of patients for he same liver
-
-disease ?
+# Does etiology have influences on the mortality of patients for the same liver disease ?
 
 ```{r}
 dat_aug_03_2 <- dat_aug_03 |> 

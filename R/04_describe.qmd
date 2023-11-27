@@ -11,7 +11,6 @@ library(patchwork)
 
 ```
 
-
 ```{r}
 dat_load_01 <- read_tsv(file = 
         "~/projects/Group_19_project/data/_raw/PONE-D-18-29048R1_data_file.csv")
@@ -24,7 +23,6 @@ dat_aug_03 <- read_tsv("~/projects/Group_19_project/data/03_dat_aug.tsv")
 dat_aug_C_03 <- read_tsv("~/projects/Group_19_project/data/03_dat_aug_C.tsv")
 dat_aug_E_03 <- read_tsv("~/projects/Group_19_project/data/03_dat_aug_E.tsv")
 ```
-
 
 # Descriptive statistics
 
@@ -308,20 +306,6 @@ box_plot_CPS_Charlson
 ```
 
 ```{r}
-ggsave("Boxplot_CPS.png", 
-       path = "../results/plots/",
-       plot = box_plot_CPS,
-       width = 7,
-       height = 5)
-
-ggsave("Boxplot_Charlson.png", 
-       path = "../results/plots/",
-       plot = box_plot_Charlson,
-       width = 7,
-       height = 5)
-```
-
-```{r}
 mean_CPS <- dat_aug_C_03 |> 
   summarize(mean(CPS))
 
@@ -354,14 +338,6 @@ box_plot_Charlson_Comorbidities <- dat_aug_C_03 |>
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 
 box_plot_Charlson_Comorbidities
-```
-
-```{r}
-ggsave("Charlson_comorbidities.png", 
-       path = "../results/plots/",
-       plot = box_plot_Charlson_Comorbidities,
-       width = 7,
-       height = 5)
 ```
 
 From the boxplot, we can deduce that AIDS and Metastatic solid tumor are 2 of the major comorbidities that have an important weight on the Charlson CI. On the opposite side of the spectrum, mild liver disease and rheumatological have a limited impact on the variable. Less weight means that the diseaseis not severe enough to affect directly and significantly the life expectancy of the patient.
@@ -413,14 +389,6 @@ bubble_comorbiditie_by_LD <- ggplot(bubble_chart,
         axis.text.x = element_text(angle = 45, hjust = 0))
 
 bubble_comorbiditie_by_LD
-```
-
-```{r}
-ggsave("Bubble_plot.png", 
-       path = "../results/plots/",
-       plot = bubble_comorbiditie_by_LD,
-       width = 7,
-       height = 5)
 ```
 
 From this visualisation graph, it appears that Hepatic Encephalopaty liver disease has the greatest amount of comorbidities observed. On the opposite, we observe fewer Comorbidities for for jaundice and Hepato-hydrothorax. Additionally, the most common combination is Ascites with Moderate Liver disease as a comorbidity.

@@ -291,14 +291,12 @@ write_tsv(
   )
 ```
 
-
 ```{r}
 write_tsv(
   x= dat_tidy_E_02, 
   file = '~/projects/Group_19_project/data/02_dat_tidy_E.tsv'
   )
 ```
-
 
 ```{r}
 write_tsv(
