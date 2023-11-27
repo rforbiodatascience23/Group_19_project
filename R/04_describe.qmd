@@ -28,7 +28,7 @@ Finally, we tidied using a pivot_longer to finally obtain a data set of 1065 obs
 
 The total number of patients stratified by gender can be visualized with the following plots:
 
-To better illustrate that both have their mode at \[60;70\], the plot is also shown faceted.
+To better illustrate that both have their mode (most commonly occurring number in the data set) at \[60;70\], the plot is also shown faceted.
 
 ```{r}
 bar_plot_age_gender <- dat_aug_clean_03 |>
@@ -141,7 +141,8 @@ pie_chart_LD<- dat_LD |>
         axis.line.x = element_blank(), 
         axis.title.y=element_blank(), 
         axis.text.y = element_blank(), 
-        axis.line.y = element_blank(), ) +
+        axis.line.y = element_blank(), 
+        axis.line = element_blank())+
   theme(plot.title = element_text(hjust = 0.5, face = "bold", size = 14))
 ```
 
@@ -232,7 +233,7 @@ bar_plot_etiology <- dat_etio |>
             vjust = -0.5, 
             size = 3) +
   labs(title = "Overview of etiology across cirrhosis patients",
-       y = "Count") +
+       y = "Proportion") +
   scale_fill_viridis_d() +
   theme(legend.title=element_blank(), 
         axis.title.x = element_blank(), 

@@ -18,7 +18,9 @@ author:
 
 ## Introduction 
 
-<u>Objective: </u> Understand patterns and correlations between early predictors **Comorbidities and Etiologies**, their numerical estimate **CPS and Charlson index** and **cirrhosis' patients outcome** \  
+<u>Objective: </u> Understand patterns and correlations between early predictors
+**Comorbidities and Etiologies**, their numerical estimate **CPS and Charlson index** 
+and **cirrhosis' patients outcome** \  
 
 :::: {.columns}
 
@@ -26,7 +28,9 @@ author:
 
 **Cirrhosis** = condition in which the liver is scarred and permanently damaged.
 
-How is this study relevant ? 
+<u>Relevancy of the study: </u> Cirrhosis is a leading cause of mortality in the 
+world (11th), and finding accurate descriptive index is a useful tool to 
+investigate the possible outcome of patients. 
 
 :::
 
@@ -41,7 +45,7 @@ Graph eva BioRender explaining the relatins between the index, etiologies...
 
 :::: {.columns}
 ::: {.column width="50%"}
-Data set used: [Early predictors of outcomes of hospitalization for cirrhosis and assessment of the impact of race and ethnicity at safety-net hospitals](https://datadryad.org/stash/dataset/doi:10.5061/dryad.6gt88dv)
+<u> Data set used: </u> [Early predictors of outcomes of hospitalization for cirrhosis and assessment of the impact of race and ethnicity at safety-net hospitals](https://datadryad.org/stash/dataset/doi:10.5061/dryad.6gt88dv)
 
 - 733 patients 
 - From 4 safety-net hospitals in the US    
@@ -55,8 +59,6 @@ Data set used: [Early predictors of outcomes of hospitalization for cirrhosis an
 
 ::: {.column width="50%"}
 ![](../results/plots/Age_gender.png){width="100%"}
-
-
 ![](../results/plots/Overview_LD.png){width="100%"}
 :::
 
@@ -68,19 +70,20 @@ Data set used: [Early predictors of outcomes of hospitalization for cirrhosis an
 
 ::: {.column width="50%"}
 
-<b>Cleaning & Tidying:</b>
+<b>Cleaning: </b>
 
--   Started by extracting necessary columns
+- Extracting necessary columns
+- Renaming columns, reordering
+- Dropping non-available values them, and assigned classes to etiology and comorbidities.
 
--   Adding an ID column as a unique identifier for each observation
+<b>Tidying:</b>
 
--   Renamed columns, reordered them, and assigned classes to etiology and comorbidities.
-
+- Pivot_wider on Comorbidities
+- Pivot_wider on Etiologies
 
 <b>Augmenting:</b>
 
--   Created categories for Mortality: no death, death in hospital, after 30 days, after 90 days.
-
+-   Created categories for Mortality: no death, death in hospital, after 30 days, after 90 days
 -   Creating age bins instead decade
 :::
 
@@ -107,12 +110,12 @@ Data set used: [Early predictors of outcomes of hospitalization for cirrhosis an
 :::
 :::
 
-## Liver disease repartition in cirrhosis patients, stratified by mortality
+## Results: Different outcomes tendency depending on the liver disease
 
 :::: {.columns}
 
 ::: {.column width="50%"}
-![](../results/plots/LD_Mortality.png){width="50%"}
+![](../results/plots/LD_Mortality.png){width="100%"}
 
 :::
 
@@ -144,12 +147,12 @@ Data set used: [Early predictors of outcomes of hospitalization for cirrhosis an
 
 :::: {.columns}
 
-::: {.column width="50%"}
+::: {.column width="60%"}
 ![](../results/plots/Significance_plot_CPS.png){width="100%"}
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 - 
 - 
 - 
@@ -161,12 +164,12 @@ Data set used: [Early predictors of outcomes of hospitalization for cirrhosis an
 
 :::: {.columns}
 
-::: {.column width="50%"}
-![](../results/plots/Significance_plot_CPS.png){width="100s%"}
+::: {.column width="60%"}
+![](../results/plots/Tile_plot_mortality.png){width="100%"}
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 - 
 - 
 - 

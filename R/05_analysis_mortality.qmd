@@ -335,7 +335,7 @@ E_table <- distinct_E %>%
   summarise(number_of_patients = n())
 
 
-print(E_table)
+E_table
 ```
 
 ```{r}
@@ -348,7 +348,7 @@ C_table <- distinct_C %>%
   summarise(number_of_patients = n())
 
 
-print(C_table)
+C_table
 ```
 
 By looking at the number of patients present in each sample, we can see that there is only one patient that has six comorbidities, so we choose not to take that category into account for the analysis of the bar charts. The bar chart stratified on the number of etiologies shows that this number is proportional to the mortality: the more etiologies a patient has, the more likely he is to die of cirrhosis. Concerning the bar chart stratified on the number of comorbidities, there is no such trend in the mortality proportions, but we can still see that the proportion of death that occur in the hospital increases, so the severity of the disease might increase with the number of comorbidities.
