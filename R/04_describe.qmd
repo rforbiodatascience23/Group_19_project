@@ -8,18 +8,26 @@ editor: visual
 
 ## General information on the data sets
 
+We have 3 main data sets: the original one, the cleaned one with amongst other 
+things the removal of NA and the tidy data sets.
+
 ```{r}
-dim_desc(dat_aug_03)
+# Original data set 
 dim_desc(dat_load_01)
+# Clean data set 
+dim_desc(dat_aug_clean_03)
+# Tidy data set 
+dim_desc(dat_aug_03)
 ```
 
-We have the dat_aug_03 data set with a total of 468 observations with 32 variables, after tidying a data set of 733 patients suffering from cirrhosis.
+The original data set consisted in 733 cirrhosis' hospitalized patients with 91 variables. 
+After cleaning, and getting dropping non available observations, we managed t reduce to 468 observations with 32 variables.
+Finally, we tidied using a pivot_longer to finally obtain a data set of 1065 observations over 9 variables
 
 ## Sex and Age group of the patients' population
 
 The total number of patients stratified by gender can be visualized with the following plots:
 
-To observe the age and gender distribution, a stacked bar plot for the age distribution, stratified by gender, can be used.\
 To better illustrate that both have their mode at \[60;70\], the plot is also shown faceted.
 
 ```{r}
@@ -127,19 +135,22 @@ print(mode_of_age_sex)
 ```
 
 ```{r}
-dat_aug_03 |> 
+dat_aug_clean_03 |> 
   count(Sex)
+  
 ```
 
 ## Overview of the liver disease in the patients' population
 
 ```{r}
-dat_LD <- dat_aug_03 |> 
-  count(Liver_disease)
+dat_LD <- dat_aug_clean_03 |> 
+  count(Liver_disease) |> 
+  mutate(proportion = n/sum(n))
 ```
 
 Ascites and hepatic encephalopathy are the two main liver diseases diagnosed. Ascites, representing 40% of liver diseases, is a build up of fluid in the abdomen, often as a consequence of cirrhosis. Hepatic encephalopathy is also a common pathology in patients with cirrhosis due to deficiencies in their neurological system, here representing 33% of the study.
 
+# Bar plot version
 ```{r}
 bar_plot_LD<- dat_LD |> 
   ggplot(aes(x = reorder(Liver_disease,-n), 
@@ -159,11 +170,31 @@ bar_plot_LD<- dat_LD |>
   scale_x_discrete(guide = guide_axis(angle = 25))
 ```
 
+# Pie char version
 ```{r}
-bar_plot_LD
+pie_chart_LD<- dat_LD |> 
+  ggplot(aes(x = "", 
+             y = proportion, 
+             fill = Liver_disease)) +
+  geom_bar(stat = 'identity', 
+           alpha = 0.7) +
+  coord_polar("y", start=0) +
+  labs(title = "Liver disease repartition in cirrhosis patients",
+       y = "Count") +
+  geom_text(aes(label = sprintf("%.1f%%", proportion * 100)),
+            position = position_stack(vjust = 0.3))+
+  scale_fill_viridis_d() +
+  theme_void() +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold", size = 14))
 ```
 
 ```{r}
+<<<<<<< HEAD
+pie_chart_LD
+```
+```{r}
+=======
+>>>>>>> d016dd34604e06eab2fbccfa3e5abfbc1291fc7a
 ggsave("Overview_LD.png", 
        path = "../results/plots/",
        plot = bar_plot_LD,
@@ -171,6 +202,10 @@ ggsave("Overview_LD.png",
        height = 5)
 ```
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> d016dd34604e06eab2fbccfa3e5abfbc1291fc7a
 ## Overview of comorbities in the patients' population
 
 Comorbidities are additional disease that can interact and coexist simultaneously with the cirrhosis. The study of comorbidities is pertinent since it can explain some of the patients' complications and can play a role in their recovery.
@@ -186,17 +221,17 @@ dat_comorb
 ```{r}
 bar_plot_comorbidities <- dat_comorb |> 
   ggplot(aes(x = reorder(Comorbidities,-count), 
-             y = count,
+             y = count/sum(count),
              fill = Comorbidities)) +
   geom_bar(stat = 'identity', 
            alpha = 0.7, 
            show.legend = FALSE) +
-  geom_text(aes(label = count), 
+  geom_text(aes(label = sprintf("%.1f%%", count/sum(count)*100)), 
             vjust = -0.5, 
             size = 2) +
   labs(title = "Overview of comorbidities across patients suffering from 
        cirrhosis ",
-       y = "Count") +
+       y = "Proportion") +
   scale_fill_viridis_d() +
   theme(legend.title=element_blank(), 
         axis.title.x = element_blank()) +
@@ -217,9 +252,9 @@ The plot illustrates the various concomitant diseases of the patients and provid
 
 -   the x-axis represents the comorbidities and the y-axis is the count of patients
 
--   In addition, each comorbidity is listed in different colors and the exact number is indicated above the respective bar.
+-   In addition, each comorbidity is listed in different colors and the exact proportion of the etiology in the population is indicated above the respective bar.
 
--   The mode are moderately severe liver diseases with a comparatively high count of 509.
+-   The mode are moderately severe liver diseases with a comparatively high count of 46.8%
 
 -   The majority of patients suffer from concomitant diseases. Only 8 patients suffer only from liver cirrhosis.
 
@@ -238,12 +273,12 @@ dat_etio
 ```{r}
 bar_plot_etiology <- dat_etio |> 
   ggplot(aes(x = reorder(Etiologies,-count), 
-             y = count,
+             y = count/sum(count),
              fill = Etiologies)) +
   geom_bar(stat = 'identity', 
            alpha = 0.7, 
            show.legend = FALSE) +
-  geom_text(aes(label = count), 
+  geom_text(aes(label = sprintf("%.1f%%", count/sum(count)*100)), 
             vjust = -0.5, 
             size = 3) +
   labs(title = "Overview of cirrhosis etiology across patients' population",
@@ -268,9 +303,9 @@ The plot illustrates the various etiologies which lead to diseases and counts th
 
 -   the x-axis represents the etiologies and the y-axis is the count of patients
 
--   The etiologies are listed in different colors and the exact number is indicated above the respective bar.
+-   The etiologies are listed in different colors and their propotion in the population is indicated above the respective bar.
 
--   The mode is the consumption of alcohol with a count of 549 followed by hepatitis C with a count of 357. Both are likely major factors at causing liver cirrhosis.
+-   The mode is the consumption of alcohol with a proportion of 55 % followed by hepatitis C at 33.2%. Both are likely major factors at causing liver cirrhosis.
 
 ## Overview of two important numerical values: CPS and Charlson_CI
 
