@@ -26,6 +26,7 @@ Before running the files that can be found in the "R" folder, a few packages sho
 -   `install.packages('ggplot2')`
 -   `install.packages('ggpubr')`
 -   `install.packages('forcats')`
+-   `install.packages('quarto')`
 
 ## Structure of the project
 
