@@ -34,7 +34,7 @@ bar_plot_age_gender <- dat_aug_clean_03 |>
        x = "Age Group",
        y = "Count") +
   scale_fill_viridis_d() +
-  theme_minimal() +
+#  theme_minimal() +
   theme(plot.title = element_text(hjust = 0.5, face = "bold", size = 14))
 
 bar_plot_age_gender
