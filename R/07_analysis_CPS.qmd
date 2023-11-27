@@ -269,7 +269,10 @@ Significance_plot_CPS <- estimate |>
   labs(
     title = "Etiologies associated with CPS ",
     x = "Estimates(95% CIs)",
-    y ="") 
+    y ="")  +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold", size = 14)) +
+  theme(axis.text=element_text(size=12),
+        axis.title=element_text(size=14,face="bold"))
 
 Significance_plot_CPS
 
