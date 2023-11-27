@@ -20,11 +20,13 @@ dat_aug_E_03 <- read_tsv("~/projects/Group_19_project/data/03_dat_aug_E.tsv")
 ```
 
 
+
 # Effect of different variables on mortality
 
 During that part, we will investigate to determine to what extent some variables like CPS, age and liver disease affect the mortality of the patients before investigating specific and relevant etiologies that have been picked using a linear regression performed in file 07_analysis_CPS.qmd.
 
 ## CPS Mortality
+
 
 ```{r}
 bar_plot_CPS_Mortality<- dat_aug_03 |> 
@@ -45,9 +47,11 @@ bar_plot_CPS_Mortality
 
 ```
 
+
 This plot proves the fact that CPS value accurately describes the mortality of cirrhosis patients. It shows that a low CPS is correlated to a higher survival rate. On the other side, a patient with a high CPS has more chances of dying of cirrhosis.
 
 ### Saving the plot
+
 
 ```{r}
 ggsave("CPS_and_mortality_boxplot.png", 
@@ -57,9 +61,11 @@ ggsave("CPS_and_mortality_boxplot.png",
        height = 5)
 ```
 
+
 ## Age impact on mortality
 
 First, we will see how the age of the patients impact their mortality by plotting the distribution of patient outcomes stratified by age.
+
 
 ```{r}
 Age_impact_mortality1 <- dat_aug_03 |> 
@@ -95,9 +101,11 @@ Age_impact_mortality2 <- dat_aug_03 |>
 Age_impact_mortality2
 ```
 
+
 The plot showing the proportions of patient outcomes is more relevant than the one showing their distribution, because it is relative to the count of patients. Nonetheless, the distribution plot allows us to see that the age categories \[30,40\] and \[90,100\] don't contain enough patients to be statistically relevant. Therefore, if we only take the other age categories into consideration, we can see slight increase in mortality when the age of the patients is increasing.
 
 ### Saving the plots
+
 
 ```{r}
 ggsave("Age_Mortality_count.png", 
@@ -115,7 +123,9 @@ ggsave("Age_Mortality_prop.png",
 
 ```
 
+
 ## Effect of different liver diseases on mortality
+
 
 ```{r}
 bar_plot_LD_Mortality<- dat_aug_03 |> 
@@ -137,9 +147,11 @@ bar_plot_LD_Mortality<- dat_aug_03 |>
 bar_plot_LD_Mortality
 ```
 
+
 By looking at the mortality of patients with different liver diseases, we can see the type of liver disease impacts greatly the mortality of patients. The size of the samples "Hepato-hydrothorax" and "Jaundice- as isolated presentation" being small (less than 15 patients), the data concerning these liver disease should not be taken into account for the analysis. This plot also provides some information about how fulminant the different liver diseases are. For instance, the categories "Other fluid overload" and "SBP" have approximately the same proportions of overall mortality, but the category "Other fluid overload" seems to be more fulminant because all of the patients that died after contracting that disease died in hospital, when the majority of the patient that died after contracting SBP died more than 30 days after leaving the hospital.
 
 ### Saving the plot
+
 
 ```{r}
 ggsave("LD_Mortality.png", 
@@ -149,9 +161,11 @@ ggsave("LD_Mortality.png",
        height = 5)
 ```
 
+
 # Effect of different etiologies on mortality
 
 We start by creating a new data set where we add three variables. The three variable are three different etiologies and their significance concerning Child Pugh score was assessed with a linear regression model in the file 07. Because the Child Pugh Score indicates the severity of the cirrhosis, it could be related to the mortality, and we will verify that hypothesis with the following plots.
+
 
 ```{r}
 dat_mortality <- dat_aug_03 |> 
@@ -163,9 +177,11 @@ dat_mortality
 
 ```
 
+
 ## Alcohol consumption impact on mortality
 
 To determine if alcohol consumption impacts mortality, we plot the distribution and the proportions of patient outcomes stratified by alcohol consumption. Alcohol was considered by the linear regression as a non-significant etiology, we therefore expect to see very few changes in the proportions. We will here plot the distribution (with normal counts) and the proportion of the etiology in the population to be able to have a relative comparison.
+
 
 ```{r}
 Alcohol_distribution <- dat_mortality |> 
@@ -203,9 +219,11 @@ Alcohol_impact_mortality <- ggarrange(Alcohol_distribution,
 Alcohol_impact_mortality 
 ```
 
+
 The proportions plot shows a very slight/ unsignificant increase in mortality when the patients are alcohol consumers, therefore we can't notice a big mortality difference between the two populations.
 
 ### Saving the plot
+
 
 ```{r}
 ggsave("Alcohol_impact_mortality.png", 
@@ -215,9 +233,11 @@ ggsave("Alcohol_impact_mortality.png",
        height = 5)
 ```
 
+
 ## Non-alcoholic fatty liver disease impact on mortality
 
 On the contrary to alcohol consumption, NAFLD was considered a significant etiology.
+
 
 ```{r}
 NAFLD_distribution <- dat_mortality |> 
@@ -253,9 +273,11 @@ NAFLD_impact_mortality <- ggarrange(NAFLD_distribution,
 NAFLD_impact_mortality
 ```
 
+
 On the proportions plot, we can see that patients with NAFLD seem to have more chance to survive to cirrhosis. However, we can't reach any specific conclusion due to the small population of patients with NAFLD. NAFLD, significant etiology, has therefore a 'positive' impact on cirrhosis patients, which seems hard to understand.
 
 ### Saving the plot
+
 
 ```{r}
 ggsave("NAFLD_impact_mortality.png", 
@@ -265,11 +287,13 @@ ggsave("NAFLD_impact_mortality.png",
        height = 5)
 ```
 
+
 # Effect of the number of etiologies and comorbidities
 
 Another hypothesis that can be made could be that the number of etiologies and comorbidities that a patient has impacts the mortality of that patient.
 
 ## Analysis number of etiologies
+
 
 ```{r}
 dat_aug_E_03 <- dat_aug_E_03 |> 
@@ -305,7 +329,9 @@ ggsave("Number_of_E_mortality.png",
        height = 5)
 ```
 
+
 ## Analysis number of comorbidities
+
 
 ```{r}
 dat_aug_C_03 <- dat_aug_C_03 |> 
@@ -367,8 +393,10 @@ C_table <- distinct_C %>%
 C_table
 ```
 
+
 By looking at the number of patients present in each sample, we can see that there is only one patient that has six comorbidities, so we choose not to take that category into account for the analysis of the bar charts. The bar chart stratified on the number of etiologies shows that this number is proportional to the mortality: the more etiologies a patient has, the more likely he is to die of cirrhosis. Concerning the bar chart stratified on the number of comorbidities, there is no such trend in the mortality proportions, but we can still see that the proportion of death that occur in the hospital increases, so the severity of the disease might increase with the number of comorbidities.
 
 ## Conclusion
 
 This analysis allows to conclude that CPS and the type of liver disease have a major impact on patient's outcome, whereas age has a slight impact. We also got to test the linear regression significant results, noticing that NAFLD seems to have a positive impact on the mortality, whereas alcohol consumption doesn't seem to play a role in the patients outcome. Regardless of the type of early predictors, their number also has an effect on the observed mortality. Indeed, an important number of etiologies tends to increase the mortality of the patients.
+
