@@ -4,7 +4,6 @@ format: html
 editor: visual
 ---
 
-
 ```{r}
 library("tidyverse")
 library("ggpubr")
@@ -51,8 +50,7 @@ mortality_CPS <- df_logistic |>
   scale_fill_viridis_d() +
   labs(title = "Mortality by CPS",
        x = "CPS",
-       y = "Mortality") + 
-  theme_minimal()
+       y = "Mortality")
 
 mortality_CPS
 ```
@@ -64,7 +62,7 @@ ggsave("mortality_CPS.png",
        path = "../results/plots/",
        plot = mortality_CPS,
        width = 7,
-       height = 5)
+       height = 3)
 ```
 
 ### Creation of a first model using the 'lg()' function
@@ -138,6 +136,12 @@ boxplot_logistic_confidence_interval <-  ggplot(
   scale_x_continuous(limits = c(0, 2))
 
 boxplot_logistic_confidence_interval
+
+ggsave("boxplot_logistic_confidence_interval.png", 
+       path = "../results/plots/",
+       plot = boxplot_logistic_confidence_interval,
+       width = 7,
+       height = 2)
 ```
 
 Now that we have an odds-ratio results, we can understand from the logistic regression that for every one CPS increase, the likelihood for mortality increase by 50%. This is pretty significant information and we can use it to keep high CPS patients under a tighter hospitalization. Furthermore, the results for this analysis are statistically significant since the p-value much lower than 0.05. Also, accoarding to the confidence interval, we can say that 95% confidence that the odds ration will be between 1.39 and 1.62. These results are well fit with the intuition that we had in the 05_analysis_mortality, where we suspected that CPS is connected with mortality. Let us recall:
@@ -159,10 +163,6 @@ bar_plot_CPS_Mortality<- dat_aug_03 |>
 
 bar_plot_CPS_Mortality
 
-```
-
-```{r}
-bar_plot_CPS_Mortality
 ```
 
 ```{r}

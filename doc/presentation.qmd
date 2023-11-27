@@ -5,6 +5,7 @@ format:
   revealjs:
     embed-resources: true
     slide-number: c/t
+    theme: moon
     width: 1600
     height: 900
     mainfont: avenir
@@ -145,20 +146,21 @@ investigate the possible outcome of patients.
 ## Model 1 - Logistic regression
 
 ::: columns
-::: {.column width="33%"}
-![](../results/plots/boxplot_logistic_confidence_interval){width="100%"}
+::: {.column width="70%"}
+
+![](../results/plots/mortality_CPS.png){width="80%"}
+
+![](../results/plots/boxplot_logistic_confidence_interval.png){width="100%"}
 :::
 
-::: {.column width="33%"}
-![](../results/plots/mortality_CPS){width="100%"}
-:::
 
-::: {.column width="33%"}
--   Overview: Logistic regression model
+::: {.column width="30%"}
 
--   Variables: CPS & Mortality
+-   **Overview:** Logistic regression model
 
--   Results: For every increased CPS unit, the likelihood for mortality increase by 50 %
+-   **Variables:** CPS & Mortality
+
+-   **Results:** For every increased CPS unit, the likelihood for mortality increase by 50 %
 :::
 :::
 
@@ -170,11 +172,11 @@ investigate the possible outcome of patients.
 :::
 
 ::: {.column width="40%"}
--   Overview: Linear regression model
+-   **Overview:** Linear regression model
 
--   Variables: CPS & Etiologies
+-   **Variables:** CPS & Etiologies
 
--   Results: Statistically significant result for nafld associated with low CPS
+-   **Results:** Statistically significant result for nafld associated with low CPS
 :::
 :::
 
