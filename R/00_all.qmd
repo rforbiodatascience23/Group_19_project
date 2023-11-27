@@ -22,7 +22,6 @@ quarto::quarto_render("~/projects/Group_19_project/R/08_analysis_liver_disease.q
 quarto::quarto_render("~/projects/Group_19_project/R/09_logistic_analysis.qmd")
 ```
 
-
 # Introduction
 
 The aim of this project is to study the early predictors of cirrhosis' patients mortality. To do that, we investigate the effect of the different comorbidities, etiologies and liver diseases on the mortality, the Charlson Comorbidity Index and the Child Pugh Score of the patients.
@@ -39,8 +38,8 @@ The dataset we used comes from the study "Early predictors of outcomes of hospit
 ## Cleaning the data
 
 ```{r}
- file.rename(from = "~/projects/Group_19_project/R/02_clean-html",
-             to = "~/projects/Group_19_project/results/02_clean_html" )
+ file.rename(from = "~/projects/Group_19_project/R/02_clean.html",
+             to = "~/projects/Group_19_project/results/02_clean.html" )
 ```
 
 ## Augmenting the data
@@ -64,12 +63,10 @@ The dataset we used comes from the study "Early predictors of outcomes of hospit
              to = "~/projects/Group_19_project/results/05_analysis_mortality.html" )
 ```
 
-
 ```{r}
  file.rename(from = "~/projects/Group_19_project/R/06_analysis_comorbidities_etiologies.html",
              to = "~/projects/Group_19_project/results/06_analysis_comorbidities_etiologies.html" )
 ```
-
 
 ```{r}
  file.rename(from = "~/projects/Group_19_project/R/08_analysis_liver_disease.html",
@@ -80,4 +77,3 @@ The dataset we used comes from the study "Early predictors of outcomes of hospit
  file.rename(from = "~/projects/Group_19_project/R/09_logistic_analysis.html",
              to = "~/projects/Group_19_project/results/09_logistic_analysis.html" )
 ```
-
