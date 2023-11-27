@@ -3,16 +3,16 @@ title: "08_analysis_liver_disease"
 format: html
 editor: visual
 ---
-# This model turned out to be a dead end, we misunderstood how the linear regression was working and we used 2 categorical values without numerical value. 
+
+# This model turned out to be a dead end, we misunderstood how the linear regression was working and we used 2 categorical values without numerical value.
+
 ```{r}
 library("tidyverse")
 library("ggpubr")
-library(forcats)
-library(purrr)
-library(broom)
-library("viridis")
+library("forcats")
+library("purrr")
+library("broom")
 library("ggplot2")
-library("patchwork")
 library("dplyr")
 ```
 

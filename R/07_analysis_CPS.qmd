@@ -3,15 +3,14 @@ title: "07_analysis_CPS"
 format: html
 editor: visual
 ---
+
 ```{r}
 library("tidyverse")
 library("ggpubr")
-library(forcats)
-library(purrr)
-library(broom)
-library("viridis")
+library("forcats")
+library("purrr")
+library("broom")
 library("ggplot2")
-library("patchwork")
 library("dplyr")
 ```
 
@@ -20,6 +19,7 @@ dat_aug_03 <- read_tsv("~/projects/Group_19_project/data/03_dat_aug.tsv")
 df_Etiology <- read_tsv("~/projects/Group_19_project/data/02_df_E.tsv")
 
 ```
+
 # Effects of comorbidities on Child Pugh Score
 
 The Child Pugh Score is a variable used to indicate the severity of a cirrhosis.
