@@ -285,3 +285,16 @@ write_tsv(
   file = '~/projects/Group_19_project/data/02_dat_tidy.tsv'
   )
 ```
+
+```{r}
+write_tsv(
+  x= dat_tidy_C_02, 
+  file = '~/projects/Group_19_project/data/02_dat_tidy_C.tsv'
+  )
+```
+
+```{r}
+write_tsv(
+  x= dat_tidy_E_02, 
+  file = '~/projects/Group_19_project/data/02_dat_tidy_E.tsv'
+  )
