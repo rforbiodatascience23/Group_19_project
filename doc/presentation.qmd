@@ -103,11 +103,11 @@ author:
 :::
 
 ::: {.column width="50%"}
--   
+-   Bar plot which shows liver disease distribution, filled by mortality status
 
--   
+-   Demonstrates the impact of varying mortality rates base on liver diseases
 
--   
+-   Reveals differences in mortality timing between "Other fluid overload" and "SNB"
 :::
 :::
 
@@ -119,11 +119,14 @@ author:
 :::
 
 ::: {.column width="40%"}
--   
+-   Tile chart reveals ratios for liver diseases and associate etiologies
 
--   
+-   High mortality for specific combinations like Hepatic encephalopathy/Auto-immune hepatitis. 
 
--   
+-   Lower death ratios (<25%) for example for Hepatitis B or Non-alcoholic fatty liver disease.
+
+-   Overrepresentation of certain comorbidities
+
 :::
 :::
 
@@ -165,9 +168,11 @@ author:
 
 ## Conclusion
 
--   
+-   The type of the liver disease notably impacts the mortality 
 
--   
+  -   The difference in timing hint a varying disease severity
+
+-   Lethal combinations of liver diseases and their associated etiologies can be identified
 
 -   For every CPS unit increase there is a 50 % higher likelihood for mortality
 
