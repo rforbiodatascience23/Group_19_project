@@ -2,21 +2,29 @@
 title: "06_analysis_comorbidities_etiologies"
 format: html
 editor: visual
-  markdown: 
-    wrap: sentence
 ---
+
+```{r}
+library("tidyverse")
+library("ggpubr")
+library("viridis")
+library("ggplot2")
+library("patchwork")
+library("dplyr")
+```
+
+```{r}
+dat_aug_03 <- read_tsv("~/projects/Group_19_project/data/03_dat_aug.tsv")
+```
 
 # Liver disease and comordities/etiologies relations
 
 ## Liver disease and Comorbidities
 
-Seeking to understand the relation between comorbidities and the patient's liver
-disease, it would be helpful to visualize if some liver diseases have peculiar 
-relationships with some comorbidities. To do so, a tile plot with the variables
-Liver disease, Comorbidities and ratio of patients of a certain liver disease
-with comorbidities was created.
+Seeking to understand the relation between comorbidities and the patient's liver disease, it would be helpful to visualize if some liver diseases have peculiar relationships with some comorbidities. To do so, a tile plot with the variables Liver disease, Comorbidities and ratio of patients of a certain liver disease with comorbidities was created.
 
-### Creation of a dataset with count of patients with same disease and same 
+### Creation of a dataset with count of patients with same disease and same
+
 comorbidities
 
 ```{r}
@@ -75,25 +83,14 @@ ggsave("Tile_plot_comorbidities.png",
        height = 5)
 ```
 
-
-Each column adds up to 100%. From this graph, we can state that Moderate to
-severe liver disease is an important comorbidities for all liver diseases. This 
-comorbidity. meaning was left very vague in the study, so it is hard to give an 
-actual explanation. However, what we can say is that close to 60% of patients 
-suffering from a Hepato-hydrothorax have a moderate to severe liver diseasse in 
-addition. A lot of Comorbidities are not clustered for a particular liver 
-disease, except for Malignancy and Diabetes which seem to be present in around 
-30% of patients suffering respectively from HCC and Jaundice. On the other side
-of the spectrum Heiplegia/Paraplegia and Dementia have very low incidence in the
-cirrhosis' patients population.
+Each column adds up to 100%. From this graph, we can state that Moderate to severe liver disease is an important comorbidities for all liver diseases. This comorbidity. meaning was left very vague in the study, so it is hard to give an actual explanation. However, what we can say is that close to 60% of patients suffering from a Hepato-hydrothorax have a moderate to severe liver diseasse in addition. A lot of Comorbidities are not clustered for a particular liver disease, except for Malignancy and Diabetes which seem to be present in around 30% of patients suffering respectively from HCC and Jaundice. On the other side of the spectrum Heiplegia/Paraplegia and Dementia have very low incidence in the cirrhosis' patients population.
 
 # Liver disease and etiology
 
-After tackling the subject comorbidities that can enhance some cases of
-cirrhosis, the etiology or causes of the liver disease is also a useful tool, 
-both for treatment and prevention.
+After tackling the subject comorbidities that can enhance some cases of cirrhosis, the etiology or causes of the liver disease is also a useful tool, both for treatment and prevention.
 
 ### Creation of a new dataset counting patients with same disease and same
+
 etiology
 
 ```{r}
@@ -134,6 +131,7 @@ tile_plot_etiologies <- ggplot(merged_dat2,
 tile_plot_etiologies
 
 ```
+
 ```{r}
 ggsave("Tile_plot_etiologies.png", 
        path = "../results/plots/",
@@ -142,21 +140,12 @@ ggsave("Tile_plot_etiologies.png",
        height = 5)
 ```
 
-
 Each column adds up to 100%.
 
-From this tile chart, Hepathitis C and alcohol consumption appear like the two
-main ethiologies for the liver disease, especially for Alcoholic hepatitis where
-nearly 80% is caused by alcohol consumption. Hepathitis C is also responsible 
-for half of the cases of HCC of patients in this study. Those two ethiologies
-usually share the stage for each liver disease. Ascites, Hepatic encephalopathy
-and UGIB have multiple etiologies possible at few percentages like Autoimmune
-hepatitis, cryptogenic disease, Hepathitis B and Non Alcoholic fatty liver 
-disease. However, Primary biliary cholangitis seems like a very rare etiology,
-since it is only present in a very few percent (arouond 1%) for patients
-suffering from Fluid overload.
+From this tile chart, Hepathitis C and alcohol consumption appear like the two main ethiologies for the liver disease, especially for Alcoholic hepatitis where nearly 80% is caused by alcohol consumption. Hepathitis C is also responsible for half of the cases of HCC of patients in this study. Those two ethiologies usually share the stage for each liver disease. Ascites, Hepatic encephalopathy and UGIB have multiple etiologies possible at few percentages like Autoimmune hepatitis, cryptogenic disease, Hepathitis B and Non Alcoholic fatty liver disease. However, Primary biliary cholangitis seems like a very rare etiology, since it is only present in a very few percent (arouond 1%) for patients suffering from Fluid overload.
 
 # Does etiology have influences on the mortality of patients for he same liver
+
 disease ?
 
 ```{r}
@@ -208,25 +197,8 @@ ggsave("Tile_plot_mortality.png",
        height = 5)
 ```
 
-
-After inspecting the etiologies associations with the liver diseases, we used 
-the tile chart above to show the death ratio for each liver disease and its 
-associated etiology. From this plot, we can deduce that all patients that 
-suffered from Hepatic encephalopathy with auto-immune hepatitis died of 
-cyrrhosis. The combination AKI/cryptogenic disease (70%), 
-Hepato-hydrothorax/Alcohol-consumption (80%), Jaundice/Hepathitis C (80%) have 
-the strongest deatah ratio. On the opposite, it seems that ethiologies like 
-Hepathitis B, Non-alcoolic fatty liver disease and liver disease like Alcoholic 
-hepatitis, Ascites, HCC, Fluid overload, SBP and UGIB have lower dath ratio 
-(less thann 25%).
+After inspecting the etiologies associations with the liver diseases, we used the tile chart above to show the death ratio for each liver disease and its associated etiology. From this plot, we can deduce that all patients that suffered from Hepatic encephalopathy with auto-immune hepatitis died of cyrrhosis. The combination AKI/cryptogenic disease (70%), Hepato-hydrothorax/Alcohol-consumption (80%), Jaundice/Hepathitis C (80%) have the strongest deatah ratio. On the opposite, it seems that ethiologies like Hepathitis B, Non-alcoolic fatty liver disease and liver disease like Alcoholic hepatitis, Ascites, HCC, Fluid overload, SBP and UGIB have lower dath ratio (less thann 25%).
 
 # Conclusion
 
-After plotting the proportions of comorbidities and etiologies for each liver 
-disease, we noticed that some of these are over represented, for instance the 
-comorbidity "Moderate to severe liver disease", as well as the etiologies 
-"Hepathitis C" and "Alcohol consumption". 
-Moreover, by plotting a tile chart of the liver diseases and the etiologies that
-takes the death ratio into account, we saw that some combinations of liver 
-diseases and etiologies are particularly lethal, in particular the combination
-of autoimmune-hepatitis and hepatic-encephalopathy.
+After plotting the proportions of comorbidities and etiologies for each liver disease, we noticed that some of these are over represented, for instance the comorbidity "Moderate to severe liver disease", as well as the etiologies "Hepathitis C" and "Alcohol consumption". Moreover, by plotting a tile chart of the liver diseases and the etiologies that takes the death ratio into account, we saw that some combinations of liver diseases and etiologies are particularly lethal, in particular the combination of autoimmune-hepatitis and hepatic-encephalopathy.
