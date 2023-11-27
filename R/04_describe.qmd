@@ -196,7 +196,6 @@ bar_plot_comorbidities <- dat_comorb |>
        cirrhosis ",
        y = "Count") +
   scale_fill_viridis_d() +
-  theme_minimal() +
   theme(legend.title=element_blank(), 
         axis.title.x = element_blank()) +
   scale_x_discrete(guide = guide_axis(angle = 63))
@@ -248,7 +247,6 @@ bar_plot_etiology <- dat_etio |>
   labs(title = "Overview of cirrhosis etiology across patients' population",
        y = "Count") +
   scale_fill_viridis_d() +
-  theme_minimal() +
   theme(legend.title=element_blank(), 
         axis.title.x = element_blank()) +
   scale_x_discrete(guide = guide_axis(angle = 30))
