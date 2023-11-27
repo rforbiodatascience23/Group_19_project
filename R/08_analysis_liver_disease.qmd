@@ -195,14 +195,6 @@ Estimates_LV_Mortality <- estimate |>
 ```
 
 ```{r}
-ggsave("Estimates_LV_Mortality.png", 
-       path = "../results/plots/",
-       plot = Estimates_LV_Mortality,
-       width = 7,
-       height = 5)
-```
-
-```{r}
 Significance_plot_LV_mortality <- estimate |> 
   select(q.value <= 0.05) |> 
   mutate(
@@ -228,14 +220,6 @@ Significance_plot_LV_mortality <- estimate |>
   expand_limits(x = c(-0.05,0.12))
 
 Significance_plot_LV_mortality
-```
-
-```{r}
-ggsave("Significance_plot_LV_mortality.png", 
-       path = "../results/plots/",
-       plot = Significance_plot_LV_mortality,
-       width = 7,
-       height = 5)
 ```
 
 According to these two plots, three of the observed liver diseases have are significantly associated with mortality. These diseases are Hepato-hydrothorax, hepatic encephalopathy and jaundice as isolated presentation. They all have a positive association with mortality, which means that the patients with these liver diseases are more likely to die of cirrhosis than the patients with other liver diseases. These results are coherent with the plot of the "liver disease repartition in cyrrhosis patients, stratified by mortality" present in the file '05_analysis\_ mortality.qmd'.

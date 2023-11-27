@@ -56,19 +56,7 @@ Charlson_vs_CPS_LV
 
 On that plot, we can see that the relationship between CPS and Charlson CI can be totally different depending on the liver disease from which the patients suffer. There is no clear pattern that can be deducted from these graphs or from the plot of Charlson CI versus CPS. However, we can't conclude that they are absolutely not correlated.
 
-### Saving the plot
-
-```{r}
-ggsave("Charlson_vs_CPS_LV.png", 
-       path = "../results/plots/",
-       plot = Charlson_vs_CPS_LV,
-       width = 7,
-       height = 5)
-```
-
-### Effects of comorbidities on Child Pugh Score with all liver diseases
-
-included
+### Effects of comorbidities on Child Pugh Score with all liver diseases included
 
 ```{r}
 Charlson_vs_CPS <- ggplot(
@@ -87,16 +75,6 @@ Charlson_vs_CPS <- ggplot(
 )
 
 Charlson_vs_CPS
-```
-
-### Saving the plot
-
-```{r}
-ggsave("Charlson_vs_CPS.png", 
-       path = "../results/plots/",
-       plot = Charlson_vs_CPS,
-       width = 7,
-       height = 5)
 ```
 
 # Effects of different etiologies on Child Pugh Score
@@ -260,16 +238,6 @@ boxplot_model_etiologies <-  ggplot(
   theme(plot.title = element_text(size = 12.5))
 
 boxplot_model_etiologies
-```
-
-### Save plot
-
-```{r}
-ggsave("Estimates_CPS_Etiologies.png", 
-       path = "../results/plots/",
-       plot = boxplot_model_etiologies,
-       width = 7,
-       height = 5)
 ```
 
 ```{r}

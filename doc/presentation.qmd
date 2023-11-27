@@ -59,6 +59,7 @@ investigate the possible outcome of patients.
 
 ::: {.column width="40%"}
 ![](../results/plots/Age_gender2.png){width="100%"}
+
 ![](../results/plots/Overview_LD.png){width="100%"}
 :::
 
