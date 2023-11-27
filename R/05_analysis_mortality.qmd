@@ -19,7 +19,6 @@ dat_aug_C_03 <- read_tsv("~/projects/Group_19_project/data/03_dat_aug_C.tsv")
 dat_aug_E_03 <- read_tsv("~/projects/Group_19_project/data/03_dat_aug_E.tsv")
 ```
 
-
 # Effect of different variables on mortality
 
 During that part, we will investigate to determine to what extent some variables like CPS, age and liver disease affect the mortality of the patients before investigating specific and relevant etiologies that have been picked using a linear regression performed in file 07_analysis_CPS.qmd.
@@ -100,13 +99,6 @@ The plot showing the proportions of patient outcomes is more relevant than the o
 ### Saving the plots
 
 ```{r}
-ggsave("Age_Mortality_count.png", 
-
-       path = "../results/plots/",
-       plot = Age_impact_mortality1,
-       width = 7,
-       height = 5)
-
 ggsave("Age_Mortality_prop.png", 
        path = "../results/plots/",
        plot = Age_impact_mortality2,
@@ -205,16 +197,6 @@ Alcohol_impact_mortality
 
 The proportions plot shows a very slight/ unsignificant increase in mortality when the patients are alcohol consumers, therefore we can't notice a big mortality difference between the two populations.
 
-### Saving the plot
-
-```{r}
-ggsave("Alcohol_impact_mortality.png", 
-       path = "../results/plots/",
-       plot = Alcohol_impact_mortality,
-       width = 7,
-       height = 5)
-```
-
 ## Non-alcoholic fatty liver disease impact on mortality
 
 On the contrary to alcohol consumption, NAFLD was considered a significant etiology.
@@ -255,16 +237,6 @@ NAFLD_impact_mortality
 
 On the proportions plot, we can see that patients with NAFLD seem to have more chance to survive to cirrhosis. However, we can't reach any specific conclusion due to the small population of patients with NAFLD. NAFLD, significant etiology, has therefore a 'positive' impact on cirrhosis patients, which seems hard to understand.
 
-### Saving the plot
-
-```{r}
-ggsave("NAFLD_impact_mortality.png", 
-       path = "../results/plots/",
-       plot = NAFLD_impact_mortality,
-       width = 7,
-       height = 5)
-```
-
 # Effect of the number of etiologies and comorbidities
 
 Another hypothesis that can be made could be that the number of etiologies and comorbidities that a patient has impacts the mortality of that patient.
@@ -297,14 +269,6 @@ nb_etiologies
 
 ```
 
-```{r}
-ggsave("Number_of_E_mortality.png", 
-       path = "../results/plots/",
-       plot = nb_etiologies,
-       width = 7,
-       height = 5)
-```
-
 ## Analysis number of comorbidities
 
 ```{r}
@@ -331,14 +295,6 @@ nb_comorbidities <- dat_aug_C_03 |>
        y = "Count") 
 nb_comorbidities
 
-```
-
-```{r}
-ggsave("Number_of_C_mortality.png", 
-       path = "../results/plots/",
-       plot = nb_comorbidities,
-       width = 7,
-       height = 5)
 ```
 
 ```{r}
