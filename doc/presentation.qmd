@@ -36,7 +36,7 @@ investigate the possible outcome of patients.
 
 ::: {.column width="50%"}
 
-Graph eva BioRender explaining the relatins between the index, etiologies...
+![](../doc/scheme.png){width="100%"}
 
 :::
 :::: 
