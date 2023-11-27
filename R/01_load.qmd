@@ -5,6 +5,7 @@ editor: visual
 ---
 
 ## Load library
+
 ```{r}
 library("tidyverse")
 library("ggpubr")
@@ -18,6 +19,7 @@ library("dplyr")
 ```
 
 ## Load data
+
 ```{r}
 dat_load_01 <- read_csv(file = 
         "~/projects/Group_19_project/data/_raw/PONE-D-18-29048R1_data_file.csv",
@@ -30,4 +32,3 @@ write_tsv(
   file = '~/projects/Group_19_project/data/01_dat_load.tsv'
 )
 ```
-

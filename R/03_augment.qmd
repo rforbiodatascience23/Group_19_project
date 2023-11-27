@@ -13,23 +13,19 @@ dat_tidy_C_02 <- read_tsv("~/projects/Group_19_project/data/02_dat_tidy_C.tsv")
 dat_tidy_E_02 <- read_tsv("~/projects/Group_19_project/data/02_dat_tidy_E.tsv")
 ```
 
-
 ## Introduction of a new variable "Mortality"
 
+We have two data sets available: a clean and a tidy one. We will augment both of them simultaneously. We need to be careful since there is an 'error' in the database where people that died at time t are written as dead at t + 1. However, we want the mortality to assess the exact mortality time.
 
-We have two data sets available: a clean and a tidy one. We will augment both of
-them simultaneously.
-We need to be careful since there is an 'error' in the database where people 
-that died at time t are written as dead at t + 1. However, we want the mortality
-to assess the exact mortality time.
+The combination are as follows:
 
-The combination are as follows:  
-
-    H No 30 No 90 No = "Alive", 
-    H Yes 30 No 90 No = "Dead_Hospital" 
-    H Yes 30 Yes 90 Yes = "Dead_Hospital" 
-    H No 30 No 90 Yes = "Dead_90" 
-    H No 30 Yes 90 Yes = "Dead_30"
+```         
+H No 30 No 90 No = "Alive", 
+H Yes 30 No 90 No = "Dead_Hospital" 
+H Yes 30 Yes 90 Yes = "Dead_Hospital" 
+H No 30 No 90 Yes = "Dead_90" 
+H No 30 Yes 90 Yes = "Dead_30"
+```
 
 ```{r}
 f <- function() {
@@ -49,6 +45,7 @@ f <- function() {
 ```
 
 ### Clean data set
+
 ```{r}
 dat_aug_clean_03 <- dat_clean_02 |> 
    mutate(Mortality = case_when(Mortality_hospital == 'Yes' ~ 
@@ -65,10 +62,10 @@ dat_aug_clean_03 <- dat_clean_02 |>
    select(-c(Mortality_30_days, Mortality_90_days, Mortality_hospital))
 
 dat_aug_clean_03
-```  
-
+```
 
 ### Tidy data set
+
 ```{r}
 dat_aug_03 <- dat_tidy_02 |> 
    mutate(Mortality = case_when(Mortality_hospital == 'Yes' ~ 
@@ -85,7 +82,9 @@ dat_aug_03 <- dat_tidy_02 |>
    select(-c(Mortality_30_days, Mortality_90_days, Mortality_hospital))
 dat_aug_03
 ```
-### Tidy Comorbidities data set 
+
+### Tidy Comorbidities data set
+
 ```{r}
 dat_aug_C_03 <- dat_tidy_C_02 |> 
    mutate(Mortality = case_when(Mortality_hospital == 'Yes' ~ 
@@ -104,7 +103,7 @@ dat_aug_C_03 <- dat_tidy_C_02 |>
 dat_aug_C_03
 ```
 
-### Tidy Etiologies data set 
+### Tidy Etiologies data set
 
 ```{r}
 dat_aug_E_03 <- dat_tidy_E_02 |> 
@@ -123,9 +122,11 @@ dat_aug_E_03 <- dat_tidy_E_02 |>
 
 dat_aug_E_03
 ```
+
 ## Introduction of a categorical variable - change Decades into age categories
 
 ### Clean
+
 ```{r}
 dat_aug_clean_03 <- dat_aug_clean_03 |>
   mutate(Age = str_c('[', Age*10, '; ', (Age + 1)*10, ']'))
@@ -134,6 +135,7 @@ dat_aug_clean_03
 ```
 
 ### Tidy
+
 ```{r}
 dat_aug_03 <- dat_aug_03 |>
   mutate(Age = str_c('[', Age*10, '; ', (Age + 1)*10, ']'))
@@ -148,12 +150,22 @@ write_tsv(
   x= dat_aug_clean_03, 
   file = '~/projects/Group_19_project/data/03_dat_aug_clean.tsv'
   )
-```
 
-```{r}
+
 write_tsv(
   x= dat_aug_03, 
   file = '~/projects/Group_19_project/data/03_dat_aug.tsv'
   )
-```
 
+
+write_tsv(
+  x= dat_aug_C_03, 
+  file = '~/projects/Group_19_project/data/03_dat_aug_C.tsv'
+  )
+
+
+write_tsv(
+  x= dat_aug_E_03, 
+  file = '~/projects/Group_19_project/data/03_dat_aug_E.tsv'
+  )
+```

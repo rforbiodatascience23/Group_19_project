@@ -14,8 +14,6 @@ dat_load_01 <- read_tsv(
 )
 ```
 
-
-
 # Joining demonstration
 
 Joining since we did not need to group together two data set. We won't use the joined data set for the rest of the project,
@@ -293,8 +291,10 @@ write_tsv(
   )
 ```
 
+
 ```{r}
 write_tsv(
   x= dat_tidy_E_02, 
   file = '~/projects/Group_19_project/data/02_dat_tidy_E.tsv'
   )
+```
