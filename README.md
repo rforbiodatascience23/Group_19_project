@@ -44,4 +44,4 @@ Before running the files that can be found in the "R" folder, a few packages sho
 -   [07_analysis_CPS.qmd](https://github.com/rforbiodatascience23/Group_19_project/blob/main/R/07_analysis_CPS.qmd):linear regression model between the CPS and etiologies
 -   [08_analysis_liver_disease.qmd](https://github.com/rforbiodatascience23/Group_19_project/blob/main/R/08_analysis_liver_disease.qmd): linear regression model to see how the different liver diseases affect mortality -> DEAD END
 -   [09_logistic_analysis.qmd](https://github.com/rforbiodatascience23/Group_19_project/blob/main/R/09_logistic_analysis.qmd): logistic regression between mortality and CPS
-
+-   [10_otherfunctions.qmd](https://github.com/rforbiodatascience23/Group_19_project/blob/main/R/10_othergraphs.qmd): a few other plots that were not relevant in the other files
