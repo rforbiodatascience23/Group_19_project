@@ -4,9 +4,26 @@ format: html
 editor: visual
 ---
 
+```{r}
+library("tidyverse")
+library("ggpubr")
+library(forcats)
+library(purrr)
+library(broom)
+library("viridis")
+library("ggplot2")
+library("patchwork")
+library("dplyr")
+```
+
+```{r}
+dat_aug_03 <- read_tsv("~/projects/Group_19_project/data/03_dat_aug.tsv")
+```
+
 # Impact of different liver diseases on mortality
 
 ### Data widening
+
 ```{r}
 df <- dat_aug_03 |>
   mutate(`Mortality (1 = y/0 = n)` = ifelse(Mortality == "No death", 0, 1)) |> 
@@ -19,14 +36,15 @@ df
 ```
 
 ### Creation of a first model using the 'lm()' function
+
 ```{r}
 model <- lm(formula = Ascites ~ `Mortality (1 = y/0 = n)`,
    data = df)
 model
 ```
 
-calculation of the mean values of the presence of the liver disease "Ascites" 
-stratified on Mortality:
+calculation of the mean values of the presence of the liver disease "Ascites" stratified on Mortality:
+
 ```{r}
 df |> 
   group_by(`Mortality (1 = y/0 = n)`) |> 
@@ -34,15 +52,15 @@ df |>
 ```
 
 ### Summary of the model
+
 ```{r}
 model |> summary()
 ```
-by looking at the p-value, we can see if the variable 
-"Ascites" is statistically significant or not.
-p-value < 0.05 so the variable is statistically significant.
 
-Pivoting the data to get a long dataset, so that all the liver diseases are 
-defined in one column:
+by looking at the p-value, we can see if the variable "Ascites" is statistically significant or not. p-value \< 0.05 so the variable is statistically significant.
+
+Pivoting the data to get a long dataset, so that all the liver diseases are defined in one column:
+
 ```{r}
 df_long <- df |> 
   pivot_longer(
@@ -65,8 +83,9 @@ df_long
 ```
 
 ### Addition of a new variable model_object
-This variable will be computed per Liver disease and will contain the result to 
-the call to the 'map()' function.
+
+This variable will be computed per Liver disease and will contain the result to the call to the 'map()' function.
+
 ```{r}
 df_long_nested <- df_long |> 
   group_by(`Liver diseases`) |> 
@@ -83,7 +102,9 @@ df_long_nested |>
   filter(`Liver diseases` == "Ascites") |>
   pull(model_object)
 ```
+
 ### Use of the broom-package to tidy the fitted model
+
 ```{r}
 df_long_nested <- df_long_nested|> 
   group_by(`Liver diseases`) |> 
@@ -101,6 +122,7 @@ df_long_nested |>
 ```
 
 To apply the 'tidy()' function per model_object:
+
 ```{r}
 df_long_nested <- df_long_nested |> 
   mutate(model_object_tidy = map(.x = model_object,
@@ -113,13 +135,16 @@ df_long_nested
 ```
 
 Use of the 'unnest()' function to unpack the model_object_tidy:
+
 ```{r}
 estimate <- df_long_nested |>
   unnest( model_object_tidy)
 
 estimate
 ```
+
 Un-grouping the data:
+
 ```{r}
 estimate <- estimate|> 
   filter(term == "`Mortality (1 = y/0 = n)`") |> 
@@ -128,8 +153,8 @@ estimate <- estimate|>
 estimate
 ```
 
-Adding the variable q-value and an indicator variable denoting if a given liver
-disease is significant or not:
+Adding the variable q-value and an indicator variable denoting if a given liver disease is significant or not:
+
 ```{r}
 estimate <- estimate |> 
   mutate(
@@ -142,7 +167,9 @@ estimate <- estimate |>
 
 estimate
 ```
+
 ### Visualization
+
 ```{r}
 if (!requireNamespace("forcats", quietly = TRUE)) {
   install.packages("forcats")
@@ -210,12 +237,5 @@ ggsave("Significance_plot_LV_mortality.png",
        width = 7,
        height = 5)
 ```
-According to these two plots, three of the observed liver diseases have are 
-significantly associated with mortality. These diseases are Hepato-hydrothorax,
-hepatic encephalopathy and jaundice as isolated presentation. They all have a
-positive association with mortality, which means that the patients with these 
-liver diseases are more likely to die of cirrhosis than the patients with other 
-liver diseases. 
-These results are coherent with the plot of the "liver disease repartition in 
-cyrrhosis patients, stratified by mortality" present in the file '05_analysis_
-mortality.qmd'.
+
+According to these two plots, three of the observed liver diseases have are significantly associated with mortality. These diseases are Hepato-hydrothorax, hepatic encephalopathy and jaundice as isolated presentation. They all have a positive association with mortality, which means that the patients with these liver diseases are more likely to die of cirrhosis than the patients with other liver diseases. These results are coherent with the plot of the "liver disease repartition in cyrrhosis patients, stratified by mortality" present in the file '05_analysis\_ mortality.qmd'.

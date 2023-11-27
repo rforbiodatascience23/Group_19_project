@@ -4,6 +4,23 @@ format: html
 editor: visual
 ---
 
+
+```{r}
+library("tidyverse")
+library("ggpubr")
+library(forcats)
+library(purrr)
+library(broom)
+library("viridis")
+library("ggplot2")
+library("patchwork")
+library("dplyr")
+```
+
+```{r}
+dat_aug_03 <- read_tsv("~/projects/Group_19_project/data/03_dat_aug.tsv")
+```
+
 ## Child Pugh Score as a predictor of mortality
 
 In the following analysis we would like to check the CPS as a predictor to mortality. We will try to figure out whether a higher CPS is associated with higher odds of mortality. To do that, we will use logistic regression.
@@ -126,6 +143,25 @@ boxplot_logistic_confidence_interval
 ```
 
 Now that we have an odds-ratio results, we can understand from the logistic regression that for every one CPS increase, the likelihood for mortality increase by 50%. This is pretty significant information and we can use it to keep high CPS patients under a tighter hospitalization. Furthermore, the results for this analysis are statistically significant since the p-value much lower than 0.05. Also, accoarding to the confidence interval, we can say that 95% confidence that the odds ration will be between 1.39 and 1.62. These results are well fit with the intuition that we had in the 05_analysis_mortality, where we suspected that CPS is connected with mortality. Let us recall:
+
+```{r}
+bar_plot_CPS_Mortality<- dat_aug_03 |> 
+  ggplot(aes(x = Mortality,
+             y = CPS,
+             fill = Mortality)) +
+  geom_boxplot(alpha = 0.7) +
+  labs(title = "Boxplot chart of CPS values",
+       subtitle = "stratified by mortality",
+       y = "CPS") +
+  scale_fill_viridis_d() +
+  theme_minimal() +
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank()) +
+  scale_x_discrete(guide = guide_axis(angle = 25))
+
+bar_plot_CPS_Mortality
+
+```
 
 ```{r}
 bar_plot_CPS_Mortality
