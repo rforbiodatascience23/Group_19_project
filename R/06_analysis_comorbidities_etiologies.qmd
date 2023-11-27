@@ -159,16 +159,15 @@ tile_plot_mortality <- ggplot(dat_aug_03_join,
            y = Etiologies, 
            fill = count2/count)) +
   geom_tile() +
-  labs(title = "Death ratios of every Etiology/Liver disease combination ",
+  labs(title = "Death ratios of Etiology/Liver disease combination ",
        x = "Liver Disease",
        y = "Etiologies", 
        fill = "Death ratio") +
   scale_fill_viridis()+
   theme_classic()+ 
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1), 
-        plot.title = element_text(hjust = 0.50, face = "bold", size = 13))+
-  theme(plot.title = element_text(hjust = 0.5, face = "bold", size = 14)) +
-  theme(axis.text=element_text(size=12),
+        plot.title = element_text(hjust = 0.60, face = "bold", size = 13),
+        axis.text=element_text(size=12),
         axis.title=element_text(size=14,face="bold"))
 
 tile_plot_mortality

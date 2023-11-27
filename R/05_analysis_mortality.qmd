@@ -121,13 +121,12 @@ bar_plot_LD_Mortality<- dat_aug_03 |>
   geom_bar(position = "fill", 
            stat = "count", 
            alpha = 0.7) +
-  labs(title = "Liver disease repartition in cirrhosis patients, stratified 
-       by mortality",
+  labs(title = "                          Liver disease in cirrhosis patients, stratified by mortality",
        y = "Proportion") +
   scale_fill_viridis_d() +
   theme(axis.title.x=element_blank()) +
-  scale_x_discrete(guide = guide_axis(angle = 25)) +
-    theme(plot.title = element_text(hjust = 0.5, face = "bold", size = 14)) +
+  scale_x_discrete(guide = guide_axis(angle = 35)) +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold", size = 14)) +
   theme(axis.text=element_text(size=12),
         axis.title=element_text(size=14,face="bold"))
 

@@ -50,7 +50,8 @@ mortality_CPS <- df_logistic |>
   scale_fill_viridis_d() +
   labs(title = "Mortality by CPS",
        x = "CPS",
-       y = "Mortality")
+       y = "Mortality") +
+  theme(plot.title = element_text(face = "bold", size = 13))
 
 mortality_CPS
 ```
@@ -132,7 +133,7 @@ boxplot_logistic_confidence_interval <-  ggplot(
     title = "CPS associated with Mortality",
     x = "Estimates(95% CIs)",
     y ="") +
-  theme(plot.title = element_text(size = 12.5))+
+  theme(plot.title = element_text(face = "bold", size = 12.5))+
   scale_x_continuous(limits = c(0, 2))
 
 boxplot_logistic_confidence_interval

@@ -99,11 +99,11 @@ author:
 ## Results: Different outcomes tendency depending on the liver disease
 
 ::: columns
-::: {.column width="50%"}
+::: {.column width="60%"}
 ![](../results/plots/LD_Mortality.png){width="100%"}
 :::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 -   Bar plot which shows liver disease distribution, filled by mortality status
 
 -   Demonstrates the impact of varying mortality rates base on liver diseases
@@ -126,7 +126,7 @@ author:
 
 -   Lower death ratios (<25%) for example for Hepatitis B or Non-alcoholic fatty liver disease.
 
--   Overrepresentation of certain comorbidities
+-   Over representation of certain comorbidities
 
 :::
 :::
@@ -170,9 +170,9 @@ author:
 
 ## Conclusion
 
--   The type of the liver disease notably impacts the mortality 
+-   The **type of the liver disease** notably impacts the patient's outcome 
 
-  -   The difference in timing hint a varying disease severity
+-   The difference in timing (less or more fulgurant) hint a varying disease severity
 
 -   Lethal combinations of liver diseases and their associated etiologies can be identified
 
