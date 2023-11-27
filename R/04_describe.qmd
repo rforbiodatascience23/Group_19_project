@@ -54,7 +54,7 @@ bar_plot_age_gender <- dat_aug_clean_03 |>
   geom_bar(position = "stack", 
            stat = "count", 
            alpha = 0.7) +
-  labs(title = "Overview of the age and gender distribution of patients with 
+  labs(title = "     Overview of the age and gender distribution of patients with 
        liver cirrhosis",
        x = "Age Group",
        y = "Count") +
@@ -73,8 +73,8 @@ bar_plot_age_gender
 ggsave("Age_gender.png", 
        path = "../results/plots/",
        plot = bar_plot_age_gender,
-       width = 15,
-       height = 10)
+       width = 9,
+       height = 5)
 ```
 
 The plots provide a visual representation of the distribution of patients with cirrhosis based on age and gender.
@@ -149,7 +149,7 @@ pie_chart_LD<- dat_LD |>
   geom_bar(stat = 'identity', 
            alpha = 0.7) +
   coord_polar("y", start=0) +
-  labs(title = "Liver disease repartition in cirrhosis patients",
+  labs(title = "            Liver disease repartition in cirrhosis patients",
        y = "Count") +
   geom_text(aes(label = sprintf("%.1f%%", proportion * 100)),
             position = position_stack(vjust = 0.3))+
@@ -161,7 +161,7 @@ pie_chart_LD<- dat_LD |>
         axis.text.y = element_blank(), 
         axis.line.y = element_blank(), 
         axis.line = element_blank())+
-  theme(plot.title = element_text(hjust = 0.5, face = "bold", size = 14))
+  theme(plot.title = element_text(face = "bold", size = 14))
 ```
 
 ```{r}
@@ -172,7 +172,7 @@ pie_chart_LD
 ggsave("Overview_LD.png", 
        path = "../results/plots/",
        plot = pie_chart_LD,
-       width = 7,
+       width = 9,
        height = 5)
 ```
 

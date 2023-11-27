@@ -35,7 +35,7 @@ author:
 ## Materials - Dataset
 
 ::: columns
-::: {.column width="60%"}
+::: {.column width="50%"}
 <u> Data set used: </u> [Early predictors of outcomes of hospitalization for cirrhosis and assessment of the impact of race and ethnicity at safety-net hospitals](https://datadryad.org/stash/dataset/doi:10.5061/dryad.6gt88dv)
 
 -   733 patients
@@ -48,8 +48,8 @@ author:
     -   UGIB (19.9%)
 :::
 
-::: {.column width="40%"}
-![](../results/plots/Age_gender2.png){width="100%"}
+::: {.column width="50%"}
+![](../results/plots/Age_gender.png){width="100%"}
 
 ![](../results/plots/Overview_LD.png){width="100%"}
 :::
@@ -106,9 +106,9 @@ author:
 ::: {.column width="40%"}
 -   Bar plot which shows liver disease distribution, filled by mortality status
 
--   Demonstrates the impact of varying mortality rates base on liver diseases
+-   Demonstrates the impact of liver diseases on **patient's outcome**
 
--   Reveals differences in mortality timing between "Other fluid overload" and "SNB"
+-   Reveals differences in mortality timing (less/more fulfurrant disease) between "Other fluid overload" and "SBP"
 :::
 :::
 
@@ -178,4 +178,4 @@ author:
 
 -   For every CPS unit increase there is a 50 % higher likelihood for mortality
 
--   According to the linear regression nafld is associated with low CPS
+-   According to the linear regression NAFLD is associated with low CPS
