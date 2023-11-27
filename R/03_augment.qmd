@@ -27,23 +27,6 @@ H No 30 No 90 Yes = "Dead_90"
 H No 30 Yes 90 Yes = "Dead_30"
 ```
 
-```{r}
-f <- function() {
-  mutate(Mortality = case_when(Mortality_hospital == 'Yes' ~ 
-                                 "Death_in_hospital", 
-                                Mortality_hospital == 'No' & 
-                                 Mortality_30_days == 'Yes' & 
-                                 Mortality_90_days == 'No' ~ 
-                                 "Death_in_first_30_days", 
-                                Mortality_hospital == 'No' & 
-                                 Mortality_30_days == 'No' & 
-                                 Mortality_90_days == 'Yes' ~ 
-                                 "Death_between_30_and_90_days", 
-                               .default = "No death")) |> 
-   select(-c(Mortality_30_days, Mortality_90_days, Mortality_hospital))
-}
-```
-
 ### Clean data set
 
 ```{r}
