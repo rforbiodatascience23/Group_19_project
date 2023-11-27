@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-## Load libraries
-=======
 ---
 title: "01_load"
 format: html
@@ -23,14 +20,14 @@ library("dplyr")
 ## Load data
 ```{r}
 dat_load_01 <- read_csv(file = 
-        "~/projects/Group_19_project/data/_raw/PONE-D-18-29048R1_data_file.csv", 
+        "/Users/PauliCharpe/Documents/Group_19_project/Group_19_project/data/_raw/PONE-D-18-29048R1_data_file.csv", 
         na = c("_","NA", "NOT AVAILABLE", " ", ""))
 ```
 
 ```{r}
 write_tsv(
   x= dat_load_01, 
-  file = '~/projects/Group_19_project/data/01_dat_load.tsv'
+  file = '/Users/PauliCharpe/Documents/Group_19_project/Group_19_project/data/01_dat_load.tsv'
   )
 ```
 
