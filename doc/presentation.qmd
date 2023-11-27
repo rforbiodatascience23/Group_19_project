@@ -4,7 +4,6 @@ subtitle: "Group 19"
 format: 
   revealjs:
     embed-resources: true
-    theme: moon
     slide-number: c/t
     width: 1600
     height: 900
@@ -16,69 +15,56 @@ author:
   Fabian Ziegler"
 ---
 
-## Introduction 
+## Introduction
 
-<u>Objective: </u> Understand patterns and correlations between early predictors
-**Comorbidities and Etiologies**, their numerical estimate **CPS and Charlson index** 
-and **cirrhosis' patients outcome** \  
+<u>Objective: </u> Understand patterns and correlations between early predictors **Comorbidities and Etiologies**, their numerical estimate **CPS and Charlson index** and **cirrhosis' patients outcome**  
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="50%"}
-
 **Cirrhosis** = condition in which the liver is scarred and permanently damaged.
 
-<u>Relevancy of the study: </u> Cirrhosis is a leading cause of mortality in the 
-world (11th), and finding accurate descriptive index is a useful tool to 
-investigate the possible outcome of patients. 
-
+<u>Relevancy of the study: </u> Cirrhosis is a leading cause of mortality in the world (11th), and finding accurate descriptive index is a useful tool to investigate the possible outcome of patients.
 :::
 
 ::: {.column width="50%"}
-
 ![](../doc/scheme.png){width="100%"}
-
 :::
-:::: 
+:::
 
 ## Materials - Dataset
 
-:::: {.columns}
+::: columns
 ::: {.column width="60%"}
 <u> Data set used: </u> [Early predictors of outcomes of hospitalization for cirrhosis and assessment of the impact of race and ethnicity at safety-net hospitals](https://datadryad.org/stash/dataset/doi:10.5061/dryad.6gt88dv)
 
-- 733 patients 
-- From 4 safety-net hospitals in the US    
-- Male dominated study (67.31%)
-- Predominant age group [60; 70]
-- Main liver disease diagnosis 
-  * Ascites (31%)
-  * Hepatic encephalopathy (21.2%)
-  * UGIB (19.9%)
+-   733 patients
+-   From 4 safety-net hospitals in the US\
+-   Male dominated study (67.31%)
+-   Predominant age group \[60; 70\]
+-   Main liver disease diagnosis
+    -   Ascites (31%)
+    -   Hepatic encephalopathy (21.2%)
+    -   UGIB (19.9%)
 :::
 
 ::: {.column width="40%"}
-![](../results/plots/Age_gender2.png){width="100%"}
-![](../results/plots/Overview_LD.png){width="100%"}
+![](../results/plots/Age_gender2.png){width="100%"} ![](../results/plots/Overview_LD.png){width="100%"}
 :::
-
-:::: 
+:::
 
 ## Methods
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="50%"}
-
 <b>Cleaning: </b>
 
-- Extracting, renaming, reordering columns
-- Dropping non-available values them
+-   Extracting, renaming, reordering columns
+-   Dropping non-available values them
 
 <b>Tidying:</b>
 
-- Pivot_wider on Comorbidities
-- Pivot_wider on Etiologies
+-   Pivot_wider on Comorbidities
+-   Pivot_wider on Etiologies
 
 <b>Augmenting:</b>
 
@@ -87,11 +73,9 @@ investigate the possible outcome of patients.
 :::
 
 ::: {.column width="50%"}
-
 ![](../doc/workflow.png){width="100%"}
 :::
-
-::::
+:::
 
 ## Overview of comorbidities and etiologies
 
@@ -111,70 +95,78 @@ investigate the possible outcome of patients.
 
 ## Results: Different outcomes tendency depending on the liver disease
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="50%"}
 ![](../results/plots/LD_Mortality.png){width="100%"}
-
 :::
 
 ::: {.column width="50%"}
-- 
-- 
-- 
+-   
+
+-   
+
+-   
 :::
-::::
+:::
 
 ## Death ratios of every Etiology/Liver disease combination
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="60%"}
 ![](../results/plots/Tile_plot_mortality.png){width="100%"}
-
 :::
 
 ::: {.column width="40%"}
-- 
-- 
-- 
+-   
+
+-   
+
+-   
 :::
-::::
-
-
-## Model 1 - Logistic regression 
-
-:::: {.columns}
-
-::: {.column width="50%"}
-![](../results/plots/){width="100%"}
-
 :::
 
-::: {.column width="50%"}
-- 
-- 
-- 
-:::
-::::
+## Model 1 - Logistic regression
 
+::: columns
+::: {.column width="33%"}
+![](../results/plots/boxplot_logistic_confidence_interval){width="100%"}
+:::
+
+::: {.column width="33%"}
+![](../results/plots/mortality_CPS){width="100%"}
+:::
+
+::: {.column width="33%"}
+-   Overview: Logistic regression model
+
+-   Variables: CPS & Mortality
+
+-   Results: For every increased CPS unit, the likelihood for mortality increase by 50 %
+:::
+:::
 
 ## Model 2 - Linear regression
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="60%"}
 ![](../results/plots/Significance_plot_CPS.png){width="100%"}
-
 :::
 
 ::: {.column width="40%"}
-- 
-- 
-- 
+-   Overview: Linear regression model
+
+-   Variables: CPS & Etiologies
+
+-   Results: Statistically significant result for nafld associated with low CPS
 :::
-::::
+:::
 
 ## Conclusion
 
+-   
 
+- 
+
+-   
+
+- 
