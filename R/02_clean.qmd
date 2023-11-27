@@ -298,3 +298,11 @@ write_tsv(
   file = '~/projects/Group_19_project/data/02_dat_tidy_E.tsv'
   )
 ```
+
+
+```{r}
+write_tsv(
+  x= df_Etiology, 
+  file = '~/projects/Group_19_project/data/02_df_E.tsv'
+  )
+```
