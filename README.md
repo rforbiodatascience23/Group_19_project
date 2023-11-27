@@ -36,7 +36,7 @@ Before running the files that can be found in the "R" folder, a few packages sho
 
 -   [00_all.qmd](https://github.com/rforbiodatascience23/Group_19_project/blob/main/R/00_all.qmd): run-all file of the project. Used to render all of the subfiles.
 -   [01_load.qmd](https://github.com/rforbiodatascience23/Group_19_project/blob/main/R/01_load.qmd):loading of the files. 
--   [02_clean.qmd](https://github.com/rforbiodatascience23/Group_19_project/blob/main/R/02_clean.qmd): tidying of the dataset. 
+-   [02_clean.qmd](https://github.com/rforbiodatascience23/Group_19_project/blob/main/R/02_clean.qmd): tidying of the dataset. Joining was performed here (despite not needing it for uor data set)
 -   [03_augment.qmd](https://github.com/rforbiodatascience23/Group_19_project/blob/main/R/03_augment.qmd): augmentation of the dataset, creation of new variables. 
 -   [04_describe.qmd](https://github.com/rforbiodatascience23/Group_19_project/blob/main/R/04_describe.qmd): creation of introduction graphs giving general statistic information about the dataset.
 -   [05_analysis_mortality.qmd](https://github.com/rforbiodatascience23/Group_19_project/blob/main/R/06_analysis1.qmd): analysis of the patients' mortality and the different variables affecting it.
