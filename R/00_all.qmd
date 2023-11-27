@@ -5,7 +5,9 @@ editor: visual
 message: false
 ---
 
-``{quarto, include=FALSE}
+```{r}
+library(quarto)
+```
 
 ```{r}
 # Generation of the sub-documents when the main document is run
@@ -20,9 +22,6 @@ quarto::quarto_render("~/projects/Group_19_project/R/08_analysis_liver_disease.q
 quarto::quarto_render("~/projects/Group_19_project/R/09_logistic_analysis.qmd")
 ```
 
-```{r}
-library(quarto)
-```
 
 # Introduction
 
