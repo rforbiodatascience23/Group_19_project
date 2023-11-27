@@ -271,6 +271,8 @@ Significance_plot_CPS <- estimate |>
     x = "Estimates(95% CIs)",
     y ="") 
 
+Significance_plot_CPS
+
 ```
 
 ### Save plot

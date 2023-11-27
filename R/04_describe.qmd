@@ -42,7 +42,7 @@ bar_plot_age_gender <- dat_aug_clean_03 |>
        x = "Age Group",
        y = "Count") +
   scale_fill_viridis_d() +
-  theme_minimal() +
+#  theme_minimal() +
   theme(plot.title = element_text(hjust = 0.5, face = "bold", size = 14))
 
 bar_plot_age_gender
@@ -164,7 +164,6 @@ bar_plot_LD<- dat_LD |>
   labs(title = "Liver disease repartition in cyrrhosis patients",
        y = "Count") +
   scale_fill_viridis_d() +
-  theme_minimal() +
   theme(axis.title.x=element_blank()) +
   scale_x_discrete(guide = guide_axis(angle = 25))
 ```
@@ -188,9 +187,12 @@ pie_chart_LD<- dat_LD |>
 ```
 
 ```{r}
+<<<<<<< HEAD
 pie_chart_LD
 ```
 ```{r}
+=======
+>>>>>>> d016dd34604e06eab2fbccfa3e5abfbc1291fc7a
 ggsave("Overview_LD.png", 
        path = "../results/plots/",
        plot = bar_plot_LD,
@@ -198,7 +200,10 @@ ggsave("Overview_LD.png",
        height = 5)
 ```
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> d016dd34604e06eab2fbccfa3e5abfbc1291fc7a
 ## Overview of comorbities in the patients' population
 
 Comorbidities are additional disease that can interact and coexist simultaneously with the cirrhosis. The study of comorbidities is pertinent since it can explain some of the patients' complications and can play a role in their recovery.
@@ -226,7 +231,6 @@ bar_plot_comorbidities <- dat_comorb |>
        cirrhosis ",
        y = "Proportion") +
   scale_fill_viridis_d() +
-  theme_minimal() +
   theme(legend.title=element_blank(), 
         axis.title.x = element_blank()) +
   scale_x_discrete(guide = guide_axis(angle = 63))
@@ -278,7 +282,6 @@ bar_plot_etiology <- dat_etio |>
   labs(title = "Overview of cirrhosis etiology across patients' population",
        y = "Count") +
   scale_fill_viridis_d() +
-  theme_minimal() +
   theme(legend.title=element_blank(), 
         axis.title.x = element_blank()) +
   scale_x_discrete(guide = guide_axis(angle = 30))

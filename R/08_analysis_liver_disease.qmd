@@ -198,7 +198,7 @@ Significance_plot_LV_mortality <- estimate |>
     x = "Estimates(95% CIs)",
     y ="") +
   scale_fill_viridis_d() +
-  expand_limits(x = c(-0.05,0.13))
+  expand_limits(x = c(-0.05,0.12))
 
 Significance_plot_LV_mortality
 ```
