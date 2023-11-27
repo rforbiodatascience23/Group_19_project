@@ -57,7 +57,7 @@ Data set used: [Early predictors of outcomes of hospitalization for cirrhosis an
 ![](../results/plots/Age_gender.png){width="100%"}
 
 
-![](../results/plots/Overview_LD.png){width="50%"}
+![](../results/plots/Overview_LD.png){width="100%"}
 :::
 
 :::: 
@@ -99,11 +99,11 @@ Data set used: [Early predictors of outcomes of hospitalization for cirrhosis an
 
 ::: columns
 ::: {.column width="50%"}
-![](../results/plots/Overview_Etiology.png){width="50%"}
+![](../results/plots/Overview_Etiology.png){width="100%"}
 :::
 
 ::: {.column width="50%"}
-![](../results/plots/Overview_Comorbidities.png){width="50%"}
+![](../results/plots/Overview_Comorbidities.png){width="100%"}
 :::
 :::
 
