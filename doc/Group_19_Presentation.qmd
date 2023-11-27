@@ -54,7 +54,7 @@ Data set used: [Early predictors of outcomes of hospitalization for cirrhosis an
 :::
 
 ::: {.column width="50%"}
-![](../results/plots/Age_gender.png)
+![](../results/plots/Age_gender.png){width="100%"}
 
 
 ![](../results/plots/Overview_LD.png){width="100%"}
@@ -117,20 +117,62 @@ Data set used: [Early predictors of outcomes of hospitalization for cirrhosis an
 :::
 
 ::: {.column width="50%"}
+- 
+- 
+- 
 :::
 ::::
 
 ## Model 1 - Logistic regression 
 
-![](../results/plots/Significance_plot_CPS.png){width="50%"}
+:::: {.columns}
+
+::: {.column width="50%"}
+![](../results/plots/){width="100%"}
+
+:::
+
+::: {.column width="50%"}
+- 
+- 
+- 
+:::
+::::
+
 
 ## Model 2 - Linear regression
 
-![](../results/plots/Significance_plot_LV_mortality.png){width="50%"}
+:::: {.columns}
+
+::: {.column width="50%"}
+![](../results/plots/Significance_plot_CPS.png){width="100%"}
+
+:::
+
+::: {.column width="50%"}
+- 
+- 
+- 
+:::
+::::
+
 
 ## Death ratios of every Etiology/Liver disease combination
 
-![](../results/plots/Tile_plot_mortality.png){width="50%"}
+:::: {.columns}
+
+::: {.column width="50%"}
+![](../results/plots/Significance_plot_CPS.png){width="100s%"}
+
+:::
+
+::: {.column width="50%"}
+- 
+- 
+- 
+:::
+::::
+
 
 ## Conclusion
 
