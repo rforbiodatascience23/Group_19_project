@@ -19,10 +19,24 @@ author:
 
 ## Introduction 
 
-- Purpose of our analysis is to understand patterns and correlations of early predictors of (Comorbidities and Etiologies) of cirrhosis' patients mortality.   
+<u>Objective: </u> Understand patterns and correlations between early predictors **Comorbidities and Etiologies**, their numerical estimate **CPS and Charlson index** and **cirrhosis' patients outcome** \  
 
--   Cirrhosis is a condition in which the liver is scarred and permanently damaged. A liver that’s affected by cirrhosis is unable to function properly, which causes serious health problems.   
+:::: {.columns}
 
+::: {.column width="50%"}
+
+**Cirrhosis** = condition in which the liver is scarred and permanently damaged.
+
+How is this study relevant ? 
+
+:::
+
+::: {.column width="50%"}
+
+Graph eva BioRender explaining the relatins between the index, etiologies...
+
+:::
+:::: 
 
 
 ## Materials - Dataset
@@ -32,17 +46,19 @@ author:
 ::: {.column width="50%"}
 Data set used: [Early predictors of outcomes of hospitalization for cirrhosis and assessment of the impact of race and ethnicity at safety-net hospitals](https://datadryad.org/stash/dataset/doi:10.5061/dryad.6gt88dv)   
 
-<\div>
-
-Study performed on X patients from 4 safety-net hospitals in the US    
-
-Focused in the early predictors of outcomes like **comorbidities** and **etiologies**    
+- 733 patients 
+- From 4 safety-net hospitals in the US    
+- Male dominated study (67.31%)
+- Predominant age group [60; 70]
+- Main liver disease diagnosis 
+* Ascites ()
 :::
 
 ::: {.column width="50%"}
 ![](../results/plots/Age_gender.png)
 
-![](../results/plots/Overview_LD.png){width=100%} 
+![](../results/plots/Overview_LD.png){width=100%}
+
 :::
 
 :::: 
