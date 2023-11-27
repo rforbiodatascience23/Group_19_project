@@ -4,6 +4,16 @@ format: html
 editor: visual
 ---
 
+```{r}
+library(tidyverse)
+
+dat_clean_02 <- read_tsv("~/projects/Group_19_project/data/02_dat_clean.tsv")
+dat_tidy_02 <- read_tsv("~/projects/Group_19_project/data/02_dat_tidy.tsv")
+dat_tidy_C_02 <- read_tsv("~/projects/Group_19_project/data/02_dat_tidy_C.tsv")
+dat_tidy_E_02 <- read_tsv("~/projects/Group_19_project/data/02_dat_tidy_E.tsv")
+```
+
+
 ## Introduction of a new variable "Mortality"
 
 

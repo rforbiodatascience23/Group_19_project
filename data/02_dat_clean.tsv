@@ -1,1051 +1,469 @@
-Id	Sex	Age	Liver_disease	Alcohol_consumption	CPS	Charlson_CI	Mortality_hospital	Mortality_30_days	Mortality_90_days	Comorbidities
-1	Female	9	Hepatic encephalopathy	No	9	0	No	No	No	C_None
-2	Male	6	SBP	Yes	9	3	No	No	No	C_Moderate_severe_liver_disease
-3	Female	8	Ascites	No	6	2	No	No	No	C_Mild_liver_disease
-3	Female	8	Ascites	No	6	2	No	No	No	C_Diabetes_with_without_complications
-4	Female	7	Other fluid overload	No	8	9	No	No	No	C_Myocardial_infarction
-4	Female	7	Other fluid overload	No	8	9	No	No	No	C_Congestive_Heart_Failure
-4	Female	7	Other fluid overload	No	8	9	No	No	No	C_Renal_disease
-4	Female	7	Other fluid overload	No	8	9	No	No	No	C_Moderate_severe_liver_disease
-4	Female	7	Other fluid overload	No	8	9	No	No	No	C_Diabetes_with_without_complications
-5	Male	7	Hepatic encephalopathy	Yes	11	4	No	No	No	C_Moderate_severe_liver_disease
-5	Male	7	Hepatic encephalopathy	Yes	11	4	No	No	No	C_Diabetes_with_without_complications
-6	Male	8	AKI	No	8	9	Yes	No	No	C_Myocardial_infarction
-6	Male	8	AKI	No	8	9	Yes	No	No	C_Congestive_Heart_Failure
-6	Male	8	AKI	No	8	9	Yes	No	No	C_Renal_disease
-6	Male	8	AKI	No	8	9	Yes	No	No	C_Moderate_severe_liver_disease
-6	Male	8	AKI	No	8	9	Yes	No	No	C_Diabetes_with_without_complications
-7	Male	7	UGIB due to portal hypertension	Yes	7	5	No	No	No	C_Chronic_pulmonary_disease
-7	Male	7	UGIB due to portal hypertension	Yes	7	5	No	No	No	C_Moderate_severe_liver_disease
-7	Male	7	UGIB due to portal hypertension	Yes	7	5	No	No	No	C_Diabetes_with_without_complications
-8	Male	6	Other fluid overload	Yes	7	3	No	No	No	C_Moderate_severe_liver_disease
-9	Male	6	Hepatic encephalopathy	Yes	11	0	No	No	No	C_None
-10	Female	6	Hepatic encephalopathy	Yes	12	5	No	NA	NA	C_Moderate_severe_liver_disease
-10	Female	6	Hepatic encephalopathy	Yes	12	5	No	NA	NA	C_Diabetes_with_without_complications
-12	Female	7	Hepatic encephalopathy	Yes	12	5	No	NA	NA	C_Malignancy
-12	Female	7	Hepatic encephalopathy	Yes	12	5	No	NA	NA	C_Moderate_severe_liver_disease
-13	Female	6	UGIB due to portal hypertension	Yes	13	3	Yes	No	No	C_Moderate_severe_liver_disease
-14	Female	6	Hepatic encephalopathy	No	8	1	No	NA	NA	C_Mild_liver_disease
-15	Male	7	SBP	Yes	12	0	Yes	No	No	C_None
-16	Male	7	Ascites	Yes	9	3	No	No	No	C_Moderate_severe_liver_disease
-17	Male	7	HCC or cholangioca.	Yes	7	2	No	NA	NA	C_Chronic_pulmonary_disease
-17	Male	7	HCC or cholangioca.	Yes	7	2	No	NA	NA	C_Diabetes_with_without_complications
-18	Female	6	UGIB due to portal hypertension	Yes	6	3	No	No	No	C_Moderate_severe_liver_disease
-19	Male	7	HCC or cholangioca.	Yes	5	9	No	No	No	C_Moderate_severe_liver_disease
-19	Male	7	HCC or cholangioca.	Yes	5	9	No	No	No	C_Metastatic_solid_tumor
-20	Male	6	Hepatic encephalopathy	Yes	10	5	No	No	No	C_Heiplegia_paraplegia
-20	Male	6	Hepatic encephalopathy	Yes	10	5	No	No	No	C_Moderate_severe_liver_disease
-21	Male	6	SBP	No	9	6	No	No	No	C_Chronic_pulmonary_disease
-21	Male	6	SBP	No	9	6	No	No	No	C_Malignancy
-21	Male	6	SBP	No	9	6	No	No	No	C_Moderate_severe_liver_disease
-22	Female	6	Hepatic encephalopathy	No	8	4	No	No	No	C_Dementia
-22	Female	6	Hepatic encephalopathy	No	8	4	No	No	No	C_Moderate_severe_liver_disease
-22	Female	6	Hepatic encephalopathy	No	8	4	No	No	No	C_Diabetes_with_without_complications
-23	Male	6	Other fluid overload	Yes	7	2	No	No	No	C_Mild_liver_disease
-23	Male	6	Other fluid overload	Yes	7	2	No	No	No	C_Diabetes_with_without_complications
-26	Male	7	Ascites	Yes	10	3	No	No	No	C_Moderate_severe_liver_disease
-28	Male	7	Other fluid overload	Yes	6	5	No	No	No	C_Mild_liver_disease
-28	Male	7	Other fluid overload	Yes	6	5	No	No	No	C_Renal_disease
-28	Male	7	Other fluid overload	Yes	6	5	No	No	No	C_Malignancy
-29	Male	5	Ascites	No	10	4	No	No	No	C_Moderate_severe_liver_disease
-29	Male	5	Ascites	No	10	4	No	No	No	C_Diabetes_with_without_complications
-30	Male	7	Other fluid overload	Yes	7	1	No	No	No	C_Mild_liver_disease
-31	Male	7	AKI	Yes	7	8	No	No	No	C_Congestive_Heart_Failure
-31	Male	7	AKI	Yes	7	8	No	No	No	C_Mild_liver_disease
-31	Male	7	AKI	Yes	7	8	No	No	No	C_Renal_disease
-31	Male	7	AKI	Yes	7	8	No	No	No	C_Malignancy
-31	Male	7	AKI	Yes	7	8	No	No	No	C_Diabetes_with_without_complications
-32	Male	6	Hepatic encephalopathy	Yes	14	7	No	No	No	C_Pepticulcer_disease
-32	Male	6	Hepatic encephalopathy	Yes	14	7	No	No	No	C_Malignancy
-32	Male	6	Hepatic encephalopathy	Yes	14	7	No	No	No	C_Moderate_severe_liver_disease
-32	Male	6	Hepatic encephalopathy	Yes	14	7	No	No	No	C_Diabetes_with_without_complications
-33	Male	6	Alcoholic hepatitis	Yes	8	2	No	No	No	C_Myocardial_infarction
-33	Male	6	Alcoholic hepatitis	Yes	8	2	No	No	No	C_Mild_liver_disease
-34	Female	6	Other fluid overload	Yes	6	8	No	No	No	C_Myocardial_infarction
-34	Female	6	Other fluid overload	Yes	6	8	No	No	No	C_Congestive_Heart_Failure
-34	Female	6	Other fluid overload	Yes	6	8	No	No	No	C_Chronic_pulmonary_disease
-34	Female	6	Other fluid overload	Yes	6	8	No	No	No	C_Mild_liver_disease
-34	Female	6	Other fluid overload	Yes	6	8	No	No	No	C_Malignancy
-34	Female	6	Other fluid overload	Yes	6	8	No	No	No	C_Diabetes_with_without_complications
-35	Male	6	HCC or cholangioca.	Yes	8	5	No	No	No	C_Malignancy
-35	Male	6	HCC or cholangioca.	Yes	8	5	No	No	No	C_Moderate_severe_liver_disease
-36	Male	6	UGIB due to portal hypertension	Yes	7	3	No	No	No	C_Moderate_severe_liver_disease
-40	Female	6	Hepatic encephalopathy	Yes	11	4	No	No	No	C_Chronic_pulmonary_disease
-40	Female	6	Hepatic encephalopathy	Yes	11	4	No	No	No	C_Moderate_severe_liver_disease
-41	Male	8	AKI	No	8	11	No	No	No	C_Malignancy
-41	Male	8	AKI	No	8	11	No	No	No	C_Moderate_severe_liver_disease
-41	Male	8	AKI	No	8	11	No	No	No	C_Metastatic_solid_tumor
-42	Male	5	UGIB due to portal hypertension	Yes	7	5	No	No	No	C_Cerebro_Vascular_disease
-42	Male	5	UGIB due to portal hypertension	Yes	7	5	No	No	No	C_Chronic_pulmonary_disease
-42	Male	5	UGIB due to portal hypertension	Yes	7	5	No	No	No	C_Moderate_severe_liver_disease
-43	Male	8	Ascites	Yes	10	4	No	No	No	C_Moderate_severe_liver_disease
-43	Male	8	Ascites	Yes	10	4	No	No	No	C_Diabetes_with_without_complications
-44	Male	7	Other fluid overload	Yes	7	6	No	No	No	C_Chronic_pulmonary_disease
-44	Male	7	Other fluid overload	Yes	7	6	No	No	No	C_Renal_disease
-44	Male	7	Other fluid overload	Yes	7	6	No	No	No	C_Moderate_severe_liver_disease
-45	Female	6	Alcoholic hepatitis	Yes	9	3	No	No	No	C_Moderate_severe_liver_disease
-47	Female	4	Alcoholic hepatitis	Yes	8	3	No	No	No	C_Moderate_severe_liver_disease
-48	Male	5	Alcoholic hepatitis	Yes	9	5	No	No	No	C_Moderate_severe_liver_disease
-48	Male	5	Alcoholic hepatitis	Yes	9	5	No	No	No	C_Diabetes_with_without_complications
-49	Male	6	Ascites	Yes	9	4	No	No	No	C_Chronic_pulmonary_disease
-49	Male	6	Ascites	Yes	9	4	No	No	No	C_Moderate_severe_liver_disease
-51	Male	6	Alcoholic hepatitis	Yes	9	8	No	No	No	C_Cerebro_Vascular_disease
-51	Male	6	Alcoholic hepatitis	Yes	9	8	No	No	No	C_Pepticulcer_disease
-51	Male	6	Alcoholic hepatitis	Yes	9	8	No	No	No	C_Malignancy
-51	Male	6	Alcoholic hepatitis	Yes	9	8	No	No	No	C_Moderate_severe_liver_disease
-51	Male	6	Alcoholic hepatitis	Yes	9	8	No	No	No	C_Diabetes_with_without_complications
-52	Male	6	Hepatic encephalopathy	No	11	5	No	No	No	C_Congestive_Heart_Failure
-52	Male	6	Hepatic encephalopathy	No	11	5	No	No	No	C_Cerebro_Vascular_disease
-52	Male	6	Hepatic encephalopathy	No	11	5	No	No	No	C_Moderate_severe_liver_disease
-53	Male	6	Hepatic encephalopathy	Yes	11	5	No	No	NA	C_Peripheral_vascular_disease
-53	Male	6	Hepatic encephalopathy	Yes	11	5	No	No	NA	C_Moderate_severe_liver_disease
-53	Male	6	Hepatic encephalopathy	Yes	11	5	No	No	NA	C_Diabetes_with_without_complications
-54	Male	6	HCC or cholangioca.	Yes	6	6	No	No	No	C_Malignancy
-54	Male	6	HCC or cholangioca.	Yes	6	6	No	No	No	C_Moderate_severe_liver_disease
-54	Male	6	HCC or cholangioca.	Yes	6	6	No	No	No	C_Diabetes_with_without_complications
-55	Male	7	UGIB due to portal hypertension	No	13	3	Yes	No	No	C_Moderate_severe_liver_disease
-56	Female	5	Ascites	No	10	3	No	NA	NA	C_Moderate_severe_liver_disease
-57	Male	5	Alcoholic hepatitis	Yes	14	3	No	No	Yes	C_Moderate_severe_liver_disease
-58	Female	4	UGIB due to portal hypertension	Yes	11	4	No	NA	NA	C_Moderate_severe_liver_disease
-58	Female	4	UGIB due to portal hypertension	Yes	11	4	No	NA	NA	C_Diabetes_with_without_complications
-59	Male	4	HCC or cholangioca.	No	11	3	No	NA	NA	C_Moderate_severe_liver_disease
-60	Female	7	Hepatic encephalopathy	Yes	9	4	Yes	No	No	C_Chronic_pulmonary_disease
-60	Female	7	Hepatic encephalopathy	Yes	9	4	Yes	No	No	C_Moderate_severe_liver_disease
-61	Male	7	Hepatic encephalopathy	No	8	6	No	No	NA	C_Malignancy
-61	Male	7	Hepatic encephalopathy	No	8	6	No	No	NA	C_Moderate_severe_liver_disease
-61	Male	7	Hepatic encephalopathy	No	8	6	No	No	NA	C_Diabetes_with_without_complications
-62	Male	7	Ascites	No	11	4	No	NA	NA	C_Mild_liver_disease
-62	Male	7	Ascites	No	11	4	No	NA	NA	C_Malignancy
-62	Male	7	Ascites	No	11	4	No	NA	NA	C_Diabetes_with_without_complications
-63	Male	6	Alcoholic hepatitis	Yes	10	0	No	No	No	C_None
-64	Female	7	Jaundice- as isolated presentation	Yes	10	5	No	No	No	C_Renal_disease
-64	Female	7	Jaundice- as isolated presentation	Yes	10	5	No	No	No	C_Moderate_severe_liver_disease
-65	Male	6	Ascites	Yes	8	9	No	No	No	C_Cerebro_Vascular_disease
-65	Male	6	Ascites	Yes	8	9	No	No	No	C_Malignancy
-65	Male	6	Ascites	Yes	8	9	No	No	No	C_Metastatic_solid_tumor
-67	Female	5	Alcoholic hepatitis	Yes	12	3	No	No	No	C_Moderate_severe_liver_disease
-68	Male	6	Ascites	Yes	7	5	No	No	No	C_Malignancy
-68	Male	6	Ascites	Yes	7	5	No	No	No	C_Moderate_severe_liver_disease
-69	Male	7	Hepatic encephalopathy	Yes	5	4	No	No	No	C_Cerebro_Vascular_disease
-69	Male	7	Hepatic encephalopathy	Yes	5	4	No	No	No	C_Moderate_severe_liver_disease
-70	Male	6	Hepatic encephalopathy	Yes	11	3	No	No	No	C_Moderate_severe_liver_disease
-71	Female	4	Alcoholic hepatitis	Yes	3	3	No	No	No	C_Moderate_severe_liver_disease
-72	Male	6	Ascites	Yes	11	11	No	NA	NA	C_Malignancy
-72	Male	6	Ascites	Yes	11	11	No	NA	NA	C_Moderate_severe_liver_disease
-72	Male	6	Ascites	Yes	11	11	No	NA	NA	C_Metastatic_solid_tumor
-74	Female	6	SBP	Yes	7	5	No	No	No	C_Moderate_severe_liver_disease
-74	Female	6	SBP	Yes	7	5	No	No	No	C_Diabetes_with_without_complications
-75	Male	6	Hepato-hydrothorax	Yes	9	5	No	No	Yes	C_Malignancy
-75	Male	6	Hepato-hydrothorax	Yes	9	5	No	No	Yes	C_Moderate_severe_liver_disease
-76	Female	5	Hepatic encephalopathy	Yes	13	3	No	No	No	C_Moderate_severe_liver_disease
-77	Male	5	SBP	Yes	13	3	No	No	No	C_Moderate_severe_liver_disease
-78	Male	6	Ascites	Yes	5	6	No	No	No	C_Chronic_pulmonary_disease
-78	Male	6	Ascites	Yes	5	6	No	No	No	C_Malignancy
-78	Male	6	Ascites	Yes	5	6	No	No	No	C_Moderate_severe_liver_disease
-79	Male	6	Ascites	No	8	5	No	No	No	C_Malignancy
-79	Male	6	Ascites	No	8	5	No	No	No	C_Moderate_severe_liver_disease
-80	Male	6	Other fluid overload	Yes	5	11	No	No	No	C_Malignancy
-80	Male	6	Other fluid overload	Yes	5	11	No	No	No	C_Moderate_severe_liver_disease
-80	Male	6	Other fluid overload	Yes	5	11	No	No	No	C_AIDS
-81	Male	7	Hepato-hydrothorax	No	8	7	No	No	No	C_Renal_disease
-81	Male	7	Hepato-hydrothorax	No	8	7	No	No	No	C_Moderate_severe_liver_disease
-81	Male	7	Hepato-hydrothorax	No	8	7	No	No	No	C_Diabetes_with_without_complications
-82	Male	6	Ascites	Yes	6	1	Yes	No	No	C_Mild_liver_disease
-83	Male	6	Alcoholic hepatitis	Yes	12	3	No	No	No	C_Moderate_severe_liver_disease
-84	Male	7	Alcoholic hepatitis	Yes	8	6	No	No	No	C_Malignancy
-84	Male	7	Alcoholic hepatitis	Yes	8	6	No	No	No	C_Moderate_severe_liver_disease
-84	Male	7	Alcoholic hepatitis	Yes	8	6	No	No	No	C_Diabetes_with_without_complications
-85	Male	6	Hepatic encephalopathy	Yes	7	13	No	No	No	C_Malignancy
-85	Male	6	Hepatic encephalopathy	Yes	7	13	No	No	No	C_Moderate_severe_liver_disease
-85	Male	6	Hepatic encephalopathy	Yes	7	13	No	No	No	C_AIDS
-85	Male	6	Hepatic encephalopathy	Yes	7	13	No	No	No	C_Diabetes_with_without_complications
-86	Male	8	Other fluid overload	Yes	4	4	No	No	No	C_Chronic_pulmonary_disease
-86	Male	8	Other fluid overload	Yes	4	4	No	No	No	C_Moderate_severe_liver_disease
-87	Male	6	AKI	No	7	11	No	NA	NA	C_Malignancy
-87	Male	6	AKI	No	7	11	No	NA	NA	C_Moderate_severe_liver_disease
-87	Male	6	AKI	No	7	11	No	NA	NA	C_AIDS
-88	Male	7	UGIB due to portal hypertension	Yes	7	4	No	No	No	C_Chronic_pulmonary_disease
-88	Male	7	UGIB due to portal hypertension	Yes	7	4	No	No	No	C_Moderate_severe_liver_disease
-89	Male	5	Other fluid overload	Yes	7	4	No	No	No	C_Chronic_pulmonary_disease
-89	Male	5	Other fluid overload	Yes	7	4	No	No	No	C_Moderate_severe_liver_disease
-90	Male	8	Ascites	Yes	7	11	No	NA	NA	C_Malignancy
-90	Male	8	Ascites	Yes	7	11	No	NA	NA	C_Moderate_severe_liver_disease
-90	Male	8	Ascites	Yes	7	11	No	NA	NA	C_Metastatic_solid_tumor
-91	Male	6	Alcoholic hepatitis	Yes	6	3	No	No	No	C_Moderate_severe_liver_disease
-92	Male	6	Ascites	Yes	12	7	No	No	No	C_Cerebro_Vascular_disease
-92	Male	6	Ascites	Yes	12	7	No	No	No	C_Malignancy
-92	Male	6	Ascites	Yes	12	7	No	No	No	C_Moderate_severe_liver_disease
-92	Male	6	Ascites	Yes	12	7	No	No	No	C_Diabetes_with_without_complications
-93	Male	6	UGIB due to portal hypertension	Yes	4	3	No	No	No	C_Moderate_severe_liver_disease
-95	Male	6	Hepatic encephalopathy	Yes	4	3	No	No	No	C_Moderate_severe_liver_disease
-96	Male	6	Ascites	Yes	7	4	No	No	No	C_Moderate_severe_liver_disease
-96	Male	6	Ascites	Yes	7	4	No	No	No	C_Diabetes_with_without_complications
-97	Male	6	UGIB due to portal hypertension	No	5	4	No	No	No	C_Congestive_Heart_Failure
-97	Male	6	UGIB due to portal hypertension	No	5	4	No	No	No	C_Moderate_severe_liver_disease
-99	Female	6	Hepatic encephalopathy	Yes	11	4	No	No	No	C_Chronic_pulmonary_disease
-99	Female	6	Hepatic encephalopathy	Yes	11	4	No	No	No	C_Moderate_severe_liver_disease
-101	Male	7	Other fluid overload	Yes	7	6	Yes	No	No	C_Congestive_Heart_Failure
-101	Male	7	Other fluid overload	Yes	7	6	Yes	No	No	C_Malignancy
-101	Male	7	Other fluid overload	Yes	7	6	Yes	No	No	C_Moderate_severe_liver_disease
-102	Female	9	Hepatic encephalopathy	No	8	4	No	No	No	C_Cerebro_Vascular_disease
-102	Female	9	Hepatic encephalopathy	No	8	4	No	No	No	C_Moderate_severe_liver_disease
-103	Male	6	Alcoholic hepatitis	Yes	5	5	No	No	No	C_Malignancy
-103	Male	6	Alcoholic hepatitis	Yes	5	5	No	No	No	C_Moderate_severe_liver_disease
-104	Female	7	Other fluid overload	Yes	5	11	No	No	No	C_Malignancy
-104	Female	7	Other fluid overload	Yes	5	11	No	No	No	C_Moderate_severe_liver_disease
-104	Female	7	Other fluid overload	Yes	5	11	No	No	No	C_Metastatic_solid_tumor
-105	Female	5	Ascites	Yes	10	3	No	No	No	C_Moderate_severe_liver_disease
-106	Male	5	UGIB due to portal hypertension	Yes	7	4	No	No	No	C_Pepticulcer_disease
-106	Male	5	UGIB due to portal hypertension	Yes	7	4	No	No	No	C_Moderate_severe_liver_disease
-107	Male	5	UGIB due to portal hypertension	Yes	5	4	No	No	No	C_Chronic_pulmonary_disease
-107	Male	5	UGIB due to portal hypertension	Yes	5	4	No	No	No	C_Moderate_severe_liver_disease
-108	Male	6	UGIB due to portal hypertension	Yes	5	4	No	No	No	C_Chronic_pulmonary_disease
-108	Male	6	UGIB due to portal hypertension	Yes	5	4	No	No	No	C_Moderate_severe_liver_disease
-110	Male	5	Ascites	Yes	9	3	No	No	No	C_Moderate_severe_liver_disease
-111	Female	4	Ascites	No	9	3	No	No	No	C_Moderate_severe_liver_disease
-112	Female	6	Ascites	No	8	5	No	No	NA	C_Malignancy
-112	Female	6	Ascites	No	8	5	No	No	NA	C_Moderate_severe_liver_disease
-113	Female	7	UGIB due to portal hypertension	No	6	7	No	No	No	C_Renal_disease
-113	Female	7	UGIB due to portal hypertension	No	6	7	No	No	No	C_Moderate_severe_liver_disease
-113	Female	7	UGIB due to portal hypertension	No	6	7	No	No	No	C_Diabetes_with_without_complications
-114	Female	6	Other fluid overload	Yes	7	3	No	No	No	C_Congestive_Heart_Failure
-114	Female	6	Other fluid overload	Yes	7	3	No	No	No	C_Chronic_pulmonary_disease
-114	Female	6	Other fluid overload	Yes	7	3	No	No	No	C_Mild_liver_disease
-115	Male	6	SBP	Yes	10	3	No	No	No	C_Moderate_severe_liver_disease
-116	Female	7	Hepatic encephalopathy	No	6	5	No	No	No	C_Cerebro_Vascular_disease
-116	Female	7	Hepatic encephalopathy	No	6	5	No	No	No	C_Chronic_pulmonary_disease
-116	Female	7	Hepatic encephalopathy	No	6	5	No	No	No	C_Moderate_severe_liver_disease
-117	Male	5	UGIB due to portal hypertension	Yes	8	3	No	No	No	C_Moderate_severe_liver_disease
-118	Male	7	Ascites	Yes	8	4	No	No	No	C_Chronic_pulmonary_disease
-118	Male	7	Ascites	Yes	8	4	No	No	No	C_Moderate_severe_liver_disease
-119	Male	8	Hepatic encephalopathy	Yes	9	10	No	No	No	C_Pepticulcer_disease
-119	Male	8	Hepatic encephalopathy	Yes	9	10	No	No	No	C_Mild_liver_disease
-119	Male	8	Hepatic encephalopathy	Yes	9	10	No	No	No	C_Malignancy
-119	Male	8	Hepatic encephalopathy	Yes	9	10	No	No	No	C_Metastatic_solid_tumor
-120	Male	9	SBP	No	8	5	No	No	No	C_Myocardial_infarction
-120	Male	9	SBP	No	8	5	No	No	No	C_Congestive_Heart_Failure
-120	Male	9	SBP	No	8	5	No	No	No	C_Dementia
-120	Male	9	SBP	No	8	5	No	No	No	C_Moderate_severe_liver_disease
-121	Male	6	Other fluid overload	Yes	5	10	No	No	NA	C_Chronic_pulmonary_disease
-121	Male	6	Other fluid overload	Yes	5	10	No	No	NA	C_Mild_liver_disease
-121	Male	6	Other fluid overload	Yes	5	10	No	No	NA	C_Malignancy
-121	Male	6	Other fluid overload	Yes	5	10	No	No	NA	C_Metastatic_solid_tumor
-122	Male	5	Hepatic encephalopathy	Yes	9	3	No	No	No	C_Moderate_severe_liver_disease
-123	Male	7	Ascites	Yes	12	5	No	No	No	C_Chronic_pulmonary_disease
-123	Male	7	Ascites	Yes	12	5	No	No	No	C_Moderate_severe_liver_disease
-123	Male	7	Ascites	Yes	12	5	No	No	No	C_Diabetes_with_without_complications
-124	Female	7	Other fluid overload	No	8	4	No	No	No	C_Moderate_severe_liver_disease
-124	Female	7	Other fluid overload	No	8	4	No	No	No	C_Diabetes_with_without_complications
-125	Male	7	HCC or cholangioca.	Yes	6	6	No	No	No	C_Malignancy
-125	Male	7	HCC or cholangioca.	Yes	6	6	No	No	No	C_Moderate_severe_liver_disease
-125	Male	7	HCC or cholangioca.	Yes	6	6	No	No	No	C_Diabetes_with_without_complications
-126	Male	5	Hepatic encephalopathy	No	13	4	No	No	NA	C_Chronic_pulmonary_disease
-126	Male	5	Hepatic encephalopathy	No	13	4	No	No	NA	C_Moderate_severe_liver_disease
-127	Female	6	Hepatic encephalopathy	No	10	3	No	No	No	C_Moderate_severe_liver_disease
-128	Male	6	Hepatic encephalopathy	Yes	10	4	No	No	No	C_Moderate_severe_liver_disease
-128	Male	6	Hepatic encephalopathy	Yes	10	4	No	No	No	C_Diabetes_with_without_complications
-129	Male	7	HCC or cholangioca.	No	3	5	No	No	No	C_Malignancy
-129	Male	7	HCC or cholangioca.	No	3	5	No	No	No	C_Moderate_severe_liver_disease
-131	Male	7	Ascites	Yes	13	3	No	No	No	C_Moderate_severe_liver_disease
-132	Male	5	Hepatic encephalopathy	Yes	9	3	No	No	No	C_Moderate_severe_liver_disease
-133	Female	8	Other fluid overload	No	8	5	No	No	No	C_Congestive_Heart_Failure
-133	Female	8	Other fluid overload	No	8	5	No	No	No	C_Chronic_pulmonary_disease
-133	Female	8	Other fluid overload	No	8	5	No	No	No	C_Moderate_severe_liver_disease
-134	Female	7	SBP	Yes	11	4	No	No	No	C_Moderate_severe_liver_disease
-134	Female	7	SBP	Yes	11	4	No	No	No	C_Diabetes_with_without_complications
-136	Female	6	UGIB due to portal hypertension	No	5	5	No	No	No	C_Chronic_pulmonary_disease
-136	Female	6	UGIB due to portal hypertension	No	5	5	No	No	No	C_Moderate_severe_liver_disease
-136	Female	6	UGIB due to portal hypertension	No	5	5	No	No	No	C_Diabetes_with_without_complications
-137	Male	6	Hepatic encephalopathy	Yes	10	1	No	No	No	C_Congestive_Heart_Failure
-138	Female	6	HCC or cholangioca.	No	7	6	No	No	No	C_Malignancy
-138	Female	6	HCC or cholangioca.	No	7	6	No	No	No	C_Moderate_severe_liver_disease
-138	Female	6	HCC or cholangioca.	No	7	6	No	No	No	C_Diabetes_with_without_complications
-139	Female	5	Ascites	Yes	7	5	No	No	No	C_Chronic_pulmonary_disease
-139	Female	5	Ascites	Yes	7	5	No	No	No	C_Moderate_severe_liver_disease
-139	Female	5	Ascites	Yes	7	5	No	No	No	C_Diabetes_with_without_complications
-140	Male	5	Alcoholic hepatitis	Yes	12	5	Yes	No	No	C_Malignancy
-140	Male	5	Alcoholic hepatitis	Yes	12	5	Yes	No	No	C_Moderate_severe_liver_disease
-141	Male	5	Jaundice- as isolated presentation	Yes	10	4	No	No	No	C_Moderate_severe_liver_disease
-141	Male	5	Jaundice- as isolated presentation	Yes	10	4	No	No	No	C_Diabetes_with_without_complications
-142	Male	8	HCC or cholangioca.	No	5	12	Yes	No	No	C_Chronic_pulmonary_disease
-142	Male	8	HCC or cholangioca.	No	5	12	Yes	No	No	C_Malignancy
-142	Male	8	HCC or cholangioca.	No	5	12	Yes	No	No	C_Moderate_severe_liver_disease
-142	Male	8	HCC or cholangioca.	No	5	12	Yes	No	No	C_Metastatic_solid_tumor
-143	Male	7	Ascites	Yes	14	4	Yes	No	No	C_Pepticulcer_disease
-143	Male	7	Ascites	Yes	14	4	Yes	No	No	C_Moderate_severe_liver_disease
-144	Male	5	Ascites	Yes	13	3	No	No	Yes	C_Moderate_severe_liver_disease
-145	Male	5	Alcoholic hepatitis	Yes	6	1	No	No	No	C_Mild_liver_disease
-146	Female	7	Alcoholic hepatitis	Yes	12	3	Yes	No	No	C_Moderate_severe_liver_disease
-147	Male	6	UGIB due to portal hypertension	Yes	7	4	No	No	No	C_Pepticulcer_disease
-147	Male	6	UGIB due to portal hypertension	Yes	7	4	No	No	No	C_Moderate_severe_liver_disease
-149	Male	6	Hepato-hydrothorax	Yes	11	4	No	No	Yes	C_Myocardial_infarction
-149	Male	6	Hepato-hydrothorax	Yes	11	4	No	No	Yes	C_Moderate_severe_liver_disease
-150	Male	6	Other fluid overload	No	10	5	Yes	No	No	C_Malignancy
-150	Male	6	Other fluid overload	No	10	5	Yes	No	No	C_Moderate_severe_liver_disease
-151	Female	8	Other fluid overload	No	5	3	No	No	No	C_Cerebro_Vascular_disease
-151	Female	8	Other fluid overload	No	5	3	No	No	No	C_Mild_liver_disease
-151	Female	8	Other fluid overload	No	5	3	No	No	No	C_Diabetes_with_without_complications
-152	Female	5	Jaundice- as isolated presentation	No	11	3	No	No	No	C_Moderate_severe_liver_disease
-153	Male	6	Hepatic encephalopathy	Yes	7	12	Yes	No	No	C_Pepticulcer_disease
-153	Male	6	Hepatic encephalopathy	Yes	7	12	Yes	No	No	C_Malignancy
-153	Male	6	Hepatic encephalopathy	Yes	7	12	Yes	No	No	C_Moderate_severe_liver_disease
-153	Male	6	Hepatic encephalopathy	Yes	7	12	Yes	No	No	C_Metastatic_solid_tumor
-154	Male	6	Ascites	No	8	3	No	No	No	C_Moderate_severe_liver_disease
-155	Female	6	Ascites	Yes	11	3	No	NA	NA	C_Moderate_severe_liver_disease
-156	Male	5	Alcoholic hepatitis	Yes	6	1	No	No	No	C_Mild_liver_disease
-157	Male	5	UGIB due to portal hypertension	No	7	4	No	No	No	C_Cerebro_Vascular_disease
-157	Male	5	UGIB due to portal hypertension	No	7	4	No	No	No	C_Moderate_severe_liver_disease
-158	Female	7	Hepatic encephalopathy	No	8	4	No	No	No	C_Moderate_severe_liver_disease
-158	Female	7	Hepatic encephalopathy	No	8	4	No	No	No	C_Diabetes_with_without_complications
-159	Male	4	Alcoholic hepatitis	Yes	10	3	No	No	No	C_Moderate_severe_liver_disease
-160	Female	6	UGIB due to portal hypertension	Yes	7	5	No	No	No	C_Renal_disease
-160	Female	6	UGIB due to portal hypertension	Yes	7	5	No	No	No	C_Moderate_severe_liver_disease
-161	Female	6	HCC or cholangioca.	Yes	8	11	No	No	No	C_Malignancy
-161	Female	6	HCC or cholangioca.	Yes	8	11	No	No	No	C_Moderate_severe_liver_disease
-161	Female	6	HCC or cholangioca.	Yes	8	11	No	No	No	C_Metastatic_solid_tumor
-162	Male	6	SBP	Yes	10	3	No	No	No	C_Moderate_severe_liver_disease
-165	Female	5	UGIB due to portal hypertension	Yes	10	3	No	No	No	C_Moderate_severe_liver_disease
-167	Male	6	UGIB due to portal hypertension	No	12	5	Yes	No	No	C_Renal_disease
-167	Male	6	UGIB due to portal hypertension	No	12	5	Yes	No	No	C_Moderate_severe_liver_disease
-168	Female	5	Other fluid overload	No	10	9	No	No	No	C_Moderate_severe_liver_disease
-168	Female	5	Other fluid overload	No	10	9	No	No	No	C_AIDS
-169	Male	5	Hepato-hydrothorax	No	11	3	No	No	No	C_Moderate_severe_liver_disease
-170	Male	3	UGIB due to portal hypertension	Yes	9	3	No	No	No	C_Moderate_severe_liver_disease
-171	Male	5	Ascites	Yes	8	3	No	NA	NA	C_Moderate_severe_liver_disease
-172	Male	6	Ascites	Yes	11	3	No	No	No	C_Moderate_severe_liver_disease
-173	Male	5	SBP	Yes	11	3	No	No	No	C_Moderate_severe_liver_disease
-175	Male	7	UGIB due to portal hypertension	No	11	3	No	No	No	C_Moderate_severe_liver_disease
-176	Male	6	Ascites	No	9	3	No	No	No	C_Moderate_severe_liver_disease
-177	Female	5	UGIB due to portal hypertension	No	7	3	No	No	No	C_Moderate_severe_liver_disease
-178	Male	5	UGIB due to portal hypertension	Yes	9	4	No	No	NA	C_Myocardial_infarction
-178	Male	5	UGIB due to portal hypertension	Yes	9	4	No	No	NA	C_Moderate_severe_liver_disease
-179	Male	6	Ascites	No	11	3	No	No	No	C_Moderate_severe_liver_disease
-180	Male	6	Ascites	No	11	3	No	No	No	C_Moderate_severe_liver_disease
-182	Male	6	Hepatic encephalopathy	Yes	9	4	No	NA	NA	C_Moderate_severe_liver_disease
-182	Male	6	Hepatic encephalopathy	Yes	9	4	No	NA	NA	C_Diabetes_with_without_complications
-183	Male	5	Ascites	No	11	3	No	No	No	C_Moderate_severe_liver_disease
-184	Male	6	Ascites	No	12	3	Yes	No	No	C_Moderate_severe_liver_disease
-185	Male	6	UGIB due to portal hypertension	Yes	7	1	No	No	No	C_Mild_liver_disease
-186	Female	6	UGIB due to portal hypertension	Yes	7	3	No	No	No	C_Moderate_severe_liver_disease
-187	Female	6	Ascites	Yes	6	3	No	No	No	C_Moderate_severe_liver_disease
-188	Female	6	Ascites	No	14	3	Yes	No	No	C_Moderate_severe_liver_disease
-189	Male	6	UGIB due to portal hypertension	No	7	6	No	No	No	C_Renal_disease
-189	Male	6	UGIB due to portal hypertension	No	7	6	No	No	No	C_Moderate_severe_liver_disease
-189	Male	6	UGIB due to portal hypertension	No	7	6	No	No	No	C_Diabetes_with_without_complications
-190	Female	6	Ascites	No	7	2	No	No	No	C_Mild_liver_disease
-190	Female	6	Ascites	No	7	2	No	No	No	C_Diabetes_with_without_complications
-191	Male	5	UGIB due to portal hypertension	Yes	7	1	No	No	No	C_Mild_liver_disease
-192	Male	6	SBP	Yes	10	5	No	No	No	C_Moderate_severe_liver_disease
-192	Male	6	SBP	Yes	10	5	No	No	No	C_Diabetes_with_without_complications
-193	Male	5	Ascites	Yes	7	3	No	No	No	C_Moderate_severe_liver_disease
-195	Male	6	Ascites	Yes	8	4	No	No	No	C_Moderate_severe_liver_disease
-195	Male	6	Ascites	Yes	8	4	No	No	No	C_Diabetes_with_without_complications
-196	Female	4	Ascites	No	5	2	No	No	No	C_Mild_liver_disease
-196	Female	4	Ascites	No	5	2	No	No	No	C_Diabetes_with_without_complications
-197	Female	6	Ascites	No	10	5	No	No	Yes	C_Congestive_Heart_Failure
-197	Female	6	Ascites	No	10	5	No	No	Yes	C_Moderate_severe_liver_disease
-197	Female	6	Ascites	No	10	5	No	No	Yes	C_Diabetes_with_without_complications
-198	Male	5	Hepatic encephalopathy	Yes	10	3	No	No	No	C_Moderate_severe_liver_disease
-199	Male	5	UGIB due to portal hypertension	Yes	9	3	No	No	No	C_Moderate_severe_liver_disease
-200	Male	5	UGIB due to portal hypertension	Yes	11	1	Yes	No	No	C_Mild_liver_disease
-202	Male	6	UGIB due to portal hypertension	Yes	8	1	No	No	No	C_Mild_liver_disease
-204	Female	7	Ascites	No	9	6	No	No	No	C_Renal_disease
-204	Female	7	Ascites	No	9	6	No	No	No	C_Moderate_severe_liver_disease
-204	Female	7	Ascites	No	9	6	No	No	No	C_Diabetes_with_without_complications
-206	Female	7	Alcoholic hepatitis	Yes	9	1	No	No	No	C_Mild_liver_disease
-207	Female	6	Ascites	No	8	3	No	No	No	C_Moderate_severe_liver_disease
-208	Male	5	Ascites	Yes	7	1	No	No	No	C_Mild_liver_disease
-209	Female	5	UGIB due to portal hypertension	No	10	1	No	No	Yes	C_Mild_liver_disease
-210	Female	6	UGIB due to portal hypertension	No	7	1	No	No	No	C_Mild_liver_disease
-211	Male	6	Ascites	No	7	3	No	No	No	C_Moderate_severe_liver_disease
-213	Male	7	Ascites	Yes	9	4	No	No	No	C_Moderate_severe_liver_disease
-213	Male	7	Ascites	Yes	9	4	No	No	No	C_Diabetes_with_without_complications
-214	Female	4	Ascites	No	10	3	No	No	No	C_Moderate_severe_liver_disease
-215	Female	5	Hepatic encephalopathy	No	12	3	No	No	No	C_Moderate_severe_liver_disease
-216	Male	6	Ascites	Yes	11	1	No	No	NA	C_Mild_liver_disease
-217	Male	5	UGIB due to portal hypertension	Yes	7	1	No	No	No	C_Mild_liver_disease
-219	Male	6	Ascites	Yes	8	1	No	No	No	C_Mild_liver_disease
-220	Male	5	UGIB due to portal hypertension	Yes	10	4	No	No	Yes	C_Moderate_severe_liver_disease
-220	Male	5	UGIB due to portal hypertension	Yes	10	4	No	No	Yes	C_Diabetes_with_without_complications
-221	Male	5	Ascites	Yes	7	1	No	No	No	C_Mild_liver_disease
-224	Female	6	UGIB due to portal hypertension	Yes	9	3	No	No	No	C_Moderate_severe_liver_disease
-225	Female	8	Hepatic encephalopathy	No	11	6	No	No	No	C_Congestive_Heart_Failure
-225	Female	8	Hepatic encephalopathy	No	11	6	No	No	No	C_Renal_disease
-225	Female	8	Hepatic encephalopathy	No	11	6	No	No	No	C_Moderate_severe_liver_disease
-226	Male	5	Ascites	Yes	9	1	No	NA	NA	C_Mild_liver_disease
-227	Male	6	Hepatic encephalopathy	Yes	7	1	No	No	No	C_Mild_liver_disease
-228	Female	8	Ascites	No	7	4	No	No	No	C_Moderate_severe_liver_disease
-228	Female	8	Ascites	No	7	4	No	No	No	C_Diabetes_with_without_complications
-230	Male	5	Ascites	Yes	10	3	No	No	NA	C_Moderate_severe_liver_disease
-231	Female	6	Ascites	No	6	5	No	No	No	C_Congestive_Heart_Failure
-231	Female	6	Ascites	No	6	5	No	No	No	C_Mild_liver_disease
-231	Female	6	Ascites	No	6	5	No	No	No	C_Renal_disease
-231	Female	6	Ascites	No	6	5	No	No	No	C_Diabetes_with_without_complications
-232	Female	6	Ascites	Yes	9	4	No	No	No	C_Moderate_severe_liver_disease
-232	Female	6	Ascites	Yes	9	4	No	No	No	C_Diabetes_with_without_complications
-234	Female	3	Ascites	No	12	3	No	No	NA	C_Moderate_severe_liver_disease
-236	Female	6	Hepatic encephalopathy	No	8	3	No	No	No	C_Moderate_severe_liver_disease
-239	Female	6	UGIB due to portal hypertension	No	7	4	No	No	No	C_Moderate_severe_liver_disease
-239	Female	6	UGIB due to portal hypertension	No	7	4	No	No	No	C_Diabetes_with_without_complications
-240	Male	6	Hepatic encephalopathy	Yes	8	3	No	No	No	C_Pepticulcer_disease
-240	Male	6	Hepatic encephalopathy	Yes	8	3	No	No	No	C_Mild_liver_disease
-240	Male	6	Hepatic encephalopathy	Yes	8	3	No	No	No	C_Diabetes_with_without_complications
-241	Female	6	Ascites	No	10	3	No	No	NA	C_Moderate_severe_liver_disease
-242	Male	6	Hepatic encephalopathy	Yes	8	1	No	NA	NA	C_Mild_liver_disease
-243	Female	5	Ascites	Yes	10	1	No	No	No	C_Mild_liver_disease
-244	Male	6	Hepatic encephalopathy	Yes	11	3	No	No	No	C_Moderate_severe_liver_disease
-245	Male	7	Ascites	Yes	10	4	No	Yes	No	C_Moderate_severe_liver_disease
-245	Male	7	Ascites	Yes	10	4	No	Yes	No	C_Diabetes_with_without_complications
-246	Male	4	Other fluid overload	No	7	3	No	No	No	C_Moderate_severe_liver_disease
-247	Male	6	Hepatic encephalopathy	Yes	10	4	No	No	No	C_Moderate_severe_liver_disease
-247	Male	6	Hepatic encephalopathy	Yes	10	4	No	No	No	C_Diabetes_with_without_complications
-248	Male	6	Ascites	Yes	5	5	No	NA	NA	C_Congestive_Heart_Failure
-248	Male	6	Ascites	Yes	5	5	No	NA	NA	C_Mild_liver_disease
-248	Male	6	Ascites	Yes	5	5	No	NA	NA	C_Renal_disease
-248	Male	6	Ascites	Yes	5	5	No	NA	NA	C_Diabetes_with_without_complications
-249	Female	7	Ascites	No	8	1	No	No	No	C_Mild_liver_disease
-250	Male	6	UGIB due to portal hypertension	Yes	10	1	No	NA	NA	C_Mild_liver_disease
-251	Female	6	SBP	No	10	3	No	No	No	C_Moderate_severe_liver_disease
-252	Male	6	UGIB due to portal hypertension	Yes	7	3	No	No	No	C_Moderate_severe_liver_disease
-253	Male	7	Ascites	Yes	6	1	No	No	No	C_Mild_liver_disease
-254	Male	7	Hepatic encephalopathy	Yes	10	3	No	No	No	C_Myocardial_infarction
-254	Male	7	Hepatic encephalopathy	Yes	10	3	No	No	No	C_Mild_liver_disease
-254	Male	7	Hepatic encephalopathy	Yes	10	3	No	No	No	C_Diabetes_with_without_complications
-255	Female	5	Ascites	Yes	9	1	No	No	No	C_Mild_liver_disease
-257	Female	7	AKI	No	7	2	No	No	No	C_Mild_liver_disease
-257	Female	7	AKI	No	7	2	No	No	No	C_Diabetes_with_without_complications
-258	Female	7	UGIB due to portal hypertension	No	7	3	No	No	No	C_Moderate_severe_liver_disease
-259	Male	6	Ascites	No	7	1	No	No	No	C_Mild_liver_disease
-260	Female	6	Ascites	No	8	7	No	No	No	C_Congestive_Heart_Failure
-260	Female	6	Ascites	No	8	7	No	No	No	C_Renal_disease
-260	Female	6	Ascites	No	8	7	No	No	No	C_Moderate_severe_liver_disease
-260	Female	6	Ascites	No	8	7	No	No	No	C_Diabetes_with_without_complications
-261	Male	7	Ascites	Yes	7	1	No	No	No	C_Mild_liver_disease
-262	Male	6	UGIB due to portal hypertension	Yes	6	3	No	No	No	C_Moderate_severe_liver_disease
-263	Female	7	Ascites	No	11	7	No	No	No	C_Congestive_Heart_Failure
-263	Female	7	Ascites	No	11	7	No	No	No	C_Moderate_severe_liver_disease
-264	Male	5	Ascites	Yes	10	3	No	No	No	C_Moderate_severe_liver_disease
-265	Male	5	UGIB due to portal hypertension	No	6	3	No	No	No	C_Mild_liver_disease
-265	Male	5	UGIB due to portal hypertension	No	6	3	No	No	No	C_Renal_disease
-266	Male	6	Hepatic encephalopathy	Yes	7	1	No	No	No	C_Mild_liver_disease
-267	Male	5	Ascites	Yes	8	3	No	No	No	C_Moderate_severe_liver_disease
-268	Female	6	Ascites	Yes	7	1	No	No	No	C_Mild_liver_disease
-269	Male	5	Hepatic encephalopathy	Yes	9	3	No	No	Yes	C_Moderate_severe_liver_disease
-270	Male	7	Ascites	Yes	8	3	No	No	No	C_Moderate_severe_liver_disease
-271	Female	6	Ascites	Yes	14	4	No	NA	NA	C_Moderate_severe_liver_disease
-271	Female	6	Ascites	Yes	14	4	No	NA	NA	C_Diabetes_with_without_complications
-274	Female	5	UGIB due to portal hypertension	Yes	9	4	No	No	No	C_Pepticulcer_disease
-274	Female	5	UGIB due to portal hypertension	Yes	9	4	No	No	No	C_Moderate_severe_liver_disease
-276	Female	6	UGIB due to portal hypertension	Yes	7	1	No	No	No	C_Mild_liver_disease
-277	Male	5	UGIB due to portal hypertension	Yes	8	4	No	No	No	C_Moderate_severe_liver_disease
-277	Male	5	UGIB due to portal hypertension	Yes	8	4	No	No	No	C_Diabetes_with_without_complications
-278	Female	7	Hepatic encephalopathy	Yes	13	5	No	NA	NA	C_Malignancy
-278	Female	7	Hepatic encephalopathy	Yes	13	5	No	NA	NA	C_Moderate_severe_liver_disease
-280	Male	3	Ascites	Yes	11	1	No	No	NA	C_Mild_liver_disease
-281	Male	9	Hepatic encephalopathy	No	7	1	No	NA	NA	C_Mild_liver_disease
-282	Male	5	Ascites	Yes	13	5	No	NA	NA	C_Renal_disease
-282	Male	5	Ascites	Yes	13	5	No	NA	NA	C_Moderate_severe_liver_disease
-283	Male	6	UGIB due to portal hypertension	Yes	8	1	No	No	No	C_Mild_liver_disease
-284	Male	6	Hepatic encephalopathy	Yes	11	3	No	NA	NA	C_Moderate_severe_liver_disease
-285	Male	6	Ascites	Yes	11	1	Yes	No	No	C_Mild_liver_disease
-286	Male	6	Hepatic encephalopathy	No	7	3	No	No	No	C_Moderate_severe_liver_disease
-287	Female	8	Hepatic encephalopathy	No	7	6	No	No	No	C_Renal_disease
-287	Female	8	Hepatic encephalopathy	No	7	6	No	No	No	C_Moderate_severe_liver_disease
-287	Female	8	Hepatic encephalopathy	No	7	6	No	No	No	C_Diabetes_with_without_complications
-288	Male	5	UGIB due to portal hypertension	Yes	7	1	No	No	NA	C_Mild_liver_disease
-290	Male	6	Hepatic encephalopathy	Yes	11	1	No	No	NA	C_Mild_liver_disease
-291	Male	7	Hepatic encephalopathy	Yes	7	2	No	NA	NA	C_Mild_liver_disease
-291	Male	7	Hepatic encephalopathy	Yes	7	2	No	NA	NA	C_Diabetes_with_without_complications
-292	Female	8	Ascites	No	9	3	No	No	NA	C_Mild_liver_disease
-292	Female	8	Ascites	No	9	3	No	No	NA	C_Renal_disease
-293	Female	6	UGIB due to portal hypertension	Yes	9	3	No	No	No	C_Moderate_severe_liver_disease
-294	Female	6	UGIB due to portal hypertension	No	7	1	No	No	No	C_Mild_liver_disease
-295	Female	6	UGIB due to portal hypertension	Yes	6	1	No	No	No	C_Mild_liver_disease
-296	Female	4	Ascites	Yes	12	3	No	No	No	C_Moderate_severe_liver_disease
-297	Male	6	UGIB due to portal hypertension	No	8	4	No	NA	NA	C_Pepticulcer_disease
-297	Male	6	UGIB due to portal hypertension	No	8	4	No	NA	NA	C_Moderate_severe_liver_disease
-299	Female	7	Hepatic encephalopathy	No	9	3	No	No	No	C_Moderate_severe_liver_disease
-300	Male	4	UGIB due to portal hypertension	Yes	7	1	No	NA	NA	C_Mild_liver_disease
-301	Male	6	Hepatic encephalopathy	Yes	10	1	No	NA	NA	C_Mild_liver_disease
-302	Male	5	Ascites	No	9	4	No	No	No	C_Moderate_severe_liver_disease
-302	Male	5	Ascites	No	9	4	No	No	No	C_Diabetes_with_without_complications
-303	Female	7	Hepatic encephalopathy	No	7	3	No	No	No	C_Rheumatological_disease
-303	Female	7	Hepatic encephalopathy	No	7	3	No	No	No	C_Mild_liver_disease
-303	Female	7	Hepatic encephalopathy	No	7	3	No	No	No	C_Diabetes_with_without_complications
-304	Male	5	Ascites	Yes	10	3	No	No	No	C_Moderate_severe_liver_disease
-305	Male	7	Ascites	Yes	13	3	No	No	NA	C_Moderate_severe_liver_disease
-306	Male	6	Ascites	Yes	7	4	No	NA	NA	C_Pepticulcer_disease
-306	Male	6	Ascites	Yes	7	4	No	NA	NA	C_Moderate_severe_liver_disease
-307	Male	7	Ascites	Yes	7	5	No	No	No	C_Chronic_pulmonary_disease
-307	Male	7	Ascites	Yes	7	5	No	No	No	C_Moderate_severe_liver_disease
-307	Male	7	Ascites	Yes	7	5	No	No	No	C_Diabetes_with_without_complications
-308	Female	5	Hepatic encephalopathy	Yes	10	7	No	NA	NA	C_Mild_liver_disease
-308	Female	5	Hepatic encephalopathy	Yes	10	7	No	NA	NA	C_AIDS
-311	Male	8	Hepatic encephalopathy	Yes	10	1	No	No	No	C_Mild_liver_disease
-312	Female	5	Ascites	Yes	11	3	No	No	No	C_Moderate_severe_liver_disease
-313	Male	6	SBP	No	7	2	No	No	No	C_Chronic_pulmonary_disease
-313	Male	6	SBP	No	7	2	No	No	No	C_Mild_liver_disease
-314	Male	6	UGIB due to portal hypertension	Yes	8	3	No	NA	NA	C_Moderate_severe_liver_disease
-315	Male	5	Hepatic encephalopathy	Yes	8	2	No	No	No	C_Mild_liver_disease
-315	Male	5	Hepatic encephalopathy	Yes	8	2	No	No	No	C_Diabetes_with_without_complications
-316	Male	7	Ascites	Yes	9	3	No	No	No	C_Moderate_severe_liver_disease
-317	Male	6	Ascites	Yes	9	1	No	NA	NA	C_Mild_liver_disease
-319	Female	6	Ascites	Yes	10	1	No	No	No	C_Mild_liver_disease
-320	Male	5	UGIB due to portal hypertension	Yes	6	4	No	NA	NA	C_Moderate_severe_liver_disease
-320	Male	5	UGIB due to portal hypertension	Yes	6	4	No	NA	NA	C_Diabetes_with_without_complications
-321	Male	6	UGIB due to portal hypertension	Yes	14	5	Yes	No	No	C_Malignancy
-321	Male	6	UGIB due to portal hypertension	Yes	14	5	Yes	No	No	C_Moderate_severe_liver_disease
-322	Female	6	UGIB due to portal hypertension	Yes	7	6	No	No	NA	C_Myocardial_infarction
-322	Female	6	UGIB due to portal hypertension	Yes	7	6	No	No	NA	C_Malignancy
-322	Female	6	UGIB due to portal hypertension	Yes	7	6	No	No	NA	C_Moderate_severe_liver_disease
-323	Male	4	Hepatic encephalopathy	Yes	9	3	No	No	No	C_Moderate_severe_liver_disease
-324	Female	6	UGIB due to portal hypertension	No	8	3	No	No	No	C_Moderate_severe_liver_disease
-325	Female	6	Hepatic encephalopathy	Yes	12	3	Yes	No	No	C_Moderate_severe_liver_disease
-326	Male	6	UGIB due to portal hypertension	Yes	7	1	No	No	No	C_Mild_liver_disease
-327	Female	6	Hepatic encephalopathy	Yes	8	4	No	No	No	C_Moderate_severe_liver_disease
-327	Female	6	Hepatic encephalopathy	Yes	8	4	No	No	No	C_Diabetes_with_without_complications
-328	Female	6	SBP	No	9	4	No	No	No	C_Moderate_severe_liver_disease
-328	Female	6	SBP	No	9	4	No	No	No	C_Diabetes_with_without_complications
-329	Female	6	UGIB due to portal hypertension	No	5	3	No	No	No	C_Chronic_pulmonary_disease
-329	Female	6	UGIB due to portal hypertension	No	5	3	No	No	No	C_Mild_liver_disease
-329	Female	6	UGIB due to portal hypertension	No	5	3	No	No	No	C_Diabetes_with_without_complications
-330	Female	6	Hepatic encephalopathy	No	8	4	No	NA	NA	C_Moderate_severe_liver_disease
-330	Female	6	Hepatic encephalopathy	No	8	4	No	NA	NA	C_Diabetes_with_without_complications
-331	Male	7	Hepatic encephalopathy	Yes	9	6	No	NA	NA	C_Renal_disease
-331	Male	7	Hepatic encephalopathy	Yes	9	6	No	NA	NA	C_Moderate_severe_liver_disease
-331	Male	7	Hepatic encephalopathy	Yes	9	6	No	NA	NA	C_Diabetes_with_without_complications
-333	Female	5	Hepatic encephalopathy	No	9	6	No	No	No	C_Renal_disease
-333	Female	5	Hepatic encephalopathy	No	9	6	No	No	No	C_Moderate_severe_liver_disease
-333	Female	5	Hepatic encephalopathy	No	9	6	No	No	No	C_Diabetes_with_without_complications
-334	Male	6	Hepatic encephalopathy	Yes	7	4	No	No	NA	C_Moderate_severe_liver_disease
-334	Male	6	Hepatic encephalopathy	Yes	7	4	No	No	NA	C_Diabetes_with_without_complications
-335	Male	5	Hepatic encephalopathy	Yes	14	4	No	No	No	C_Moderate_severe_liver_disease
-335	Male	5	Hepatic encephalopathy	Yes	14	4	No	No	No	C_Diabetes_with_without_complications
-336	Female	5	Ascites	Yes	12	1	No	No	Yes	C_Mild_liver_disease
-337	Male	7	UGIB due to portal hypertension	Yes	6	3	No	No	No	C_Moderate_severe_liver_disease
-338	Male	6	Ascites	Yes	11	3	No	No	No	C_Moderate_severe_liver_disease
-339	Male	4	UGIB due to portal hypertension	Yes	10	4	No	No	No	C_Moderate_severe_liver_disease
-339	Male	4	UGIB due to portal hypertension	Yes	10	4	No	No	No	C_Diabetes_with_without_complications
-340	Male	7	Ascites	No	6	3	No	No	No	C_Mild_liver_disease
-340	Male	7	Ascites	No	6	3	No	No	No	C_Renal_disease
-341	Male	4	Hepatic encephalopathy	No	13	3	Yes	No	No	C_Moderate_severe_liver_disease
-342	Female	9	Hepatic encephalopathy	No	7	5	No	NA	NA	C_Malignancy
-342	Female	9	Hepatic encephalopathy	No	7	5	No	NA	NA	C_Moderate_severe_liver_disease
-343	Male	6	UGIB due to portal hypertension	Yes	9	1	No	No	No	C_Mild_liver_disease
-344	Female	6	Ascites	No	8	3	No	No	No	C_Moderate_severe_liver_disease
-345	Male	7	Ascites	Yes	9	4	No	No	No	C_Chronic_pulmonary_disease
-345	Male	7	Ascites	Yes	9	4	No	No	No	C_Moderate_severe_liver_disease
-346	Male	6	Ascites	Yes	7	4	No	No	No	C_Moderate_severe_liver_disease
-346	Male	6	Ascites	Yes	7	4	No	No	No	C_Diabetes_with_without_complications
-347	Male	6	Hepatic encephalopathy	Yes	10	3	No	No	No	C_Moderate_severe_liver_disease
-348	Male	5	UGIB due to portal hypertension	Yes	6	4	No	No	No	C_Pepticulcer_disease
-348	Male	5	UGIB due to portal hypertension	Yes	6	4	No	No	No	C_Moderate_severe_liver_disease
-350	Female	6	UGIB due to portal hypertension	No	6	5	No	No	No	C_Myocardial_infarction
-350	Female	6	UGIB due to portal hypertension	No	6	5	No	No	No	C_Moderate_severe_liver_disease
-350	Female	6	UGIB due to portal hypertension	No	6	5	No	No	No	C_Diabetes_with_without_complications
-351	Male	7	UGIB due to portal hypertension	No	11	4	No	No	No	C_Moderate_severe_liver_disease
-351	Male	7	UGIB due to portal hypertension	No	11	4	No	No	No	C_Diabetes_with_without_complications
-352	Female	4	Ascites	No	9	4	No	No	No	C_Moderate_severe_liver_disease
-352	Female	4	Ascites	No	9	4	No	No	No	C_Diabetes_with_without_complications
-353	Male	5	UGIB due to portal hypertension	Yes	9	4	No	No	No	C_Moderate_severe_liver_disease
-353	Male	5	UGIB due to portal hypertension	Yes	9	4	No	No	No	C_Diabetes_with_without_complications
-354	Male	7	SBP	No	9	4	No	No	No	C_Moderate_severe_liver_disease
-354	Male	7	SBP	No	9	4	No	No	No	C_Diabetes_with_without_complications
-355	Female	6	Ascites	Yes	9	1	No	No	No	C_Mild_liver_disease
-356	Male	6	Ascites	Yes	9	4	No	No	NA	C_Congestive_Heart_Failure
-356	Male	6	Ascites	Yes	9	4	No	No	NA	C_Moderate_severe_liver_disease
-357	Female	7	Hepatic encephalopathy	No	9	4	No	No	No	C_Moderate_severe_liver_disease
-357	Female	7	Hepatic encephalopathy	No	9	4	No	No	No	C_Diabetes_with_without_complications
-358	Male	7	Hepatic encephalopathy	Yes	9	10	No	No	No	C_Myocardial_infarction
-358	Male	7	Hepatic encephalopathy	Yes	9	10	No	No	No	C_Moderate_severe_liver_disease
-358	Male	7	Hepatic encephalopathy	Yes	9	10	No	No	No	C_Metastatic_solid_tumor
-360	Male	5	UGIB due to portal hypertension	Yes	9	3	No	No	No	C_Moderate_severe_liver_disease
-361	Male	4	Hepatic encephalopathy	Yes	5	3	No	No	NA	C_Moderate_severe_liver_disease
-363	Female	6	Hepatic encephalopathy	Yes	9	3	No	No	No	C_Moderate_severe_liver_disease
-364	Male	5	Hepatic encephalopathy	No	10	3	No	NA	NA	C_Moderate_severe_liver_disease
-365	Female	6	Hepatic encephalopathy	Yes	8	3	No	No	No	C_Moderate_severe_liver_disease
-366	Male	5	Hepatic encephalopathy	No	13	11	Yes	No	No	C_Malignancy
-366	Male	5	Hepatic encephalopathy	No	13	11	Yes	No	No	C_Moderate_severe_liver_disease
-366	Male	5	Hepatic encephalopathy	No	13	11	Yes	No	No	C_AIDS
-367	Male	6	Other fluid overload	Yes	11	3	Yes	No	No	C_Moderate_severe_liver_disease
-368	Male	4	UGIB due to portal hypertension	Yes	8	3	No	NA	NA	C_Moderate_severe_liver_disease
-369	Female	8	Hepatic encephalopathy	No	9	3	No	No	No	C_Moderate_severe_liver_disease
-371	Male	6	UGIB due to portal hypertension	Yes	6	3	No	NA	NA	C_Moderate_severe_liver_disease
-372	Male	5	Ascites	Yes	11	4	No	No	No	C_Chronic_pulmonary_disease
-372	Male	5	Ascites	Yes	11	4	No	No	No	C_Moderate_severe_liver_disease
-373	Male	6	Hepatic encephalopathy	Yes	7	0	No	No	No	C_None
-374	Male	6	Ascites	No	8	5	No	No	No	C_Renal_disease
-374	Male	6	Ascites	No	8	5	No	No	No	C_Moderate_severe_liver_disease
-375	Male	6	Ascites	Yes	7	5	No	No	No	C_Pepticulcer_disease
-375	Male	6	Ascites	Yes	7	5	No	No	No	C_Moderate_severe_liver_disease
-375	Male	6	Ascites	Yes	7	5	No	No	No	C_Diabetes_with_without_complications
-376	Female	4	Alcoholic hepatitis	Yes	12	3	No	No	No	C_Moderate_severe_liver_disease
-377	Male	4	UGIB due to portal hypertension	Yes	9	3	No	No	No	C_Moderate_severe_liver_disease
-378	Male	6	AKI	Yes	10	6	No	No	No	C_Pepticulcer_disease
-378	Male	6	AKI	Yes	10	6	No	No	No	C_Renal_disease
-378	Male	6	AKI	Yes	10	6	No	No	No	C_Moderate_severe_liver_disease
-379	Female	6	Alcoholic hepatitis	Yes	10	3	No	No	NA	C_Moderate_severe_liver_disease
-381	Male	6	UGIB due to portal hypertension	Yes	7	3	No	No	No	C_Moderate_severe_liver_disease
-382	Male	5	Hepatic encephalopathy	Yes	7	3	No	No	No	C_Moderate_severe_liver_disease
-383	Male	6	Hepatic encephalopathy	Yes	9	3	No	No	No	C_Moderate_severe_liver_disease
-384	Female	6	UGIB due to portal hypertension	No	10	3	Yes	No	No	C_Moderate_severe_liver_disease
-385	Male	6	Hepatic encephalopathy	Yes	10	5	No	NA	NA	C_Pepticulcer_disease
-385	Male	6	Hepatic encephalopathy	Yes	10	5	No	NA	NA	C_Moderate_severe_liver_disease
-385	Male	6	Hepatic encephalopathy	Yes	10	5	No	NA	NA	C_Diabetes_with_without_complications
-386	Male	6	Ascites	No	8	1	No	No	No	C_Congestive_Heart_Failure
-388	Male	5	Ascites	Yes	8	3	No	No	No	C_Moderate_severe_liver_disease
-389	Male	6	UGIB due to portal hypertension	Yes	10	4	No	No	Yes	C_Moderate_severe_liver_disease
-389	Male	6	UGIB due to portal hypertension	Yes	10	4	No	No	Yes	C_Diabetes_with_without_complications
-390	Male	6	Hepatic encephalopathy	Yes	8	3	No	NA	NA	C_Moderate_severe_liver_disease
-391	Female	6	Hepatic encephalopathy	No	7	9	No	No	No	C_Congestive_Heart_Failure
-391	Female	6	Hepatic encephalopathy	No	7	9	No	No	No	C_Chronic_pulmonary_disease
-391	Female	6	Hepatic encephalopathy	No	7	9	No	No	No	C_Renal_disease
-391	Female	6	Hepatic encephalopathy	No	7	9	No	No	No	C_Moderate_severe_liver_disease
-391	Female	6	Hepatic encephalopathy	No	7	9	No	No	No	C_Diabetes_with_without_complications
-392	Male	6	SBP	No	8	9	No	No	No	C_Myocardial_infarction
-392	Male	6	SBP	No	8	9	No	No	No	C_Congestive_Heart_Failure
-392	Male	6	SBP	No	8	9	No	No	No	C_Renal_disease
-392	Male	6	SBP	No	8	9	No	No	No	C_Moderate_severe_liver_disease
-392	Male	6	SBP	No	8	9	No	No	No	C_Diabetes_with_without_complications
-393	Male	4	Alcoholic hepatitis	Yes	13	4	No	No	No	C_Moderate_severe_liver_disease
-393	Male	4	Alcoholic hepatitis	Yes	13	4	No	No	No	C_Diabetes_with_without_complications
-394	Female	6	Hepatic encephalopathy	Yes	8	4	No	No	No	C_Pepticulcer_disease
-394	Female	6	Hepatic encephalopathy	Yes	8	4	No	No	No	C_Moderate_severe_liver_disease
-395	Female	6	Hepatic encephalopathy	Yes	8	4	No	No	No	C_Chronic_pulmonary_disease
-395	Female	6	Hepatic encephalopathy	Yes	8	4	No	No	No	C_Moderate_severe_liver_disease
-396	Male	6	Hepatic encephalopathy	Yes	11	5	No	No	Yes	C_Chronic_pulmonary_disease
-396	Male	6	Hepatic encephalopathy	Yes	11	5	No	No	Yes	C_Moderate_severe_liver_disease
-396	Male	6	Hepatic encephalopathy	Yes	11	5	No	No	Yes	C_Diabetes_with_without_complications
-397	Female	4	UGIB due to portal hypertension	Yes	8	3	No	No	No	C_Moderate_severe_liver_disease
-398	Male	5	UGIB due to portal hypertension	Yes	6	4	No	No	No	C_Myocardial_infarction
-398	Male	5	UGIB due to portal hypertension	Yes	6	4	No	No	No	C_Moderate_severe_liver_disease
-399	Female	6	UGIB due to portal hypertension	Yes	7	4	No	No	No	C_Chronic_pulmonary_disease
-399	Female	6	UGIB due to portal hypertension	Yes	7	4	No	No	No	C_Moderate_severe_liver_disease
-400	Male	7	Hepatic encephalopathy	Yes	11	5	Yes	No	No	C_Malignancy
-400	Male	7	Hepatic encephalopathy	Yes	11	5	Yes	No	No	C_Moderate_severe_liver_disease
-401	Male	5	UGIB due to portal hypertension	Yes	5	4	No	NA	NA	C_Moderate_severe_liver_disease
-401	Male	5	UGIB due to portal hypertension	Yes	5	4	No	NA	NA	C_Diabetes_with_without_complications
-402	Female	6	UGIB due to portal hypertension	Yes	7	4	Yes	No	No	C_Mild_liver_disease
-402	Female	6	UGIB due to portal hypertension	Yes	7	4	Yes	No	No	C_Malignancy
-402	Female	6	UGIB due to portal hypertension	Yes	7	4	Yes	No	No	C_Diabetes_with_without_complications
-403	Male	6	Ascites	Yes	7	3	No	No	No	C_Moderate_severe_liver_disease
-404	Male	5	UGIB due to portal hypertension	Yes	7	3	No	No	No	C_Moderate_severe_liver_disease
-405	Male	6	Hepatic encephalopathy	Yes	9	3	No	No	No	C_Moderate_severe_liver_disease
-406	Male	6	Hepatic encephalopathy	Yes	8	3	No	No	No	C_Moderate_severe_liver_disease
-408	Male	6	Ascites	Yes	8	5	No	No	No	C_Congestive_Heart_Failure
-408	Male	6	Ascites	Yes	8	5	No	No	No	C_Chronic_pulmonary_disease
-408	Male	6	Ascites	Yes	8	5	No	No	No	C_Moderate_severe_liver_disease
-409	Male	8	Ascites	No	8	9	No	NA	NA	C_Moderate_severe_liver_disease
-409	Male	8	Ascites	No	8	9	No	NA	NA	C_Metastatic_solid_tumor
-410	Male	5	UGIB due to portal hypertension	Yes	6	3	No	No	No	C_Moderate_severe_liver_disease
-411	Female	8	HCC or cholangioca.	No	9	6	No	No	No	C_Myocardial_infarction
-411	Female	8	HCC or cholangioca.	No	9	6	No	No	No	C_Malignancy
-411	Female	8	HCC or cholangioca.	No	9	6	No	No	No	C_Moderate_severe_liver_disease
-412	Female	6	Hepato-hydrothorax	Yes	11	3	No	No	No	C_Moderate_severe_liver_disease
-413	Male	6	Alcoholic hepatitis	Yes	11	5	No	No	No	C_Renal_disease
-413	Male	6	Alcoholic hepatitis	Yes	11	5	No	No	No	C_Moderate_severe_liver_disease
-414	Male	5	Hepatic encephalopathy	Yes	9	3	Yes	No	No	C_Moderate_severe_liver_disease
-415	Female	5	Hepatic encephalopathy	Yes	9	3	Yes	No	No	C_Moderate_severe_liver_disease
-417	Female	7	Ascites	No	7	3	No	No	No	C_Moderate_severe_liver_disease
-418	Male	7	Jaundice- as isolated presentation	Yes	11	6	Yes	No	No	C_Malignancy
-418	Male	7	Jaundice- as isolated presentation	Yes	11	6	Yes	No	No	C_Moderate_severe_liver_disease
-418	Male	7	Jaundice- as isolated presentation	Yes	11	6	Yes	No	No	C_Diabetes_with_without_complications
-419	Female	6	Other fluid overload	Yes	10	3	No	No	NA	C_Moderate_severe_liver_disease
-420	Female	5	Alcoholic hepatitis	Yes	11	3	Yes	No	No	C_Moderate_severe_liver_disease
-421	Female	6	Ascites	No	7	3	No	No	No	C_Moderate_severe_liver_disease
-422	Male	6	SBP	Yes	11	3	No	No	Yes	C_Moderate_severe_liver_disease
-423	Male	6	Hepatic encephalopathy	No	8	6	No	No	NA	C_Congestive_Heart_Failure
-423	Male	6	Hepatic encephalopathy	No	8	6	No	No	NA	C_Chronic_pulmonary_disease
-423	Male	6	Hepatic encephalopathy	No	8	6	No	No	NA	C_Renal_disease
-423	Male	6	Hepatic encephalopathy	No	8	6	No	No	NA	C_Diabetes_with_without_complications
-424	Male	4	Hepatic encephalopathy	Yes	6	3	No	No	No	C_Moderate_severe_liver_disease
-425	Male	6	Hepatic encephalopathy	Yes	8	4	No	No	NA	C_Chronic_pulmonary_disease
-425	Male	6	Hepatic encephalopathy	Yes	8	4	No	No	NA	C_Moderate_severe_liver_disease
-427	Male	5	Ascites	Yes	9	9	No	No	No	C_Myocardial_infarction
-427	Male	5	Ascites	Yes	9	9	No	No	No	C_Pepticulcer_disease
-427	Male	5	Ascites	Yes	9	9	No	No	No	C_Malignancy
-427	Male	5	Ascites	Yes	9	9	No	No	No	C_Moderate_severe_liver_disease
-427	Male	5	Ascites	Yes	9	9	No	No	No	C_Diabetes_with_without_complications
-428	Male	6	Other fluid overload	No	10	3	No	No	No	C_Moderate_severe_liver_disease
-429	Female	6	Ascites	No	11	1	No	No	No	C_Diabetes_with_without_complications
-430	Female	6	Ascites	Yes	9	1	No	No	No	C_Mild_liver_disease
-431	Male	7	Ascites	No	9	10	No	No	No	C_Moderate_severe_liver_disease
-431	Male	7	Ascites	No	9	10	No	No	No	C_Metastatic_solid_tumor
-431	Male	7	Ascites	No	9	10	No	No	No	C_Diabetes_with_without_complications
-432	Male	6	Ascites	Yes	10	3	No	No	No	C_Moderate_severe_liver_disease
-433	Female	6	Ascites	Yes	9	10	No	Yes	No	C_Moderate_severe_liver_disease
-433	Female	6	Ascites	Yes	9	10	No	Yes	No	C_Metastatic_solid_tumor
-433	Female	6	Ascites	Yes	9	10	No	Yes	No	C_Diabetes_with_without_complications
-434	Male	7	Hepatic encephalopathy	No	7	3	No	No	No	C_Moderate_severe_liver_disease
-435	Male	6	UGIB due to portal hypertension	Yes	9	4	No	No	No	C_Chronic_pulmonary_disease
-435	Male	6	UGIB due to portal hypertension	Yes	9	4	No	No	No	C_Moderate_severe_liver_disease
-437	Male	7	Hepatic encephalopathy	Yes	8	10	Yes	No	No	C_Cerebro_Vascular_disease
-437	Male	7	Hepatic encephalopathy	Yes	8	10	Yes	No	No	C_Moderate_severe_liver_disease
-437	Male	7	Hepatic encephalopathy	Yes	8	10	Yes	No	No	C_Metastatic_solid_tumor
-438	Male	6	Alcoholic hepatitis	Yes	9	1	Yes	No	No	C_Mild_liver_disease
-439	Male	6	Ascites	Yes	6	2	No	No	No	C_Pepticulcer_disease
-439	Male	6	Ascites	Yes	6	2	No	No	No	C_Mild_liver_disease
-440	Female	6	Hepatic encephalopathy	No	8	3	No	No	No	C_Moderate_severe_liver_disease
-441	Male	6	Alcoholic hepatitis	Yes	6	3	No	No	No	C_Moderate_severe_liver_disease
-442	Female	5	Ascites	Yes	7	3	No	No	No	C_Moderate_severe_liver_disease
-443	Female	6	UGIB due to portal hypertension	Yes	9	4	Yes	No	No	C_Chronic_pulmonary_disease
-443	Female	6	UGIB due to portal hypertension	Yes	9	4	Yes	No	No	C_Moderate_severe_liver_disease
-444	Male	6	Hepatic encephalopathy	Yes	8	3	No	No	No	C_Moderate_severe_liver_disease
-445	Male	7	Hepatic encephalopathy	Yes	6	1	Yes	No	No	C_Mild_liver_disease
-446	Female	5	Ascites	Yes	8	3	No	No	NA	C_Moderate_severe_liver_disease
-447	Female	7	Ascites	No	9	4	No	No	NA	C_Cerebro_Vascular_disease
-447	Female	7	Ascites	No	9	4	No	No	NA	C_Moderate_severe_liver_disease
-448	Female	6	Hepatic encephalopathy	Yes	10	3	Yes	No	No	C_Moderate_severe_liver_disease
-449	Female	7	Ascites	Yes	6	3	No	No	No	C_Moderate_severe_liver_disease
-451	Male	6	Ascites	Yes	10	6	Yes	No	No	C_Chronic_pulmonary_disease
-451	Male	6	Ascites	Yes	10	6	Yes	No	No	C_Malignancy
-451	Male	6	Ascites	Yes	10	6	Yes	No	No	C_Moderate_severe_liver_disease
-452	Male	5	HCC or cholangioca.	No	6	4	No	No	No	C_Moderate_severe_liver_disease
-452	Male	5	HCC or cholangioca.	No	6	4	No	No	No	C_Diabetes_with_without_complications
-453	Male	3	Alcoholic hepatitis	Yes	9	4	No	NA	NA	C_Cerebro_Vascular_disease
-453	Male	3	Alcoholic hepatitis	Yes	9	4	No	NA	NA	C_Moderate_severe_liver_disease
-454	Female	5	Hepatic encephalopathy	Yes	11	3	Yes	No	No	C_Moderate_severe_liver_disease
-455	Male	6	UGIB due to portal hypertension	No	5	3	No	No	No	C_Moderate_severe_liver_disease
-456	Male	6	Alcoholic hepatitis	Yes	12	3	No	No	No	C_Moderate_severe_liver_disease
-457	Male	6	Hepatic encephalopathy	Yes	7	3	No	No	No	C_Moderate_severe_liver_disease
-458	Female	6	UGIB due to portal hypertension	No	6	3	No	No	No	C_Moderate_severe_liver_disease
-459	Male	6	Ascites	Yes	8	3	Yes	No	No	C_Moderate_severe_liver_disease
-460	Male	6	UGIB due to portal hypertension	Yes	5	5	No	No	No	C_Pepticulcer_disease
-460	Male	6	UGIB due to portal hypertension	Yes	5	5	No	No	No	C_Moderate_severe_liver_disease
-460	Male	6	UGIB due to portal hypertension	Yes	5	5	No	No	No	C_Diabetes_with_without_complications
-461	Male	7	HCC or cholangioca.	No	5	11	No	NA	NA	C_Moderate_severe_liver_disease
-461	Male	7	HCC or cholangioca.	No	5	11	No	NA	NA	C_Metastatic_solid_tumor
-461	Male	7	HCC or cholangioca.	No	5	11	No	NA	NA	C_Diabetes_with_without_complications
-462	Male	5	UGIB due to portal hypertension	Yes	6	4	No	No	No	C_Moderate_severe_liver_disease
-462	Male	5	UGIB due to portal hypertension	Yes	6	4	No	No	No	C_Diabetes_with_without_complications
-464	Male	6	Hepatic encephalopathy	Yes	10	3	No	No	No	C_Moderate_severe_liver_disease
-465	Male	6	SBP	No	12	3	No	No	No	C_Moderate_severe_liver_disease
-466	Male	6	UGIB due to portal hypertension	Yes	8	4	No	No	No	C_Chronic_pulmonary_disease
-466	Male	6	UGIB due to portal hypertension	Yes	8	4	No	No	No	C_Moderate_severe_liver_disease
-467	Female	6	Hepatic encephalopathy	No	8	6	No	No	No	C_Malignancy
-467	Female	6	Hepatic encephalopathy	No	8	6	No	No	No	C_Moderate_severe_liver_disease
-467	Female	6	Hepatic encephalopathy	No	8	6	No	No	No	C_Diabetes_with_without_complications
-468	Male	6	UGIB due to portal hypertension	Yes	5	3	No	No	No	C_Moderate_severe_liver_disease
-469	Male	7	UGIB due to portal hypertension	Yes	7	3	No	No	No	C_Moderate_severe_liver_disease
-470	Female	7	Alcoholic hepatitis	Yes	11	3	No	No	No	C_Moderate_severe_liver_disease
-471	Female	5	SBP	No	8	4	No	No	No	C_Rheumatological_disease
-471	Female	5	SBP	No	8	4	No	No	No	C_Moderate_severe_liver_disease
-472	Female	5	UGIB due to portal hypertension	Yes	9	3	No	No	No	C_Moderate_severe_liver_disease
-473	Male	4	UGIB due to portal hypertension	Yes	6	3	No	No	No	C_Moderate_severe_liver_disease
-474	Male	6	Ascites	Yes	5	6	No	No	No	C_Congestive_Heart_Failure
-474	Male	6	Ascites	Yes	5	6	No	No	No	C_Chronic_pulmonary_disease
-474	Male	6	Ascites	Yes	5	6	No	No	No	C_Pepticulcer_disease
-474	Male	6	Ascites	Yes	5	6	No	No	No	C_Moderate_severe_liver_disease
-475	Male	6	UGIB due to portal hypertension	Yes	5	1	No	No	No	C_Mild_liver_disease
-476	Female	7	Ascites	Yes	10	5	No	No	No	C_Malignancy
-476	Female	7	Ascites	Yes	10	5	No	No	No	C_Moderate_severe_liver_disease
-477	Male	7	SBP	No	8	8	No	No	No	C_Congestive_Heart_Failure
-477	Male	7	SBP	No	8	8	No	No	No	C_Renal_disease
-477	Male	7	SBP	No	8	8	No	No	No	C_Moderate_severe_liver_disease
-477	Male	7	SBP	No	8	8	No	No	No	C_Diabetes_with_without_complications
-479	Male	5	Alcoholic hepatitis	Yes	10	0	No	No	No	C_None
-480	Male	6	SBP	Yes	9	4	No	No	No	C_Chronic_pulmonary_disease
-480	Male	6	SBP	Yes	9	4	No	No	No	C_Moderate_severe_liver_disease
-481	Male	6	Ascites	Yes	6	3	No	No	No	C_Moderate_severe_liver_disease
-482	Male	6	SBP	Yes	8	4	No	No	No	C_Myocardial_infarction
-482	Male	6	SBP	Yes	8	4	No	No	No	C_Moderate_severe_liver_disease
-483	Male	5	Hepatic encephalopathy	Yes	7	4	No	No	No	C_Moderate_severe_liver_disease
-483	Male	5	Hepatic encephalopathy	Yes	7	4	No	No	No	C_Diabetes_with_without_complications
-484	Female	7	Hepatic encephalopathy	Yes	8	11	No	No	No	C_Chronic_pulmonary_disease
-484	Female	7	Hepatic encephalopathy	Yes	8	11	No	No	No	C_Pepticulcer_disease
-484	Female	7	Hepatic encephalopathy	Yes	8	11	No	No	No	C_Moderate_severe_liver_disease
-484	Female	7	Hepatic encephalopathy	Yes	8	11	No	No	No	C_Metastatic_solid_tumor
-485	Male	5	UGIB due to portal hypertension	Yes	6	3	No	No	No	C_Moderate_severe_liver_disease
-486	Male	6	UGIB due to portal hypertension	No	9	6	No	No	No	C_Myocardial_infarction
-486	Male	6	UGIB due to portal hypertension	No	9	6	No	No	No	C_Chronic_pulmonary_disease
-486	Male	6	UGIB due to portal hypertension	No	9	6	No	No	No	C_Moderate_severe_liver_disease
-486	Male	6	UGIB due to portal hypertension	No	9	6	No	No	No	C_Diabetes_with_without_complications
-487	Male	6	Hepatic encephalopathy	Yes	6	6	No	No	No	C_Cerebro_Vascular_disease
-487	Male	6	Hepatic encephalopathy	Yes	6	6	No	No	No	C_Moderate_severe_liver_disease
-487	Male	6	Hepatic encephalopathy	Yes	6	6	No	No	No	C_Diabetes_with_without_complications
-488	Male	6	Ascites	Yes	6	3	No	No	No	C_Moderate_severe_liver_disease
-489	Male	7	Hepatic encephalopathy	No	8	6	No	No	No	C_Renal_disease
-489	Male	7	Hepatic encephalopathy	No	8	6	No	No	No	C_Moderate_severe_liver_disease
-489	Male	7	Hepatic encephalopathy	No	8	6	No	No	No	C_Diabetes_with_without_complications
-491	Male	7	Ascites	Yes	8	7	No	No	No	C_Renal_disease
-491	Male	7	Ascites	Yes	8	7	No	No	No	C_Moderate_severe_liver_disease
-491	Male	7	Ascites	Yes	8	7	No	No	No	C_Diabetes_with_without_complications
-492	Male	5	Hepatic encephalopathy	No	9	5	No	No	No	C_Pepticulcer_disease
-492	Male	5	Hepatic encephalopathy	No	9	5	No	No	No	C_Moderate_severe_liver_disease
-492	Male	5	Hepatic encephalopathy	No	9	5	No	No	No	C_Diabetes_with_without_complications
-493	Female	5	Alcoholic hepatitis	Yes	8	4	No	No	No	C_Chronic_pulmonary_disease
-493	Female	5	Alcoholic hepatitis	Yes	8	4	No	No	No	C_Moderate_severe_liver_disease
-494	Male	6	Hepatic encephalopathy	Yes	8	4	No	No	No	C_Pepticulcer_disease
-494	Male	6	Hepatic encephalopathy	Yes	8	4	No	No	No	C_Moderate_severe_liver_disease
-495	Male	6	SBP	Yes	11	5	No	No	Yes	C_Malignancy
-495	Male	6	SBP	Yes	11	5	No	No	Yes	C_Moderate_severe_liver_disease
-497	Female	7	Hepatic encephalopathy	Yes	10	11	No	Yes	No	C_Cerebro_Vascular_disease
-497	Female	7	Hepatic encephalopathy	Yes	10	11	No	Yes	No	C_Pepticulcer_disease
-497	Female	7	Hepatic encephalopathy	Yes	10	11	No	Yes	No	C_Moderate_severe_liver_disease
-497	Female	7	Hepatic encephalopathy	Yes	10	11	No	Yes	No	C_AIDS
-498	Female	5	Ascites	Yes	13	3	Yes	No	No	C_Moderate_severe_liver_disease
-500	Male	6	Other fluid overload	Yes	11	3	No	No	No	C_Moderate_severe_liver_disease
-501	Male	5	AKI	No	6	6	No	No	No	C_Congestive_Heart_Failure
-501	Male	5	AKI	No	6	6	No	No	No	C_Moderate_severe_liver_disease
-501	Male	5	AKI	No	6	6	No	No	No	C_Diabetes_with_without_complications
-502	Male	6	Ascites	Yes	7	4	No	NA	NA	C_Moderate_severe_liver_disease
-502	Male	6	Ascites	Yes	7	4	No	NA	NA	C_Diabetes_with_without_complications
-503	Female	6	Ascites	Yes	9	9	No	No	No	C_Moderate_severe_liver_disease
-503	Female	6	Ascites	Yes	9	9	No	No	No	C_AIDS
-504	Male	6	Ascites	No	8	4	No	No	No	C_Congestive_Heart_Failure
-504	Male	6	Ascites	No	8	4	No	No	No	C_Moderate_severe_liver_disease
-505	Male	6	Hepatic encephalopathy	Yes	10	3	No	NA	NA	C_Moderate_severe_liver_disease
-506	Male	7	HCC or cholangioca.	No	7	3	No	NA	NA	C_Mild_liver_disease
-506	Male	7	HCC or cholangioca.	No	7	3	No	NA	NA	C_Malignancy
-507	Female	6	Hepatic encephalopathy	No	11	10	No	No	NA	C_Moderate_severe_liver_disease
-507	Female	6	Hepatic encephalopathy	No	11	10	No	No	NA	C_Metastatic_solid_tumor
-507	Female	6	Hepatic encephalopathy	No	11	10	No	No	NA	C_Diabetes_with_without_complications
-509	Male	5	UGIB due to portal hypertension	Yes	5	1	No	No	No	C_Mild_liver_disease
-510	Male	6	Ascites	Yes	12	3	No	No	No	C_Moderate_severe_liver_disease
-513	Male	7	Ascites	No	10	4	No	No	No	C_Myocardial_infarction
-513	Male	7	Ascites	No	10	4	No	No	No	C_Moderate_severe_liver_disease
-515	Male	4	Hepatic encephalopathy	No	10	9	No	No	No	C_Moderate_severe_liver_disease
-515	Male	4	Hepatic encephalopathy	No	10	9	No	No	No	C_AIDS
-516	Male	6	Ascites	Yes	10	3	No	No	No	C_Moderate_severe_liver_disease
-517	Female	7	Ascites	Yes	13	3	Yes	No	No	C_Moderate_severe_liver_disease
-518	Male	6	Ascites	No	9	1	No	No	No	C_Mild_liver_disease
-519	Male	5	UGIB due to portal hypertension	Yes	9	3	No	No	No	C_Moderate_severe_liver_disease
-520	Male	4	Hepatic encephalopathy	Yes	12	3	No	No	No	C_Moderate_severe_liver_disease
-521	Male	6	Hepatic encephalopathy	Yes	11	5	No	No	No	C_Dementia
-521	Male	6	Hepatic encephalopathy	Yes	11	5	No	No	No	C_Renal_disease
-521	Male	6	Hepatic encephalopathy	Yes	11	5	No	No	No	C_Moderate_severe_liver_disease
-523	Female	4	Ascites	Yes	11	4	No	NA	NA	C_Moderate_severe_liver_disease
-523	Female	4	Ascites	Yes	11	4	No	NA	NA	C_Diabetes_with_without_complications
-525	Male	6	HCC or cholangioca.	No	5	9	No	No	NA	C_Moderate_severe_liver_disease
-525	Male	6	HCC or cholangioca.	No	5	9	No	No	NA	C_Metastatic_solid_tumor
-528	Male	5	AKI	Yes	11	4	Yes	No	No	C_Congestive_Heart_Failure
-528	Male	5	AKI	Yes	11	4	Yes	No	No	C_Moderate_severe_liver_disease
-529	Male	6	Ascites	Yes	8	3	No	NA	NA	C_Moderate_severe_liver_disease
-530	Male	5	Ascites	Yes	12	3	No	No	No	C_Moderate_severe_liver_disease
-531	Female	6	Ascites	Yes	8	3	No	No	No	C_Moderate_severe_liver_disease
-533	Male	8	Ascites	No	9	5	No	NA	NA	C_Malignancy
-533	Male	8	Ascites	No	9	5	No	NA	NA	C_Moderate_severe_liver_disease
-534	Male	7	HCC or cholangioca.	Yes	8	6	No	No	No	C_Malignancy
-534	Male	7	HCC or cholangioca.	Yes	8	6	No	No	No	C_Moderate_severe_liver_disease
-534	Male	7	HCC or cholangioca.	Yes	8	6	No	No	No	C_Diabetes_with_without_complications
-536	Male	4	HCC or cholangioca.	Yes	8	5	No	NA	NA	C_Malignancy
-536	Male	4	HCC or cholangioca.	Yes	8	5	No	NA	NA	C_Moderate_severe_liver_disease
-537	Male	7	HCC or cholangioca.	No	7	10	No	No	NA	C_Moderate_severe_liver_disease
-537	Male	7	HCC or cholangioca.	No	7	10	No	No	NA	C_Metastatic_solid_tumor
-537	Male	7	HCC or cholangioca.	No	7	10	No	No	NA	C_Diabetes_with_without_complications
-538	Male	6	Ascites	Yes	11	3	No	No	Yes	C_Moderate_severe_liver_disease
-539	Male	7	SBP	Yes	12	3	No	No	Yes	C_Moderate_severe_liver_disease
-540	Male	6	HCC or cholangioca.	Yes	7	5	No	No	No	C_Malignancy
-540	Male	6	HCC or cholangioca.	Yes	7	5	No	No	No	C_Moderate_severe_liver_disease
-541	Female	4	Alcoholic hepatitis	Yes	10	3	No	No	Yes	C_Moderate_severe_liver_disease
-543	Male	7	Ascites	Yes	10	6	No	NA	NA	C_Malignancy
-543	Male	7	Ascites	Yes	10	6	No	NA	NA	C_Moderate_severe_liver_disease
-543	Male	7	Ascites	Yes	10	6	No	NA	NA	C_Diabetes_with_without_complications
-544	Female	7	AKI	Yes	8	9	No	NA	NA	C_Moderate_severe_liver_disease
-544	Female	7	AKI	Yes	8	9	No	NA	NA	C_AIDS
-545	Male	4	Alcoholic hepatitis	Yes	9	3	No	No	No	C_Moderate_severe_liver_disease
-546	Male	6	Hepatic encephalopathy	Yes	11	5	Yes	No	No	C_Renal_disease
-546	Male	6	Hepatic encephalopathy	Yes	11	5	Yes	No	No	C_Moderate_severe_liver_disease
-547	Female	8	Ascites	No	9	3	No	No	NA	C_Moderate_severe_liver_disease
-552	Male	5	UGIB due to portal hypertension	Yes	8	3	No	No	No	C_Moderate_severe_liver_disease
-553	Male	6	Alcoholic hepatitis	Yes	10	3	No	NA	NA	C_Moderate_severe_liver_disease
-556	Female	7	AKI	Yes	6	2	No	No	No	C_Chronic_pulmonary_disease
-556	Female	7	AKI	Yes	6	2	No	No	No	C_Mild_liver_disease
-557	Male	4	UGIB due to portal hypertension	Yes	8	3	No	No	NA	C_Moderate_severe_liver_disease
-559	Male	6	Ascites	Yes	6	4	No	No	No	C_Pepticulcer_disease
-559	Male	6	Ascites	Yes	6	4	No	No	No	C_Moderate_severe_liver_disease
-560	Male	7	AKI	No	6	3	No	No	No	C_Myocardial_infarction
-560	Male	7	AKI	No	6	3	No	No	No	C_Congestive_Heart_Failure
-560	Male	7	AKI	No	6	3	No	No	No	C_Diabetes_with_without_complications
-562	Male	7	AKI	Yes	6	1	No	No	No	C_Mild_liver_disease
-563	Female	6	Ascites	No	11	6	No	No	No	C_Renal_disease
-563	Female	6	Ascites	No	11	6	No	No	No	C_Moderate_severe_liver_disease
-563	Female	6	Ascites	No	11	6	No	No	No	C_Diabetes_with_without_complications
-565	Male	5	UGIB due to portal hypertension	Yes	7	6	No	No	No	C_Pepticulcer_disease
-565	Male	5	UGIB due to portal hypertension	Yes	7	6	No	No	No	C_Moderate_severe_liver_disease
-565	Male	5	UGIB due to portal hypertension	Yes	7	6	No	No	No	C_Diabetes_with_without_complications
-566	Male	6	Ascites	Yes	8	3	No	No	No	C_Moderate_severe_liver_disease
-567	Male	7	Hepatic encephalopathy	Yes	14	3	No	No	No	C_Moderate_severe_liver_disease
-569	Female	9	Hepatic encephalopathy	No	8	3	No	No	No	C_Moderate_severe_liver_disease
-571	Male	6	Ascites	Yes	6	3	No	No	No	C_Congestive_Heart_Failure
-571	Male	6	Ascites	Yes	6	3	No	No	No	C_Chronic_pulmonary_disease
-571	Male	6	Ascites	Yes	6	3	No	No	No	C_Mild_liver_disease
-572	Female	7	Ascites	No	7	4	No	NA	NA	C_Moderate_severe_liver_disease
-572	Female	7	Ascites	No	7	4	No	NA	NA	C_Diabetes_with_without_complications
-573	Female	8	Ascites	No	8	4	No	No	No	C_Congestive_Heart_Failure
-573	Female	8	Ascites	No	8	4	No	No	No	C_Moderate_severe_liver_disease
-576	Female	7	Jaundice- as isolated presentation	No	9	7	No	NA	NA	C_Mild_liver_disease
-576	Female	7	Jaundice- as isolated presentation	No	9	7	No	NA	NA	C_Metastatic_solid_tumor
-578	Male	5	Ascites	Yes	9	3	No	NA	NA	C_Moderate_severe_liver_disease
-579	Female	7	Hepato-hydrothorax	No	11	4	No	NA	NA	C_Chronic_pulmonary_disease
-579	Female	7	Hepato-hydrothorax	No	11	4	No	NA	NA	C_Moderate_severe_liver_disease
-580	Male	5	HCC or cholangioca.	No	9	5	No	NA	NA	C_Malignancy
-580	Male	5	HCC or cholangioca.	No	9	5	No	NA	NA	C_Moderate_severe_liver_disease
-583	Male	6	Ascites	Yes	11	3	No	NA	NA	C_Moderate_severe_liver_disease
-584	Male	5	Ascites	Yes	8	3	No	No	No	C_Moderate_severe_liver_disease
-585	Male	6	Ascites	Yes	9	3	No	No	NA	C_Moderate_severe_liver_disease
-586	Male	6	Ascites	Yes	9	5	No	Yes	No	C_Malignancy
-586	Male	6	Ascites	Yes	9	5	No	Yes	No	C_Moderate_severe_liver_disease
-587	Female	5	Ascites	No	8	3	No	No	NA	C_Moderate_severe_liver_disease
-588	Female	4	Alcoholic hepatitis	Yes	10	1	Yes	No	No	C_Mild_liver_disease
-589	Female	6	AKI	No	5	4	No	No	No	C_Moderate_severe_liver_disease
-589	Female	6	AKI	No	5	4	No	No	No	C_Diabetes_with_without_complications
-591	Male	6	Hepatic encephalopathy	Yes	8	3	No	NA	NA	C_Moderate_severe_liver_disease
-592	Male	7	Ascites	Yes	11	3	No	No	No	C_Moderate_severe_liver_disease
-594	Female	6	Ascites	Yes	8	3	No	No	NA	C_Moderate_severe_liver_disease
-596	Male	4	AKI	No	7	2	No	No	No	C_Congestive_Heart_Failure
-596	Male	4	AKI	No	7	2	No	No	No	C_Mild_liver_disease
-597	Female	6	Hepatic encephalopathy	No	12	3	No	No	No	C_Moderate_severe_liver_disease
-599	Male	6	Ascites	Yes	6	4	No	No	No	C_Moderate_severe_liver_disease
-599	Male	6	Ascites	Yes	6	4	No	No	No	C_Diabetes_with_without_complications
-602	Male	6	AKI	No	7	7	No	NA	NA	C_Renal_disease
-602	Male	6	AKI	No	7	7	No	NA	NA	C_Moderate_severe_liver_disease
-602	Male	6	AKI	No	7	7	No	NA	NA	C_Diabetes_with_without_complications
-604	Male	7	SBP	No	11	6	No	NA	NA	C_Chronic_pulmonary_disease
-604	Male	7	SBP	No	11	6	No	NA	NA	C_Malignancy
-604	Male	7	SBP	No	11	6	No	NA	NA	C_Moderate_severe_liver_disease
-605	Male	4	Alcoholic hepatitis	Yes	7	3	No	NA	NA	C_Moderate_severe_liver_disease
-606	Male	5	SBP	Yes	7	11	No	No	No	C_Renal_disease
-606	Male	5	SBP	Yes	7	11	No	No	No	C_Moderate_severe_liver_disease
-606	Male	5	SBP	Yes	7	11	No	No	No	C_AIDS
-607	Female	6	UGIB due to portal hypertension	No	5	4	No	No	No	C_Moderate_severe_liver_disease
-607	Female	6	UGIB due to portal hypertension	No	5	4	No	No	No	C_Diabetes_with_without_complications
-608	Female	8	Ascites	No	9	7	No	No	Yes	C_Renal_disease
-608	Female	8	Ascites	No	9	7	No	No	Yes	C_Moderate_severe_liver_disease
-608	Female	8	Ascites	No	9	7	No	No	Yes	C_Diabetes_with_without_complications
-609	Male	5	Ascites	Yes	9	3	No	No	No	C_Moderate_severe_liver_disease
-610	Male	5	AKI	Yes	8	3	No	No	No	C_Moderate_severe_liver_disease
-611	Female	7	Ascites	No	9	4	No	NA	NA	C_Congestive_Heart_Failure
-611	Female	7	Ascites	No	9	4	No	NA	NA	C_Moderate_severe_liver_disease
-616	Male	5	Alcoholic hepatitis	Yes	9	3	No	No	No	C_Moderate_severe_liver_disease
-617	Female	6	AKI	Yes	9	5	No	NA	NA	C_Malignancy
-617	Female	6	AKI	Yes	9	5	No	NA	NA	C_Moderate_severe_liver_disease
-618	Male	7	Other fluid overload	Yes	7	2	No	No	No	C_Mild_liver_disease
-618	Male	7	Other fluid overload	Yes	7	2	No	No	No	C_Diabetes_with_without_complications
-619	Male	6	Hepatic encephalopathy	Yes	15	9	No	No	Yes	C_Moderate_severe_liver_disease
-619	Male	6	Hepatic encephalopathy	Yes	15	9	No	No	Yes	C_Metastatic_solid_tumor
-620	Male	7	Hepatic encephalopathy	Yes	10	5	No	Yes	No	C_Malignancy
-620	Male	7	Hepatic encephalopathy	Yes	10	5	No	Yes	No	C_Moderate_severe_liver_disease
-621	Male	4	UGIB due to portal hypertension	Yes	5	3	No	Yes	No	C_Moderate_severe_liver_disease
-622	Female	6	SBP	Yes	13	5	No	NA	NA	C_Malignancy
-622	Female	6	SBP	Yes	13	5	No	NA	NA	C_Moderate_severe_liver_disease
-623	Female	6	Hepatic encephalopathy	Yes	10	3	Yes	No	No	C_Moderate_severe_liver_disease
-624	Female	9	Ascites	No	9	3	No	NA	NA	C_Moderate_severe_liver_disease
-625	Male	6	Other fluid overload	Yes	9	1	No	NA	NA	C_Mild_liver_disease
-626	Male	6	Alcoholic hepatitis	Yes	10	4	No	NA	NA	C_Moderate_severe_liver_disease
-626	Male	6	Alcoholic hepatitis	Yes	10	4	No	NA	NA	C_Diabetes_with_without_complications
-628	Male	5	Ascites	Yes	8	6	No	No	NA	C_Congestive_Heart_Failure
-628	Male	5	Ascites	Yes	8	6	No	No	NA	C_Renal_disease
-628	Male	5	Ascites	Yes	8	6	No	No	NA	C_Moderate_severe_liver_disease
-629	Male	5	UGIB due to portal hypertension	Yes	14	3	No	No	No	C_Moderate_severe_liver_disease
-631	Male	6	UGIB due to portal hypertension	Yes	8	3	No	NA	NA	C_Moderate_severe_liver_disease
-632	Male	6	Ascites	Yes	8	3	No	NA	NA	C_Malignancy
-632	Male	6	Ascites	Yes	8	3	No	NA	NA	C_Diabetes_with_without_complications
-635	Female	7	UGIB due to portal hypertension	No	6	6	No	No	No	C_Malignancy
-635	Female	7	UGIB due to portal hypertension	No	6	6	No	No	No	C_Moderate_severe_liver_disease
-635	Female	7	UGIB due to portal hypertension	No	6	6	No	No	No	C_Diabetes_with_without_complications
-636	Male	4	Ascites	Yes	13	3	Yes	No	No	C_Moderate_severe_liver_disease
-637	Female	7	Ascites	Yes	8	3	No	No	No	C_Moderate_severe_liver_disease
-639	Male	6	Ascites	No	8	3	No	No	No	C_Moderate_severe_liver_disease
-642	Male	7	AKI	Yes	6	4	No	No	No	C_Congestive_Heart_Failure
-642	Male	7	AKI	Yes	6	4	No	No	No	C_Moderate_severe_liver_disease
-644	Female	5	Alcoholic hepatitis	Yes	6	1	No	NA	NA	C_Mild_liver_disease
-646	Male	6	Hepatic encephalopathy	Yes	8	4	No	No	No	C_Moderate_severe_liver_disease
-646	Male	6	Hepatic encephalopathy	Yes	8	4	No	No	No	C_Diabetes_with_without_complications
-647	Male	7	Ascites	Yes	12	3	No	NA	NA	C_Moderate_severe_liver_disease
-649	Male	8	Hepatic encephalopathy	Yes	7	5	No	NA	NA	C_Cerebro_Vascular_disease
-649	Male	8	Hepatic encephalopathy	Yes	7	5	No	NA	NA	C_Moderate_severe_liver_disease
-649	Male	8	Hepatic encephalopathy	Yes	7	5	No	NA	NA	C_Diabetes_with_without_complications
-650	Male	6	Ascites	Yes	8	3	No	No	No	C_Moderate_severe_liver_disease
-651	Male	6	Ascites	Yes	12	3	No	No	NA	C_Moderate_severe_liver_disease
-652	Male	6	HCC or cholangioca.	Yes	9	5	No	Yes	No	C_Malignancy
-652	Male	6	HCC or cholangioca.	Yes	9	5	No	Yes	No	C_Moderate_severe_liver_disease
-654	Male	7	Ascites	No	8	3	No	NA	NA	C_Moderate_severe_liver_disease
-656	Male	6	Ascites	Yes	9	3	No	NA	NA	C_Moderate_severe_liver_disease
-657	Female	5	Alcoholic hepatitis	Yes	10	3	No	No	No	C_Moderate_severe_liver_disease
-658	Male	5	Alcoholic hepatitis	Yes	9	3	No	No	No	C_Moderate_severe_liver_disease
-660	Male	7	Ascites	Yes	9	7	No	No	No	C_Renal_disease
-660	Male	7	Ascites	Yes	9	7	No	No	No	C_Moderate_severe_liver_disease
-660	Male	7	Ascites	Yes	9	7	No	No	No	C_Diabetes_with_without_complications
-661	Female	8	Ascites	No	9	5	No	No	NA	C_Malignancy
-661	Female	8	Ascites	No	9	5	No	No	NA	C_Moderate_severe_liver_disease
-662	Male	7	Ascites	Yes	14	3	No	NA	NA	C_Moderate_severe_liver_disease
-663	Male	5	Ascites	Yes	12	3	No	No	No	C_Moderate_severe_liver_disease
-665	Male	7	AKI	Yes	12	4	No	No	NA	C_Moderate_severe_liver_disease
-665	Male	7	AKI	Yes	12	4	No	No	NA	C_Diabetes_with_without_complications
-666	Female	6	Ascites	Yes	11	3	No	NA	NA	C_Moderate_severe_liver_disease
-667	Male	6	Ascites	Yes	12	3	No	No	No	C_Moderate_severe_liver_disease
-668	Male	5	Ascites	Yes	12	3	Yes	No	No	C_Moderate_severe_liver_disease
-669	Male	6	Ascites	Yes	7	4	No	No	No	C_Moderate_severe_liver_disease
-669	Male	6	Ascites	Yes	7	4	No	No	No	C_Diabetes_with_without_complications
-670	Male	6	Ascites	Yes	10	3	No	No	NA	C_Moderate_severe_liver_disease
-671	Male	6	Ascites	Yes	7	6	No	NA	NA	C_Renal_disease
-671	Male	6	Ascites	Yes	7	6	No	NA	NA	C_Moderate_severe_liver_disease
-671	Male	6	Ascites	Yes	7	6	No	NA	NA	C_Diabetes_with_without_complications
-672	Male	7	Ascites	Yes	8	4	No	NA	NA	C_Moderate_severe_liver_disease
-672	Male	7	Ascites	Yes	8	4	No	NA	NA	C_Diabetes_with_without_complications
-673	Male	7	HCC or cholangioca.	Yes	7	5	No	NA	NA	C_Malignancy
-673	Male	7	HCC or cholangioca.	Yes	7	5	No	NA	NA	C_Moderate_severe_liver_disease
-674	Male	6	Alcoholic hepatitis	Yes	5	1	No	No	No	C_Mild_liver_disease
-675	Female	5	Ascites	Yes	7	3	No	NA	NA	C_Moderate_severe_liver_disease
-676	Female	6	Ascites	Yes	12	3	No	NA	NA	C_Moderate_severe_liver_disease
-678	Male	6	Alcoholic hepatitis	Yes	8	2	No	No	No	C_Pepticulcer_disease
-678	Male	6	Alcoholic hepatitis	Yes	8	2	No	No	No	C_Mild_liver_disease
-680	Female	5	Alcoholic hepatitis	Yes	9	3	No	No	No	C_Moderate_severe_liver_disease
-681	Male	6	Ascites	Yes	8	3	No	No	NA	C_Moderate_severe_liver_disease
-682	Male	7	AKI	Yes	6	1	No	No	No	C_Mild_liver_disease
-683	Male	7	Ascites	Yes	13	3	No	No	Yes	C_Moderate_severe_liver_disease
-684	Male	5	UGIB due to portal hypertension	Yes	7	3	No	NA	NA	C_Moderate_severe_liver_disease
-685	Male	6	UGIB due to portal hypertension	Yes	7	5	Yes	No	No	C_Moderate_severe_liver_disease
-685	Male	6	UGIB due to portal hypertension	Yes	7	5	Yes	No	No	C_Diabetes_with_without_complications
-686	Female	7	Ascites	No	8	4	No	No	No	C_Moderate_severe_liver_disease
-686	Female	7	Ascites	No	8	4	No	No	No	C_Diabetes_with_without_complications
-687	Male	6	Jaundice- as isolated presentation	Yes	8	1	No	No	No	C_Mild_liver_disease
-688	Male	6	Ascites	Yes	9	4	No	No	No	C_Moderate_severe_liver_disease
-688	Male	6	Ascites	Yes	9	4	No	No	No	C_Diabetes_with_without_complications
-689	Male	7	Ascites	Yes	11	3	No	Yes	No	C_Moderate_severe_liver_disease
-692	Male	7	Hepatic encephalopathy	No	8	4	No	No	No	C_Moderate_severe_liver_disease
-692	Male	7	Hepatic encephalopathy	No	8	4	No	No	No	C_Diabetes_with_without_complications
-693	Male	8	Hepatic encephalopathy	Yes	7	3	No	No	No	C_Moderate_severe_liver_disease
-694	Male	6	Ascites	Yes	11	3	No	No	No	C_Moderate_severe_liver_disease
-695	Male	7	AKI	Yes	5	4	No	No	No	C_Moderate_severe_liver_disease
-695	Male	7	AKI	Yes	5	4	No	No	No	C_Diabetes_with_without_complications
-698	Female	7	Ascites	No	12	5	No	No	No	C_Malignancy
-698	Female	7	Ascites	No	12	5	No	No	No	C_Moderate_severe_liver_disease
-699	Male	7	Alcoholic hepatitis	Yes	7	3	No	No	No	C_Moderate_severe_liver_disease
-700	Male	8	AKI	Yes	7	3	No	No	NA	C_Moderate_severe_liver_disease
-701	Female	4	Ascites	Yes	10	3	No	No	No	C_Moderate_severe_liver_disease
-702	Male	7	SBP	Yes	11	3	No	NA	NA	C_Moderate_severe_liver_disease
-703	Male	7	Ascites	Yes	13	3	No	No	Yes	C_Moderate_severe_liver_disease
-704	Male	6	Ascites	Yes	7	3	No	No	No	C_Moderate_severe_liver_disease
-705	Male	7	Ascites	Yes	12	4	No	No	NA	C_Pepticulcer_disease
-705	Male	7	Ascites	Yes	12	4	No	No	NA	C_Moderate_severe_liver_disease
-706	Male	6	AKI	No	7	4	No	NA	NA	C_Congestive_Heart_Failure
-706	Male	6	AKI	No	7	4	No	NA	NA	C_Mild_liver_disease
-706	Male	6	AKI	No	7	4	No	NA	NA	C_Renal_disease
-708	Female	6	Alcoholic hepatitis	Yes	10	4	No	No	No	C_Moderate_severe_liver_disease
-708	Female	6	Alcoholic hepatitis	Yes	10	4	No	No	No	C_Diabetes_with_without_complications
-709	Male	7	Hepatic encephalopathy	No	9	3	No	No	NA	C_Moderate_severe_liver_disease
-710	Male	6	Ascites	Yes	10	3	No	No	No	C_Moderate_severe_liver_disease
-711	Female	8	Ascites	No	10	4	No	No	No	C_Moderate_severe_liver_disease
-711	Female	8	Ascites	No	10	4	No	No	No	C_Diabetes_with_without_complications
-712	Male	7	UGIB due to portal hypertension	Yes	8	3	No	No	No	C_Moderate_severe_liver_disease
-713	Male	7	Ascites	Yes	11	3	No	NA	NA	C_Moderate_severe_liver_disease
-714	Female	6	AKI	Yes	5	4	No	No	No	C_Chronic_pulmonary_disease
-714	Female	6	AKI	Yes	5	4	No	No	No	C_Moderate_severe_liver_disease
-720	Male	7	AKI	Yes	5	4	No	No	No	C_Pepticulcer_disease
-720	Male	7	AKI	Yes	5	4	No	No	No	C_Moderate_severe_liver_disease
-721	Male	6	Ascites	Yes	9	5	No	No	Yes	C_Malignancy
-721	Male	6	Ascites	Yes	9	5	No	No	Yes	C_Moderate_severe_liver_disease
-722	Male	7	Ascites	Yes	10	3	No	No	NA	C_Moderate_severe_liver_disease
-723	Female	8	HCC or cholangioca.	Yes	7	3	No	Yes	No	C_Moderate_severe_liver_disease
-724	Male	4	Alcoholic hepatitis	Yes	8	3	No	No	No	C_Moderate_severe_liver_disease
-726	Male	7	Hepatic encephalopathy	Yes	14	3	No	No	No	C_Moderate_severe_liver_disease
-728	Male	5	Ascites	No	8	7	No	NA	NA	C_Congestive_Heart_Failure
-728	Male	5	Ascites	No	8	7	No	NA	NA	C_Renal_disease
-728	Male	5	Ascites	No	8	7	No	NA	NA	C_Moderate_severe_liver_disease
-728	Male	5	Ascites	No	8	7	No	NA	NA	C_Diabetes_with_without_complications
-729	Female	5	Ascites	Yes	11	3	No	NA	NA	C_Moderate_severe_liver_disease
-731		6	Ascites	Yes	12	3	No	No	No	C_Moderate_severe_liver_disease
-732	Male	6	Ascites	No	10	4	Yes	No	No	C_Chronic_pulmonary_disease
-732	Male	6	Ascites	No	10	4	Yes	No	No	C_Moderate_severe_liver_disease
+Id	Sex	Age	Liver_disease	E_Alcohol_consumption	E_Hepatitis_c	E_Hepatitis_b	E_Non_alcoolic_fatty_LD	E_Cryptogenic	E_Primary_sclerosing_cholangitis	E_Autoimmune_hepatitis	E_Primary_biliary_cholangitis	C_Myocardial_infarction	C_Congestive_Heart_Failure	C_Peripheral_vascular_disease	C_Cerebro_Vascular_disease	C_Dementia	C_Chronic_pulmonary_disease	C_Rheumatological_disease	C_Pepticulcer_disease	C_Mild_liver_disease	C_Heiplegia_paraplegia	C_Renal_disease	C_Malignancy	C_Moderate_severe_liver_disease	C_Metastatic_solid_tumor	C_AIDS	C_Diabetes_with_without_complications	C_None	CPS	Charlson_CI	Mortality_hospital	Mortality_30_days	Mortality_90_days
+1	Female	9	Hepatic encephalopathy	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	9	0	No	No	No
+2	Male	6	SBP	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	9	3	No	No	No
+3	Female	8	Ascites	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	6	2	No	No	No
+4	Female	7	Other fluid overload	No	No	No	No	Yes	No	No	No	Yes	Yes	No	No	No	No	No	No	No	No	Yes	No	Yes	No	No	Yes	No	8	9	No	No	No
+5	Male	7	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	11	4	No	No	No
+6	Male	8	AKI	No	No	No	No	Yes	No	No	No	Yes	Yes	No	No	No	No	No	No	No	No	Yes	No	Yes	No	No	Yes	No	8	9	Yes	No	No
+7	Male	7	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	No	Yes	No	7	5	No	No	No
+8	Male	6	Other fluid overload	Yes	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	7	3	No	No	No
+9	Male	6	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	11	0	No	No	No
+13	Female	6	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	13	3	Yes	No	No
+15	Male	7	SBP	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	12	0	Yes	No	No
+16	Male	7	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	9	3	No	No	No
+18	Female	6	UGIB due to portal hypertension	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	6	3	No	No	No
+19	Male	7	HCC or cholangioca.	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	No	5	9	No	No	No
+20	Male	6	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	No	No	No	10	5	No	No	No
+21	Male	6	SBP	No	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	Yes	Yes	No	No	No	No	9	6	No	No	No
+22	Female	6	Hepatic encephalopathy	No	No	No	Yes	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	Yes	No	No	Yes	No	8	4	No	No	No
+23	Male	6	Other fluid overload	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	7	2	No	No	No
+26	Male	7	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	10	3	No	No	No
+28	Male	7	Other fluid overload	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	Yes	Yes	No	No	No	No	No	6	5	No	No	No
+29	Male	5	Ascites	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	10	4	No	No	No
+30	Male	7	Other fluid overload	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	7	1	No	No	No
+31	Male	7	AKI	Yes	Yes	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	Yes	Yes	No	No	No	Yes	No	7	8	No	No	No
+32	Male	6	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	Yes	Yes	No	No	Yes	No	14	7	No	No	No
+33	Male	6	Alcoholic hepatitis	Yes	Yes	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	8	2	No	No	No
+34	Female	6	Other fluid overload	Yes	No	No	No	No	No	No	No	Yes	Yes	No	No	No	Yes	No	No	Yes	No	No	Yes	No	No	No	Yes	No	6	8	No	No	No
+35	Male	6	HCC or cholangioca.	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	No	No	8	5	No	No	No
+36	Male	6	UGIB due to portal hypertension	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	7	3	No	No	No
+40	Female	6	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	No	No	No	11	4	No	No	No
+41	Male	8	AKI	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	Yes	No	No	No	8	11	No	No	No
+42	Male	5	UGIB due to portal hypertension	Yes	Yes	No	No	No	No	No	No	No	No	No	Yes	No	Yes	No	No	No	No	No	No	Yes	No	No	No	No	7	5	No	No	No
+43	Male	8	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	10	4	No	No	No
+44	Male	7	Other fluid overload	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	Yes	No	Yes	No	No	No	No	7	6	No	No	No
+45	Female	6	Alcoholic hepatitis	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	9	3	No	No	No
+47	Female	4	Alcoholic hepatitis	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	8	3	No	No	No
+48	Male	5	Alcoholic hepatitis	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	9	5	No	No	No
+49	Male	6	Ascites	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	No	No	No	9	4	No	No	No
+51	Male	6	Alcoholic hepatitis	Yes	Yes	No	No	No	No	No	No	No	No	No	Yes	No	No	No	Yes	No	No	No	Yes	Yes	No	No	Yes	No	9	8	No	No	No
+52	Male	6	Hepatic encephalopathy	No	Yes	No	No	No	No	No	No	No	Yes	No	Yes	No	No	No	No	No	No	No	No	Yes	No	No	No	No	11	5	No	No	No
+54	Male	6	HCC or cholangioca.	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	Yes	No	6	6	No	No	No
+55	Male	7	UGIB due to portal hypertension	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	13	3	Yes	No	No
+57	Male	5	Alcoholic hepatitis	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	14	3	No	No	Yes
+60	Female	7	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	No	No	No	9	4	Yes	No	No
+63	Male	6	Alcoholic hepatitis	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	10	0	No	No	No
+64	Female	7	Jaundice- as isolated presentation	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	Yes	No	No	No	No	10	5	No	No	No
+65	Male	6	Ascites	Yes	Yes	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	Yes	No	Yes	No	No	No	8	9	No	No	No
+67	Female	5	Alcoholic hepatitis	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	12	3	No	No	No
+68	Male	6	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	No	No	7	5	No	No	No
+69	Male	7	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	Yes	No	No	No	No	5	4	No	No	No
+70	Male	6	Hepatic encephalopathy	Yes	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	11	3	No	No	No
+71	Female	4	Alcoholic hepatitis	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	3	3	No	No	No
+74	Female	6	SBP	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	7	5	No	No	No
+75	Male	6	Hepato-hydrothorax	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	No	No	9	5	No	No	Yes
+76	Female	5	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	13	3	No	No	No
+77	Male	5	SBP	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	13	3	No	No	No
+78	Male	6	Ascites	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	Yes	Yes	No	No	No	No	5	6	No	No	No
+79	Male	6	Ascites	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	No	No	8	5	No	No	No
+80	Male	6	Other fluid overload	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	Yes	No	No	5	11	No	No	No
+81	Male	7	Hepato-hydrothorax	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	Yes	No	No	Yes	No	8	7	No	No	No
+82	Male	6	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	6	1	Yes	No	No
+83	Male	6	Alcoholic hepatitis	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	12	3	No	No	No
+84	Male	7	Alcoholic hepatitis	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	Yes	No	8	6	No	No	No
+85	Male	6	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	Yes	Yes	No	7	13	No	No	No
+86	Male	8	Other fluid overload	Yes	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	No	No	No	4	4	No	No	No
+88	Male	7	UGIB due to portal hypertension	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	No	No	No	7	4	No	No	No
+89	Male	5	Other fluid overload	Yes	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	No	No	No	7	4	No	No	No
+91	Male	6	Alcoholic hepatitis	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	6	3	No	No	No
+92	Male	6	Ascites	Yes	No	Yes	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	Yes	Yes	No	No	Yes	No	12	7	No	No	No
+93	Male	6	UGIB due to portal hypertension	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	4	3	No	No	No
+95	Male	6	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	4	3	No	No	No
+96	Male	6	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	7	4	No	No	No
+97	Male	6	UGIB due to portal hypertension	No	No	Yes	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	5	4	No	No	No
+99	Female	6	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	No	No	No	11	4	No	No	No
+101	Male	7	Other fluid overload	Yes	Yes	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	No	No	7	6	Yes	No	No
+102	Female	9	Hepatic encephalopathy	No	No	Yes	No	Yes	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	Yes	No	No	No	No	8	4	No	No	No
+103	Male	6	Alcoholic hepatitis	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	No	No	5	5	No	No	No
+104	Female	7	Other fluid overload	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	Yes	No	No	No	5	11	No	No	No
+105	Female	5	Ascites	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	10	3	No	No	No
+106	Male	5	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	Yes	No	No	No	No	7	4	No	No	No
+107	Male	5	UGIB due to portal hypertension	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	No	No	No	5	4	No	No	No
+108	Male	6	UGIB due to portal hypertension	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	No	No	No	5	4	No	No	No
+110	Male	5	Ascites	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	9	3	No	No	No
+111	Female	4	Ascites	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	9	3	No	No	No
+113	Female	7	UGIB due to portal hypertension	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	Yes	No	No	Yes	No	6	7	No	No	No
+114	Female	6	Other fluid overload	Yes	No	No	No	No	No	No	No	No	Yes	No	No	No	Yes	No	No	Yes	No	No	No	No	No	No	No	No	7	3	No	No	No
+115	Male	6	SBP	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	10	3	No	No	No
+116	Female	7	Hepatic encephalopathy	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	Yes	No	No	No	No	No	No	Yes	No	No	No	No	6	5	No	No	No
+117	Male	5	UGIB due to portal hypertension	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	8	3	No	No	No
+118	Male	7	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	No	No	No	8	4	No	No	No
+119	Male	8	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	Yes	No	Yes	No	No	No	9	10	No	No	No
+120	Male	9	SBP	No	No	No	No	No	No	No	No	Yes	Yes	No	No	Yes	No	No	No	No	No	No	No	Yes	No	No	No	No	8	5	No	No	No
+122	Male	5	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	9	3	No	No	No
+123	Male	7	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	No	Yes	No	12	5	No	No	No
+124	Female	7	Other fluid overload	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	8	4	No	No	No
+125	Male	7	HCC or cholangioca.	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	Yes	No	6	6	No	No	No
+127	Female	6	Hepatic encephalopathy	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	10	3	No	No	No
+128	Male	6	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	10	4	No	No	No
+129	Male	7	HCC or cholangioca.	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	No	No	3	5	No	No	No
+131	Male	7	Ascites	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	13	3	No	No	No
+132	Male	5	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	9	3	No	No	No
+133	Female	8	Other fluid overload	No	No	No	No	No	No	No	Yes	No	Yes	No	No	No	Yes	No	No	No	No	No	No	Yes	No	No	No	No	8	5	No	No	No
+134	Female	7	SBP	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	11	4	No	No	No
+136	Female	6	UGIB due to portal hypertension	No	No	No	Yes	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	No	Yes	No	5	5	No	No	No
+137	Male	6	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	10	1	No	No	No
+138	Female	6	HCC or cholangioca.	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	Yes	No	7	6	No	No	No
+139	Female	5	Ascites	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	No	Yes	No	7	5	No	No	No
+140	Male	5	Alcoholic hepatitis	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	No	No	12	5	Yes	No	No
+141	Male	5	Jaundice- as isolated presentation	Yes	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	10	4	No	No	No
+142	Male	8	HCC or cholangioca.	No	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	Yes	Yes	Yes	No	No	No	5	12	Yes	No	No
+143	Male	7	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	Yes	No	No	No	No	14	4	Yes	No	No
+144	Male	5	Ascites	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	13	3	No	No	Yes
+145	Male	5	Alcoholic hepatitis	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	6	1	No	No	No
+146	Female	7	Alcoholic hepatitis	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	12	3	Yes	No	No
+147	Male	6	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	Yes	No	No	No	No	7	4	No	No	No
+149	Male	6	Hepato-hydrothorax	Yes	Yes	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	11	4	No	No	Yes
+150	Male	6	Other fluid overload	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	No	No	10	5	Yes	No	No
+151	Female	8	Other fluid overload	No	Yes	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	5	3	No	No	No
+152	Female	5	Jaundice- as isolated presentation	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	11	3	No	No	No
+153	Male	6	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	Yes	Yes	Yes	No	No	No	7	12	Yes	No	No
+154	Male	6	Ascites	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	8	3	No	No	No
+156	Male	5	Alcoholic hepatitis	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	6	1	No	No	No
+157	Male	5	UGIB due to portal hypertension	No	Yes	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	Yes	No	No	No	No	7	4	No	No	No
+158	Female	7	Hepatic encephalopathy	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	8	4	No	No	No
+159	Male	4	Alcoholic hepatitis	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	10	3	No	No	No
+160	Female	6	UGIB due to portal hypertension	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	Yes	No	No	No	No	7	5	No	No	No
+161	Female	6	HCC or cholangioca.	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	Yes	No	No	No	8	11	No	No	No
+162	Male	6	SBP	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	10	3	No	No	No
+165	Female	5	UGIB due to portal hypertension	Yes	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	10	3	No	No	No
+167	Male	6	UGIB due to portal hypertension	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	Yes	No	No	No	No	12	5	Yes	No	No
+168	Female	5	Other fluid overload	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	Yes	No	No	10	9	No	No	No
+169	Male	5	Hepato-hydrothorax	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	11	3	No	No	No
+170	Male	3	UGIB due to portal hypertension	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	9	3	No	No	No
+172	Male	6	Ascites	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	11	3	No	No	No
+173	Male	5	SBP	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	11	3	No	No	No
+175	Male	7	UGIB due to portal hypertension	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	11	3	No	No	No
+176	Male	6	Ascites	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	9	3	No	No	No
+177	Female	5	UGIB due to portal hypertension	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	7	3	No	No	No
+179	Male	6	Ascites	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	11	3	No	No	No
+180	Male	6	Ascites	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	11	3	No	No	No
+183	Male	5	Ascites	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	11	3	No	No	No
+184	Male	6	Ascites	No	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	12	3	Yes	No	No
+185	Male	6	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	7	1	No	No	No
+186	Female	6	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	7	3	No	No	No
+187	Female	6	Ascites	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	6	3	No	No	No
+188	Female	6	Ascites	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	14	3	Yes	No	No
+189	Male	6	UGIB due to portal hypertension	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	Yes	No	No	Yes	No	7	6	No	No	No
+190	Female	6	Ascites	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	7	2	No	No	No
+191	Male	5	UGIB due to portal hypertension	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	7	1	No	No	No
+192	Male	6	SBP	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	10	5	No	No	No
+193	Male	5	Ascites	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	7	3	No	No	No
+195	Male	6	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	8	4	No	No	No
+196	Female	4	Ascites	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	5	2	No	No	No
+197	Female	6	Ascites	No	No	No	Yes	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	10	5	No	No	Yes
+198	Male	5	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	10	3	No	No	No
+199	Male	5	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	9	3	No	No	No
+200	Male	5	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	11	1	Yes	No	No
+202	Male	6	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	8	1	No	No	No
+204	Female	7	Ascites	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	Yes	No	No	Yes	No	9	6	No	No	No
+206	Female	7	Alcoholic hepatitis	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	9	1	No	No	No
+207	Female	6	Ascites	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	8	3	No	No	No
+208	Male	5	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	7	1	No	No	No
+209	Female	5	UGIB due to portal hypertension	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	10	1	No	No	Yes
+210	Female	6	UGIB due to portal hypertension	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	7	1	No	No	No
+211	Male	6	Ascites	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	7	3	No	No	No
+213	Male	7	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	9	4	No	No	No
+214	Female	4	Ascites	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	10	3	No	No	No
+215	Female	5	Hepatic encephalopathy	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	12	3	No	No	No
+217	Male	5	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	7	1	No	No	No
+219	Male	6	Ascites	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	8	1	No	No	No
+220	Male	5	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	10	4	No	No	Yes
+221	Male	5	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	7	1	No	No	No
+224	Female	6	UGIB due to portal hypertension	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	9	3	No	No	No
+225	Female	8	Hepatic encephalopathy	No	No	Yes	Yes	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	Yes	No	Yes	No	No	No	No	11	6	No	No	No
+227	Male	6	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	7	1	No	No	No
+228	Female	8	Ascites	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	7	4	No	No	No
+231	Female	6	Ascites	No	No	No	Yes	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	Yes	No	No	No	No	Yes	No	6	5	No	No	No
+232	Female	6	Ascites	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	9	4	No	No	No
+236	Female	6	Hepatic encephalopathy	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	8	3	No	No	No
+239	Female	6	UGIB due to portal hypertension	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	7	4	No	No	No
+240	Male	6	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	No	No	No	No	Yes	No	8	3	No	No	No
+243	Female	5	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	10	1	No	No	No
+244	Male	6	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	11	3	No	No	No
+245	Male	7	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	10	4	No	Yes	No
+246	Male	4	Other fluid overload	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	7	3	No	No	No
+247	Male	6	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	10	4	No	No	No
+249	Female	7	Ascites	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	8	1	No	No	No
+251	Female	6	SBP	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	10	3	No	No	No
+252	Male	6	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	7	3	No	No	No
+253	Male	7	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	6	1	No	No	No
+254	Male	7	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	10	3	No	No	No
+255	Female	5	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	9	1	No	No	No
+257	Female	7	AKI	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	7	2	No	No	No
+258	Female	7	UGIB due to portal hypertension	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	7	3	No	No	No
+259	Male	6	Ascites	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	7	1	No	No	No
+260	Female	6	Ascites	No	No	No	No	Yes	No	No	No	No	Yes	No	No	No	No	No	No	No	No	Yes	No	Yes	No	No	Yes	No	8	7	No	No	No
+261	Male	7	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	7	1	No	No	No
+262	Male	6	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	6	3	No	No	No
+263	Female	7	Ascites	No	No	No	No	Yes	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	11	7	No	No	No
+264	Male	5	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	10	3	No	No	No
+265	Male	5	UGIB due to portal hypertension	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	Yes	No	No	No	No	No	No	6	3	No	No	No
+266	Male	6	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	7	1	No	No	No
+267	Male	5	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	8	3	No	No	No
+268	Female	6	Ascites	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	7	1	No	No	No
+269	Male	5	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	9	3	No	No	Yes
+270	Male	7	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	8	3	No	No	No
+274	Female	5	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	Yes	No	No	No	No	9	4	No	No	No
+276	Female	6	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	7	1	No	No	No
+277	Male	5	UGIB due to portal hypertension	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	8	4	No	No	No
+283	Male	6	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	8	1	No	No	No
+285	Male	6	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	11	1	Yes	No	No
+286	Male	6	Hepatic encephalopathy	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	7	3	No	No	No
+287	Female	8	Hepatic encephalopathy	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	Yes	No	No	Yes	No	7	6	No	No	No
+293	Female	6	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	9	3	No	No	No
+294	Female	6	UGIB due to portal hypertension	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	7	1	No	No	No
+295	Female	6	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	6	1	No	No	No
+296	Female	4	Ascites	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	12	3	No	No	No
+299	Female	7	Hepatic encephalopathy	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	9	3	No	No	No
+302	Male	5	Ascites	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	9	4	No	No	No
+303	Female	7	Hepatic encephalopathy	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	Yes	No	Yes	No	No	No	No	No	No	Yes	No	7	3	No	No	No
+304	Male	5	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	10	3	No	No	No
+307	Male	7	Ascites	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	No	Yes	No	7	5	No	No	No
+311	Male	8	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	10	1	No	No	No
+312	Female	5	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	11	3	No	No	No
+313	Male	6	SBP	No	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	No	No	No	No	No	No	No	7	2	No	No	No
+315	Male	5	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	8	2	No	No	No
+316	Male	7	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	9	3	No	No	No
+319	Female	6	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	10	1	No	No	No
+321	Male	6	UGIB due to portal hypertension	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	No	No	14	5	Yes	No	No
+323	Male	4	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	9	3	No	No	No
+324	Female	6	UGIB due to portal hypertension	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	8	3	No	No	No
+325	Female	6	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	12	3	Yes	No	No
+326	Male	6	UGIB due to portal hypertension	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	7	1	No	No	No
+327	Female	6	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	8	4	No	No	No
+328	Female	6	SBP	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	9	4	No	No	No
+329	Female	6	UGIB due to portal hypertension	No	No	No	Yes	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	No	No	No	No	No	Yes	No	5	3	No	No	No
+333	Female	5	Hepatic encephalopathy	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	Yes	No	No	Yes	No	9	6	No	No	No
+335	Male	5	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	14	4	No	No	No
+336	Female	5	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	12	1	No	No	Yes
+337	Male	7	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	6	3	No	No	No
+338	Male	6	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	11	3	No	No	No
+339	Male	4	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	10	4	No	No	No
+340	Male	7	Ascites	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	Yes	No	No	No	No	No	No	6	3	No	No	No
+341	Male	4	Hepatic encephalopathy	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	13	3	Yes	No	No
+343	Male	6	UGIB due to portal hypertension	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	9	1	No	No	No
+344	Female	6	Ascites	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	8	3	No	No	No
+345	Male	7	Ascites	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	No	No	No	9	4	No	No	No
+346	Male	6	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	7	4	No	No	No
+347	Male	6	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	10	3	No	No	No
+348	Male	5	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	Yes	No	No	No	No	6	4	No	No	No
+350	Female	6	UGIB due to portal hypertension	No	No	No	Yes	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	6	5	No	No	No
+351	Male	7	UGIB due to portal hypertension	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	11	4	No	No	No
+352	Female	4	Ascites	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	9	4	No	No	No
+353	Male	5	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	9	4	No	No	No
+354	Male	7	SBP	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	9	4	No	No	No
+355	Female	6	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	9	1	No	No	No
+357	Female	7	Hepatic encephalopathy	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	9	4	No	No	No
+358	Male	7	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	No	9	10	No	No	No
+360	Male	5	UGIB due to portal hypertension	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	9	3	No	No	No
+363	Female	6	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	9	3	No	No	No
+365	Female	6	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	8	3	No	No	No
+366	Male	5	Hepatic encephalopathy	No	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	Yes	No	No	13	11	Yes	No	No
+367	Male	6	Other fluid overload	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	11	3	Yes	No	No
+369	Female	8	Hepatic encephalopathy	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	9	3	No	No	No
+372	Male	5	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	No	No	No	11	4	No	No	No
+373	Male	6	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	7	0	No	No	No
+374	Male	6	Ascites	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	Yes	No	No	No	No	8	5	No	No	No
+375	Male	6	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	Yes	No	No	Yes	No	7	5	No	No	No
+376	Female	4	Alcoholic hepatitis	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	12	3	No	No	No
+377	Male	4	UGIB due to portal hypertension	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	9	3	No	No	No
+378	Male	6	AKI	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	Yes	No	No	No	No	10	6	No	No	No
+381	Male	6	UGIB due to portal hypertension	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	7	3	No	No	No
+382	Male	5	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	7	3	No	No	No
+383	Male	6	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	9	3	No	No	No
+384	Female	6	UGIB due to portal hypertension	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	10	3	Yes	No	No
+386	Male	6	Ascites	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	8	1	No	No	No
+388	Male	5	Ascites	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	8	3	No	No	No
+389	Male	6	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	10	4	No	No	Yes
+391	Female	6	Hepatic encephalopathy	No	No	No	No	No	No	No	No	No	Yes	No	No	No	Yes	No	No	No	No	Yes	No	Yes	No	No	Yes	No	7	9	No	No	No
+392	Male	6	SBP	No	No	No	No	Yes	No	No	No	Yes	Yes	No	No	No	No	No	No	No	No	Yes	No	Yes	No	No	Yes	No	8	9	No	No	No
+393	Male	4	Alcoholic hepatitis	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	13	4	No	No	No
+394	Female	6	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	Yes	No	No	No	No	8	4	No	No	No
+395	Female	6	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	No	No	No	8	4	No	No	No
+396	Male	6	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	No	Yes	No	11	5	No	No	Yes
+397	Female	4	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	8	3	No	No	No
+398	Male	5	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	6	4	No	No	No
+399	Female	6	UGIB due to portal hypertension	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	No	No	No	7	4	No	No	No
+400	Male	7	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	No	No	11	5	Yes	No	No
+402	Female	6	UGIB due to portal hypertension	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	No	No	Yes	No	7	4	Yes	No	No
+403	Male	6	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	7	3	No	No	No
+404	Male	5	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	7	3	No	No	No
+405	Male	6	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	9	3	No	No	No
+406	Male	6	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	8	3	No	No	No
+408	Male	6	Ascites	Yes	Yes	No	No	No	No	No	No	No	Yes	No	No	No	Yes	No	No	No	No	No	No	Yes	No	No	No	No	8	5	No	No	No
+410	Male	5	UGIB due to portal hypertension	Yes	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	6	3	No	No	No
+411	Female	8	HCC or cholangioca.	No	Yes	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	No	No	9	6	No	No	No
+412	Female	6	Hepato-hydrothorax	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	11	3	No	No	No
+413	Male	6	Alcoholic hepatitis	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	Yes	No	No	No	No	11	5	No	No	No
+414	Male	5	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	9	3	Yes	No	No
+415	Female	5	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	9	3	Yes	No	No
+417	Female	7	Ascites	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	7	3	No	No	No
+418	Male	7	Jaundice- as isolated presentation	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	Yes	No	11	6	Yes	No	No
+420	Female	5	Alcoholic hepatitis	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	11	3	Yes	No	No
+421	Female	6	Ascites	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	7	3	No	No	No
+422	Male	6	SBP	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	11	3	No	No	Yes
+424	Male	4	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	6	3	No	No	No
+427	Male	5	Ascites	Yes	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	No	No	Yes	Yes	No	No	Yes	No	9	9	No	No	No
+428	Male	6	Other fluid overload	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	10	3	No	No	No
+429	Female	6	Ascites	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	11	1	No	No	No
+430	Female	6	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	9	1	No	No	No
+431	Male	7	Ascites	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	Yes	No	9	10	No	No	No
+432	Male	6	Ascites	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	10	3	No	No	No
+433	Female	6	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	Yes	No	9	10	No	Yes	No
+434	Male	7	Hepatic encephalopathy	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	7	3	No	No	No
+435	Male	6	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	No	No	No	9	4	No	No	No
+437	Male	7	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	Yes	Yes	No	No	No	8	10	Yes	No	No
+438	Male	6	Alcoholic hepatitis	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	9	1	Yes	No	No
+439	Male	6	Ascites	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	No	No	No	No	No	No	6	2	No	No	No
+440	Female	6	Hepatic encephalopathy	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	8	3	No	No	No
+441	Male	6	Alcoholic hepatitis	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	6	3	No	No	No
+442	Female	5	Ascites	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	7	3	No	No	No
+443	Female	6	UGIB due to portal hypertension	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	No	No	No	9	4	Yes	No	No
+444	Male	6	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	8	3	No	No	No
+445	Male	7	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	6	1	Yes	No	No
+448	Female	6	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	10	3	Yes	No	No
+449	Female	7	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	6	3	No	No	No
+451	Male	6	Ascites	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	Yes	Yes	No	No	No	No	10	6	Yes	No	No
+452	Male	5	HCC or cholangioca.	No	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	6	4	No	No	No
+454	Female	5	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	11	3	Yes	No	No
+455	Male	6	UGIB due to portal hypertension	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	5	3	No	No	No
+456	Male	6	Alcoholic hepatitis	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	12	3	No	No	No
+457	Male	6	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	7	3	No	No	No
+458	Female	6	UGIB due to portal hypertension	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	6	3	No	No	No
+459	Male	6	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	8	3	Yes	No	No
+460	Male	6	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	Yes	No	No	Yes	No	5	5	No	No	No
+462	Male	5	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	6	4	No	No	No
+464	Male	6	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	10	3	No	No	No
+465	Male	6	SBP	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	12	3	No	No	No
+466	Male	6	UGIB due to portal hypertension	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	No	No	No	8	4	No	No	No
+467	Female	6	Hepatic encephalopathy	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	Yes	No	8	6	No	No	No
+468	Male	6	UGIB due to portal hypertension	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	5	3	No	No	No
+469	Male	7	UGIB due to portal hypertension	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	7	3	No	No	No
+470	Female	7	Alcoholic hepatitis	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	11	3	No	No	No
+471	Female	5	SBP	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	Yes	No	No	No	No	8	4	No	No	No
+472	Female	5	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	9	3	No	No	No
+473	Male	4	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	6	3	No	No	No
+474	Male	6	Ascites	Yes	No	No	No	No	No	No	No	No	Yes	No	No	No	Yes	No	Yes	No	No	No	No	Yes	No	No	No	No	5	6	No	No	No
+475	Male	6	UGIB due to portal hypertension	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	5	1	No	No	No
+476	Female	7	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	No	No	10	5	No	No	No
+477	Male	7	SBP	No	Yes	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	Yes	No	Yes	No	No	Yes	No	8	8	No	No	No
+479	Male	5	Alcoholic hepatitis	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	10	0	No	No	No
+480	Male	6	SBP	Yes	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	No	No	No	9	4	No	No	No
+481	Male	6	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	6	3	No	No	No
+482	Male	6	SBP	Yes	Yes	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	8	4	No	No	No
+483	Male	5	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	7	4	No	No	No
+484	Female	7	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	Yes	No	No	No	No	Yes	Yes	No	No	No	8	11	No	No	No
+485	Male	5	UGIB due to portal hypertension	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	6	3	No	No	No
+486	Male	6	UGIB due to portal hypertension	No	No	No	No	No	No	No	No	Yes	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	No	Yes	No	9	6	No	No	No
+487	Male	6	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	6	6	No	No	No
+488	Male	6	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	6	3	No	No	No
+489	Male	7	Hepatic encephalopathy	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	Yes	No	No	Yes	No	8	6	No	No	No
+491	Male	7	Ascites	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	Yes	No	No	Yes	No	8	7	No	No	No
+492	Male	5	Hepatic encephalopathy	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	Yes	No	No	Yes	No	9	5	No	No	No
+493	Female	5	Alcoholic hepatitis	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	No	No	No	8	4	No	No	No
+494	Male	6	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	Yes	No	No	No	No	8	4	No	No	No
+495	Male	6	SBP	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	No	No	11	5	No	No	Yes
+497	Female	7	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	Yes	No	No	No	No	Yes	No	Yes	No	No	10	11	No	Yes	No
+498	Female	5	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	13	3	Yes	No	No
+500	Male	6	Other fluid overload	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	11	3	No	No	No
+501	Male	5	AKI	No	Yes	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	6	6	No	No	No
+503	Female	6	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	Yes	No	No	9	9	No	No	No
+504	Male	6	Ascites	No	No	No	Yes	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	8	4	No	No	No
+509	Male	5	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	5	1	No	No	No
+510	Male	6	Ascites	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	12	3	No	No	No
+513	Male	7	Ascites	No	Yes	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	10	4	No	No	No
+515	Male	4	Hepatic encephalopathy	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	Yes	No	No	10	9	No	No	No
+516	Male	6	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	10	3	No	No	No
+517	Female	7	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	13	3	Yes	No	No
+518	Male	6	Ascites	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	9	1	No	No	No
+519	Male	5	UGIB due to portal hypertension	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	9	3	No	No	No
+520	Male	4	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	12	3	No	No	No
+521	Male	6	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	Yes	No	Yes	No	No	No	No	11	5	No	No	No
+528	Male	5	AKI	Yes	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	11	4	Yes	No	No
+530	Male	5	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	12	3	No	No	No
+531	Female	6	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	8	3	No	No	No
+534	Male	7	HCC or cholangioca.	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	Yes	No	8	6	No	No	No
+538	Male	6	Ascites	Yes	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	11	3	No	No	Yes
+539	Male	7	SBP	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	12	3	No	No	Yes
+540	Male	6	HCC or cholangioca.	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	No	No	7	5	No	No	No
+541	Female	4	Alcoholic hepatitis	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	10	3	No	No	Yes
+545	Male	4	Alcoholic hepatitis	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	9	3	No	No	No
+546	Male	6	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	Yes	No	No	No	No	11	5	Yes	No	No
+552	Male	5	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	8	3	No	No	No
+556	Female	7	AKI	Yes	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	No	No	No	No	No	No	No	6	2	No	No	No
+559	Male	6	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	Yes	No	No	No	No	6	4	No	No	No
+560	Male	7	AKI	No	No	No	No	No	No	No	No	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	6	3	No	No	No
+562	Male	7	AKI	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	6	1	No	No	No
+563	Female	6	Ascites	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	Yes	No	No	Yes	No	11	6	No	No	No
+565	Male	5	UGIB due to portal hypertension	Yes	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	Yes	No	No	Yes	No	7	6	No	No	No
+566	Male	6	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	8	3	No	No	No
+567	Male	7	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	14	3	No	No	No
+569	Female	9	Hepatic encephalopathy	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	8	3	No	No	No
+571	Male	6	Ascites	Yes	No	No	No	No	No	No	No	No	Yes	No	No	No	Yes	No	No	Yes	No	No	No	No	No	No	No	No	6	3	No	No	No
+573	Female	8	Ascites	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	8	4	No	No	No
+584	Male	5	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	8	3	No	No	No
+586	Male	6	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	No	No	9	5	No	Yes	No
+588	Female	4	Alcoholic hepatitis	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	10	1	Yes	No	No
+589	Female	6	AKI	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	5	4	No	No	No
+592	Male	7	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	11	3	No	No	No
+596	Male	4	AKI	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	7	2	No	No	No
+597	Female	6	Hepatic encephalopathy	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	12	3	No	No	No
+599	Male	6	Ascites	Yes	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	6	4	No	No	No
+606	Male	5	SBP	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	Yes	No	Yes	No	No	7	11	No	No	No
+607	Female	6	UGIB due to portal hypertension	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	5	4	No	No	No
+608	Female	8	Ascites	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	Yes	No	No	Yes	No	9	7	No	No	Yes
+609	Male	5	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	9	3	No	No	No
+610	Male	5	AKI	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	8	3	No	No	No
+616	Male	5	Alcoholic hepatitis	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	9	3	No	No	No
+618	Male	7	Other fluid overload	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	7	2	No	No	No
+619	Male	6	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	No	15	9	No	No	Yes
+620	Male	7	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	No	No	10	5	No	Yes	No
+621	Male	4	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	5	3	No	Yes	No
+623	Female	6	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	10	3	Yes	No	No
+629	Male	5	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	14	3	No	No	No
+635	Female	7	UGIB due to portal hypertension	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	Yes	No	6	6	No	No	No
+636	Male	4	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	13	3	Yes	No	No
+637	Female	7	Ascites	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	8	3	No	No	No
+639	Male	6	Ascites	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	8	3	No	No	No
+642	Male	7	AKI	Yes	Yes	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	6	4	No	No	No
+646	Male	6	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	8	4	No	No	No
+650	Male	6	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	8	3	No	No	No
+652	Male	6	HCC or cholangioca.	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	No	No	9	5	No	Yes	No
+657	Female	5	Alcoholic hepatitis	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	10	3	No	No	No
+658	Male	5	Alcoholic hepatitis	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	9	3	No	No	No
+660	Male	7	Ascites	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	Yes	No	No	Yes	No	9	7	No	No	No
+663	Male	5	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	12	3	No	No	No
+667	Male	6	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	12	3	No	No	No
+668	Male	5	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	12	3	Yes	No	No
+669	Male	6	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	7	4	No	No	No
+674	Male	6	Alcoholic hepatitis	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	5	1	No	No	No
+678	Male	6	Alcoholic hepatitis	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	No	No	No	No	No	No	8	2	No	No	No
+680	Female	5	Alcoholic hepatitis	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	9	3	No	No	No
+682	Male	7	AKI	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	6	1	No	No	No
+683	Male	7	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	13	3	No	No	Yes
+685	Male	6	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	7	5	Yes	No	No
+686	Female	7	Ascites	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	8	4	No	No	No
+687	Male	6	Jaundice- as isolated presentation	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	No	No	8	1	No	No	No
+688	Male	6	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	9	4	No	No	No
+689	Male	7	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	11	3	No	Yes	No
+692	Male	7	Hepatic encephalopathy	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	8	4	No	No	No
+693	Male	8	Hepatic encephalopathy	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	7	3	No	No	No
+694	Male	6	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	11	3	No	No	No
+695	Male	7	AKI	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	5	4	No	No	No
+698	Female	7	Ascites	No	No	No	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	No	No	12	5	No	No	No
+699	Male	7	Alcoholic hepatitis	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	7	3	No	No	No
+701	Female	4	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	10	3	No	No	No
+703	Male	7	Ascites	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	13	3	No	No	Yes
+704	Male	6	Ascites	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	7	3	No	No	No
+708	Female	6	Alcoholic hepatitis	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	10	4	No	No	No
+710	Male	6	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	10	3	No	No	No
+711	Female	8	Ascites	No	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	Yes	No	10	4	No	No	No
+712	Male	7	UGIB due to portal hypertension	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	8	3	No	No	No
+714	Female	6	AKI	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	No	No	No	5	4	No	No	No
+720	Male	7	AKI	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	Yes	No	No	No	No	5	4	No	No	No
+721	Male	6	Ascites	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	Yes	No	No	No	No	9	5	No	No	Yes
+723	Female	8	HCC or cholangioca.	Yes	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	7	3	No	Yes	No
+724	Male	4	Alcoholic hepatitis	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	8	3	No	No	No
+726	Male	7	Hepatic encephalopathy	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	14	3	No	No	No
+732	Male	6	Ascites	No	Yes	No	No	No	No	No	No	No	No	No	No	No	Yes	No	No	No	No	No	No	Yes	No	No	No	No	10	4	Yes	No	No

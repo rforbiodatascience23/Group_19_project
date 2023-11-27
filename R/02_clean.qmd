@@ -4,6 +4,18 @@ format: html
 editor: visual
 ---
 
+```{r}
+library(tidyverse)
+```
+
+```{r}
+dat_load_01 <- read_tsv(
+  file = '~/projects/Group_19_project/data/01_dat_load.tsv'
+)
+```
+
+
+
 # Joining demonstration
 
 Joining since we did not need to group together two data set. We won't use the joined data set for the rest of the project,
