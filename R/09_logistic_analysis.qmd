@@ -1,0 +1,154 @@
+---
+title: "09_logistic_regression"
+format: html
+editor: visual
+---
+
+## Child Pugh Score as a predictor of mortality
+
+In the following analysis we would like to check the CPS as a predictor to mortality. We will try to figure out whether a higher CPS is associated with higher odds of mortality. To do that, we will use logistic regression.
+
+```{r}
+df_logistic <- dat_aug_03 |>
+  mutate(`Mortality (1 = y/0 = n)` = ifelse(Mortality == "No death", 0, 1)) |> 
+  pivot_wider(
+    names_from = Liver_disease,
+    values_from = Liver_disease
+    ) |> 
+  mutate(across(10:19, ~ifelse(is.na(.), 0, 1)))
+```
+
+we started by adding the mortality variable to our dataframe. The new variable is binary and its outcome is 0 for no, and 1 for yes.
+
+```{r}
+df_logistic
+```
+
+Lets try to plot the variables that we're about to analyze:
+
+```{r}
+mortality_CPS <- df_logistic |> 
+  ggplot(mapping = aes(x = CPS,
+                       fill = Mortality,
+                       na.rm = TRUE)) +
+  geom_bar(alpha = 0.6,
+           position = "fill") +
+  scale_fill_viridis_d() +
+  labs(title = "Mortality by CPS",
+       x = "CPS",
+       y = "Mortality") + 
+  theme_minimal()
+
+mortality_CPS
+```
+
+In the following bar chart, we can see the proportions for each CPS and mortality. We can see some trend as the yellow stacks of the bars, which represent the no death observations, are on a decrease as the CPS level increase. In other words, we can see a connection between death and high CPS level. In the following analysis we will try to find this connection.
+
+```{r}
+ggsave("mortality_CPS.png", 
+       path = "../results/plots/",
+       plot = mortality_CPS,
+       width = 7,
+       height = 5)
+```
+
+### Creation of a first model using the 'lg()' function
+
+We chose logistic regression since our outcome is binary (Mortality: yes=1, no=0). We start by creating a logistic regression model:
+
+```{r}
+logistic_model <- glm(`Mortality (1 = y/0 = n)` ~ CPS, data=df_logistic, family = "binomial")
+logistic_intervals <- confint(logistic_model)
+logistic_summary <- summary(logistic_model)
+```
+
+The logistic interval are the variables that we are going to based the odds ratio on.
+
+```{r}
+logistic_summary
+```
+
+Next, we would like to see our results tidy and readable.
+
+```{r}
+logistic_intervals<-as.tibble(logistic_intervals) |>
+  mutate(term = c("(intercept)", "CPS"))|> 
+  relocate(term)|>
+  rename(conf_high = `97.5 %`,
+         conf_low = `2.5 %`)
+
+logistic_intervals
+```
+
+```{r}
+logistic_results <- tidy(logistic_model)
+
+logistic_results
+```
+
+We would like to have all of the results in one tibble, therefore, we can join the tibbles of the results and the intervals by the column term:
+
+```{r}
+logistic_result_intervals<- inner_join(logistic_results, logistic_intervals, 
+                                       by = join_by(term == term))
+logistic_result_intervals
+```
+
+The results that we have are the log-odds ratio for mortality. We will now exponentiate those results to make it easier to interpret.
+
+```{r}
+logistic_result_intervals<- logistic_result_intervals |>
+  mutate(exp_estimate = exp(estimate),
+         exp_conf_low = exp(conf_low),
+         exp_conf_high = exp(conf_high))
+
+logistic_result_intervals
+```
+
+```{r}
+boxplot_logistic_confidence_interval <-  ggplot( 
+  data = logistic_result_intervals,
+  mapping = aes(x = exp_estimate,
+                  y = term)) +
+  geom_errorbarh(aes(xmin = exp_conf_low,
+                 xmax = exp_conf_high)) +
+  geom_point()+
+  geom_hline(yintercept = 0, linetype = "dashed", color = "black", size = 0.5) +
+  geom_vline(xintercept = 1, linetype = "dashed", color = "red", size = 0.5) +
+  labs(
+    title = "CPS associated with Mortality",
+    x = "Estimates(95% CIs)",
+    y ="") +
+  theme(plot.title = element_text(size = 12.5))+
+  scale_x_continuous(limits = c(0, 2))
+
+boxplot_logistic_confidence_interval
+```
+
+Now that we have an odds-ratio results, we can understand from the logistic regression that for every one CPS increase, the likelihood for mortality increase by 50%. This is pretty significant information and we can use it to keep high CPS patients under a tighter hospitalization. Furthermore, the results for this analysis are statistically significant since the p-value much lower than 0.05. Also, accoarding to the confidence interval, we can say that 95% confidence that the odds ration will be between 1.39 and 1.62. These results are well fit with the intuition that we had in the 05_analysis_mortality, where we suspected that CPS is connected with mortality. Let us recall:
+
+```{r}
+bar_plot_CPS_Mortality
+```
+
+```{r}
+logistic_sigmoid_func <- ggplot(df_logistic, aes(x=CPS, y=`Mortality (1 = y/0 = n)`)) + 
+  geom_point(alpha=.5) +
+  stat_smooth(method="glm", se=FALSE, method.args = list(family=binomial)) + 
+  theme_minimal()
+logistic_sigmoid_func
+```
+
+The logistic curve is not balanced. One possible suggestion can be due to the fact that we have 190 deaths vs. 875 survivors in our dataset.
+
+```{r}
+ggsave("logistic_sigmoid_func.png", 
+       path = "../results/plots/",
+       plot = logistic_sigmoid_func,
+       width = 7,
+       height = 5)
+```
+
+## Conclusion
+
+This analysis assesses that high CPS values have a crutial impact on patients mortality. Of course that we could have some intuition for that before, as we could see in the box plot and the bar chart for this analysis, but according to our data, the odds ratio for it is 1.5. In other words, for every unit increase in CPS, the patients have an increased likelihood for mortality by 50%. This demonstrates how dangerous can cirrhosis be if not treating it as it should.
