@@ -1,1051 +1,1066 @@
-Id	Sex	Age	Liver_disease	Alcohol_consumption	CPS	Charlson_CI	Comorbidities	Mortality
-1	Female	[90; 100]	Hepatic encephalopathy	No	9	0	C_None	No death
-2	Male	[60; 70]	SBP	Yes	9	3	C_Moderate_severe_liver_disease	No death
-3	Female	[80; 90]	Ascites	No	6	2	C_Mild_liver_disease	No death
-3	Female	[80; 90]	Ascites	No	6	2	C_Diabetes_with_without_complications	No death
-4	Female	[70; 80]	Other fluid overload	No	8	9	C_Myocardial_infarction	No death
-4	Female	[70; 80]	Other fluid overload	No	8	9	C_Congestive_Heart_Failure	No death
-4	Female	[70; 80]	Other fluid overload	No	8	9	C_Renal_disease	No death
-4	Female	[70; 80]	Other fluid overload	No	8	9	C_Moderate_severe_liver_disease	No death
-4	Female	[70; 80]	Other fluid overload	No	8	9	C_Diabetes_with_without_complications	No death
-5	Male	[70; 80]	Hepatic encephalopathy	Yes	11	4	C_Moderate_severe_liver_disease	No death
-5	Male	[70; 80]	Hepatic encephalopathy	Yes	11	4	C_Diabetes_with_without_complications	No death
-6	Male	[80; 90]	AKI	No	8	9	C_Myocardial_infarction	Death_in_hospital
-6	Male	[80; 90]	AKI	No	8	9	C_Congestive_Heart_Failure	Death_in_hospital
-6	Male	[80; 90]	AKI	No	8	9	C_Renal_disease	Death_in_hospital
-6	Male	[80; 90]	AKI	No	8	9	C_Moderate_severe_liver_disease	Death_in_hospital
-6	Male	[80; 90]	AKI	No	8	9	C_Diabetes_with_without_complications	Death_in_hospital
-7	Male	[70; 80]	UGIB due to portal hypertension	Yes	7	5	C_Chronic_pulmonary_disease	No death
-7	Male	[70; 80]	UGIB due to portal hypertension	Yes	7	5	C_Moderate_severe_liver_disease	No death
-7	Male	[70; 80]	UGIB due to portal hypertension	Yes	7	5	C_Diabetes_with_without_complications	No death
-8	Male	[60; 70]	Other fluid overload	Yes	7	3	C_Moderate_severe_liver_disease	No death
-9	Male	[60; 70]	Hepatic encephalopathy	Yes	11	0	C_None	No death
-10	Female	[60; 70]	Hepatic encephalopathy	Yes	12	5	C_Moderate_severe_liver_disease	No death
-10	Female	[60; 70]	Hepatic encephalopathy	Yes	12	5	C_Diabetes_with_without_complications	No death
-12	Female	[70; 80]	Hepatic encephalopathy	Yes	12	5	C_Malignancy	No death
-12	Female	[70; 80]	Hepatic encephalopathy	Yes	12	5	C_Moderate_severe_liver_disease	No death
-13	Female	[60; 70]	UGIB due to portal hypertension	Yes	13	3	C_Moderate_severe_liver_disease	Death_in_hospital
-14	Female	[60; 70]	Hepatic encephalopathy	No	8	1	C_Mild_liver_disease	No death
-15	Male	[70; 80]	SBP	Yes	12	0	C_None	Death_in_hospital
-16	Male	[70; 80]	Ascites	Yes	9	3	C_Moderate_severe_liver_disease	No death
-17	Male	[70; 80]	HCC or cholangioca.	Yes	7	2	C_Chronic_pulmonary_disease	No death
-17	Male	[70; 80]	HCC or cholangioca.	Yes	7	2	C_Diabetes_with_without_complications	No death
-18	Female	[60; 70]	UGIB due to portal hypertension	Yes	6	3	C_Moderate_severe_liver_disease	No death
-19	Male	[70; 80]	HCC or cholangioca.	Yes	5	9	C_Moderate_severe_liver_disease	No death
-19	Male	[70; 80]	HCC or cholangioca.	Yes	5	9	C_Metastatic_solid_tumor	No death
-20	Male	[60; 70]	Hepatic encephalopathy	Yes	10	5	C_Heiplegia_paraplegia	No death
-20	Male	[60; 70]	Hepatic encephalopathy	Yes	10	5	C_Moderate_severe_liver_disease	No death
-21	Male	[60; 70]	SBP	No	9	6	C_Chronic_pulmonary_disease	No death
-21	Male	[60; 70]	SBP	No	9	6	C_Malignancy	No death
-21	Male	[60; 70]	SBP	No	9	6	C_Moderate_severe_liver_disease	No death
-22	Female	[60; 70]	Hepatic encephalopathy	No	8	4	C_Dementia	No death
-22	Female	[60; 70]	Hepatic encephalopathy	No	8	4	C_Moderate_severe_liver_disease	No death
-22	Female	[60; 70]	Hepatic encephalopathy	No	8	4	C_Diabetes_with_without_complications	No death
-23	Male	[60; 70]	Other fluid overload	Yes	7	2	C_Mild_liver_disease	No death
-23	Male	[60; 70]	Other fluid overload	Yes	7	2	C_Diabetes_with_without_complications	No death
-26	Male	[70; 80]	Ascites	Yes	10	3	C_Moderate_severe_liver_disease	No death
-28	Male	[70; 80]	Other fluid overload	Yes	6	5	C_Mild_liver_disease	No death
-28	Male	[70; 80]	Other fluid overload	Yes	6	5	C_Renal_disease	No death
-28	Male	[70; 80]	Other fluid overload	Yes	6	5	C_Malignancy	No death
-29	Male	[50; 60]	Ascites	No	10	4	C_Moderate_severe_liver_disease	No death
-29	Male	[50; 60]	Ascites	No	10	4	C_Diabetes_with_without_complications	No death
-30	Male	[70; 80]	Other fluid overload	Yes	7	1	C_Mild_liver_disease	No death
-31	Male	[70; 80]	AKI	Yes	7	8	C_Congestive_Heart_Failure	No death
-31	Male	[70; 80]	AKI	Yes	7	8	C_Mild_liver_disease	No death
-31	Male	[70; 80]	AKI	Yes	7	8	C_Renal_disease	No death
-31	Male	[70; 80]	AKI	Yes	7	8	C_Malignancy	No death
-31	Male	[70; 80]	AKI	Yes	7	8	C_Diabetes_with_without_complications	No death
-32	Male	[60; 70]	Hepatic encephalopathy	Yes	14	7	C_Pepticulcer_disease	No death
-32	Male	[60; 70]	Hepatic encephalopathy	Yes	14	7	C_Malignancy	No death
-32	Male	[60; 70]	Hepatic encephalopathy	Yes	14	7	C_Moderate_severe_liver_disease	No death
-32	Male	[60; 70]	Hepatic encephalopathy	Yes	14	7	C_Diabetes_with_without_complications	No death
-33	Male	[60; 70]	Alcoholic hepatitis	Yes	8	2	C_Myocardial_infarction	No death
-33	Male	[60; 70]	Alcoholic hepatitis	Yes	8	2	C_Mild_liver_disease	No death
-34	Female	[60; 70]	Other fluid overload	Yes	6	8	C_Myocardial_infarction	No death
-34	Female	[60; 70]	Other fluid overload	Yes	6	8	C_Congestive_Heart_Failure	No death
-34	Female	[60; 70]	Other fluid overload	Yes	6	8	C_Chronic_pulmonary_disease	No death
-34	Female	[60; 70]	Other fluid overload	Yes	6	8	C_Mild_liver_disease	No death
-34	Female	[60; 70]	Other fluid overload	Yes	6	8	C_Malignancy	No death
-34	Female	[60; 70]	Other fluid overload	Yes	6	8	C_Diabetes_with_without_complications	No death
-35	Male	[60; 70]	HCC or cholangioca.	Yes	8	5	C_Malignancy	No death
-35	Male	[60; 70]	HCC or cholangioca.	Yes	8	5	C_Moderate_severe_liver_disease	No death
-36	Male	[60; 70]	UGIB due to portal hypertension	Yes	7	3	C_Moderate_severe_liver_disease	No death
-40	Female	[60; 70]	Hepatic encephalopathy	Yes	11	4	C_Chronic_pulmonary_disease	No death
-40	Female	[60; 70]	Hepatic encephalopathy	Yes	11	4	C_Moderate_severe_liver_disease	No death
-41	Male	[80; 90]	AKI	No	8	11	C_Malignancy	No death
-41	Male	[80; 90]	AKI	No	8	11	C_Moderate_severe_liver_disease	No death
-41	Male	[80; 90]	AKI	No	8	11	C_Metastatic_solid_tumor	No death
-42	Male	[50; 60]	UGIB due to portal hypertension	Yes	7	5	C_Cerebro_Vascular_disease	No death
-42	Male	[50; 60]	UGIB due to portal hypertension	Yes	7	5	C_Chronic_pulmonary_disease	No death
-42	Male	[50; 60]	UGIB due to portal hypertension	Yes	7	5	C_Moderate_severe_liver_disease	No death
-43	Male	[80; 90]	Ascites	Yes	10	4	C_Moderate_severe_liver_disease	No death
-43	Male	[80; 90]	Ascites	Yes	10	4	C_Diabetes_with_without_complications	No death
-44	Male	[70; 80]	Other fluid overload	Yes	7	6	C_Chronic_pulmonary_disease	No death
-44	Male	[70; 80]	Other fluid overload	Yes	7	6	C_Renal_disease	No death
-44	Male	[70; 80]	Other fluid overload	Yes	7	6	C_Moderate_severe_liver_disease	No death
-45	Female	[60; 70]	Alcoholic hepatitis	Yes	9	3	C_Moderate_severe_liver_disease	No death
-47	Female	[40; 50]	Alcoholic hepatitis	Yes	8	3	C_Moderate_severe_liver_disease	No death
-48	Male	[50; 60]	Alcoholic hepatitis	Yes	9	5	C_Moderate_severe_liver_disease	No death
-48	Male	[50; 60]	Alcoholic hepatitis	Yes	9	5	C_Diabetes_with_without_complications	No death
-49	Male	[60; 70]	Ascites	Yes	9	4	C_Chronic_pulmonary_disease	No death
-49	Male	[60; 70]	Ascites	Yes	9	4	C_Moderate_severe_liver_disease	No death
-51	Male	[60; 70]	Alcoholic hepatitis	Yes	9	8	C_Cerebro_Vascular_disease	No death
-51	Male	[60; 70]	Alcoholic hepatitis	Yes	9	8	C_Pepticulcer_disease	No death
-51	Male	[60; 70]	Alcoholic hepatitis	Yes	9	8	C_Malignancy	No death
-51	Male	[60; 70]	Alcoholic hepatitis	Yes	9	8	C_Moderate_severe_liver_disease	No death
-51	Male	[60; 70]	Alcoholic hepatitis	Yes	9	8	C_Diabetes_with_without_complications	No death
-52	Male	[60; 70]	Hepatic encephalopathy	No	11	5	C_Congestive_Heart_Failure	No death
-52	Male	[60; 70]	Hepatic encephalopathy	No	11	5	C_Cerebro_Vascular_disease	No death
-52	Male	[60; 70]	Hepatic encephalopathy	No	11	5	C_Moderate_severe_liver_disease	No death
-53	Male	[60; 70]	Hepatic encephalopathy	Yes	11	5	C_Peripheral_vascular_disease	No death
-53	Male	[60; 70]	Hepatic encephalopathy	Yes	11	5	C_Moderate_severe_liver_disease	No death
-53	Male	[60; 70]	Hepatic encephalopathy	Yes	11	5	C_Diabetes_with_without_complications	No death
-54	Male	[60; 70]	HCC or cholangioca.	Yes	6	6	C_Malignancy	No death
-54	Male	[60; 70]	HCC or cholangioca.	Yes	6	6	C_Moderate_severe_liver_disease	No death
-54	Male	[60; 70]	HCC or cholangioca.	Yes	6	6	C_Diabetes_with_without_complications	No death
-55	Male	[70; 80]	UGIB due to portal hypertension	No	13	3	C_Moderate_severe_liver_disease	Death_in_hospital
-56	Female	[50; 60]	Ascites	No	10	3	C_Moderate_severe_liver_disease	No death
-57	Male	[50; 60]	Alcoholic hepatitis	Yes	14	3	C_Moderate_severe_liver_disease	Death_between_30_and_90_days
-58	Female	[40; 50]	UGIB due to portal hypertension	Yes	11	4	C_Moderate_severe_liver_disease	No death
-58	Female	[40; 50]	UGIB due to portal hypertension	Yes	11	4	C_Diabetes_with_without_complications	No death
-59	Male	[40; 50]	HCC or cholangioca.	No	11	3	C_Moderate_severe_liver_disease	No death
-60	Female	[70; 80]	Hepatic encephalopathy	Yes	9	4	C_Chronic_pulmonary_disease	Death_in_hospital
-60	Female	[70; 80]	Hepatic encephalopathy	Yes	9	4	C_Moderate_severe_liver_disease	Death_in_hospital
-61	Male	[70; 80]	Hepatic encephalopathy	No	8	6	C_Malignancy	No death
-61	Male	[70; 80]	Hepatic encephalopathy	No	8	6	C_Moderate_severe_liver_disease	No death
-61	Male	[70; 80]	Hepatic encephalopathy	No	8	6	C_Diabetes_with_without_complications	No death
-62	Male	[70; 80]	Ascites	No	11	4	C_Mild_liver_disease	No death
-62	Male	[70; 80]	Ascites	No	11	4	C_Malignancy	No death
-62	Male	[70; 80]	Ascites	No	11	4	C_Diabetes_with_without_complications	No death
-63	Male	[60; 70]	Alcoholic hepatitis	Yes	10	0	C_None	No death
-64	Female	[70; 80]	Jaundice- as isolated presentation	Yes	10	5	C_Renal_disease	No death
-64	Female	[70; 80]	Jaundice- as isolated presentation	Yes	10	5	C_Moderate_severe_liver_disease	No death
-65	Male	[60; 70]	Ascites	Yes	8	9	C_Cerebro_Vascular_disease	No death
-65	Male	[60; 70]	Ascites	Yes	8	9	C_Malignancy	No death
-65	Male	[60; 70]	Ascites	Yes	8	9	C_Metastatic_solid_tumor	No death
-67	Female	[50; 60]	Alcoholic hepatitis	Yes	12	3	C_Moderate_severe_liver_disease	No death
-68	Male	[60; 70]	Ascites	Yes	7	5	C_Malignancy	No death
-68	Male	[60; 70]	Ascites	Yes	7	5	C_Moderate_severe_liver_disease	No death
-69	Male	[70; 80]	Hepatic encephalopathy	Yes	5	4	C_Cerebro_Vascular_disease	No death
-69	Male	[70; 80]	Hepatic encephalopathy	Yes	5	4	C_Moderate_severe_liver_disease	No death
-70	Male	[60; 70]	Hepatic encephalopathy	Yes	11	3	C_Moderate_severe_liver_disease	No death
-71	Female	[40; 50]	Alcoholic hepatitis	Yes	3	3	C_Moderate_severe_liver_disease	No death
-72	Male	[60; 70]	Ascites	Yes	11	11	C_Malignancy	No death
-72	Male	[60; 70]	Ascites	Yes	11	11	C_Moderate_severe_liver_disease	No death
-72	Male	[60; 70]	Ascites	Yes	11	11	C_Metastatic_solid_tumor	No death
-74	Female	[60; 70]	SBP	Yes	7	5	C_Moderate_severe_liver_disease	No death
-74	Female	[60; 70]	SBP	Yes	7	5	C_Diabetes_with_without_complications	No death
-75	Male	[60; 70]	Hepato-hydrothorax	Yes	9	5	C_Malignancy	Death_between_30_and_90_days
-75	Male	[60; 70]	Hepato-hydrothorax	Yes	9	5	C_Moderate_severe_liver_disease	Death_between_30_and_90_days
-76	Female	[50; 60]	Hepatic encephalopathy	Yes	13	3	C_Moderate_severe_liver_disease	No death
-77	Male	[50; 60]	SBP	Yes	13	3	C_Moderate_severe_liver_disease	No death
-78	Male	[60; 70]	Ascites	Yes	5	6	C_Chronic_pulmonary_disease	No death
-78	Male	[60; 70]	Ascites	Yes	5	6	C_Malignancy	No death
-78	Male	[60; 70]	Ascites	Yes	5	6	C_Moderate_severe_liver_disease	No death
-79	Male	[60; 70]	Ascites	No	8	5	C_Malignancy	No death
-79	Male	[60; 70]	Ascites	No	8	5	C_Moderate_severe_liver_disease	No death
-80	Male	[60; 70]	Other fluid overload	Yes	5	11	C_Malignancy	No death
-80	Male	[60; 70]	Other fluid overload	Yes	5	11	C_Moderate_severe_liver_disease	No death
-80	Male	[60; 70]	Other fluid overload	Yes	5	11	C_AIDS	No death
-81	Male	[70; 80]	Hepato-hydrothorax	No	8	7	C_Renal_disease	No death
-81	Male	[70; 80]	Hepato-hydrothorax	No	8	7	C_Moderate_severe_liver_disease	No death
-81	Male	[70; 80]	Hepato-hydrothorax	No	8	7	C_Diabetes_with_without_complications	No death
-82	Male	[60; 70]	Ascites	Yes	6	1	C_Mild_liver_disease	Death_in_hospital
-83	Male	[60; 70]	Alcoholic hepatitis	Yes	12	3	C_Moderate_severe_liver_disease	No death
-84	Male	[70; 80]	Alcoholic hepatitis	Yes	8	6	C_Malignancy	No death
-84	Male	[70; 80]	Alcoholic hepatitis	Yes	8	6	C_Moderate_severe_liver_disease	No death
-84	Male	[70; 80]	Alcoholic hepatitis	Yes	8	6	C_Diabetes_with_without_complications	No death
-85	Male	[60; 70]	Hepatic encephalopathy	Yes	7	13	C_Malignancy	No death
-85	Male	[60; 70]	Hepatic encephalopathy	Yes	7	13	C_Moderate_severe_liver_disease	No death
-85	Male	[60; 70]	Hepatic encephalopathy	Yes	7	13	C_AIDS	No death
-85	Male	[60; 70]	Hepatic encephalopathy	Yes	7	13	C_Diabetes_with_without_complications	No death
-86	Male	[80; 90]	Other fluid overload	Yes	4	4	C_Chronic_pulmonary_disease	No death
-86	Male	[80; 90]	Other fluid overload	Yes	4	4	C_Moderate_severe_liver_disease	No death
-87	Male	[60; 70]	AKI	No	7	11	C_Malignancy	No death
-87	Male	[60; 70]	AKI	No	7	11	C_Moderate_severe_liver_disease	No death
-87	Male	[60; 70]	AKI	No	7	11	C_AIDS	No death
-88	Male	[70; 80]	UGIB due to portal hypertension	Yes	7	4	C_Chronic_pulmonary_disease	No death
-88	Male	[70; 80]	UGIB due to portal hypertension	Yes	7	4	C_Moderate_severe_liver_disease	No death
-89	Male	[50; 60]	Other fluid overload	Yes	7	4	C_Chronic_pulmonary_disease	No death
-89	Male	[50; 60]	Other fluid overload	Yes	7	4	C_Moderate_severe_liver_disease	No death
-90	Male	[80; 90]	Ascites	Yes	7	11	C_Malignancy	No death
-90	Male	[80; 90]	Ascites	Yes	7	11	C_Moderate_severe_liver_disease	No death
-90	Male	[80; 90]	Ascites	Yes	7	11	C_Metastatic_solid_tumor	No death
-91	Male	[60; 70]	Alcoholic hepatitis	Yes	6	3	C_Moderate_severe_liver_disease	No death
-92	Male	[60; 70]	Ascites	Yes	12	7	C_Cerebro_Vascular_disease	No death
-92	Male	[60; 70]	Ascites	Yes	12	7	C_Malignancy	No death
-92	Male	[60; 70]	Ascites	Yes	12	7	C_Moderate_severe_liver_disease	No death
-92	Male	[60; 70]	Ascites	Yes	12	7	C_Diabetes_with_without_complications	No death
-93	Male	[60; 70]	UGIB due to portal hypertension	Yes	4	3	C_Moderate_severe_liver_disease	No death
-95	Male	[60; 70]	Hepatic encephalopathy	Yes	4	3	C_Moderate_severe_liver_disease	No death
-96	Male	[60; 70]	Ascites	Yes	7	4	C_Moderate_severe_liver_disease	No death
-96	Male	[60; 70]	Ascites	Yes	7	4	C_Diabetes_with_without_complications	No death
-97	Male	[60; 70]	UGIB due to portal hypertension	No	5	4	C_Congestive_Heart_Failure	No death
-97	Male	[60; 70]	UGIB due to portal hypertension	No	5	4	C_Moderate_severe_liver_disease	No death
-99	Female	[60; 70]	Hepatic encephalopathy	Yes	11	4	C_Chronic_pulmonary_disease	No death
-99	Female	[60; 70]	Hepatic encephalopathy	Yes	11	4	C_Moderate_severe_liver_disease	No death
-101	Male	[70; 80]	Other fluid overload	Yes	7	6	C_Congestive_Heart_Failure	Death_in_hospital
-101	Male	[70; 80]	Other fluid overload	Yes	7	6	C_Malignancy	Death_in_hospital
-101	Male	[70; 80]	Other fluid overload	Yes	7	6	C_Moderate_severe_liver_disease	Death_in_hospital
-102	Female	[90; 100]	Hepatic encephalopathy	No	8	4	C_Cerebro_Vascular_disease	No death
-102	Female	[90; 100]	Hepatic encephalopathy	No	8	4	C_Moderate_severe_liver_disease	No death
-103	Male	[60; 70]	Alcoholic hepatitis	Yes	5	5	C_Malignancy	No death
-103	Male	[60; 70]	Alcoholic hepatitis	Yes	5	5	C_Moderate_severe_liver_disease	No death
-104	Female	[70; 80]	Other fluid overload	Yes	5	11	C_Malignancy	No death
-104	Female	[70; 80]	Other fluid overload	Yes	5	11	C_Moderate_severe_liver_disease	No death
-104	Female	[70; 80]	Other fluid overload	Yes	5	11	C_Metastatic_solid_tumor	No death
-105	Female	[50; 60]	Ascites	Yes	10	3	C_Moderate_severe_liver_disease	No death
-106	Male	[50; 60]	UGIB due to portal hypertension	Yes	7	4	C_Pepticulcer_disease	No death
-106	Male	[50; 60]	UGIB due to portal hypertension	Yes	7	4	C_Moderate_severe_liver_disease	No death
-107	Male	[50; 60]	UGIB due to portal hypertension	Yes	5	4	C_Chronic_pulmonary_disease	No death
-107	Male	[50; 60]	UGIB due to portal hypertension	Yes	5	4	C_Moderate_severe_liver_disease	No death
-108	Male	[60; 70]	UGIB due to portal hypertension	Yes	5	4	C_Chronic_pulmonary_disease	No death
-108	Male	[60; 70]	UGIB due to portal hypertension	Yes	5	4	C_Moderate_severe_liver_disease	No death
-110	Male	[50; 60]	Ascites	Yes	9	3	C_Moderate_severe_liver_disease	No death
-111	Female	[40; 50]	Ascites	No	9	3	C_Moderate_severe_liver_disease	No death
-112	Female	[60; 70]	Ascites	No	8	5	C_Malignancy	No death
-112	Female	[60; 70]	Ascites	No	8	5	C_Moderate_severe_liver_disease	No death
-113	Female	[70; 80]	UGIB due to portal hypertension	No	6	7	C_Renal_disease	No death
-113	Female	[70; 80]	UGIB due to portal hypertension	No	6	7	C_Moderate_severe_liver_disease	No death
-113	Female	[70; 80]	UGIB due to portal hypertension	No	6	7	C_Diabetes_with_without_complications	No death
-114	Female	[60; 70]	Other fluid overload	Yes	7	3	C_Congestive_Heart_Failure	No death
-114	Female	[60; 70]	Other fluid overload	Yes	7	3	C_Chronic_pulmonary_disease	No death
-114	Female	[60; 70]	Other fluid overload	Yes	7	3	C_Mild_liver_disease	No death
-115	Male	[60; 70]	SBP	Yes	10	3	C_Moderate_severe_liver_disease	No death
-116	Female	[70; 80]	Hepatic encephalopathy	No	6	5	C_Cerebro_Vascular_disease	No death
-116	Female	[70; 80]	Hepatic encephalopathy	No	6	5	C_Chronic_pulmonary_disease	No death
-116	Female	[70; 80]	Hepatic encephalopathy	No	6	5	C_Moderate_severe_liver_disease	No death
-117	Male	[50; 60]	UGIB due to portal hypertension	Yes	8	3	C_Moderate_severe_liver_disease	No death
-118	Male	[70; 80]	Ascites	Yes	8	4	C_Chronic_pulmonary_disease	No death
-118	Male	[70; 80]	Ascites	Yes	8	4	C_Moderate_severe_liver_disease	No death
-119	Male	[80; 90]	Hepatic encephalopathy	Yes	9	10	C_Pepticulcer_disease	No death
-119	Male	[80; 90]	Hepatic encephalopathy	Yes	9	10	C_Mild_liver_disease	No death
-119	Male	[80; 90]	Hepatic encephalopathy	Yes	9	10	C_Malignancy	No death
-119	Male	[80; 90]	Hepatic encephalopathy	Yes	9	10	C_Metastatic_solid_tumor	No death
-120	Male	[90; 100]	SBP	No	8	5	C_Myocardial_infarction	No death
-120	Male	[90; 100]	SBP	No	8	5	C_Congestive_Heart_Failure	No death
-120	Male	[90; 100]	SBP	No	8	5	C_Dementia	No death
-120	Male	[90; 100]	SBP	No	8	5	C_Moderate_severe_liver_disease	No death
-121	Male	[60; 70]	Other fluid overload	Yes	5	10	C_Chronic_pulmonary_disease	No death
-121	Male	[60; 70]	Other fluid overload	Yes	5	10	C_Mild_liver_disease	No death
-121	Male	[60; 70]	Other fluid overload	Yes	5	10	C_Malignancy	No death
-121	Male	[60; 70]	Other fluid overload	Yes	5	10	C_Metastatic_solid_tumor	No death
-122	Male	[50; 60]	Hepatic encephalopathy	Yes	9	3	C_Moderate_severe_liver_disease	No death
-123	Male	[70; 80]	Ascites	Yes	12	5	C_Chronic_pulmonary_disease	No death
-123	Male	[70; 80]	Ascites	Yes	12	5	C_Moderate_severe_liver_disease	No death
-123	Male	[70; 80]	Ascites	Yes	12	5	C_Diabetes_with_without_complications	No death
-124	Female	[70; 80]	Other fluid overload	No	8	4	C_Moderate_severe_liver_disease	No death
-124	Female	[70; 80]	Other fluid overload	No	8	4	C_Diabetes_with_without_complications	No death
-125	Male	[70; 80]	HCC or cholangioca.	Yes	6	6	C_Malignancy	No death
-125	Male	[70; 80]	HCC or cholangioca.	Yes	6	6	C_Moderate_severe_liver_disease	No death
-125	Male	[70; 80]	HCC or cholangioca.	Yes	6	6	C_Diabetes_with_without_complications	No death
-126	Male	[50; 60]	Hepatic encephalopathy	No	13	4	C_Chronic_pulmonary_disease	No death
-126	Male	[50; 60]	Hepatic encephalopathy	No	13	4	C_Moderate_severe_liver_disease	No death
-127	Female	[60; 70]	Hepatic encephalopathy	No	10	3	C_Moderate_severe_liver_disease	No death
-128	Male	[60; 70]	Hepatic encephalopathy	Yes	10	4	C_Moderate_severe_liver_disease	No death
-128	Male	[60; 70]	Hepatic encephalopathy	Yes	10	4	C_Diabetes_with_without_complications	No death
-129	Male	[70; 80]	HCC or cholangioca.	No	3	5	C_Malignancy	No death
-129	Male	[70; 80]	HCC or cholangioca.	No	3	5	C_Moderate_severe_liver_disease	No death
-131	Male	[70; 80]	Ascites	Yes	13	3	C_Moderate_severe_liver_disease	No death
-132	Male	[50; 60]	Hepatic encephalopathy	Yes	9	3	C_Moderate_severe_liver_disease	No death
-133	Female	[80; 90]	Other fluid overload	No	8	5	C_Congestive_Heart_Failure	No death
-133	Female	[80; 90]	Other fluid overload	No	8	5	C_Chronic_pulmonary_disease	No death
-133	Female	[80; 90]	Other fluid overload	No	8	5	C_Moderate_severe_liver_disease	No death
-134	Female	[70; 80]	SBP	Yes	11	4	C_Moderate_severe_liver_disease	No death
-134	Female	[70; 80]	SBP	Yes	11	4	C_Diabetes_with_without_complications	No death
-136	Female	[60; 70]	UGIB due to portal hypertension	No	5	5	C_Chronic_pulmonary_disease	No death
-136	Female	[60; 70]	UGIB due to portal hypertension	No	5	5	C_Moderate_severe_liver_disease	No death
-136	Female	[60; 70]	UGIB due to portal hypertension	No	5	5	C_Diabetes_with_without_complications	No death
-137	Male	[60; 70]	Hepatic encephalopathy	Yes	10	1	C_Congestive_Heart_Failure	No death
-138	Female	[60; 70]	HCC or cholangioca.	No	7	6	C_Malignancy	No death
-138	Female	[60; 70]	HCC or cholangioca.	No	7	6	C_Moderate_severe_liver_disease	No death
-138	Female	[60; 70]	HCC or cholangioca.	No	7	6	C_Diabetes_with_without_complications	No death
-139	Female	[50; 60]	Ascites	Yes	7	5	C_Chronic_pulmonary_disease	No death
-139	Female	[50; 60]	Ascites	Yes	7	5	C_Moderate_severe_liver_disease	No death
-139	Female	[50; 60]	Ascites	Yes	7	5	C_Diabetes_with_without_complications	No death
-140	Male	[50; 60]	Alcoholic hepatitis	Yes	12	5	C_Malignancy	Death_in_hospital
-140	Male	[50; 60]	Alcoholic hepatitis	Yes	12	5	C_Moderate_severe_liver_disease	Death_in_hospital
-141	Male	[50; 60]	Jaundice- as isolated presentation	Yes	10	4	C_Moderate_severe_liver_disease	No death
-141	Male	[50; 60]	Jaundice- as isolated presentation	Yes	10	4	C_Diabetes_with_without_complications	No death
-142	Male	[80; 90]	HCC or cholangioca.	No	5	12	C_Chronic_pulmonary_disease	Death_in_hospital
-142	Male	[80; 90]	HCC or cholangioca.	No	5	12	C_Malignancy	Death_in_hospital
-142	Male	[80; 90]	HCC or cholangioca.	No	5	12	C_Moderate_severe_liver_disease	Death_in_hospital
-142	Male	[80; 90]	HCC or cholangioca.	No	5	12	C_Metastatic_solid_tumor	Death_in_hospital
-143	Male	[70; 80]	Ascites	Yes	14	4	C_Pepticulcer_disease	Death_in_hospital
-143	Male	[70; 80]	Ascites	Yes	14	4	C_Moderate_severe_liver_disease	Death_in_hospital
-144	Male	[50; 60]	Ascites	Yes	13	3	C_Moderate_severe_liver_disease	Death_between_30_and_90_days
-145	Male	[50; 60]	Alcoholic hepatitis	Yes	6	1	C_Mild_liver_disease	No death
-146	Female	[70; 80]	Alcoholic hepatitis	Yes	12	3	C_Moderate_severe_liver_disease	Death_in_hospital
-147	Male	[60; 70]	UGIB due to portal hypertension	Yes	7	4	C_Pepticulcer_disease	No death
-147	Male	[60; 70]	UGIB due to portal hypertension	Yes	7	4	C_Moderate_severe_liver_disease	No death
-149	Male	[60; 70]	Hepato-hydrothorax	Yes	11	4	C_Myocardial_infarction	Death_between_30_and_90_days
-149	Male	[60; 70]	Hepato-hydrothorax	Yes	11	4	C_Moderate_severe_liver_disease	Death_between_30_and_90_days
-150	Male	[60; 70]	Other fluid overload	No	10	5	C_Malignancy	Death_in_hospital
-150	Male	[60; 70]	Other fluid overload	No	10	5	C_Moderate_severe_liver_disease	Death_in_hospital
-151	Female	[80; 90]	Other fluid overload	No	5	3	C_Cerebro_Vascular_disease	No death
-151	Female	[80; 90]	Other fluid overload	No	5	3	C_Mild_liver_disease	No death
-151	Female	[80; 90]	Other fluid overload	No	5	3	C_Diabetes_with_without_complications	No death
-152	Female	[50; 60]	Jaundice- as isolated presentation	No	11	3	C_Moderate_severe_liver_disease	No death
-153	Male	[60; 70]	Hepatic encephalopathy	Yes	7	12	C_Pepticulcer_disease	Death_in_hospital
-153	Male	[60; 70]	Hepatic encephalopathy	Yes	7	12	C_Malignancy	Death_in_hospital
-153	Male	[60; 70]	Hepatic encephalopathy	Yes	7	12	C_Moderate_severe_liver_disease	Death_in_hospital
-153	Male	[60; 70]	Hepatic encephalopathy	Yes	7	12	C_Metastatic_solid_tumor	Death_in_hospital
-154	Male	[60; 70]	Ascites	No	8	3	C_Moderate_severe_liver_disease	No death
-155	Female	[60; 70]	Ascites	Yes	11	3	C_Moderate_severe_liver_disease	No death
-156	Male	[50; 60]	Alcoholic hepatitis	Yes	6	1	C_Mild_liver_disease	No death
-157	Male	[50; 60]	UGIB due to portal hypertension	No	7	4	C_Cerebro_Vascular_disease	No death
-157	Male	[50; 60]	UGIB due to portal hypertension	No	7	4	C_Moderate_severe_liver_disease	No death
-158	Female	[70; 80]	Hepatic encephalopathy	No	8	4	C_Moderate_severe_liver_disease	No death
-158	Female	[70; 80]	Hepatic encephalopathy	No	8	4	C_Diabetes_with_without_complications	No death
-159	Male	[40; 50]	Alcoholic hepatitis	Yes	10	3	C_Moderate_severe_liver_disease	No death
-160	Female	[60; 70]	UGIB due to portal hypertension	Yes	7	5	C_Renal_disease	No death
-160	Female	[60; 70]	UGIB due to portal hypertension	Yes	7	5	C_Moderate_severe_liver_disease	No death
-161	Female	[60; 70]	HCC or cholangioca.	Yes	8	11	C_Malignancy	No death
-161	Female	[60; 70]	HCC or cholangioca.	Yes	8	11	C_Moderate_severe_liver_disease	No death
-161	Female	[60; 70]	HCC or cholangioca.	Yes	8	11	C_Metastatic_solid_tumor	No death
-162	Male	[60; 70]	SBP	Yes	10	3	C_Moderate_severe_liver_disease	No death
-165	Female	[50; 60]	UGIB due to portal hypertension	Yes	10	3	C_Moderate_severe_liver_disease	No death
-167	Male	[60; 70]	UGIB due to portal hypertension	No	12	5	C_Renal_disease	Death_in_hospital
-167	Male	[60; 70]	UGIB due to portal hypertension	No	12	5	C_Moderate_severe_liver_disease	Death_in_hospital
-168	Female	[50; 60]	Other fluid overload	No	10	9	C_Moderate_severe_liver_disease	No death
-168	Female	[50; 60]	Other fluid overload	No	10	9	C_AIDS	No death
-169	Male	[50; 60]	Hepato-hydrothorax	No	11	3	C_Moderate_severe_liver_disease	No death
-170	Male	[30; 40]	UGIB due to portal hypertension	Yes	9	3	C_Moderate_severe_liver_disease	No death
-171	Male	[50; 60]	Ascites	Yes	8	3	C_Moderate_severe_liver_disease	No death
-172	Male	[60; 70]	Ascites	Yes	11	3	C_Moderate_severe_liver_disease	No death
-173	Male	[50; 60]	SBP	Yes	11	3	C_Moderate_severe_liver_disease	No death
-175	Male	[70; 80]	UGIB due to portal hypertension	No	11	3	C_Moderate_severe_liver_disease	No death
-176	Male	[60; 70]	Ascites	No	9	3	C_Moderate_severe_liver_disease	No death
-177	Female	[50; 60]	UGIB due to portal hypertension	No	7	3	C_Moderate_severe_liver_disease	No death
-178	Male	[50; 60]	UGIB due to portal hypertension	Yes	9	4	C_Myocardial_infarction	No death
-178	Male	[50; 60]	UGIB due to portal hypertension	Yes	9	4	C_Moderate_severe_liver_disease	No death
-179	Male	[60; 70]	Ascites	No	11	3	C_Moderate_severe_liver_disease	No death
-180	Male	[60; 70]	Ascites	No	11	3	C_Moderate_severe_liver_disease	No death
-182	Male	[60; 70]	Hepatic encephalopathy	Yes	9	4	C_Moderate_severe_liver_disease	No death
-182	Male	[60; 70]	Hepatic encephalopathy	Yes	9	4	C_Diabetes_with_without_complications	No death
-183	Male	[50; 60]	Ascites	No	11	3	C_Moderate_severe_liver_disease	No death
-184	Male	[60; 70]	Ascites	No	12	3	C_Moderate_severe_liver_disease	Death_in_hospital
-185	Male	[60; 70]	UGIB due to portal hypertension	Yes	7	1	C_Mild_liver_disease	No death
-186	Female	[60; 70]	UGIB due to portal hypertension	Yes	7	3	C_Moderate_severe_liver_disease	No death
-187	Female	[60; 70]	Ascites	Yes	6	3	C_Moderate_severe_liver_disease	No death
-188	Female	[60; 70]	Ascites	No	14	3	C_Moderate_severe_liver_disease	Death_in_hospital
-189	Male	[60; 70]	UGIB due to portal hypertension	No	7	6	C_Renal_disease	No death
-189	Male	[60; 70]	UGIB due to portal hypertension	No	7	6	C_Moderate_severe_liver_disease	No death
-189	Male	[60; 70]	UGIB due to portal hypertension	No	7	6	C_Diabetes_with_without_complications	No death
-190	Female	[60; 70]	Ascites	No	7	2	C_Mild_liver_disease	No death
-190	Female	[60; 70]	Ascites	No	7	2	C_Diabetes_with_without_complications	No death
-191	Male	[50; 60]	UGIB due to portal hypertension	Yes	7	1	C_Mild_liver_disease	No death
-192	Male	[60; 70]	SBP	Yes	10	5	C_Moderate_severe_liver_disease	No death
-192	Male	[60; 70]	SBP	Yes	10	5	C_Diabetes_with_without_complications	No death
-193	Male	[50; 60]	Ascites	Yes	7	3	C_Moderate_severe_liver_disease	No death
-195	Male	[60; 70]	Ascites	Yes	8	4	C_Moderate_severe_liver_disease	No death
-195	Male	[60; 70]	Ascites	Yes	8	4	C_Diabetes_with_without_complications	No death
-196	Female	[40; 50]	Ascites	No	5	2	C_Mild_liver_disease	No death
-196	Female	[40; 50]	Ascites	No	5	2	C_Diabetes_with_without_complications	No death
-197	Female	[60; 70]	Ascites	No	10	5	C_Congestive_Heart_Failure	Death_between_30_and_90_days
-197	Female	[60; 70]	Ascites	No	10	5	C_Moderate_severe_liver_disease	Death_between_30_and_90_days
-197	Female	[60; 70]	Ascites	No	10	5	C_Diabetes_with_without_complications	Death_between_30_and_90_days
-198	Male	[50; 60]	Hepatic encephalopathy	Yes	10	3	C_Moderate_severe_liver_disease	No death
-199	Male	[50; 60]	UGIB due to portal hypertension	Yes	9	3	C_Moderate_severe_liver_disease	No death
-200	Male	[50; 60]	UGIB due to portal hypertension	Yes	11	1	C_Mild_liver_disease	Death_in_hospital
-202	Male	[60; 70]	UGIB due to portal hypertension	Yes	8	1	C_Mild_liver_disease	No death
-204	Female	[70; 80]	Ascites	No	9	6	C_Renal_disease	No death
-204	Female	[70; 80]	Ascites	No	9	6	C_Moderate_severe_liver_disease	No death
-204	Female	[70; 80]	Ascites	No	9	6	C_Diabetes_with_without_complications	No death
-206	Female	[70; 80]	Alcoholic hepatitis	Yes	9	1	C_Mild_liver_disease	No death
-207	Female	[60; 70]	Ascites	No	8	3	C_Moderate_severe_liver_disease	No death
-208	Male	[50; 60]	Ascites	Yes	7	1	C_Mild_liver_disease	No death
-209	Female	[50; 60]	UGIB due to portal hypertension	No	10	1	C_Mild_liver_disease	Death_between_30_and_90_days
-210	Female	[60; 70]	UGIB due to portal hypertension	No	7	1	C_Mild_liver_disease	No death
-211	Male	[60; 70]	Ascites	No	7	3	C_Moderate_severe_liver_disease	No death
-213	Male	[70; 80]	Ascites	Yes	9	4	C_Moderate_severe_liver_disease	No death
-213	Male	[70; 80]	Ascites	Yes	9	4	C_Diabetes_with_without_complications	No death
-214	Female	[40; 50]	Ascites	No	10	3	C_Moderate_severe_liver_disease	No death
-215	Female	[50; 60]	Hepatic encephalopathy	No	12	3	C_Moderate_severe_liver_disease	No death
-216	Male	[60; 70]	Ascites	Yes	11	1	C_Mild_liver_disease	No death
-217	Male	[50; 60]	UGIB due to portal hypertension	Yes	7	1	C_Mild_liver_disease	No death
-219	Male	[60; 70]	Ascites	Yes	8	1	C_Mild_liver_disease	No death
-220	Male	[50; 60]	UGIB due to portal hypertension	Yes	10	4	C_Moderate_severe_liver_disease	Death_between_30_and_90_days
-220	Male	[50; 60]	UGIB due to portal hypertension	Yes	10	4	C_Diabetes_with_without_complications	Death_between_30_and_90_days
-221	Male	[50; 60]	Ascites	Yes	7	1	C_Mild_liver_disease	No death
-224	Female	[60; 70]	UGIB due to portal hypertension	Yes	9	3	C_Moderate_severe_liver_disease	No death
-225	Female	[80; 90]	Hepatic encephalopathy	No	11	6	C_Congestive_Heart_Failure	No death
-225	Female	[80; 90]	Hepatic encephalopathy	No	11	6	C_Renal_disease	No death
-225	Female	[80; 90]	Hepatic encephalopathy	No	11	6	C_Moderate_severe_liver_disease	No death
-226	Male	[50; 60]	Ascites	Yes	9	1	C_Mild_liver_disease	No death
-227	Male	[60; 70]	Hepatic encephalopathy	Yes	7	1	C_Mild_liver_disease	No death
-228	Female	[80; 90]	Ascites	No	7	4	C_Moderate_severe_liver_disease	No death
-228	Female	[80; 90]	Ascites	No	7	4	C_Diabetes_with_without_complications	No death
-230	Male	[50; 60]	Ascites	Yes	10	3	C_Moderate_severe_liver_disease	No death
-231	Female	[60; 70]	Ascites	No	6	5	C_Congestive_Heart_Failure	No death
-231	Female	[60; 70]	Ascites	No	6	5	C_Mild_liver_disease	No death
-231	Female	[60; 70]	Ascites	No	6	5	C_Renal_disease	No death
-231	Female	[60; 70]	Ascites	No	6	5	C_Diabetes_with_without_complications	No death
-232	Female	[60; 70]	Ascites	Yes	9	4	C_Moderate_severe_liver_disease	No death
-232	Female	[60; 70]	Ascites	Yes	9	4	C_Diabetes_with_without_complications	No death
-234	Female	[30; 40]	Ascites	No	12	3	C_Moderate_severe_liver_disease	No death
-236	Female	[60; 70]	Hepatic encephalopathy	No	8	3	C_Moderate_severe_liver_disease	No death
-239	Female	[60; 70]	UGIB due to portal hypertension	No	7	4	C_Moderate_severe_liver_disease	No death
-239	Female	[60; 70]	UGIB due to portal hypertension	No	7	4	C_Diabetes_with_without_complications	No death
-240	Male	[60; 70]	Hepatic encephalopathy	Yes	8	3	C_Pepticulcer_disease	No death
-240	Male	[60; 70]	Hepatic encephalopathy	Yes	8	3	C_Mild_liver_disease	No death
-240	Male	[60; 70]	Hepatic encephalopathy	Yes	8	3	C_Diabetes_with_without_complications	No death
-241	Female	[60; 70]	Ascites	No	10	3	C_Moderate_severe_liver_disease	No death
-242	Male	[60; 70]	Hepatic encephalopathy	Yes	8	1	C_Mild_liver_disease	No death
-243	Female	[50; 60]	Ascites	Yes	10	1	C_Mild_liver_disease	No death
-244	Male	[60; 70]	Hepatic encephalopathy	Yes	11	3	C_Moderate_severe_liver_disease	No death
-245	Male	[70; 80]	Ascites	Yes	10	4	C_Moderate_severe_liver_disease	Death_in_first_30_days
-245	Male	[70; 80]	Ascites	Yes	10	4	C_Diabetes_with_without_complications	Death_in_first_30_days
-246	Male	[40; 50]	Other fluid overload	No	7	3	C_Moderate_severe_liver_disease	No death
-247	Male	[60; 70]	Hepatic encephalopathy	Yes	10	4	C_Moderate_severe_liver_disease	No death
-247	Male	[60; 70]	Hepatic encephalopathy	Yes	10	4	C_Diabetes_with_without_complications	No death
-248	Male	[60; 70]	Ascites	Yes	5	5	C_Congestive_Heart_Failure	No death
-248	Male	[60; 70]	Ascites	Yes	5	5	C_Mild_liver_disease	No death
-248	Male	[60; 70]	Ascites	Yes	5	5	C_Renal_disease	No death
-248	Male	[60; 70]	Ascites	Yes	5	5	C_Diabetes_with_without_complications	No death
-249	Female	[70; 80]	Ascites	No	8	1	C_Mild_liver_disease	No death
-250	Male	[60; 70]	UGIB due to portal hypertension	Yes	10	1	C_Mild_liver_disease	No death
-251	Female	[60; 70]	SBP	No	10	3	C_Moderate_severe_liver_disease	No death
-252	Male	[60; 70]	UGIB due to portal hypertension	Yes	7	3	C_Moderate_severe_liver_disease	No death
-253	Male	[70; 80]	Ascites	Yes	6	1	C_Mild_liver_disease	No death
-254	Male	[70; 80]	Hepatic encephalopathy	Yes	10	3	C_Myocardial_infarction	No death
-254	Male	[70; 80]	Hepatic encephalopathy	Yes	10	3	C_Mild_liver_disease	No death
-254	Male	[70; 80]	Hepatic encephalopathy	Yes	10	3	C_Diabetes_with_without_complications	No death
-255	Female	[50; 60]	Ascites	Yes	9	1	C_Mild_liver_disease	No death
-257	Female	[70; 80]	AKI	No	7	2	C_Mild_liver_disease	No death
-257	Female	[70; 80]	AKI	No	7	2	C_Diabetes_with_without_complications	No death
-258	Female	[70; 80]	UGIB due to portal hypertension	No	7	3	C_Moderate_severe_liver_disease	No death
-259	Male	[60; 70]	Ascites	No	7	1	C_Mild_liver_disease	No death
-260	Female	[60; 70]	Ascites	No	8	7	C_Congestive_Heart_Failure	No death
-260	Female	[60; 70]	Ascites	No	8	7	C_Renal_disease	No death
-260	Female	[60; 70]	Ascites	No	8	7	C_Moderate_severe_liver_disease	No death
-260	Female	[60; 70]	Ascites	No	8	7	C_Diabetes_with_without_complications	No death
-261	Male	[70; 80]	Ascites	Yes	7	1	C_Mild_liver_disease	No death
-262	Male	[60; 70]	UGIB due to portal hypertension	Yes	6	3	C_Moderate_severe_liver_disease	No death
-263	Female	[70; 80]	Ascites	No	11	7	C_Congestive_Heart_Failure	No death
-263	Female	[70; 80]	Ascites	No	11	7	C_Moderate_severe_liver_disease	No death
-264	Male	[50; 60]	Ascites	Yes	10	3	C_Moderate_severe_liver_disease	No death
-265	Male	[50; 60]	UGIB due to portal hypertension	No	6	3	C_Mild_liver_disease	No death
-265	Male	[50; 60]	UGIB due to portal hypertension	No	6	3	C_Renal_disease	No death
-266	Male	[60; 70]	Hepatic encephalopathy	Yes	7	1	C_Mild_liver_disease	No death
-267	Male	[50; 60]	Ascites	Yes	8	3	C_Moderate_severe_liver_disease	No death
-268	Female	[60; 70]	Ascites	Yes	7	1	C_Mild_liver_disease	No death
-269	Male	[50; 60]	Hepatic encephalopathy	Yes	9	3	C_Moderate_severe_liver_disease	Death_between_30_and_90_days
-270	Male	[70; 80]	Ascites	Yes	8	3	C_Moderate_severe_liver_disease	No death
-271	Female	[60; 70]	Ascites	Yes	14	4	C_Moderate_severe_liver_disease	No death
-271	Female	[60; 70]	Ascites	Yes	14	4	C_Diabetes_with_without_complications	No death
-274	Female	[50; 60]	UGIB due to portal hypertension	Yes	9	4	C_Pepticulcer_disease	No death
-274	Female	[50; 60]	UGIB due to portal hypertension	Yes	9	4	C_Moderate_severe_liver_disease	No death
-276	Female	[60; 70]	UGIB due to portal hypertension	Yes	7	1	C_Mild_liver_disease	No death
-277	Male	[50; 60]	UGIB due to portal hypertension	Yes	8	4	C_Moderate_severe_liver_disease	No death
-277	Male	[50; 60]	UGIB due to portal hypertension	Yes	8	4	C_Diabetes_with_without_complications	No death
-278	Female	[70; 80]	Hepatic encephalopathy	Yes	13	5	C_Malignancy	No death
-278	Female	[70; 80]	Hepatic encephalopathy	Yes	13	5	C_Moderate_severe_liver_disease	No death
-280	Male	[30; 40]	Ascites	Yes	11	1	C_Mild_liver_disease	No death
-281	Male	[90; 100]	Hepatic encephalopathy	No	7	1	C_Mild_liver_disease	No death
-282	Male	[50; 60]	Ascites	Yes	13	5	C_Renal_disease	No death
-282	Male	[50; 60]	Ascites	Yes	13	5	C_Moderate_severe_liver_disease	No death
-283	Male	[60; 70]	UGIB due to portal hypertension	Yes	8	1	C_Mild_liver_disease	No death
-284	Male	[60; 70]	Hepatic encephalopathy	Yes	11	3	C_Moderate_severe_liver_disease	No death
-285	Male	[60; 70]	Ascites	Yes	11	1	C_Mild_liver_disease	Death_in_hospital
-286	Male	[60; 70]	Hepatic encephalopathy	No	7	3	C_Moderate_severe_liver_disease	No death
-287	Female	[80; 90]	Hepatic encephalopathy	No	7	6	C_Renal_disease	No death
-287	Female	[80; 90]	Hepatic encephalopathy	No	7	6	C_Moderate_severe_liver_disease	No death
-287	Female	[80; 90]	Hepatic encephalopathy	No	7	6	C_Diabetes_with_without_complications	No death
-288	Male	[50; 60]	UGIB due to portal hypertension	Yes	7	1	C_Mild_liver_disease	No death
-290	Male	[60; 70]	Hepatic encephalopathy	Yes	11	1	C_Mild_liver_disease	No death
-291	Male	[70; 80]	Hepatic encephalopathy	Yes	7	2	C_Mild_liver_disease	No death
-291	Male	[70; 80]	Hepatic encephalopathy	Yes	7	2	C_Diabetes_with_without_complications	No death
-292	Female	[80; 90]	Ascites	No	9	3	C_Mild_liver_disease	No death
-292	Female	[80; 90]	Ascites	No	9	3	C_Renal_disease	No death
-293	Female	[60; 70]	UGIB due to portal hypertension	Yes	9	3	C_Moderate_severe_liver_disease	No death
-294	Female	[60; 70]	UGIB due to portal hypertension	No	7	1	C_Mild_liver_disease	No death
-295	Female	[60; 70]	UGIB due to portal hypertension	Yes	6	1	C_Mild_liver_disease	No death
-296	Female	[40; 50]	Ascites	Yes	12	3	C_Moderate_severe_liver_disease	No death
-297	Male	[60; 70]	UGIB due to portal hypertension	No	8	4	C_Pepticulcer_disease	No death
-297	Male	[60; 70]	UGIB due to portal hypertension	No	8	4	C_Moderate_severe_liver_disease	No death
-299	Female	[70; 80]	Hepatic encephalopathy	No	9	3	C_Moderate_severe_liver_disease	No death
-300	Male	[40; 50]	UGIB due to portal hypertension	Yes	7	1	C_Mild_liver_disease	No death
-301	Male	[60; 70]	Hepatic encephalopathy	Yes	10	1	C_Mild_liver_disease	No death
-302	Male	[50; 60]	Ascites	No	9	4	C_Moderate_severe_liver_disease	No death
-302	Male	[50; 60]	Ascites	No	9	4	C_Diabetes_with_without_complications	No death
-303	Female	[70; 80]	Hepatic encephalopathy	No	7	3	C_Rheumatological_disease	No death
-303	Female	[70; 80]	Hepatic encephalopathy	No	7	3	C_Mild_liver_disease	No death
-303	Female	[70; 80]	Hepatic encephalopathy	No	7	3	C_Diabetes_with_without_complications	No death
-304	Male	[50; 60]	Ascites	Yes	10	3	C_Moderate_severe_liver_disease	No death
-305	Male	[70; 80]	Ascites	Yes	13	3	C_Moderate_severe_liver_disease	No death
-306	Male	[60; 70]	Ascites	Yes	7	4	C_Pepticulcer_disease	No death
-306	Male	[60; 70]	Ascites	Yes	7	4	C_Moderate_severe_liver_disease	No death
-307	Male	[70; 80]	Ascites	Yes	7	5	C_Chronic_pulmonary_disease	No death
-307	Male	[70; 80]	Ascites	Yes	7	5	C_Moderate_severe_liver_disease	No death
-307	Male	[70; 80]	Ascites	Yes	7	5	C_Diabetes_with_without_complications	No death
-308	Female	[50; 60]	Hepatic encephalopathy	Yes	10	7	C_Mild_liver_disease	No death
-308	Female	[50; 60]	Hepatic encephalopathy	Yes	10	7	C_AIDS	No death
-311	Male	[80; 90]	Hepatic encephalopathy	Yes	10	1	C_Mild_liver_disease	No death
-312	Female	[50; 60]	Ascites	Yes	11	3	C_Moderate_severe_liver_disease	No death
-313	Male	[60; 70]	SBP	No	7	2	C_Chronic_pulmonary_disease	No death
-313	Male	[60; 70]	SBP	No	7	2	C_Mild_liver_disease	No death
-314	Male	[60; 70]	UGIB due to portal hypertension	Yes	8	3	C_Moderate_severe_liver_disease	No death
-315	Male	[50; 60]	Hepatic encephalopathy	Yes	8	2	C_Mild_liver_disease	No death
-315	Male	[50; 60]	Hepatic encephalopathy	Yes	8	2	C_Diabetes_with_without_complications	No death
-316	Male	[70; 80]	Ascites	Yes	9	3	C_Moderate_severe_liver_disease	No death
-317	Male	[60; 70]	Ascites	Yes	9	1	C_Mild_liver_disease	No death
-319	Female	[60; 70]	Ascites	Yes	10	1	C_Mild_liver_disease	No death
-320	Male	[50; 60]	UGIB due to portal hypertension	Yes	6	4	C_Moderate_severe_liver_disease	No death
-320	Male	[50; 60]	UGIB due to portal hypertension	Yes	6	4	C_Diabetes_with_without_complications	No death
-321	Male	[60; 70]	UGIB due to portal hypertension	Yes	14	5	C_Malignancy	Death_in_hospital
-321	Male	[60; 70]	UGIB due to portal hypertension	Yes	14	5	C_Moderate_severe_liver_disease	Death_in_hospital
-322	Female	[60; 70]	UGIB due to portal hypertension	Yes	7	6	C_Myocardial_infarction	No death
-322	Female	[60; 70]	UGIB due to portal hypertension	Yes	7	6	C_Malignancy	No death
-322	Female	[60; 70]	UGIB due to portal hypertension	Yes	7	6	C_Moderate_severe_liver_disease	No death
-323	Male	[40; 50]	Hepatic encephalopathy	Yes	9	3	C_Moderate_severe_liver_disease	No death
-324	Female	[60; 70]	UGIB due to portal hypertension	No	8	3	C_Moderate_severe_liver_disease	No death
-325	Female	[60; 70]	Hepatic encephalopathy	Yes	12	3	C_Moderate_severe_liver_disease	Death_in_hospital
-326	Male	[60; 70]	UGIB due to portal hypertension	Yes	7	1	C_Mild_liver_disease	No death
-327	Female	[60; 70]	Hepatic encephalopathy	Yes	8	4	C_Moderate_severe_liver_disease	No death
-327	Female	[60; 70]	Hepatic encephalopathy	Yes	8	4	C_Diabetes_with_without_complications	No death
-328	Female	[60; 70]	SBP	No	9	4	C_Moderate_severe_liver_disease	No death
-328	Female	[60; 70]	SBP	No	9	4	C_Diabetes_with_without_complications	No death
-329	Female	[60; 70]	UGIB due to portal hypertension	No	5	3	C_Chronic_pulmonary_disease	No death
-329	Female	[60; 70]	UGIB due to portal hypertension	No	5	3	C_Mild_liver_disease	No death
-329	Female	[60; 70]	UGIB due to portal hypertension	No	5	3	C_Diabetes_with_without_complications	No death
-330	Female	[60; 70]	Hepatic encephalopathy	No	8	4	C_Moderate_severe_liver_disease	No death
-330	Female	[60; 70]	Hepatic encephalopathy	No	8	4	C_Diabetes_with_without_complications	No death
-331	Male	[70; 80]	Hepatic encephalopathy	Yes	9	6	C_Renal_disease	No death
-331	Male	[70; 80]	Hepatic encephalopathy	Yes	9	6	C_Moderate_severe_liver_disease	No death
-331	Male	[70; 80]	Hepatic encephalopathy	Yes	9	6	C_Diabetes_with_without_complications	No death
-333	Female	[50; 60]	Hepatic encephalopathy	No	9	6	C_Renal_disease	No death
-333	Female	[50; 60]	Hepatic encephalopathy	No	9	6	C_Moderate_severe_liver_disease	No death
-333	Female	[50; 60]	Hepatic encephalopathy	No	9	6	C_Diabetes_with_without_complications	No death
-334	Male	[60; 70]	Hepatic encephalopathy	Yes	7	4	C_Moderate_severe_liver_disease	No death
-334	Male	[60; 70]	Hepatic encephalopathy	Yes	7	4	C_Diabetes_with_without_complications	No death
-335	Male	[50; 60]	Hepatic encephalopathy	Yes	14	4	C_Moderate_severe_liver_disease	No death
-335	Male	[50; 60]	Hepatic encephalopathy	Yes	14	4	C_Diabetes_with_without_complications	No death
-336	Female	[50; 60]	Ascites	Yes	12	1	C_Mild_liver_disease	Death_between_30_and_90_days
-337	Male	[70; 80]	UGIB due to portal hypertension	Yes	6	3	C_Moderate_severe_liver_disease	No death
-338	Male	[60; 70]	Ascites	Yes	11	3	C_Moderate_severe_liver_disease	No death
-339	Male	[40; 50]	UGIB due to portal hypertension	Yes	10	4	C_Moderate_severe_liver_disease	No death
-339	Male	[40; 50]	UGIB due to portal hypertension	Yes	10	4	C_Diabetes_with_without_complications	No death
-340	Male	[70; 80]	Ascites	No	6	3	C_Mild_liver_disease	No death
-340	Male	[70; 80]	Ascites	No	6	3	C_Renal_disease	No death
-341	Male	[40; 50]	Hepatic encephalopathy	No	13	3	C_Moderate_severe_liver_disease	Death_in_hospital
-342	Female	[90; 100]	Hepatic encephalopathy	No	7	5	C_Malignancy	No death
-342	Female	[90; 100]	Hepatic encephalopathy	No	7	5	C_Moderate_severe_liver_disease	No death
-343	Male	[60; 70]	UGIB due to portal hypertension	Yes	9	1	C_Mild_liver_disease	No death
-344	Female	[60; 70]	Ascites	No	8	3	C_Moderate_severe_liver_disease	No death
-345	Male	[70; 80]	Ascites	Yes	9	4	C_Chronic_pulmonary_disease	No death
-345	Male	[70; 80]	Ascites	Yes	9	4	C_Moderate_severe_liver_disease	No death
-346	Male	[60; 70]	Ascites	Yes	7	4	C_Moderate_severe_liver_disease	No death
-346	Male	[60; 70]	Ascites	Yes	7	4	C_Diabetes_with_without_complications	No death
-347	Male	[60; 70]	Hepatic encephalopathy	Yes	10	3	C_Moderate_severe_liver_disease	No death
-348	Male	[50; 60]	UGIB due to portal hypertension	Yes	6	4	C_Pepticulcer_disease	No death
-348	Male	[50; 60]	UGIB due to portal hypertension	Yes	6	4	C_Moderate_severe_liver_disease	No death
-350	Female	[60; 70]	UGIB due to portal hypertension	No	6	5	C_Myocardial_infarction	No death
-350	Female	[60; 70]	UGIB due to portal hypertension	No	6	5	C_Moderate_severe_liver_disease	No death
-350	Female	[60; 70]	UGIB due to portal hypertension	No	6	5	C_Diabetes_with_without_complications	No death
-351	Male	[70; 80]	UGIB due to portal hypertension	No	11	4	C_Moderate_severe_liver_disease	No death
-351	Male	[70; 80]	UGIB due to portal hypertension	No	11	4	C_Diabetes_with_without_complications	No death
-352	Female	[40; 50]	Ascites	No	9	4	C_Moderate_severe_liver_disease	No death
-352	Female	[40; 50]	Ascites	No	9	4	C_Diabetes_with_without_complications	No death
-353	Male	[50; 60]	UGIB due to portal hypertension	Yes	9	4	C_Moderate_severe_liver_disease	No death
-353	Male	[50; 60]	UGIB due to portal hypertension	Yes	9	4	C_Diabetes_with_without_complications	No death
-354	Male	[70; 80]	SBP	No	9	4	C_Moderate_severe_liver_disease	No death
-354	Male	[70; 80]	SBP	No	9	4	C_Diabetes_with_without_complications	No death
-355	Female	[60; 70]	Ascites	Yes	9	1	C_Mild_liver_disease	No death
-356	Male	[60; 70]	Ascites	Yes	9	4	C_Congestive_Heart_Failure	No death
-356	Male	[60; 70]	Ascites	Yes	9	4	C_Moderate_severe_liver_disease	No death
-357	Female	[70; 80]	Hepatic encephalopathy	No	9	4	C_Moderate_severe_liver_disease	No death
-357	Female	[70; 80]	Hepatic encephalopathy	No	9	4	C_Diabetes_with_without_complications	No death
-358	Male	[70; 80]	Hepatic encephalopathy	Yes	9	10	C_Myocardial_infarction	No death
-358	Male	[70; 80]	Hepatic encephalopathy	Yes	9	10	C_Moderate_severe_liver_disease	No death
-358	Male	[70; 80]	Hepatic encephalopathy	Yes	9	10	C_Metastatic_solid_tumor	No death
-360	Male	[50; 60]	UGIB due to portal hypertension	Yes	9	3	C_Moderate_severe_liver_disease	No death
-361	Male	[40; 50]	Hepatic encephalopathy	Yes	5	3	C_Moderate_severe_liver_disease	No death
-363	Female	[60; 70]	Hepatic encephalopathy	Yes	9	3	C_Moderate_severe_liver_disease	No death
-364	Male	[50; 60]	Hepatic encephalopathy	No	10	3	C_Moderate_severe_liver_disease	No death
-365	Female	[60; 70]	Hepatic encephalopathy	Yes	8	3	C_Moderate_severe_liver_disease	No death
-366	Male	[50; 60]	Hepatic encephalopathy	No	13	11	C_Malignancy	Death_in_hospital
-366	Male	[50; 60]	Hepatic encephalopathy	No	13	11	C_Moderate_severe_liver_disease	Death_in_hospital
-366	Male	[50; 60]	Hepatic encephalopathy	No	13	11	C_AIDS	Death_in_hospital
-367	Male	[60; 70]	Other fluid overload	Yes	11	3	C_Moderate_severe_liver_disease	Death_in_hospital
-368	Male	[40; 50]	UGIB due to portal hypertension	Yes	8	3	C_Moderate_severe_liver_disease	No death
-369	Female	[80; 90]	Hepatic encephalopathy	No	9	3	C_Moderate_severe_liver_disease	No death
-371	Male	[60; 70]	UGIB due to portal hypertension	Yes	6	3	C_Moderate_severe_liver_disease	No death
-372	Male	[50; 60]	Ascites	Yes	11	4	C_Chronic_pulmonary_disease	No death
-372	Male	[50; 60]	Ascites	Yes	11	4	C_Moderate_severe_liver_disease	No death
-373	Male	[60; 70]	Hepatic encephalopathy	Yes	7	0	C_None	No death
-374	Male	[60; 70]	Ascites	No	8	5	C_Renal_disease	No death
-374	Male	[60; 70]	Ascites	No	8	5	C_Moderate_severe_liver_disease	No death
-375	Male	[60; 70]	Ascites	Yes	7	5	C_Pepticulcer_disease	No death
-375	Male	[60; 70]	Ascites	Yes	7	5	C_Moderate_severe_liver_disease	No death
-375	Male	[60; 70]	Ascites	Yes	7	5	C_Diabetes_with_without_complications	No death
-376	Female	[40; 50]	Alcoholic hepatitis	Yes	12	3	C_Moderate_severe_liver_disease	No death
-377	Male	[40; 50]	UGIB due to portal hypertension	Yes	9	3	C_Moderate_severe_liver_disease	No death
-378	Male	[60; 70]	AKI	Yes	10	6	C_Pepticulcer_disease	No death
-378	Male	[60; 70]	AKI	Yes	10	6	C_Renal_disease	No death
-378	Male	[60; 70]	AKI	Yes	10	6	C_Moderate_severe_liver_disease	No death
-379	Female	[60; 70]	Alcoholic hepatitis	Yes	10	3	C_Moderate_severe_liver_disease	No death
-381	Male	[60; 70]	UGIB due to portal hypertension	Yes	7	3	C_Moderate_severe_liver_disease	No death
-382	Male	[50; 60]	Hepatic encephalopathy	Yes	7	3	C_Moderate_severe_liver_disease	No death
-383	Male	[60; 70]	Hepatic encephalopathy	Yes	9	3	C_Moderate_severe_liver_disease	No death
-384	Female	[60; 70]	UGIB due to portal hypertension	No	10	3	C_Moderate_severe_liver_disease	Death_in_hospital
-385	Male	[60; 70]	Hepatic encephalopathy	Yes	10	5	C_Pepticulcer_disease	No death
-385	Male	[60; 70]	Hepatic encephalopathy	Yes	10	5	C_Moderate_severe_liver_disease	No death
-385	Male	[60; 70]	Hepatic encephalopathy	Yes	10	5	C_Diabetes_with_without_complications	No death
-386	Male	[60; 70]	Ascites	No	8	1	C_Congestive_Heart_Failure	No death
-388	Male	[50; 60]	Ascites	Yes	8	3	C_Moderate_severe_liver_disease	No death
-389	Male	[60; 70]	UGIB due to portal hypertension	Yes	10	4	C_Moderate_severe_liver_disease	Death_between_30_and_90_days
-389	Male	[60; 70]	UGIB due to portal hypertension	Yes	10	4	C_Diabetes_with_without_complications	Death_between_30_and_90_days
-390	Male	[60; 70]	Hepatic encephalopathy	Yes	8	3	C_Moderate_severe_liver_disease	No death
-391	Female	[60; 70]	Hepatic encephalopathy	No	7	9	C_Congestive_Heart_Failure	No death
-391	Female	[60; 70]	Hepatic encephalopathy	No	7	9	C_Chronic_pulmonary_disease	No death
-391	Female	[60; 70]	Hepatic encephalopathy	No	7	9	C_Renal_disease	No death
-391	Female	[60; 70]	Hepatic encephalopathy	No	7	9	C_Moderate_severe_liver_disease	No death
-391	Female	[60; 70]	Hepatic encephalopathy	No	7	9	C_Diabetes_with_without_complications	No death
-392	Male	[60; 70]	SBP	No	8	9	C_Myocardial_infarction	No death
-392	Male	[60; 70]	SBP	No	8	9	C_Congestive_Heart_Failure	No death
-392	Male	[60; 70]	SBP	No	8	9	C_Renal_disease	No death
-392	Male	[60; 70]	SBP	No	8	9	C_Moderate_severe_liver_disease	No death
-392	Male	[60; 70]	SBP	No	8	9	C_Diabetes_with_without_complications	No death
-393	Male	[40; 50]	Alcoholic hepatitis	Yes	13	4	C_Moderate_severe_liver_disease	No death
-393	Male	[40; 50]	Alcoholic hepatitis	Yes	13	4	C_Diabetes_with_without_complications	No death
-394	Female	[60; 70]	Hepatic encephalopathy	Yes	8	4	C_Pepticulcer_disease	No death
-394	Female	[60; 70]	Hepatic encephalopathy	Yes	8	4	C_Moderate_severe_liver_disease	No death
-395	Female	[60; 70]	Hepatic encephalopathy	Yes	8	4	C_Chronic_pulmonary_disease	No death
-395	Female	[60; 70]	Hepatic encephalopathy	Yes	8	4	C_Moderate_severe_liver_disease	No death
-396	Male	[60; 70]	Hepatic encephalopathy	Yes	11	5	C_Chronic_pulmonary_disease	Death_between_30_and_90_days
-396	Male	[60; 70]	Hepatic encephalopathy	Yes	11	5	C_Moderate_severe_liver_disease	Death_between_30_and_90_days
-396	Male	[60; 70]	Hepatic encephalopathy	Yes	11	5	C_Diabetes_with_without_complications	Death_between_30_and_90_days
-397	Female	[40; 50]	UGIB due to portal hypertension	Yes	8	3	C_Moderate_severe_liver_disease	No death
-398	Male	[50; 60]	UGIB due to portal hypertension	Yes	6	4	C_Myocardial_infarction	No death
-398	Male	[50; 60]	UGIB due to portal hypertension	Yes	6	4	C_Moderate_severe_liver_disease	No death
-399	Female	[60; 70]	UGIB due to portal hypertension	Yes	7	4	C_Chronic_pulmonary_disease	No death
-399	Female	[60; 70]	UGIB due to portal hypertension	Yes	7	4	C_Moderate_severe_liver_disease	No death
-400	Male	[70; 80]	Hepatic encephalopathy	Yes	11	5	C_Malignancy	Death_in_hospital
-400	Male	[70; 80]	Hepatic encephalopathy	Yes	11	5	C_Moderate_severe_liver_disease	Death_in_hospital
-401	Male	[50; 60]	UGIB due to portal hypertension	Yes	5	4	C_Moderate_severe_liver_disease	No death
-401	Male	[50; 60]	UGIB due to portal hypertension	Yes	5	4	C_Diabetes_with_without_complications	No death
-402	Female	[60; 70]	UGIB due to portal hypertension	Yes	7	4	C_Mild_liver_disease	Death_in_hospital
-402	Female	[60; 70]	UGIB due to portal hypertension	Yes	7	4	C_Malignancy	Death_in_hospital
-402	Female	[60; 70]	UGIB due to portal hypertension	Yes	7	4	C_Diabetes_with_without_complications	Death_in_hospital
-403	Male	[60; 70]	Ascites	Yes	7	3	C_Moderate_severe_liver_disease	No death
-404	Male	[50; 60]	UGIB due to portal hypertension	Yes	7	3	C_Moderate_severe_liver_disease	No death
-405	Male	[60; 70]	Hepatic encephalopathy	Yes	9	3	C_Moderate_severe_liver_disease	No death
-406	Male	[60; 70]	Hepatic encephalopathy	Yes	8	3	C_Moderate_severe_liver_disease	No death
-408	Male	[60; 70]	Ascites	Yes	8	5	C_Congestive_Heart_Failure	No death
-408	Male	[60; 70]	Ascites	Yes	8	5	C_Chronic_pulmonary_disease	No death
-408	Male	[60; 70]	Ascites	Yes	8	5	C_Moderate_severe_liver_disease	No death
-409	Male	[80; 90]	Ascites	No	8	9	C_Moderate_severe_liver_disease	No death
-409	Male	[80; 90]	Ascites	No	8	9	C_Metastatic_solid_tumor	No death
-410	Male	[50; 60]	UGIB due to portal hypertension	Yes	6	3	C_Moderate_severe_liver_disease	No death
-411	Female	[80; 90]	HCC or cholangioca.	No	9	6	C_Myocardial_infarction	No death
-411	Female	[80; 90]	HCC or cholangioca.	No	9	6	C_Malignancy	No death
-411	Female	[80; 90]	HCC or cholangioca.	No	9	6	C_Moderate_severe_liver_disease	No death
-412	Female	[60; 70]	Hepato-hydrothorax	Yes	11	3	C_Moderate_severe_liver_disease	No death
-413	Male	[60; 70]	Alcoholic hepatitis	Yes	11	5	C_Renal_disease	No death
-413	Male	[60; 70]	Alcoholic hepatitis	Yes	11	5	C_Moderate_severe_liver_disease	No death
-414	Male	[50; 60]	Hepatic encephalopathy	Yes	9	3	C_Moderate_severe_liver_disease	Death_in_hospital
-415	Female	[50; 60]	Hepatic encephalopathy	Yes	9	3	C_Moderate_severe_liver_disease	Death_in_hospital
-417	Female	[70; 80]	Ascites	No	7	3	C_Moderate_severe_liver_disease	No death
-418	Male	[70; 80]	Jaundice- as isolated presentation	Yes	11	6	C_Malignancy	Death_in_hospital
-418	Male	[70; 80]	Jaundice- as isolated presentation	Yes	11	6	C_Moderate_severe_liver_disease	Death_in_hospital
-418	Male	[70; 80]	Jaundice- as isolated presentation	Yes	11	6	C_Diabetes_with_without_complications	Death_in_hospital
-419	Female	[60; 70]	Other fluid overload	Yes	10	3	C_Moderate_severe_liver_disease	No death
-420	Female	[50; 60]	Alcoholic hepatitis	Yes	11	3	C_Moderate_severe_liver_disease	Death_in_hospital
-421	Female	[60; 70]	Ascites	No	7	3	C_Moderate_severe_liver_disease	No death
-422	Male	[60; 70]	SBP	Yes	11	3	C_Moderate_severe_liver_disease	Death_between_30_and_90_days
-423	Male	[60; 70]	Hepatic encephalopathy	No	8	6	C_Congestive_Heart_Failure	No death
-423	Male	[60; 70]	Hepatic encephalopathy	No	8	6	C_Chronic_pulmonary_disease	No death
-423	Male	[60; 70]	Hepatic encephalopathy	No	8	6	C_Renal_disease	No death
-423	Male	[60; 70]	Hepatic encephalopathy	No	8	6	C_Diabetes_with_without_complications	No death
-424	Male	[40; 50]	Hepatic encephalopathy	Yes	6	3	C_Moderate_severe_liver_disease	No death
-425	Male	[60; 70]	Hepatic encephalopathy	Yes	8	4	C_Chronic_pulmonary_disease	No death
-425	Male	[60; 70]	Hepatic encephalopathy	Yes	8	4	C_Moderate_severe_liver_disease	No death
-427	Male	[50; 60]	Ascites	Yes	9	9	C_Myocardial_infarction	No death
-427	Male	[50; 60]	Ascites	Yes	9	9	C_Pepticulcer_disease	No death
-427	Male	[50; 60]	Ascites	Yes	9	9	C_Malignancy	No death
-427	Male	[50; 60]	Ascites	Yes	9	9	C_Moderate_severe_liver_disease	No death
-427	Male	[50; 60]	Ascites	Yes	9	9	C_Diabetes_with_without_complications	No death
-428	Male	[60; 70]	Other fluid overload	No	10	3	C_Moderate_severe_liver_disease	No death
-429	Female	[60; 70]	Ascites	No	11	1	C_Diabetes_with_without_complications	No death
-430	Female	[60; 70]	Ascites	Yes	9	1	C_Mild_liver_disease	No death
-431	Male	[70; 80]	Ascites	No	9	10	C_Moderate_severe_liver_disease	No death
-431	Male	[70; 80]	Ascites	No	9	10	C_Metastatic_solid_tumor	No death
-431	Male	[70; 80]	Ascites	No	9	10	C_Diabetes_with_without_complications	No death
-432	Male	[60; 70]	Ascites	Yes	10	3	C_Moderate_severe_liver_disease	No death
-433	Female	[60; 70]	Ascites	Yes	9	10	C_Moderate_severe_liver_disease	Death_in_first_30_days
-433	Female	[60; 70]	Ascites	Yes	9	10	C_Metastatic_solid_tumor	Death_in_first_30_days
-433	Female	[60; 70]	Ascites	Yes	9	10	C_Diabetes_with_without_complications	Death_in_first_30_days
-434	Male	[70; 80]	Hepatic encephalopathy	No	7	3	C_Moderate_severe_liver_disease	No death
-435	Male	[60; 70]	UGIB due to portal hypertension	Yes	9	4	C_Chronic_pulmonary_disease	No death
-435	Male	[60; 70]	UGIB due to portal hypertension	Yes	9	4	C_Moderate_severe_liver_disease	No death
-437	Male	[70; 80]	Hepatic encephalopathy	Yes	8	10	C_Cerebro_Vascular_disease	Death_in_hospital
-437	Male	[70; 80]	Hepatic encephalopathy	Yes	8	10	C_Moderate_severe_liver_disease	Death_in_hospital
-437	Male	[70; 80]	Hepatic encephalopathy	Yes	8	10	C_Metastatic_solid_tumor	Death_in_hospital
-438	Male	[60; 70]	Alcoholic hepatitis	Yes	9	1	C_Mild_liver_disease	Death_in_hospital
-439	Male	[60; 70]	Ascites	Yes	6	2	C_Pepticulcer_disease	No death
-439	Male	[60; 70]	Ascites	Yes	6	2	C_Mild_liver_disease	No death
-440	Female	[60; 70]	Hepatic encephalopathy	No	8	3	C_Moderate_severe_liver_disease	No death
-441	Male	[60; 70]	Alcoholic hepatitis	Yes	6	3	C_Moderate_severe_liver_disease	No death
-442	Female	[50; 60]	Ascites	Yes	7	3	C_Moderate_severe_liver_disease	No death
-443	Female	[60; 70]	UGIB due to portal hypertension	Yes	9	4	C_Chronic_pulmonary_disease	Death_in_hospital
-443	Female	[60; 70]	UGIB due to portal hypertension	Yes	9	4	C_Moderate_severe_liver_disease	Death_in_hospital
-444	Male	[60; 70]	Hepatic encephalopathy	Yes	8	3	C_Moderate_severe_liver_disease	No death
-445	Male	[70; 80]	Hepatic encephalopathy	Yes	6	1	C_Mild_liver_disease	Death_in_hospital
-446	Female	[50; 60]	Ascites	Yes	8	3	C_Moderate_severe_liver_disease	No death
-447	Female	[70; 80]	Ascites	No	9	4	C_Cerebro_Vascular_disease	No death
-447	Female	[70; 80]	Ascites	No	9	4	C_Moderate_severe_liver_disease	No death
-448	Female	[60; 70]	Hepatic encephalopathy	Yes	10	3	C_Moderate_severe_liver_disease	Death_in_hospital
-449	Female	[70; 80]	Ascites	Yes	6	3	C_Moderate_severe_liver_disease	No death
-451	Male	[60; 70]	Ascites	Yes	10	6	C_Chronic_pulmonary_disease	Death_in_hospital
-451	Male	[60; 70]	Ascites	Yes	10	6	C_Malignancy	Death_in_hospital
-451	Male	[60; 70]	Ascites	Yes	10	6	C_Moderate_severe_liver_disease	Death_in_hospital
-452	Male	[50; 60]	HCC or cholangioca.	No	6	4	C_Moderate_severe_liver_disease	No death
-452	Male	[50; 60]	HCC or cholangioca.	No	6	4	C_Diabetes_with_without_complications	No death
-453	Male	[30; 40]	Alcoholic hepatitis	Yes	9	4	C_Cerebro_Vascular_disease	No death
-453	Male	[30; 40]	Alcoholic hepatitis	Yes	9	4	C_Moderate_severe_liver_disease	No death
-454	Female	[50; 60]	Hepatic encephalopathy	Yes	11	3	C_Moderate_severe_liver_disease	Death_in_hospital
-455	Male	[60; 70]	UGIB due to portal hypertension	No	5	3	C_Moderate_severe_liver_disease	No death
-456	Male	[60; 70]	Alcoholic hepatitis	Yes	12	3	C_Moderate_severe_liver_disease	No death
-457	Male	[60; 70]	Hepatic encephalopathy	Yes	7	3	C_Moderate_severe_liver_disease	No death
-458	Female	[60; 70]	UGIB due to portal hypertension	No	6	3	C_Moderate_severe_liver_disease	No death
-459	Male	[60; 70]	Ascites	Yes	8	3	C_Moderate_severe_liver_disease	Death_in_hospital
-460	Male	[60; 70]	UGIB due to portal hypertension	Yes	5	5	C_Pepticulcer_disease	No death
-460	Male	[60; 70]	UGIB due to portal hypertension	Yes	5	5	C_Moderate_severe_liver_disease	No death
-460	Male	[60; 70]	UGIB due to portal hypertension	Yes	5	5	C_Diabetes_with_without_complications	No death
-461	Male	[70; 80]	HCC or cholangioca.	No	5	11	C_Moderate_severe_liver_disease	No death
-461	Male	[70; 80]	HCC or cholangioca.	No	5	11	C_Metastatic_solid_tumor	No death
-461	Male	[70; 80]	HCC or cholangioca.	No	5	11	C_Diabetes_with_without_complications	No death
-462	Male	[50; 60]	UGIB due to portal hypertension	Yes	6	4	C_Moderate_severe_liver_disease	No death
-462	Male	[50; 60]	UGIB due to portal hypertension	Yes	6	4	C_Diabetes_with_without_complications	No death
-464	Male	[60; 70]	Hepatic encephalopathy	Yes	10	3	C_Moderate_severe_liver_disease	No death
-465	Male	[60; 70]	SBP	No	12	3	C_Moderate_severe_liver_disease	No death
-466	Male	[60; 70]	UGIB due to portal hypertension	Yes	8	4	C_Chronic_pulmonary_disease	No death
-466	Male	[60; 70]	UGIB due to portal hypertension	Yes	8	4	C_Moderate_severe_liver_disease	No death
-467	Female	[60; 70]	Hepatic encephalopathy	No	8	6	C_Malignancy	No death
-467	Female	[60; 70]	Hepatic encephalopathy	No	8	6	C_Moderate_severe_liver_disease	No death
-467	Female	[60; 70]	Hepatic encephalopathy	No	8	6	C_Diabetes_with_without_complications	No death
-468	Male	[60; 70]	UGIB due to portal hypertension	Yes	5	3	C_Moderate_severe_liver_disease	No death
-469	Male	[70; 80]	UGIB due to portal hypertension	Yes	7	3	C_Moderate_severe_liver_disease	No death
-470	Female	[70; 80]	Alcoholic hepatitis	Yes	11	3	C_Moderate_severe_liver_disease	No death
-471	Female	[50; 60]	SBP	No	8	4	C_Rheumatological_disease	No death
-471	Female	[50; 60]	SBP	No	8	4	C_Moderate_severe_liver_disease	No death
-472	Female	[50; 60]	UGIB due to portal hypertension	Yes	9	3	C_Moderate_severe_liver_disease	No death
-473	Male	[40; 50]	UGIB due to portal hypertension	Yes	6	3	C_Moderate_severe_liver_disease	No death
-474	Male	[60; 70]	Ascites	Yes	5	6	C_Congestive_Heart_Failure	No death
-474	Male	[60; 70]	Ascites	Yes	5	6	C_Chronic_pulmonary_disease	No death
-474	Male	[60; 70]	Ascites	Yes	5	6	C_Pepticulcer_disease	No death
-474	Male	[60; 70]	Ascites	Yes	5	6	C_Moderate_severe_liver_disease	No death
-475	Male	[60; 70]	UGIB due to portal hypertension	Yes	5	1	C_Mild_liver_disease	No death
-476	Female	[70; 80]	Ascites	Yes	10	5	C_Malignancy	No death
-476	Female	[70; 80]	Ascites	Yes	10	5	C_Moderate_severe_liver_disease	No death
-477	Male	[70; 80]	SBP	No	8	8	C_Congestive_Heart_Failure	No death
-477	Male	[70; 80]	SBP	No	8	8	C_Renal_disease	No death
-477	Male	[70; 80]	SBP	No	8	8	C_Moderate_severe_liver_disease	No death
-477	Male	[70; 80]	SBP	No	8	8	C_Diabetes_with_without_complications	No death
-479	Male	[50; 60]	Alcoholic hepatitis	Yes	10	0	C_None	No death
-480	Male	[60; 70]	SBP	Yes	9	4	C_Chronic_pulmonary_disease	No death
-480	Male	[60; 70]	SBP	Yes	9	4	C_Moderate_severe_liver_disease	No death
-481	Male	[60; 70]	Ascites	Yes	6	3	C_Moderate_severe_liver_disease	No death
-482	Male	[60; 70]	SBP	Yes	8	4	C_Myocardial_infarction	No death
-482	Male	[60; 70]	SBP	Yes	8	4	C_Moderate_severe_liver_disease	No death
-483	Male	[50; 60]	Hepatic encephalopathy	Yes	7	4	C_Moderate_severe_liver_disease	No death
-483	Male	[50; 60]	Hepatic encephalopathy	Yes	7	4	C_Diabetes_with_without_complications	No death
-484	Female	[70; 80]	Hepatic encephalopathy	Yes	8	11	C_Chronic_pulmonary_disease	No death
-484	Female	[70; 80]	Hepatic encephalopathy	Yes	8	11	C_Pepticulcer_disease	No death
-484	Female	[70; 80]	Hepatic encephalopathy	Yes	8	11	C_Moderate_severe_liver_disease	No death
-484	Female	[70; 80]	Hepatic encephalopathy	Yes	8	11	C_Metastatic_solid_tumor	No death
-485	Male	[50; 60]	UGIB due to portal hypertension	Yes	6	3	C_Moderate_severe_liver_disease	No death
-486	Male	[60; 70]	UGIB due to portal hypertension	No	9	6	C_Myocardial_infarction	No death
-486	Male	[60; 70]	UGIB due to portal hypertension	No	9	6	C_Chronic_pulmonary_disease	No death
-486	Male	[60; 70]	UGIB due to portal hypertension	No	9	6	C_Moderate_severe_liver_disease	No death
-486	Male	[60; 70]	UGIB due to portal hypertension	No	9	6	C_Diabetes_with_without_complications	No death
-487	Male	[60; 70]	Hepatic encephalopathy	Yes	6	6	C_Cerebro_Vascular_disease	No death
-487	Male	[60; 70]	Hepatic encephalopathy	Yes	6	6	C_Moderate_severe_liver_disease	No death
-487	Male	[60; 70]	Hepatic encephalopathy	Yes	6	6	C_Diabetes_with_without_complications	No death
-488	Male	[60; 70]	Ascites	Yes	6	3	C_Moderate_severe_liver_disease	No death
-489	Male	[70; 80]	Hepatic encephalopathy	No	8	6	C_Renal_disease	No death
-489	Male	[70; 80]	Hepatic encephalopathy	No	8	6	C_Moderate_severe_liver_disease	No death
-489	Male	[70; 80]	Hepatic encephalopathy	No	8	6	C_Diabetes_with_without_complications	No death
-491	Male	[70; 80]	Ascites	Yes	8	7	C_Renal_disease	No death
-491	Male	[70; 80]	Ascites	Yes	8	7	C_Moderate_severe_liver_disease	No death
-491	Male	[70; 80]	Ascites	Yes	8	7	C_Diabetes_with_without_complications	No death
-492	Male	[50; 60]	Hepatic encephalopathy	No	9	5	C_Pepticulcer_disease	No death
-492	Male	[50; 60]	Hepatic encephalopathy	No	9	5	C_Moderate_severe_liver_disease	No death
-492	Male	[50; 60]	Hepatic encephalopathy	No	9	5	C_Diabetes_with_without_complications	No death
-493	Female	[50; 60]	Alcoholic hepatitis	Yes	8	4	C_Chronic_pulmonary_disease	No death
-493	Female	[50; 60]	Alcoholic hepatitis	Yes	8	4	C_Moderate_severe_liver_disease	No death
-494	Male	[60; 70]	Hepatic encephalopathy	Yes	8	4	C_Pepticulcer_disease	No death
-494	Male	[60; 70]	Hepatic encephalopathy	Yes	8	4	C_Moderate_severe_liver_disease	No death
-495	Male	[60; 70]	SBP	Yes	11	5	C_Malignancy	Death_between_30_and_90_days
-495	Male	[60; 70]	SBP	Yes	11	5	C_Moderate_severe_liver_disease	Death_between_30_and_90_days
-497	Female	[70; 80]	Hepatic encephalopathy	Yes	10	11	C_Cerebro_Vascular_disease	Death_in_first_30_days
-497	Female	[70; 80]	Hepatic encephalopathy	Yes	10	11	C_Pepticulcer_disease	Death_in_first_30_days
-497	Female	[70; 80]	Hepatic encephalopathy	Yes	10	11	C_Moderate_severe_liver_disease	Death_in_first_30_days
-497	Female	[70; 80]	Hepatic encephalopathy	Yes	10	11	C_AIDS	Death_in_first_30_days
-498	Female	[50; 60]	Ascites	Yes	13	3	C_Moderate_severe_liver_disease	Death_in_hospital
-500	Male	[60; 70]	Other fluid overload	Yes	11	3	C_Moderate_severe_liver_disease	No death
-501	Male	[50; 60]	AKI	No	6	6	C_Congestive_Heart_Failure	No death
-501	Male	[50; 60]	AKI	No	6	6	C_Moderate_severe_liver_disease	No death
-501	Male	[50; 60]	AKI	No	6	6	C_Diabetes_with_without_complications	No death
-502	Male	[60; 70]	Ascites	Yes	7	4	C_Moderate_severe_liver_disease	No death
-502	Male	[60; 70]	Ascites	Yes	7	4	C_Diabetes_with_without_complications	No death
-503	Female	[60; 70]	Ascites	Yes	9	9	C_Moderate_severe_liver_disease	No death
-503	Female	[60; 70]	Ascites	Yes	9	9	C_AIDS	No death
-504	Male	[60; 70]	Ascites	No	8	4	C_Congestive_Heart_Failure	No death
-504	Male	[60; 70]	Ascites	No	8	4	C_Moderate_severe_liver_disease	No death
-505	Male	[60; 70]	Hepatic encephalopathy	Yes	10	3	C_Moderate_severe_liver_disease	No death
-506	Male	[70; 80]	HCC or cholangioca.	No	7	3	C_Mild_liver_disease	No death
-506	Male	[70; 80]	HCC or cholangioca.	No	7	3	C_Malignancy	No death
-507	Female	[60; 70]	Hepatic encephalopathy	No	11	10	C_Moderate_severe_liver_disease	No death
-507	Female	[60; 70]	Hepatic encephalopathy	No	11	10	C_Metastatic_solid_tumor	No death
-507	Female	[60; 70]	Hepatic encephalopathy	No	11	10	C_Diabetes_with_without_complications	No death
-509	Male	[50; 60]	UGIB due to portal hypertension	Yes	5	1	C_Mild_liver_disease	No death
-510	Male	[60; 70]	Ascites	Yes	12	3	C_Moderate_severe_liver_disease	No death
-513	Male	[70; 80]	Ascites	No	10	4	C_Myocardial_infarction	No death
-513	Male	[70; 80]	Ascites	No	10	4	C_Moderate_severe_liver_disease	No death
-515	Male	[40; 50]	Hepatic encephalopathy	No	10	9	C_Moderate_severe_liver_disease	No death
-515	Male	[40; 50]	Hepatic encephalopathy	No	10	9	C_AIDS	No death
-516	Male	[60; 70]	Ascites	Yes	10	3	C_Moderate_severe_liver_disease	No death
-517	Female	[70; 80]	Ascites	Yes	13	3	C_Moderate_severe_liver_disease	Death_in_hospital
-518	Male	[60; 70]	Ascites	No	9	1	C_Mild_liver_disease	No death
-519	Male	[50; 60]	UGIB due to portal hypertension	Yes	9	3	C_Moderate_severe_liver_disease	No death
-520	Male	[40; 50]	Hepatic encephalopathy	Yes	12	3	C_Moderate_severe_liver_disease	No death
-521	Male	[60; 70]	Hepatic encephalopathy	Yes	11	5	C_Dementia	No death
-521	Male	[60; 70]	Hepatic encephalopathy	Yes	11	5	C_Renal_disease	No death
-521	Male	[60; 70]	Hepatic encephalopathy	Yes	11	5	C_Moderate_severe_liver_disease	No death
-523	Female	[40; 50]	Ascites	Yes	11	4	C_Moderate_severe_liver_disease	No death
-523	Female	[40; 50]	Ascites	Yes	11	4	C_Diabetes_with_without_complications	No death
-525	Male	[60; 70]	HCC or cholangioca.	No	5	9	C_Moderate_severe_liver_disease	No death
-525	Male	[60; 70]	HCC or cholangioca.	No	5	9	C_Metastatic_solid_tumor	No death
-528	Male	[50; 60]	AKI	Yes	11	4	C_Congestive_Heart_Failure	Death_in_hospital
-528	Male	[50; 60]	AKI	Yes	11	4	C_Moderate_severe_liver_disease	Death_in_hospital
-529	Male	[60; 70]	Ascites	Yes	8	3	C_Moderate_severe_liver_disease	No death
-530	Male	[50; 60]	Ascites	Yes	12	3	C_Moderate_severe_liver_disease	No death
-531	Female	[60; 70]	Ascites	Yes	8	3	C_Moderate_severe_liver_disease	No death
-533	Male	[80; 90]	Ascites	No	9	5	C_Malignancy	No death
-533	Male	[80; 90]	Ascites	No	9	5	C_Moderate_severe_liver_disease	No death
-534	Male	[70; 80]	HCC or cholangioca.	Yes	8	6	C_Malignancy	No death
-534	Male	[70; 80]	HCC or cholangioca.	Yes	8	6	C_Moderate_severe_liver_disease	No death
-534	Male	[70; 80]	HCC or cholangioca.	Yes	8	6	C_Diabetes_with_without_complications	No death
-536	Male	[40; 50]	HCC or cholangioca.	Yes	8	5	C_Malignancy	No death
-536	Male	[40; 50]	HCC or cholangioca.	Yes	8	5	C_Moderate_severe_liver_disease	No death
-537	Male	[70; 80]	HCC or cholangioca.	No	7	10	C_Moderate_severe_liver_disease	No death
-537	Male	[70; 80]	HCC or cholangioca.	No	7	10	C_Metastatic_solid_tumor	No death
-537	Male	[70; 80]	HCC or cholangioca.	No	7	10	C_Diabetes_with_without_complications	No death
-538	Male	[60; 70]	Ascites	Yes	11	3	C_Moderate_severe_liver_disease	Death_between_30_and_90_days
-539	Male	[70; 80]	SBP	Yes	12	3	C_Moderate_severe_liver_disease	Death_between_30_and_90_days
-540	Male	[60; 70]	HCC or cholangioca.	Yes	7	5	C_Malignancy	No death
-540	Male	[60; 70]	HCC or cholangioca.	Yes	7	5	C_Moderate_severe_liver_disease	No death
-541	Female	[40; 50]	Alcoholic hepatitis	Yes	10	3	C_Moderate_severe_liver_disease	Death_between_30_and_90_days
-543	Male	[70; 80]	Ascites	Yes	10	6	C_Malignancy	No death
-543	Male	[70; 80]	Ascites	Yes	10	6	C_Moderate_severe_liver_disease	No death
-543	Male	[70; 80]	Ascites	Yes	10	6	C_Diabetes_with_without_complications	No death
-544	Female	[70; 80]	AKI	Yes	8	9	C_Moderate_severe_liver_disease	No death
-544	Female	[70; 80]	AKI	Yes	8	9	C_AIDS	No death
-545	Male	[40; 50]	Alcoholic hepatitis	Yes	9	3	C_Moderate_severe_liver_disease	No death
-546	Male	[60; 70]	Hepatic encephalopathy	Yes	11	5	C_Renal_disease	Death_in_hospital
-546	Male	[60; 70]	Hepatic encephalopathy	Yes	11	5	C_Moderate_severe_liver_disease	Death_in_hospital
-547	Female	[80; 90]	Ascites	No	9	3	C_Moderate_severe_liver_disease	No death
-552	Male	[50; 60]	UGIB due to portal hypertension	Yes	8	3	C_Moderate_severe_liver_disease	No death
-553	Male	[60; 70]	Alcoholic hepatitis	Yes	10	3	C_Moderate_severe_liver_disease	No death
-556	Female	[70; 80]	AKI	Yes	6	2	C_Chronic_pulmonary_disease	No death
-556	Female	[70; 80]	AKI	Yes	6	2	C_Mild_liver_disease	No death
-557	Male	[40; 50]	UGIB due to portal hypertension	Yes	8	3	C_Moderate_severe_liver_disease	No death
-559	Male	[60; 70]	Ascites	Yes	6	4	C_Pepticulcer_disease	No death
-559	Male	[60; 70]	Ascites	Yes	6	4	C_Moderate_severe_liver_disease	No death
-560	Male	[70; 80]	AKI	No	6	3	C_Myocardial_infarction	No death
-560	Male	[70; 80]	AKI	No	6	3	C_Congestive_Heart_Failure	No death
-560	Male	[70; 80]	AKI	No	6	3	C_Diabetes_with_without_complications	No death
-562	Male	[70; 80]	AKI	Yes	6	1	C_Mild_liver_disease	No death
-563	Female	[60; 70]	Ascites	No	11	6	C_Renal_disease	No death
-563	Female	[60; 70]	Ascites	No	11	6	C_Moderate_severe_liver_disease	No death
-563	Female	[60; 70]	Ascites	No	11	6	C_Diabetes_with_without_complications	No death
-565	Male	[50; 60]	UGIB due to portal hypertension	Yes	7	6	C_Pepticulcer_disease	No death
-565	Male	[50; 60]	UGIB due to portal hypertension	Yes	7	6	C_Moderate_severe_liver_disease	No death
-565	Male	[50; 60]	UGIB due to portal hypertension	Yes	7	6	C_Diabetes_with_without_complications	No death
-566	Male	[60; 70]	Ascites	Yes	8	3	C_Moderate_severe_liver_disease	No death
-567	Male	[70; 80]	Hepatic encephalopathy	Yes	14	3	C_Moderate_severe_liver_disease	No death
-569	Female	[90; 100]	Hepatic encephalopathy	No	8	3	C_Moderate_severe_liver_disease	No death
-571	Male	[60; 70]	Ascites	Yes	6	3	C_Congestive_Heart_Failure	No death
-571	Male	[60; 70]	Ascites	Yes	6	3	C_Chronic_pulmonary_disease	No death
-571	Male	[60; 70]	Ascites	Yes	6	3	C_Mild_liver_disease	No death
-572	Female	[70; 80]	Ascites	No	7	4	C_Moderate_severe_liver_disease	No death
-572	Female	[70; 80]	Ascites	No	7	4	C_Diabetes_with_without_complications	No death
-573	Female	[80; 90]	Ascites	No	8	4	C_Congestive_Heart_Failure	No death
-573	Female	[80; 90]	Ascites	No	8	4	C_Moderate_severe_liver_disease	No death
-576	Female	[70; 80]	Jaundice- as isolated presentation	No	9	7	C_Mild_liver_disease	No death
-576	Female	[70; 80]	Jaundice- as isolated presentation	No	9	7	C_Metastatic_solid_tumor	No death
-578	Male	[50; 60]	Ascites	Yes	9	3	C_Moderate_severe_liver_disease	No death
-579	Female	[70; 80]	Hepato-hydrothorax	No	11	4	C_Chronic_pulmonary_disease	No death
-579	Female	[70; 80]	Hepato-hydrothorax	No	11	4	C_Moderate_severe_liver_disease	No death
-580	Male	[50; 60]	HCC or cholangioca.	No	9	5	C_Malignancy	No death
-580	Male	[50; 60]	HCC or cholangioca.	No	9	5	C_Moderate_severe_liver_disease	No death
-583	Male	[60; 70]	Ascites	Yes	11	3	C_Moderate_severe_liver_disease	No death
-584	Male	[50; 60]	Ascites	Yes	8	3	C_Moderate_severe_liver_disease	No death
-585	Male	[60; 70]	Ascites	Yes	9	3	C_Moderate_severe_liver_disease	No death
-586	Male	[60; 70]	Ascites	Yes	9	5	C_Malignancy	Death_in_first_30_days
-586	Male	[60; 70]	Ascites	Yes	9	5	C_Moderate_severe_liver_disease	Death_in_first_30_days
-587	Female	[50; 60]	Ascites	No	8	3	C_Moderate_severe_liver_disease	No death
-588	Female	[40; 50]	Alcoholic hepatitis	Yes	10	1	C_Mild_liver_disease	Death_in_hospital
-589	Female	[60; 70]	AKI	No	5	4	C_Moderate_severe_liver_disease	No death
-589	Female	[60; 70]	AKI	No	5	4	C_Diabetes_with_without_complications	No death
-591	Male	[60; 70]	Hepatic encephalopathy	Yes	8	3	C_Moderate_severe_liver_disease	No death
-592	Male	[70; 80]	Ascites	Yes	11	3	C_Moderate_severe_liver_disease	No death
-594	Female	[60; 70]	Ascites	Yes	8	3	C_Moderate_severe_liver_disease	No death
-596	Male	[40; 50]	AKI	No	7	2	C_Congestive_Heart_Failure	No death
-596	Male	[40; 50]	AKI	No	7	2	C_Mild_liver_disease	No death
-597	Female	[60; 70]	Hepatic encephalopathy	No	12	3	C_Moderate_severe_liver_disease	No death
-599	Male	[60; 70]	Ascites	Yes	6	4	C_Moderate_severe_liver_disease	No death
-599	Male	[60; 70]	Ascites	Yes	6	4	C_Diabetes_with_without_complications	No death
-602	Male	[60; 70]	AKI	No	7	7	C_Renal_disease	No death
-602	Male	[60; 70]	AKI	No	7	7	C_Moderate_severe_liver_disease	No death
-602	Male	[60; 70]	AKI	No	7	7	C_Diabetes_with_without_complications	No death
-604	Male	[70; 80]	SBP	No	11	6	C_Chronic_pulmonary_disease	No death
-604	Male	[70; 80]	SBP	No	11	6	C_Malignancy	No death
-604	Male	[70; 80]	SBP	No	11	6	C_Moderate_severe_liver_disease	No death
-605	Male	[40; 50]	Alcoholic hepatitis	Yes	7	3	C_Moderate_severe_liver_disease	No death
-606	Male	[50; 60]	SBP	Yes	7	11	C_Renal_disease	No death
-606	Male	[50; 60]	SBP	Yes	7	11	C_Moderate_severe_liver_disease	No death
-606	Male	[50; 60]	SBP	Yes	7	11	C_AIDS	No death
-607	Female	[60; 70]	UGIB due to portal hypertension	No	5	4	C_Moderate_severe_liver_disease	No death
-607	Female	[60; 70]	UGIB due to portal hypertension	No	5	4	C_Diabetes_with_without_complications	No death
-608	Female	[80; 90]	Ascites	No	9	7	C_Renal_disease	Death_between_30_and_90_days
-608	Female	[80; 90]	Ascites	No	9	7	C_Moderate_severe_liver_disease	Death_between_30_and_90_days
-608	Female	[80; 90]	Ascites	No	9	7	C_Diabetes_with_without_complications	Death_between_30_and_90_days
-609	Male	[50; 60]	Ascites	Yes	9	3	C_Moderate_severe_liver_disease	No death
-610	Male	[50; 60]	AKI	Yes	8	3	C_Moderate_severe_liver_disease	No death
-611	Female	[70; 80]	Ascites	No	9	4	C_Congestive_Heart_Failure	No death
-611	Female	[70; 80]	Ascites	No	9	4	C_Moderate_severe_liver_disease	No death
-616	Male	[50; 60]	Alcoholic hepatitis	Yes	9	3	C_Moderate_severe_liver_disease	No death
-617	Female	[60; 70]	AKI	Yes	9	5	C_Malignancy	No death
-617	Female	[60; 70]	AKI	Yes	9	5	C_Moderate_severe_liver_disease	No death
-618	Male	[70; 80]	Other fluid overload	Yes	7	2	C_Mild_liver_disease	No death
-618	Male	[70; 80]	Other fluid overload	Yes	7	2	C_Diabetes_with_without_complications	No death
-619	Male	[60; 70]	Hepatic encephalopathy	Yes	15	9	C_Moderate_severe_liver_disease	Death_between_30_and_90_days
-619	Male	[60; 70]	Hepatic encephalopathy	Yes	15	9	C_Metastatic_solid_tumor	Death_between_30_and_90_days
-620	Male	[70; 80]	Hepatic encephalopathy	Yes	10	5	C_Malignancy	Death_in_first_30_days
-620	Male	[70; 80]	Hepatic encephalopathy	Yes	10	5	C_Moderate_severe_liver_disease	Death_in_first_30_days
-621	Male	[40; 50]	UGIB due to portal hypertension	Yes	5	3	C_Moderate_severe_liver_disease	Death_in_first_30_days
-622	Female	[60; 70]	SBP	Yes	13	5	C_Malignancy	No death
-622	Female	[60; 70]	SBP	Yes	13	5	C_Moderate_severe_liver_disease	No death
-623	Female	[60; 70]	Hepatic encephalopathy	Yes	10	3	C_Moderate_severe_liver_disease	Death_in_hospital
-624	Female	[90; 100]	Ascites	No	9	3	C_Moderate_severe_liver_disease	No death
-625	Male	[60; 70]	Other fluid overload	Yes	9	1	C_Mild_liver_disease	No death
-626	Male	[60; 70]	Alcoholic hepatitis	Yes	10	4	C_Moderate_severe_liver_disease	No death
-626	Male	[60; 70]	Alcoholic hepatitis	Yes	10	4	C_Diabetes_with_without_complications	No death
-628	Male	[50; 60]	Ascites	Yes	8	6	C_Congestive_Heart_Failure	No death
-628	Male	[50; 60]	Ascites	Yes	8	6	C_Renal_disease	No death
-628	Male	[50; 60]	Ascites	Yes	8	6	C_Moderate_severe_liver_disease	No death
-629	Male	[50; 60]	UGIB due to portal hypertension	Yes	14	3	C_Moderate_severe_liver_disease	No death
-631	Male	[60; 70]	UGIB due to portal hypertension	Yes	8	3	C_Moderate_severe_liver_disease	No death
-632	Male	[60; 70]	Ascites	Yes	8	3	C_Malignancy	No death
-632	Male	[60; 70]	Ascites	Yes	8	3	C_Diabetes_with_without_complications	No death
-635	Female	[70; 80]	UGIB due to portal hypertension	No	6	6	C_Malignancy	No death
-635	Female	[70; 80]	UGIB due to portal hypertension	No	6	6	C_Moderate_severe_liver_disease	No death
-635	Female	[70; 80]	UGIB due to portal hypertension	No	6	6	C_Diabetes_with_without_complications	No death
-636	Male	[40; 50]	Ascites	Yes	13	3	C_Moderate_severe_liver_disease	Death_in_hospital
-637	Female	[70; 80]	Ascites	Yes	8	3	C_Moderate_severe_liver_disease	No death
-639	Male	[60; 70]	Ascites	No	8	3	C_Moderate_severe_liver_disease	No death
-642	Male	[70; 80]	AKI	Yes	6	4	C_Congestive_Heart_Failure	No death
-642	Male	[70; 80]	AKI	Yes	6	4	C_Moderate_severe_liver_disease	No death
-644	Female	[50; 60]	Alcoholic hepatitis	Yes	6	1	C_Mild_liver_disease	No death
-646	Male	[60; 70]	Hepatic encephalopathy	Yes	8	4	C_Moderate_severe_liver_disease	No death
-646	Male	[60; 70]	Hepatic encephalopathy	Yes	8	4	C_Diabetes_with_without_complications	No death
-647	Male	[70; 80]	Ascites	Yes	12	3	C_Moderate_severe_liver_disease	No death
-649	Male	[80; 90]	Hepatic encephalopathy	Yes	7	5	C_Cerebro_Vascular_disease	No death
-649	Male	[80; 90]	Hepatic encephalopathy	Yes	7	5	C_Moderate_severe_liver_disease	No death
-649	Male	[80; 90]	Hepatic encephalopathy	Yes	7	5	C_Diabetes_with_without_complications	No death
-650	Male	[60; 70]	Ascites	Yes	8	3	C_Moderate_severe_liver_disease	No death
-651	Male	[60; 70]	Ascites	Yes	12	3	C_Moderate_severe_liver_disease	No death
-652	Male	[60; 70]	HCC or cholangioca.	Yes	9	5	C_Malignancy	Death_in_first_30_days
-652	Male	[60; 70]	HCC or cholangioca.	Yes	9	5	C_Moderate_severe_liver_disease	Death_in_first_30_days
-654	Male	[70; 80]	Ascites	No	8	3	C_Moderate_severe_liver_disease	No death
-656	Male	[60; 70]	Ascites	Yes	9	3	C_Moderate_severe_liver_disease	No death
-657	Female	[50; 60]	Alcoholic hepatitis	Yes	10	3	C_Moderate_severe_liver_disease	No death
-658	Male	[50; 60]	Alcoholic hepatitis	Yes	9	3	C_Moderate_severe_liver_disease	No death
-660	Male	[70; 80]	Ascites	Yes	9	7	C_Renal_disease	No death
-660	Male	[70; 80]	Ascites	Yes	9	7	C_Moderate_severe_liver_disease	No death
-660	Male	[70; 80]	Ascites	Yes	9	7	C_Diabetes_with_without_complications	No death
-661	Female	[80; 90]	Ascites	No	9	5	C_Malignancy	No death
-661	Female	[80; 90]	Ascites	No	9	5	C_Moderate_severe_liver_disease	No death
-662	Male	[70; 80]	Ascites	Yes	14	3	C_Moderate_severe_liver_disease	No death
-663	Male	[50; 60]	Ascites	Yes	12	3	C_Moderate_severe_liver_disease	No death
-665	Male	[70; 80]	AKI	Yes	12	4	C_Moderate_severe_liver_disease	No death
-665	Male	[70; 80]	AKI	Yes	12	4	C_Diabetes_with_without_complications	No death
-666	Female	[60; 70]	Ascites	Yes	11	3	C_Moderate_severe_liver_disease	No death
-667	Male	[60; 70]	Ascites	Yes	12	3	C_Moderate_severe_liver_disease	No death
-668	Male	[50; 60]	Ascites	Yes	12	3	C_Moderate_severe_liver_disease	Death_in_hospital
-669	Male	[60; 70]	Ascites	Yes	7	4	C_Moderate_severe_liver_disease	No death
-669	Male	[60; 70]	Ascites	Yes	7	4	C_Diabetes_with_without_complications	No death
-670	Male	[60; 70]	Ascites	Yes	10	3	C_Moderate_severe_liver_disease	No death
-671	Male	[60; 70]	Ascites	Yes	7	6	C_Renal_disease	No death
-671	Male	[60; 70]	Ascites	Yes	7	6	C_Moderate_severe_liver_disease	No death
-671	Male	[60; 70]	Ascites	Yes	7	6	C_Diabetes_with_without_complications	No death
-672	Male	[70; 80]	Ascites	Yes	8	4	C_Moderate_severe_liver_disease	No death
-672	Male	[70; 80]	Ascites	Yes	8	4	C_Diabetes_with_without_complications	No death
-673	Male	[70; 80]	HCC or cholangioca.	Yes	7	5	C_Malignancy	No death
-673	Male	[70; 80]	HCC or cholangioca.	Yes	7	5	C_Moderate_severe_liver_disease	No death
-674	Male	[60; 70]	Alcoholic hepatitis	Yes	5	1	C_Mild_liver_disease	No death
-675	Female	[50; 60]	Ascites	Yes	7	3	C_Moderate_severe_liver_disease	No death
-676	Female	[60; 70]	Ascites	Yes	12	3	C_Moderate_severe_liver_disease	No death
-678	Male	[60; 70]	Alcoholic hepatitis	Yes	8	2	C_Pepticulcer_disease	No death
-678	Male	[60; 70]	Alcoholic hepatitis	Yes	8	2	C_Mild_liver_disease	No death
-680	Female	[50; 60]	Alcoholic hepatitis	Yes	9	3	C_Moderate_severe_liver_disease	No death
-681	Male	[60; 70]	Ascites	Yes	8	3	C_Moderate_severe_liver_disease	No death
-682	Male	[70; 80]	AKI	Yes	6	1	C_Mild_liver_disease	No death
-683	Male	[70; 80]	Ascites	Yes	13	3	C_Moderate_severe_liver_disease	Death_between_30_and_90_days
-684	Male	[50; 60]	UGIB due to portal hypertension	Yes	7	3	C_Moderate_severe_liver_disease	No death
-685	Male	[60; 70]	UGIB due to portal hypertension	Yes	7	5	C_Moderate_severe_liver_disease	Death_in_hospital
-685	Male	[60; 70]	UGIB due to portal hypertension	Yes	7	5	C_Diabetes_with_without_complications	Death_in_hospital
-686	Female	[70; 80]	Ascites	No	8	4	C_Moderate_severe_liver_disease	No death
-686	Female	[70; 80]	Ascites	No	8	4	C_Diabetes_with_without_complications	No death
-687	Male	[60; 70]	Jaundice- as isolated presentation	Yes	8	1	C_Mild_liver_disease	No death
-688	Male	[60; 70]	Ascites	Yes	9	4	C_Moderate_severe_liver_disease	No death
-688	Male	[60; 70]	Ascites	Yes	9	4	C_Diabetes_with_without_complications	No death
-689	Male	[70; 80]	Ascites	Yes	11	3	C_Moderate_severe_liver_disease	Death_in_first_30_days
-692	Male	[70; 80]	Hepatic encephalopathy	No	8	4	C_Moderate_severe_liver_disease	No death
-692	Male	[70; 80]	Hepatic encephalopathy	No	8	4	C_Diabetes_with_without_complications	No death
-693	Male	[80; 90]	Hepatic encephalopathy	Yes	7	3	C_Moderate_severe_liver_disease	No death
-694	Male	[60; 70]	Ascites	Yes	11	3	C_Moderate_severe_liver_disease	No death
-695	Male	[70; 80]	AKI	Yes	5	4	C_Moderate_severe_liver_disease	No death
-695	Male	[70; 80]	AKI	Yes	5	4	C_Diabetes_with_without_complications	No death
-698	Female	[70; 80]	Ascites	No	12	5	C_Malignancy	No death
-698	Female	[70; 80]	Ascites	No	12	5	C_Moderate_severe_liver_disease	No death
-699	Male	[70; 80]	Alcoholic hepatitis	Yes	7	3	C_Moderate_severe_liver_disease	No death
-700	Male	[80; 90]	AKI	Yes	7	3	C_Moderate_severe_liver_disease	No death
-701	Female	[40; 50]	Ascites	Yes	10	3	C_Moderate_severe_liver_disease	No death
-702	Male	[70; 80]	SBP	Yes	11	3	C_Moderate_severe_liver_disease	No death
-703	Male	[70; 80]	Ascites	Yes	13	3	C_Moderate_severe_liver_disease	Death_between_30_and_90_days
-704	Male	[60; 70]	Ascites	Yes	7	3	C_Moderate_severe_liver_disease	No death
-705	Male	[70; 80]	Ascites	Yes	12	4	C_Pepticulcer_disease	No death
-705	Male	[70; 80]	Ascites	Yes	12	4	C_Moderate_severe_liver_disease	No death
-706	Male	[60; 70]	AKI	No	7	4	C_Congestive_Heart_Failure	No death
-706	Male	[60; 70]	AKI	No	7	4	C_Mild_liver_disease	No death
-706	Male	[60; 70]	AKI	No	7	4	C_Renal_disease	No death
-708	Female	[60; 70]	Alcoholic hepatitis	Yes	10	4	C_Moderate_severe_liver_disease	No death
-708	Female	[60; 70]	Alcoholic hepatitis	Yes	10	4	C_Diabetes_with_without_complications	No death
-709	Male	[70; 80]	Hepatic encephalopathy	No	9	3	C_Moderate_severe_liver_disease	No death
-710	Male	[60; 70]	Ascites	Yes	10	3	C_Moderate_severe_liver_disease	No death
-711	Female	[80; 90]	Ascites	No	10	4	C_Moderate_severe_liver_disease	No death
-711	Female	[80; 90]	Ascites	No	10	4	C_Diabetes_with_without_complications	No death
-712	Male	[70; 80]	UGIB due to portal hypertension	Yes	8	3	C_Moderate_severe_liver_disease	No death
-713	Male	[70; 80]	Ascites	Yes	11	3	C_Moderate_severe_liver_disease	No death
-714	Female	[60; 70]	AKI	Yes	5	4	C_Chronic_pulmonary_disease	No death
-714	Female	[60; 70]	AKI	Yes	5	4	C_Moderate_severe_liver_disease	No death
-720	Male	[70; 80]	AKI	Yes	5	4	C_Pepticulcer_disease	No death
-720	Male	[70; 80]	AKI	Yes	5	4	C_Moderate_severe_liver_disease	No death
-721	Male	[60; 70]	Ascites	Yes	9	5	C_Malignancy	Death_between_30_and_90_days
-721	Male	[60; 70]	Ascites	Yes	9	5	C_Moderate_severe_liver_disease	Death_between_30_and_90_days
-722	Male	[70; 80]	Ascites	Yes	10	3	C_Moderate_severe_liver_disease	No death
-723	Female	[80; 90]	HCC or cholangioca.	Yes	7	3	C_Moderate_severe_liver_disease	Death_in_first_30_days
-724	Male	[40; 50]	Alcoholic hepatitis	Yes	8	3	C_Moderate_severe_liver_disease	No death
-726	Male	[70; 80]	Hepatic encephalopathy	Yes	14	3	C_Moderate_severe_liver_disease	No death
-728	Male	[50; 60]	Ascites	No	8	7	C_Congestive_Heart_Failure	No death
-728	Male	[50; 60]	Ascites	No	8	7	C_Renal_disease	No death
-728	Male	[50; 60]	Ascites	No	8	7	C_Moderate_severe_liver_disease	No death
-728	Male	[50; 60]	Ascites	No	8	7	C_Diabetes_with_without_complications	No death
-729	Female	[50; 60]	Ascites	Yes	11	3	C_Moderate_severe_liver_disease	No death
-731		[60; 70]	Ascites	Yes	12	3	C_Moderate_severe_liver_disease	No death
-732	Male	[60; 70]	Ascites	No	10	4	C_Chronic_pulmonary_disease	Death_in_hospital
-732	Male	[60; 70]	Ascites	No	10	4	C_Moderate_severe_liver_disease	Death_in_hospital
+Id	Sex	Age	Liver_disease	CPS	Charlson_CI	Comorbidities	Etiologies	Mortality
+1	Female	[90; 100]	Hepatic encephalopathy	9	0	None	Cryptogenic	No death
+2	Male	[60; 70]	SBP	9	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+2	Male	[60; 70]	SBP	9	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+3	Female	[80; 90]	Ascites	6	2	Mild_liver_disease	Non_alcoolic_fatty_LD	No death
+3	Female	[80; 90]	Ascites	6	2	Diabetes_with_without_complications	Non_alcoolic_fatty_LD	No death
+4	Female	[70; 80]	Other fluid overload	8	9	Myocardial_infarction	Cryptogenic	No death
+4	Female	[70; 80]	Other fluid overload	8	9	Congestive_Heart_Failure	Cryptogenic	No death
+4	Female	[70; 80]	Other fluid overload	8	9	Renal_disease	Cryptogenic	No death
+4	Female	[70; 80]	Other fluid overload	8	9	Moderate_severe_liver_disease	Cryptogenic	No death
+4	Female	[70; 80]	Other fluid overload	8	9	Diabetes_with_without_complications	Cryptogenic	No death
+5	Male	[70; 80]	Hepatic encephalopathy	11	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+5	Male	[70; 80]	Hepatic encephalopathy	11	4	Diabetes_with_without_complications	Alcohol_consumption	No death
+6	Male	[80; 90]	AKI	8	9	Myocardial_infarction	Cryptogenic	Death_in_hospital
+6	Male	[80; 90]	AKI	8	9	Congestive_Heart_Failure	Cryptogenic	Death_in_hospital
+6	Male	[80; 90]	AKI	8	9	Renal_disease	Cryptogenic	Death_in_hospital
+6	Male	[80; 90]	AKI	8	9	Moderate_severe_liver_disease	Cryptogenic	Death_in_hospital
+6	Male	[80; 90]	AKI	8	9	Diabetes_with_without_complications	Cryptogenic	Death_in_hospital
+7	Male	[70; 80]	UGIB due to portal hypertension	7	5	Chronic_pulmonary_disease	Alcohol_consumption	No death
+7	Male	[70; 80]	UGIB due to portal hypertension	7	5	Moderate_severe_liver_disease	Alcohol_consumption	No death
+7	Male	[70; 80]	UGIB due to portal hypertension	7	5	Diabetes_with_without_complications	Alcohol_consumption	No death
+8	Male	[60; 70]	Other fluid overload	7	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+8	Male	[60; 70]	Other fluid overload	7	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+8	Male	[60; 70]	Other fluid overload	7	3	Moderate_severe_liver_disease	Hepatitis_b	No death
+9	Male	[60; 70]	Hepatic encephalopathy	11	0	None	Alcohol_consumption	No death
+9	Male	[60; 70]	Hepatic encephalopathy	11	0	None	Hepatitis_c	No death
+13	Female	[60; 70]	UGIB due to portal hypertension	13	3	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_hospital
+15	Male	[70; 80]	SBP	12	0	None	Alcohol_consumption	Death_in_hospital
+15	Male	[70; 80]	SBP	12	0	None	Hepatitis_c	Death_in_hospital
+16	Male	[70; 80]	Ascites	9	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+18	Female	[60; 70]	UGIB due to portal hypertension	6	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+18	Female	[60; 70]	UGIB due to portal hypertension	6	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+19	Male	[70; 80]	HCC or cholangioca.	5	9	Moderate_severe_liver_disease	Alcohol_consumption	No death
+19	Male	[70; 80]	HCC or cholangioca.	5	9	Moderate_severe_liver_disease	Hepatitis_c	No death
+19	Male	[70; 80]	HCC or cholangioca.	5	9	Metastatic_solid_tumor	Alcohol_consumption	No death
+19	Male	[70; 80]	HCC or cholangioca.	5	9	Metastatic_solid_tumor	Hepatitis_c	No death
+20	Male	[60; 70]	Hepatic encephalopathy	10	5	Heiplegia_paraplegia	Alcohol_consumption	No death
+20	Male	[60; 70]	Hepatic encephalopathy	10	5	Heiplegia_paraplegia	Hepatitis_c	No death
+20	Male	[60; 70]	Hepatic encephalopathy	10	5	Moderate_severe_liver_disease	Alcohol_consumption	No death
+20	Male	[60; 70]	Hepatic encephalopathy	10	5	Moderate_severe_liver_disease	Hepatitis_c	No death
+21	Male	[60; 70]	SBP	9	6	Chronic_pulmonary_disease	Hepatitis_c	No death
+21	Male	[60; 70]	SBP	9	6	Malignancy	Hepatitis_c	No death
+21	Male	[60; 70]	SBP	9	6	Moderate_severe_liver_disease	Hepatitis_c	No death
+22	Female	[60; 70]	Hepatic encephalopathy	8	4	Dementia	Non_alcoolic_fatty_LD	No death
+22	Female	[60; 70]	Hepatic encephalopathy	8	4	Moderate_severe_liver_disease	Non_alcoolic_fatty_LD	No death
+22	Female	[60; 70]	Hepatic encephalopathy	8	4	Diabetes_with_without_complications	Non_alcoolic_fatty_LD	No death
+23	Male	[60; 70]	Other fluid overload	7	2	Mild_liver_disease	Alcohol_consumption	No death
+23	Male	[60; 70]	Other fluid overload	7	2	Mild_liver_disease	Hepatitis_c	No death
+23	Male	[60; 70]	Other fluid overload	7	2	Diabetes_with_without_complications	Alcohol_consumption	No death
+23	Male	[60; 70]	Other fluid overload	7	2	Diabetes_with_without_complications	Hepatitis_c	No death
+26	Male	[70; 80]	Ascites	10	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+28	Male	[70; 80]	Other fluid overload	6	5	Mild_liver_disease	Alcohol_consumption	No death
+28	Male	[70; 80]	Other fluid overload	6	5	Mild_liver_disease	Hepatitis_c	No death
+28	Male	[70; 80]	Other fluid overload	6	5	Renal_disease	Alcohol_consumption	No death
+28	Male	[70; 80]	Other fluid overload	6	5	Renal_disease	Hepatitis_c	No death
+28	Male	[70; 80]	Other fluid overload	6	5	Malignancy	Alcohol_consumption	No death
+28	Male	[70; 80]	Other fluid overload	6	5	Malignancy	Hepatitis_c	No death
+29	Male	[50; 60]	Ascites	10	4	Moderate_severe_liver_disease	Hepatitis_c	No death
+29	Male	[50; 60]	Ascites	10	4	Diabetes_with_without_complications	Hepatitis_c	No death
+30	Male	[70; 80]	Other fluid overload	7	1	Mild_liver_disease	Alcohol_consumption	No death
+30	Male	[70; 80]	Other fluid overload	7	1	Mild_liver_disease	Hepatitis_c	No death
+31	Male	[70; 80]	AKI	7	8	Congestive_Heart_Failure	Alcohol_consumption	No death
+31	Male	[70; 80]	AKI	7	8	Congestive_Heart_Failure	Hepatitis_c	No death
+31	Male	[70; 80]	AKI	7	8	Mild_liver_disease	Alcohol_consumption	No death
+31	Male	[70; 80]	AKI	7	8	Mild_liver_disease	Hepatitis_c	No death
+31	Male	[70; 80]	AKI	7	8	Renal_disease	Alcohol_consumption	No death
+31	Male	[70; 80]	AKI	7	8	Renal_disease	Hepatitis_c	No death
+31	Male	[70; 80]	AKI	7	8	Malignancy	Alcohol_consumption	No death
+31	Male	[70; 80]	AKI	7	8	Malignancy	Hepatitis_c	No death
+31	Male	[70; 80]	AKI	7	8	Diabetes_with_without_complications	Alcohol_consumption	No death
+31	Male	[70; 80]	AKI	7	8	Diabetes_with_without_complications	Hepatitis_c	No death
+32	Male	[60; 70]	Hepatic encephalopathy	14	7	Pepticulcer_disease	Alcohol_consumption	No death
+32	Male	[60; 70]	Hepatic encephalopathy	14	7	Pepticulcer_disease	Hepatitis_c	No death
+32	Male	[60; 70]	Hepatic encephalopathy	14	7	Malignancy	Alcohol_consumption	No death
+32	Male	[60; 70]	Hepatic encephalopathy	14	7	Malignancy	Hepatitis_c	No death
+32	Male	[60; 70]	Hepatic encephalopathy	14	7	Moderate_severe_liver_disease	Alcohol_consumption	No death
+32	Male	[60; 70]	Hepatic encephalopathy	14	7	Moderate_severe_liver_disease	Hepatitis_c	No death
+32	Male	[60; 70]	Hepatic encephalopathy	14	7	Diabetes_with_without_complications	Alcohol_consumption	No death
+32	Male	[60; 70]	Hepatic encephalopathy	14	7	Diabetes_with_without_complications	Hepatitis_c	No death
+33	Male	[60; 70]	Alcoholic hepatitis	8	2	Myocardial_infarction	Alcohol_consumption	No death
+33	Male	[60; 70]	Alcoholic hepatitis	8	2	Myocardial_infarction	Hepatitis_c	No death
+33	Male	[60; 70]	Alcoholic hepatitis	8	2	Mild_liver_disease	Alcohol_consumption	No death
+33	Male	[60; 70]	Alcoholic hepatitis	8	2	Mild_liver_disease	Hepatitis_c	No death
+34	Female	[60; 70]	Other fluid overload	6	8	Myocardial_infarction	Alcohol_consumption	No death
+34	Female	[60; 70]	Other fluid overload	6	8	Congestive_Heart_Failure	Alcohol_consumption	No death
+34	Female	[60; 70]	Other fluid overload	6	8	Chronic_pulmonary_disease	Alcohol_consumption	No death
+34	Female	[60; 70]	Other fluid overload	6	8	Mild_liver_disease	Alcohol_consumption	No death
+34	Female	[60; 70]	Other fluid overload	6	8	Malignancy	Alcohol_consumption	No death
+34	Female	[60; 70]	Other fluid overload	6	8	Diabetes_with_without_complications	Alcohol_consumption	No death
+35	Male	[60; 70]	HCC or cholangioca.	8	5	Malignancy	Alcohol_consumption	No death
+35	Male	[60; 70]	HCC or cholangioca.	8	5	Malignancy	Hepatitis_c	No death
+35	Male	[60; 70]	HCC or cholangioca.	8	5	Moderate_severe_liver_disease	Alcohol_consumption	No death
+35	Male	[60; 70]	HCC or cholangioca.	8	5	Moderate_severe_liver_disease	Hepatitis_c	No death
+36	Male	[60; 70]	UGIB due to portal hypertension	7	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+36	Male	[60; 70]	UGIB due to portal hypertension	7	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+40	Female	[60; 70]	Hepatic encephalopathy	11	4	Chronic_pulmonary_disease	Alcohol_consumption	No death
+40	Female	[60; 70]	Hepatic encephalopathy	11	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+41	Male	[80; 90]	AKI	8	11	Malignancy	Hepatitis_c	No death
+41	Male	[80; 90]	AKI	8	11	Moderate_severe_liver_disease	Hepatitis_c	No death
+41	Male	[80; 90]	AKI	8	11	Metastatic_solid_tumor	Hepatitis_c	No death
+42	Male	[50; 60]	UGIB due to portal hypertension	7	5	Cerebro_Vascular_disease	Alcohol_consumption	No death
+42	Male	[50; 60]	UGIB due to portal hypertension	7	5	Cerebro_Vascular_disease	Hepatitis_c	No death
+42	Male	[50; 60]	UGIB due to portal hypertension	7	5	Chronic_pulmonary_disease	Alcohol_consumption	No death
+42	Male	[50; 60]	UGIB due to portal hypertension	7	5	Chronic_pulmonary_disease	Hepatitis_c	No death
+42	Male	[50; 60]	UGIB due to portal hypertension	7	5	Moderate_severe_liver_disease	Alcohol_consumption	No death
+42	Male	[50; 60]	UGIB due to portal hypertension	7	5	Moderate_severe_liver_disease	Hepatitis_c	No death
+43	Male	[80; 90]	Ascites	10	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+43	Male	[80; 90]	Ascites	10	4	Diabetes_with_without_complications	Alcohol_consumption	No death
+44	Male	[70; 80]	Other fluid overload	7	6	Chronic_pulmonary_disease	Alcohol_consumption	No death
+44	Male	[70; 80]	Other fluid overload	7	6	Chronic_pulmonary_disease	Hepatitis_c	No death
+44	Male	[70; 80]	Other fluid overload	7	6	Renal_disease	Alcohol_consumption	No death
+44	Male	[70; 80]	Other fluid overload	7	6	Renal_disease	Hepatitis_c	No death
+44	Male	[70; 80]	Other fluid overload	7	6	Moderate_severe_liver_disease	Alcohol_consumption	No death
+44	Male	[70; 80]	Other fluid overload	7	6	Moderate_severe_liver_disease	Hepatitis_c	No death
+45	Female	[60; 70]	Alcoholic hepatitis	9	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+45	Female	[60; 70]	Alcoholic hepatitis	9	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+47	Female	[40; 50]	Alcoholic hepatitis	8	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+47	Female	[40; 50]	Alcoholic hepatitis	8	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+48	Male	[50; 60]	Alcoholic hepatitis	9	5	Moderate_severe_liver_disease	Alcohol_consumption	No death
+48	Male	[50; 60]	Alcoholic hepatitis	9	5	Moderate_severe_liver_disease	Hepatitis_c	No death
+48	Male	[50; 60]	Alcoholic hepatitis	9	5	Diabetes_with_without_complications	Alcohol_consumption	No death
+48	Male	[50; 60]	Alcoholic hepatitis	9	5	Diabetes_with_without_complications	Hepatitis_c	No death
+49	Male	[60; 70]	Ascites	9	4	Chronic_pulmonary_disease	Alcohol_consumption	No death
+49	Male	[60; 70]	Ascites	9	4	Chronic_pulmonary_disease	Hepatitis_c	No death
+49	Male	[60; 70]	Ascites	9	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+49	Male	[60; 70]	Ascites	9	4	Moderate_severe_liver_disease	Hepatitis_c	No death
+51	Male	[60; 70]	Alcoholic hepatitis	9	8	Cerebro_Vascular_disease	Alcohol_consumption	No death
+51	Male	[60; 70]	Alcoholic hepatitis	9	8	Cerebro_Vascular_disease	Hepatitis_c	No death
+51	Male	[60; 70]	Alcoholic hepatitis	9	8	Pepticulcer_disease	Alcohol_consumption	No death
+51	Male	[60; 70]	Alcoholic hepatitis	9	8	Pepticulcer_disease	Hepatitis_c	No death
+51	Male	[60; 70]	Alcoholic hepatitis	9	8	Malignancy	Alcohol_consumption	No death
+51	Male	[60; 70]	Alcoholic hepatitis	9	8	Malignancy	Hepatitis_c	No death
+51	Male	[60; 70]	Alcoholic hepatitis	9	8	Moderate_severe_liver_disease	Alcohol_consumption	No death
+51	Male	[60; 70]	Alcoholic hepatitis	9	8	Moderate_severe_liver_disease	Hepatitis_c	No death
+51	Male	[60; 70]	Alcoholic hepatitis	9	8	Diabetes_with_without_complications	Alcohol_consumption	No death
+51	Male	[60; 70]	Alcoholic hepatitis	9	8	Diabetes_with_without_complications	Hepatitis_c	No death
+52	Male	[60; 70]	Hepatic encephalopathy	11	5	Congestive_Heart_Failure	Hepatitis_c	No death
+52	Male	[60; 70]	Hepatic encephalopathy	11	5	Cerebro_Vascular_disease	Hepatitis_c	No death
+52	Male	[60; 70]	Hepatic encephalopathy	11	5	Moderate_severe_liver_disease	Hepatitis_c	No death
+54	Male	[60; 70]	HCC or cholangioca.	6	6	Malignancy	Alcohol_consumption	No death
+54	Male	[60; 70]	HCC or cholangioca.	6	6	Malignancy	Hepatitis_c	No death
+54	Male	[60; 70]	HCC or cholangioca.	6	6	Moderate_severe_liver_disease	Alcohol_consumption	No death
+54	Male	[60; 70]	HCC or cholangioca.	6	6	Moderate_severe_liver_disease	Hepatitis_c	No death
+54	Male	[60; 70]	HCC or cholangioca.	6	6	Diabetes_with_without_complications	Alcohol_consumption	No death
+54	Male	[60; 70]	HCC or cholangioca.	6	6	Diabetes_with_without_complications	Hepatitis_c	No death
+55	Male	[70; 80]	UGIB due to portal hypertension	13	3	Moderate_severe_liver_disease	Hepatitis_c	Death_in_hospital
+57	Male	[50; 60]	Alcoholic hepatitis	14	3	Moderate_severe_liver_disease	Alcohol_consumption	Death_between_30_and_90_days
+60	Female	[70; 80]	Hepatic encephalopathy	9	4	Chronic_pulmonary_disease	Alcohol_consumption	Death_in_hospital
+60	Female	[70; 80]	Hepatic encephalopathy	9	4	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_hospital
+63	Male	[60; 70]	Alcoholic hepatitis	10	0	None	Alcohol_consumption	No death
+64	Female	[70; 80]	Jaundice- as isolated presentation	10	5	Renal_disease	Alcohol_consumption	No death
+64	Female	[70; 80]	Jaundice- as isolated presentation	10	5	Moderate_severe_liver_disease	Alcohol_consumption	No death
+65	Male	[60; 70]	Ascites	8	9	Cerebro_Vascular_disease	Alcohol_consumption	No death
+65	Male	[60; 70]	Ascites	8	9	Cerebro_Vascular_disease	Hepatitis_c	No death
+65	Male	[60; 70]	Ascites	8	9	Malignancy	Alcohol_consumption	No death
+65	Male	[60; 70]	Ascites	8	9	Malignancy	Hepatitis_c	No death
+65	Male	[60; 70]	Ascites	8	9	Metastatic_solid_tumor	Alcohol_consumption	No death
+65	Male	[60; 70]	Ascites	8	9	Metastatic_solid_tumor	Hepatitis_c	No death
+67	Female	[50; 60]	Alcoholic hepatitis	12	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+67	Female	[50; 60]	Alcoholic hepatitis	12	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+68	Male	[60; 70]	Ascites	7	5	Malignancy	Alcohol_consumption	No death
+68	Male	[60; 70]	Ascites	7	5	Moderate_severe_liver_disease	Alcohol_consumption	No death
+69	Male	[70; 80]	Hepatic encephalopathy	5	4	Cerebro_Vascular_disease	Alcohol_consumption	No death
+69	Male	[70; 80]	Hepatic encephalopathy	5	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+70	Male	[60; 70]	Hepatic encephalopathy	11	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+70	Male	[60; 70]	Hepatic encephalopathy	11	3	Moderate_severe_liver_disease	Hepatitis_b	No death
+71	Female	[40; 50]	Alcoholic hepatitis	3	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+74	Female	[60; 70]	SBP	7	5	Moderate_severe_liver_disease	Alcohol_consumption	No death
+74	Female	[60; 70]	SBP	7	5	Moderate_severe_liver_disease	Hepatitis_c	No death
+74	Female	[60; 70]	SBP	7	5	Diabetes_with_without_complications	Alcohol_consumption	No death
+74	Female	[60; 70]	SBP	7	5	Diabetes_with_without_complications	Hepatitis_c	No death
+75	Male	[60; 70]	Hepato-hydrothorax	9	5	Malignancy	Alcohol_consumption	Death_between_30_and_90_days
+75	Male	[60; 70]	Hepato-hydrothorax	9	5	Malignancy	Hepatitis_c	Death_between_30_and_90_days
+75	Male	[60; 70]	Hepato-hydrothorax	9	5	Moderate_severe_liver_disease	Alcohol_consumption	Death_between_30_and_90_days
+75	Male	[60; 70]	Hepato-hydrothorax	9	5	Moderate_severe_liver_disease	Hepatitis_c	Death_between_30_and_90_days
+76	Female	[50; 60]	Hepatic encephalopathy	13	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+76	Female	[50; 60]	Hepatic encephalopathy	13	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+77	Male	[50; 60]	SBP	13	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+77	Male	[50; 60]	SBP	13	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+78	Male	[60; 70]	Ascites	5	6	Chronic_pulmonary_disease	Alcohol_consumption	No death
+78	Male	[60; 70]	Ascites	5	6	Chronic_pulmonary_disease	Hepatitis_c	No death
+78	Male	[60; 70]	Ascites	5	6	Malignancy	Alcohol_consumption	No death
+78	Male	[60; 70]	Ascites	5	6	Malignancy	Hepatitis_c	No death
+78	Male	[60; 70]	Ascites	5	6	Moderate_severe_liver_disease	Alcohol_consumption	No death
+78	Male	[60; 70]	Ascites	5	6	Moderate_severe_liver_disease	Hepatitis_c	No death
+79	Male	[60; 70]	Ascites	8	5	Malignancy	Hepatitis_c	No death
+79	Male	[60; 70]	Ascites	8	5	Moderate_severe_liver_disease	Hepatitis_c	No death
+80	Male	[60; 70]	Other fluid overload	5	11	Malignancy	Alcohol_consumption	No death
+80	Male	[60; 70]	Other fluid overload	5	11	Malignancy	Hepatitis_c	No death
+80	Male	[60; 70]	Other fluid overload	5	11	Moderate_severe_liver_disease	Alcohol_consumption	No death
+80	Male	[60; 70]	Other fluid overload	5	11	Moderate_severe_liver_disease	Hepatitis_c	No death
+80	Male	[60; 70]	Other fluid overload	5	11	AIDS	Alcohol_consumption	No death
+80	Male	[60; 70]	Other fluid overload	5	11	AIDS	Hepatitis_c	No death
+81	Male	[70; 80]	Hepato-hydrothorax	8	7	Renal_disease	Hepatitis_c	No death
+81	Male	[70; 80]	Hepato-hydrothorax	8	7	Moderate_severe_liver_disease	Hepatitis_c	No death
+81	Male	[70; 80]	Hepato-hydrothorax	8	7	Diabetes_with_without_complications	Hepatitis_c	No death
+82	Male	[60; 70]	Ascites	6	1	Mild_liver_disease	Alcohol_consumption	Death_in_hospital
+83	Male	[60; 70]	Alcoholic hepatitis	12	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+83	Male	[60; 70]	Alcoholic hepatitis	12	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+84	Male	[70; 80]	Alcoholic hepatitis	8	6	Malignancy	Alcohol_consumption	No death
+84	Male	[70; 80]	Alcoholic hepatitis	8	6	Moderate_severe_liver_disease	Alcohol_consumption	No death
+84	Male	[70; 80]	Alcoholic hepatitis	8	6	Diabetes_with_without_complications	Alcohol_consumption	No death
+85	Male	[60; 70]	Hepatic encephalopathy	7	13	Malignancy	Alcohol_consumption	No death
+85	Male	[60; 70]	Hepatic encephalopathy	7	13	Malignancy	Hepatitis_c	No death
+85	Male	[60; 70]	Hepatic encephalopathy	7	13	Moderate_severe_liver_disease	Alcohol_consumption	No death
+85	Male	[60; 70]	Hepatic encephalopathy	7	13	Moderate_severe_liver_disease	Hepatitis_c	No death
+85	Male	[60; 70]	Hepatic encephalopathy	7	13	AIDS	Alcohol_consumption	No death
+85	Male	[60; 70]	Hepatic encephalopathy	7	13	AIDS	Hepatitis_c	No death
+85	Male	[60; 70]	Hepatic encephalopathy	7	13	Diabetes_with_without_complications	Alcohol_consumption	No death
+85	Male	[60; 70]	Hepatic encephalopathy	7	13	Diabetes_with_without_complications	Hepatitis_c	No death
+86	Male	[80; 90]	Other fluid overload	4	4	Chronic_pulmonary_disease	Alcohol_consumption	No death
+86	Male	[80; 90]	Other fluid overload	4	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+88	Male	[70; 80]	UGIB due to portal hypertension	7	4	Chronic_pulmonary_disease	Alcohol_consumption	No death
+88	Male	[70; 80]	UGIB due to portal hypertension	7	4	Chronic_pulmonary_disease	Hepatitis_c	No death
+88	Male	[70; 80]	UGIB due to portal hypertension	7	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+88	Male	[70; 80]	UGIB due to portal hypertension	7	4	Moderate_severe_liver_disease	Hepatitis_c	No death
+89	Male	[50; 60]	Other fluid overload	7	4	Chronic_pulmonary_disease	Alcohol_consumption	No death
+89	Male	[50; 60]	Other fluid overload	7	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+91	Male	[60; 70]	Alcoholic hepatitis	6	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+92	Male	[60; 70]	Ascites	12	7	Cerebro_Vascular_disease	Alcohol_consumption	No death
+92	Male	[60; 70]	Ascites	12	7	Cerebro_Vascular_disease	Hepatitis_b	No death
+92	Male	[60; 70]	Ascites	12	7	Malignancy	Alcohol_consumption	No death
+92	Male	[60; 70]	Ascites	12	7	Malignancy	Hepatitis_b	No death
+92	Male	[60; 70]	Ascites	12	7	Moderate_severe_liver_disease	Alcohol_consumption	No death
+92	Male	[60; 70]	Ascites	12	7	Moderate_severe_liver_disease	Hepatitis_b	No death
+92	Male	[60; 70]	Ascites	12	7	Diabetes_with_without_complications	Alcohol_consumption	No death
+92	Male	[60; 70]	Ascites	12	7	Diabetes_with_without_complications	Hepatitis_b	No death
+93	Male	[60; 70]	UGIB due to portal hypertension	4	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+93	Male	[60; 70]	UGIB due to portal hypertension	4	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+95	Male	[60; 70]	Hepatic encephalopathy	4	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+95	Male	[60; 70]	Hepatic encephalopathy	4	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+96	Male	[60; 70]	Ascites	7	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+96	Male	[60; 70]	Ascites	7	4	Diabetes_with_without_complications	Alcohol_consumption	No death
+97	Male	[60; 70]	UGIB due to portal hypertension	5	4	Congestive_Heart_Failure	Hepatitis_b	No death
+97	Male	[60; 70]	UGIB due to portal hypertension	5	4	Moderate_severe_liver_disease	Hepatitis_b	No death
+99	Female	[60; 70]	Hepatic encephalopathy	11	4	Chronic_pulmonary_disease	Alcohol_consumption	No death
+99	Female	[60; 70]	Hepatic encephalopathy	11	4	Chronic_pulmonary_disease	Hepatitis_c	No death
+99	Female	[60; 70]	Hepatic encephalopathy	11	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+99	Female	[60; 70]	Hepatic encephalopathy	11	4	Moderate_severe_liver_disease	Hepatitis_c	No death
+101	Male	[70; 80]	Other fluid overload	7	6	Congestive_Heart_Failure	Alcohol_consumption	Death_in_hospital
+101	Male	[70; 80]	Other fluid overload	7	6	Congestive_Heart_Failure	Hepatitis_c	Death_in_hospital
+101	Male	[70; 80]	Other fluid overload	7	6	Malignancy	Alcohol_consumption	Death_in_hospital
+101	Male	[70; 80]	Other fluid overload	7	6	Malignancy	Hepatitis_c	Death_in_hospital
+101	Male	[70; 80]	Other fluid overload	7	6	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_hospital
+101	Male	[70; 80]	Other fluid overload	7	6	Moderate_severe_liver_disease	Hepatitis_c	Death_in_hospital
+102	Female	[90; 100]	Hepatic encephalopathy	8	4	Cerebro_Vascular_disease	Hepatitis_b	No death
+102	Female	[90; 100]	Hepatic encephalopathy	8	4	Cerebro_Vascular_disease	Cryptogenic	No death
+102	Female	[90; 100]	Hepatic encephalopathy	8	4	Moderate_severe_liver_disease	Hepatitis_b	No death
+102	Female	[90; 100]	Hepatic encephalopathy	8	4	Moderate_severe_liver_disease	Cryptogenic	No death
+103	Male	[60; 70]	Alcoholic hepatitis	5	5	Malignancy	Alcohol_consumption	No death
+103	Male	[60; 70]	Alcoholic hepatitis	5	5	Malignancy	Hepatitis_c	No death
+103	Male	[60; 70]	Alcoholic hepatitis	5	5	Moderate_severe_liver_disease	Alcohol_consumption	No death
+103	Male	[60; 70]	Alcoholic hepatitis	5	5	Moderate_severe_liver_disease	Hepatitis_c	No death
+104	Female	[70; 80]	Other fluid overload	5	11	Malignancy	Alcohol_consumption	No death
+104	Female	[70; 80]	Other fluid overload	5	11	Moderate_severe_liver_disease	Alcohol_consumption	No death
+104	Female	[70; 80]	Other fluid overload	5	11	Metastatic_solid_tumor	Alcohol_consumption	No death
+105	Female	[50; 60]	Ascites	10	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+105	Female	[50; 60]	Ascites	10	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+106	Male	[50; 60]	UGIB due to portal hypertension	7	4	Pepticulcer_disease	Alcohol_consumption	No death
+106	Male	[50; 60]	UGIB due to portal hypertension	7	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+107	Male	[50; 60]	UGIB due to portal hypertension	5	4	Chronic_pulmonary_disease	Alcohol_consumption	No death
+107	Male	[50; 60]	UGIB due to portal hypertension	5	4	Chronic_pulmonary_disease	Hepatitis_c	No death
+107	Male	[50; 60]	UGIB due to portal hypertension	5	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+107	Male	[50; 60]	UGIB due to portal hypertension	5	4	Moderate_severe_liver_disease	Hepatitis_c	No death
+108	Male	[60; 70]	UGIB due to portal hypertension	5	4	Chronic_pulmonary_disease	Alcohol_consumption	No death
+108	Male	[60; 70]	UGIB due to portal hypertension	5	4	Chronic_pulmonary_disease	Hepatitis_c	No death
+108	Male	[60; 70]	UGIB due to portal hypertension	5	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+108	Male	[60; 70]	UGIB due to portal hypertension	5	4	Moderate_severe_liver_disease	Hepatitis_c	No death
+110	Male	[50; 60]	Ascites	9	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+110	Male	[50; 60]	Ascites	9	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+111	Female	[40; 50]	Ascites	9	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+113	Female	[70; 80]	UGIB due to portal hypertension	6	7	Renal_disease	Hepatitis_c	No death
+113	Female	[70; 80]	UGIB due to portal hypertension	6	7	Moderate_severe_liver_disease	Hepatitis_c	No death
+113	Female	[70; 80]	UGIB due to portal hypertension	6	7	Diabetes_with_without_complications	Hepatitis_c	No death
+114	Female	[60; 70]	Other fluid overload	7	3	Congestive_Heart_Failure	Alcohol_consumption	No death
+114	Female	[60; 70]	Other fluid overload	7	3	Chronic_pulmonary_disease	Alcohol_consumption	No death
+114	Female	[60; 70]	Other fluid overload	7	3	Mild_liver_disease	Alcohol_consumption	No death
+115	Male	[60; 70]	SBP	10	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+115	Male	[60; 70]	SBP	10	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+116	Female	[70; 80]	Hepatic encephalopathy	6	5	Cerebro_Vascular_disease	Cryptogenic	No death
+116	Female	[70; 80]	Hepatic encephalopathy	6	5	Chronic_pulmonary_disease	Cryptogenic	No death
+116	Female	[70; 80]	Hepatic encephalopathy	6	5	Moderate_severe_liver_disease	Cryptogenic	No death
+117	Male	[50; 60]	UGIB due to portal hypertension	8	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+117	Male	[50; 60]	UGIB due to portal hypertension	8	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+118	Male	[70; 80]	Ascites	8	4	Chronic_pulmonary_disease	Alcohol_consumption	No death
+118	Male	[70; 80]	Ascites	8	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+119	Male	[80; 90]	Hepatic encephalopathy	9	10	Pepticulcer_disease	Alcohol_consumption	No death
+119	Male	[80; 90]	Hepatic encephalopathy	9	10	Pepticulcer_disease	Hepatitis_c	No death
+119	Male	[80; 90]	Hepatic encephalopathy	9	10	Mild_liver_disease	Alcohol_consumption	No death
+119	Male	[80; 90]	Hepatic encephalopathy	9	10	Mild_liver_disease	Hepatitis_c	No death
+119	Male	[80; 90]	Hepatic encephalopathy	9	10	Malignancy	Alcohol_consumption	No death
+119	Male	[80; 90]	Hepatic encephalopathy	9	10	Malignancy	Hepatitis_c	No death
+119	Male	[80; 90]	Hepatic encephalopathy	9	10	Metastatic_solid_tumor	Alcohol_consumption	No death
+119	Male	[80; 90]	Hepatic encephalopathy	9	10	Metastatic_solid_tumor	Hepatitis_c	No death
+122	Male	[50; 60]	Hepatic encephalopathy	9	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+122	Male	[50; 60]	Hepatic encephalopathy	9	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+123	Male	[70; 80]	Ascites	12	5	Chronic_pulmonary_disease	Alcohol_consumption	No death
+123	Male	[70; 80]	Ascites	12	5	Moderate_severe_liver_disease	Alcohol_consumption	No death
+123	Male	[70; 80]	Ascites	12	5	Diabetes_with_without_complications	Alcohol_consumption	No death
+124	Female	[70; 80]	Other fluid overload	8	4	Moderate_severe_liver_disease	Hepatitis_c	No death
+124	Female	[70; 80]	Other fluid overload	8	4	Diabetes_with_without_complications	Hepatitis_c	No death
+125	Male	[70; 80]	HCC or cholangioca.	6	6	Malignancy	Alcohol_consumption	No death
+125	Male	[70; 80]	HCC or cholangioca.	6	6	Malignancy	Hepatitis_c	No death
+125	Male	[70; 80]	HCC or cholangioca.	6	6	Moderate_severe_liver_disease	Alcohol_consumption	No death
+125	Male	[70; 80]	HCC or cholangioca.	6	6	Moderate_severe_liver_disease	Hepatitis_c	No death
+125	Male	[70; 80]	HCC or cholangioca.	6	6	Diabetes_with_without_complications	Alcohol_consumption	No death
+125	Male	[70; 80]	HCC or cholangioca.	6	6	Diabetes_with_without_complications	Hepatitis_c	No death
+127	Female	[60; 70]	Hepatic encephalopathy	10	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+128	Male	[60; 70]	Hepatic encephalopathy	10	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+128	Male	[60; 70]	Hepatic encephalopathy	10	4	Moderate_severe_liver_disease	Hepatitis_c	No death
+128	Male	[60; 70]	Hepatic encephalopathy	10	4	Diabetes_with_without_complications	Alcohol_consumption	No death
+128	Male	[60; 70]	Hepatic encephalopathy	10	4	Diabetes_with_without_complications	Hepatitis_c	No death
+129	Male	[70; 80]	HCC or cholangioca.	3	5	Malignancy	Hepatitis_b	No death
+129	Male	[70; 80]	HCC or cholangioca.	3	5	Moderate_severe_liver_disease	Hepatitis_b	No death
+131	Male	[70; 80]	Ascites	13	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+131	Male	[70; 80]	Ascites	13	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+132	Male	[50; 60]	Hepatic encephalopathy	9	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+132	Male	[50; 60]	Hepatic encephalopathy	9	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+133	Female	[80; 90]	Other fluid overload	8	5	Congestive_Heart_Failure	Primary_biliary_cholangitis	No death
+133	Female	[80; 90]	Other fluid overload	8	5	Chronic_pulmonary_disease	Primary_biliary_cholangitis	No death
+133	Female	[80; 90]	Other fluid overload	8	5	Moderate_severe_liver_disease	Primary_biliary_cholangitis	No death
+134	Female	[70; 80]	SBP	11	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+134	Female	[70; 80]	SBP	11	4	Diabetes_with_without_complications	Alcohol_consumption	No death
+136	Female	[60; 70]	UGIB due to portal hypertension	5	5	Chronic_pulmonary_disease	Non_alcoolic_fatty_LD	No death
+136	Female	[60; 70]	UGIB due to portal hypertension	5	5	Moderate_severe_liver_disease	Non_alcoolic_fatty_LD	No death
+136	Female	[60; 70]	UGIB due to portal hypertension	5	5	Diabetes_with_without_complications	Non_alcoolic_fatty_LD	No death
+137	Male	[60; 70]	Hepatic encephalopathy	10	1	Congestive_Heart_Failure	Alcohol_consumption	No death
+138	Female	[60; 70]	HCC or cholangioca.	7	6	Malignancy	Hepatitis_c	No death
+138	Female	[60; 70]	HCC or cholangioca.	7	6	Moderate_severe_liver_disease	Hepatitis_c	No death
+138	Female	[60; 70]	HCC or cholangioca.	7	6	Diabetes_with_without_complications	Hepatitis_c	No death
+139	Female	[50; 60]	Ascites	7	5	Chronic_pulmonary_disease	Alcohol_consumption	No death
+139	Female	[50; 60]	Ascites	7	5	Chronic_pulmonary_disease	Hepatitis_c	No death
+139	Female	[50; 60]	Ascites	7	5	Moderate_severe_liver_disease	Alcohol_consumption	No death
+139	Female	[50; 60]	Ascites	7	5	Moderate_severe_liver_disease	Hepatitis_c	No death
+139	Female	[50; 60]	Ascites	7	5	Diabetes_with_without_complications	Alcohol_consumption	No death
+139	Female	[50; 60]	Ascites	7	5	Diabetes_with_without_complications	Hepatitis_c	No death
+140	Male	[50; 60]	Alcoholic hepatitis	12	5	Malignancy	Alcohol_consumption	Death_in_hospital
+140	Male	[50; 60]	Alcoholic hepatitis	12	5	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_hospital
+141	Male	[50; 60]	Jaundice- as isolated presentation	10	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+141	Male	[50; 60]	Jaundice- as isolated presentation	10	4	Moderate_severe_liver_disease	Hepatitis_b	No death
+141	Male	[50; 60]	Jaundice- as isolated presentation	10	4	Diabetes_with_without_complications	Alcohol_consumption	No death
+141	Male	[50; 60]	Jaundice- as isolated presentation	10	4	Diabetes_with_without_complications	Hepatitis_b	No death
+142	Male	[80; 90]	HCC or cholangioca.	5	12	Chronic_pulmonary_disease	Hepatitis_c	Death_in_hospital
+142	Male	[80; 90]	HCC or cholangioca.	5	12	Malignancy	Hepatitis_c	Death_in_hospital
+142	Male	[80; 90]	HCC or cholangioca.	5	12	Moderate_severe_liver_disease	Hepatitis_c	Death_in_hospital
+142	Male	[80; 90]	HCC or cholangioca.	5	12	Metastatic_solid_tumor	Hepatitis_c	Death_in_hospital
+143	Male	[70; 80]	Ascites	14	4	Pepticulcer_disease	Alcohol_consumption	Death_in_hospital
+143	Male	[70; 80]	Ascites	14	4	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_hospital
+144	Male	[50; 60]	Ascites	13	3	Moderate_severe_liver_disease	Alcohol_consumption	Death_between_30_and_90_days
+144	Male	[50; 60]	Ascites	13	3	Moderate_severe_liver_disease	Hepatitis_c	Death_between_30_and_90_days
+145	Male	[50; 60]	Alcoholic hepatitis	6	1	Mild_liver_disease	Alcohol_consumption	No death
+146	Female	[70; 80]	Alcoholic hepatitis	12	3	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_hospital
+147	Male	[60; 70]	UGIB due to portal hypertension	7	4	Pepticulcer_disease	Alcohol_consumption	No death
+147	Male	[60; 70]	UGIB due to portal hypertension	7	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+149	Male	[60; 70]	Hepato-hydrothorax	11	4	Myocardial_infarction	Alcohol_consumption	Death_between_30_and_90_days
+149	Male	[60; 70]	Hepato-hydrothorax	11	4	Myocardial_infarction	Hepatitis_c	Death_between_30_and_90_days
+149	Male	[60; 70]	Hepato-hydrothorax	11	4	Moderate_severe_liver_disease	Alcohol_consumption	Death_between_30_and_90_days
+149	Male	[60; 70]	Hepato-hydrothorax	11	4	Moderate_severe_liver_disease	Hepatitis_c	Death_between_30_and_90_days
+150	Male	[60; 70]	Other fluid overload	10	5	Malignancy	Hepatitis_c	Death_in_hospital
+150	Male	[60; 70]	Other fluid overload	10	5	Moderate_severe_liver_disease	Hepatitis_c	Death_in_hospital
+151	Female	[80; 90]	Other fluid overload	5	3	Cerebro_Vascular_disease	Hepatitis_c	No death
+151	Female	[80; 90]	Other fluid overload	5	3	Mild_liver_disease	Hepatitis_c	No death
+151	Female	[80; 90]	Other fluid overload	5	3	Diabetes_with_without_complications	Hepatitis_c	No death
+152	Female	[50; 60]	Jaundice- as isolated presentation	11	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+153	Male	[60; 70]	Hepatic encephalopathy	7	12	Pepticulcer_disease	Alcohol_consumption	Death_in_hospital
+153	Male	[60; 70]	Hepatic encephalopathy	7	12	Pepticulcer_disease	Hepatitis_c	Death_in_hospital
+153	Male	[60; 70]	Hepatic encephalopathy	7	12	Malignancy	Alcohol_consumption	Death_in_hospital
+153	Male	[60; 70]	Hepatic encephalopathy	7	12	Malignancy	Hepatitis_c	Death_in_hospital
+153	Male	[60; 70]	Hepatic encephalopathy	7	12	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_hospital
+153	Male	[60; 70]	Hepatic encephalopathy	7	12	Moderate_severe_liver_disease	Hepatitis_c	Death_in_hospital
+153	Male	[60; 70]	Hepatic encephalopathy	7	12	Metastatic_solid_tumor	Alcohol_consumption	Death_in_hospital
+153	Male	[60; 70]	Hepatic encephalopathy	7	12	Metastatic_solid_tumor	Hepatitis_c	Death_in_hospital
+154	Male	[60; 70]	Ascites	8	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+156	Male	[50; 60]	Alcoholic hepatitis	6	1	Mild_liver_disease	Alcohol_consumption	No death
+156	Male	[50; 60]	Alcoholic hepatitis	6	1	Mild_liver_disease	Hepatitis_c	No death
+157	Male	[50; 60]	UGIB due to portal hypertension	7	4	Cerebro_Vascular_disease	Hepatitis_c	No death
+157	Male	[50; 60]	UGIB due to portal hypertension	7	4	Moderate_severe_liver_disease	Hepatitis_c	No death
+158	Female	[70; 80]	Hepatic encephalopathy	8	4	Moderate_severe_liver_disease	Non_alcoolic_fatty_LD	No death
+158	Female	[70; 80]	Hepatic encephalopathy	8	4	Diabetes_with_without_complications	Non_alcoolic_fatty_LD	No death
+159	Male	[40; 50]	Alcoholic hepatitis	10	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+160	Female	[60; 70]	UGIB due to portal hypertension	7	5	Renal_disease	Alcohol_consumption	No death
+160	Female	[60; 70]	UGIB due to portal hypertension	7	5	Renal_disease	Hepatitis_c	No death
+160	Female	[60; 70]	UGIB due to portal hypertension	7	5	Moderate_severe_liver_disease	Alcohol_consumption	No death
+160	Female	[60; 70]	UGIB due to portal hypertension	7	5	Moderate_severe_liver_disease	Hepatitis_c	No death
+161	Female	[60; 70]	HCC or cholangioca.	8	11	Malignancy	Alcohol_consumption	No death
+161	Female	[60; 70]	HCC or cholangioca.	8	11	Malignancy	Hepatitis_c	No death
+161	Female	[60; 70]	HCC or cholangioca.	8	11	Moderate_severe_liver_disease	Alcohol_consumption	No death
+161	Female	[60; 70]	HCC or cholangioca.	8	11	Moderate_severe_liver_disease	Hepatitis_c	No death
+161	Female	[60; 70]	HCC or cholangioca.	8	11	Metastatic_solid_tumor	Alcohol_consumption	No death
+161	Female	[60; 70]	HCC or cholangioca.	8	11	Metastatic_solid_tumor	Hepatitis_c	No death
+162	Male	[60; 70]	SBP	10	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+165	Female	[50; 60]	UGIB due to portal hypertension	10	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+165	Female	[50; 60]	UGIB due to portal hypertension	10	3	Moderate_severe_liver_disease	Autoimmune_hepatitis	No death
+167	Male	[60; 70]	UGIB due to portal hypertension	12	5	Renal_disease	Hepatitis_c	Death_in_hospital
+167	Male	[60; 70]	UGIB due to portal hypertension	12	5	Moderate_severe_liver_disease	Hepatitis_c	Death_in_hospital
+168	Female	[50; 60]	Other fluid overload	10	9	Moderate_severe_liver_disease	Hepatitis_c	No death
+168	Female	[50; 60]	Other fluid overload	10	9	AIDS	Hepatitis_c	No death
+169	Male	[50; 60]	Hepato-hydrothorax	11	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+170	Male	[30; 40]	UGIB due to portal hypertension	9	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+170	Male	[30; 40]	UGIB due to portal hypertension	9	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+172	Male	[60; 70]	Ascites	11	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+172	Male	[60; 70]	Ascites	11	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+173	Male	[50; 60]	SBP	11	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+175	Male	[70; 80]	UGIB due to portal hypertension	11	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+176	Male	[60; 70]	Ascites	9	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+177	Female	[50; 60]	UGIB due to portal hypertension	7	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+179	Male	[60; 70]	Ascites	11	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+180	Male	[60; 70]	Ascites	11	3	Moderate_severe_liver_disease	Cryptogenic	No death
+183	Male	[50; 60]	Ascites	11	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+184	Male	[60; 70]	Ascites	12	3	Moderate_severe_liver_disease	Hepatitis_c	Death_in_hospital
+184	Male	[60; 70]	Ascites	12	3	Moderate_severe_liver_disease	Hepatitis_b	Death_in_hospital
+185	Male	[60; 70]	UGIB due to portal hypertension	7	1	Mild_liver_disease	Alcohol_consumption	No death
+186	Female	[60; 70]	UGIB due to portal hypertension	7	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+187	Female	[60; 70]	Ascites	6	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+187	Female	[60; 70]	Ascites	6	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+188	Female	[60; 70]	Ascites	14	3	Moderate_severe_liver_disease	Cryptogenic	Death_in_hospital
+189	Male	[60; 70]	UGIB due to portal hypertension	7	6	Renal_disease	Hepatitis_c	No death
+189	Male	[60; 70]	UGIB due to portal hypertension	7	6	Moderate_severe_liver_disease	Hepatitis_c	No death
+189	Male	[60; 70]	UGIB due to portal hypertension	7	6	Diabetes_with_without_complications	Hepatitis_c	No death
+190	Female	[60; 70]	Ascites	7	2	Mild_liver_disease	Non_alcoolic_fatty_LD	No death
+190	Female	[60; 70]	Ascites	7	2	Diabetes_with_without_complications	Non_alcoolic_fatty_LD	No death
+191	Male	[50; 60]	UGIB due to portal hypertension	7	1	Mild_liver_disease	Alcohol_consumption	No death
+191	Male	[50; 60]	UGIB due to portal hypertension	7	1	Mild_liver_disease	Hepatitis_c	No death
+192	Male	[60; 70]	SBP	10	5	Moderate_severe_liver_disease	Alcohol_consumption	No death
+192	Male	[60; 70]	SBP	10	5	Diabetes_with_without_complications	Alcohol_consumption	No death
+193	Male	[50; 60]	Ascites	7	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+193	Male	[50; 60]	Ascites	7	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+195	Male	[60; 70]	Ascites	8	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+195	Male	[60; 70]	Ascites	8	4	Diabetes_with_without_complications	Alcohol_consumption	No death
+196	Female	[40; 50]	Ascites	5	2	Mild_liver_disease	Non_alcoolic_fatty_LD	No death
+196	Female	[40; 50]	Ascites	5	2	Diabetes_with_without_complications	Non_alcoolic_fatty_LD	No death
+197	Female	[60; 70]	Ascites	10	5	Congestive_Heart_Failure	Non_alcoolic_fatty_LD	Death_between_30_and_90_days
+197	Female	[60; 70]	Ascites	10	5	Moderate_severe_liver_disease	Non_alcoolic_fatty_LD	Death_between_30_and_90_days
+197	Female	[60; 70]	Ascites	10	5	Diabetes_with_without_complications	Non_alcoolic_fatty_LD	Death_between_30_and_90_days
+198	Male	[50; 60]	Hepatic encephalopathy	10	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+199	Male	[50; 60]	UGIB due to portal hypertension	9	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+200	Male	[50; 60]	UGIB due to portal hypertension	11	1	Mild_liver_disease	Alcohol_consumption	Death_in_hospital
+202	Male	[60; 70]	UGIB due to portal hypertension	8	1	Mild_liver_disease	Alcohol_consumption	No death
+204	Female	[70; 80]	Ascites	9	6	Renal_disease	Cryptogenic	No death
+204	Female	[70; 80]	Ascites	9	6	Moderate_severe_liver_disease	Cryptogenic	No death
+204	Female	[70; 80]	Ascites	9	6	Diabetes_with_without_complications	Cryptogenic	No death
+206	Female	[70; 80]	Alcoholic hepatitis	9	1	Mild_liver_disease	Alcohol_consumption	No death
+207	Female	[60; 70]	Ascites	8	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+208	Male	[50; 60]	Ascites	7	1	Mild_liver_disease	Alcohol_consumption	No death
+209	Female	[50; 60]	UGIB due to portal hypertension	10	1	Mild_liver_disease	Cryptogenic	Death_between_30_and_90_days
+210	Female	[60; 70]	UGIB due to portal hypertension	7	1	Mild_liver_disease	Non_alcoolic_fatty_LD	No death
+211	Male	[60; 70]	Ascites	7	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+213	Male	[70; 80]	Ascites	9	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+213	Male	[70; 80]	Ascites	9	4	Diabetes_with_without_complications	Alcohol_consumption	No death
+214	Female	[40; 50]	Ascites	10	3	Moderate_severe_liver_disease	Cryptogenic	No death
+215	Female	[50; 60]	Hepatic encephalopathy	12	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+217	Male	[50; 60]	UGIB due to portal hypertension	7	1	Mild_liver_disease	Alcohol_consumption	No death
+219	Male	[60; 70]	Ascites	8	1	Mild_liver_disease	Alcohol_consumption	No death
+219	Male	[60; 70]	Ascites	8	1	Mild_liver_disease	Hepatitis_c	No death
+220	Male	[50; 60]	UGIB due to portal hypertension	10	4	Moderate_severe_liver_disease	Alcohol_consumption	Death_between_30_and_90_days
+220	Male	[50; 60]	UGIB due to portal hypertension	10	4	Diabetes_with_without_complications	Alcohol_consumption	Death_between_30_and_90_days
+221	Male	[50; 60]	Ascites	7	1	Mild_liver_disease	Alcohol_consumption	No death
+224	Female	[60; 70]	UGIB due to portal hypertension	9	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+224	Female	[60; 70]	UGIB due to portal hypertension	9	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+225	Female	[80; 90]	Hepatic encephalopathy	11	6	Congestive_Heart_Failure	Hepatitis_b	No death
+225	Female	[80; 90]	Hepatic encephalopathy	11	6	Congestive_Heart_Failure	Non_alcoolic_fatty_LD	No death
+225	Female	[80; 90]	Hepatic encephalopathy	11	6	Renal_disease	Hepatitis_b	No death
+225	Female	[80; 90]	Hepatic encephalopathy	11	6	Renal_disease	Non_alcoolic_fatty_LD	No death
+225	Female	[80; 90]	Hepatic encephalopathy	11	6	Moderate_severe_liver_disease	Hepatitis_b	No death
+225	Female	[80; 90]	Hepatic encephalopathy	11	6	Moderate_severe_liver_disease	Non_alcoolic_fatty_LD	No death
+227	Male	[60; 70]	Hepatic encephalopathy	7	1	Mild_liver_disease	Alcohol_consumption	No death
+227	Male	[60; 70]	Hepatic encephalopathy	7	1	Mild_liver_disease	Hepatitis_c	No death
+228	Female	[80; 90]	Ascites	7	4	Moderate_severe_liver_disease	Non_alcoolic_fatty_LD	No death
+228	Female	[80; 90]	Ascites	7	4	Diabetes_with_without_complications	Non_alcoolic_fatty_LD	No death
+231	Female	[60; 70]	Ascites	6	5	Congestive_Heart_Failure	Non_alcoolic_fatty_LD	No death
+231	Female	[60; 70]	Ascites	6	5	Mild_liver_disease	Non_alcoolic_fatty_LD	No death
+231	Female	[60; 70]	Ascites	6	5	Renal_disease	Non_alcoolic_fatty_LD	No death
+231	Female	[60; 70]	Ascites	6	5	Diabetes_with_without_complications	Non_alcoolic_fatty_LD	No death
+232	Female	[60; 70]	Ascites	9	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+232	Female	[60; 70]	Ascites	9	4	Moderate_severe_liver_disease	Hepatitis_c	No death
+232	Female	[60; 70]	Ascites	9	4	Diabetes_with_without_complications	Alcohol_consumption	No death
+232	Female	[60; 70]	Ascites	9	4	Diabetes_with_without_complications	Hepatitis_c	No death
+236	Female	[60; 70]	Hepatic encephalopathy	8	3	Moderate_severe_liver_disease	Cryptogenic	No death
+239	Female	[60; 70]	UGIB due to portal hypertension	7	4	Moderate_severe_liver_disease	Cryptogenic	No death
+239	Female	[60; 70]	UGIB due to portal hypertension	7	4	Diabetes_with_without_complications	Cryptogenic	No death
+240	Male	[60; 70]	Hepatic encephalopathy	8	3	Pepticulcer_disease	Alcohol_consumption	No death
+240	Male	[60; 70]	Hepatic encephalopathy	8	3	Mild_liver_disease	Alcohol_consumption	No death
+240	Male	[60; 70]	Hepatic encephalopathy	8	3	Diabetes_with_without_complications	Alcohol_consumption	No death
+243	Female	[50; 60]	Ascites	10	1	Mild_liver_disease	Alcohol_consumption	No death
+244	Male	[60; 70]	Hepatic encephalopathy	11	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+245	Male	[70; 80]	Ascites	10	4	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_first_30_days
+245	Male	[70; 80]	Ascites	10	4	Diabetes_with_without_complications	Alcohol_consumption	Death_in_first_30_days
+246	Male	[40; 50]	Other fluid overload	7	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+247	Male	[60; 70]	Hepatic encephalopathy	10	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+247	Male	[60; 70]	Hepatic encephalopathy	10	4	Diabetes_with_without_complications	Alcohol_consumption	No death
+249	Female	[70; 80]	Ascites	8	1	Mild_liver_disease	Cryptogenic	No death
+251	Female	[60; 70]	SBP	10	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+252	Male	[60; 70]	UGIB due to portal hypertension	7	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+253	Male	[70; 80]	Ascites	6	1	Mild_liver_disease	Alcohol_consumption	No death
+254	Male	[70; 80]	Hepatic encephalopathy	10	3	Myocardial_infarction	Alcohol_consumption	No death
+254	Male	[70; 80]	Hepatic encephalopathy	10	3	Mild_liver_disease	Alcohol_consumption	No death
+254	Male	[70; 80]	Hepatic encephalopathy	10	3	Diabetes_with_without_complications	Alcohol_consumption	No death
+255	Female	[50; 60]	Ascites	9	1	Mild_liver_disease	Alcohol_consumption	No death
+257	Female	[70; 80]	AKI	7	2	Mild_liver_disease	Cryptogenic	No death
+257	Female	[70; 80]	AKI	7	2	Diabetes_with_without_complications	Cryptogenic	No death
+258	Female	[70; 80]	UGIB due to portal hypertension	7	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+259	Male	[60; 70]	Ascites	7	1	Mild_liver_disease	Hepatitis_c	No death
+260	Female	[60; 70]	Ascites	8	7	Congestive_Heart_Failure	Cryptogenic	No death
+260	Female	[60; 70]	Ascites	8	7	Renal_disease	Cryptogenic	No death
+260	Female	[60; 70]	Ascites	8	7	Moderate_severe_liver_disease	Cryptogenic	No death
+260	Female	[60; 70]	Ascites	8	7	Diabetes_with_without_complications	Cryptogenic	No death
+261	Male	[70; 80]	Ascites	7	1	Mild_liver_disease	Alcohol_consumption	No death
+262	Male	[60; 70]	UGIB due to portal hypertension	6	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+263	Female	[70; 80]	Ascites	11	7	Congestive_Heart_Failure	Cryptogenic	No death
+263	Female	[70; 80]	Ascites	11	7	Moderate_severe_liver_disease	Cryptogenic	No death
+264	Male	[50; 60]	Ascites	10	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+265	Male	[50; 60]	UGIB due to portal hypertension	6	3	Mild_liver_disease	Cryptogenic	No death
+265	Male	[50; 60]	UGIB due to portal hypertension	6	3	Renal_disease	Cryptogenic	No death
+266	Male	[60; 70]	Hepatic encephalopathy	7	1	Mild_liver_disease	Alcohol_consumption	No death
+267	Male	[50; 60]	Ascites	8	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+268	Female	[60; 70]	Ascites	7	1	Mild_liver_disease	Alcohol_consumption	No death
+268	Female	[60; 70]	Ascites	7	1	Mild_liver_disease	Hepatitis_c	No death
+269	Male	[50; 60]	Hepatic encephalopathy	9	3	Moderate_severe_liver_disease	Alcohol_consumption	Death_between_30_and_90_days
+269	Male	[50; 60]	Hepatic encephalopathy	9	3	Moderate_severe_liver_disease	Hepatitis_c	Death_between_30_and_90_days
+270	Male	[70; 80]	Ascites	8	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+274	Female	[50; 60]	UGIB due to portal hypertension	9	4	Pepticulcer_disease	Alcohol_consumption	No death
+274	Female	[50; 60]	UGIB due to portal hypertension	9	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+276	Female	[60; 70]	UGIB due to portal hypertension	7	1	Mild_liver_disease	Alcohol_consumption	No death
+277	Male	[50; 60]	UGIB due to portal hypertension	8	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+277	Male	[50; 60]	UGIB due to portal hypertension	8	4	Moderate_severe_liver_disease	Hepatitis_c	No death
+277	Male	[50; 60]	UGIB due to portal hypertension	8	4	Diabetes_with_without_complications	Alcohol_consumption	No death
+277	Male	[50; 60]	UGIB due to portal hypertension	8	4	Diabetes_with_without_complications	Hepatitis_c	No death
+283	Male	[60; 70]	UGIB due to portal hypertension	8	1	Mild_liver_disease	Alcohol_consumption	No death
+285	Male	[60; 70]	Ascites	11	1	Mild_liver_disease	Alcohol_consumption	Death_in_hospital
+286	Male	[60; 70]	Hepatic encephalopathy	7	3	Moderate_severe_liver_disease	Non_alcoolic_fatty_LD	No death
+287	Female	[80; 90]	Hepatic encephalopathy	7	6	Renal_disease	Non_alcoolic_fatty_LD	No death
+287	Female	[80; 90]	Hepatic encephalopathy	7	6	Moderate_severe_liver_disease	Non_alcoolic_fatty_LD	No death
+287	Female	[80; 90]	Hepatic encephalopathy	7	6	Diabetes_with_without_complications	Non_alcoolic_fatty_LD	No death
+293	Female	[60; 70]	UGIB due to portal hypertension	9	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+294	Female	[60; 70]	UGIB due to portal hypertension	7	1	Mild_liver_disease	Cryptogenic	No death
+295	Female	[60; 70]	UGIB due to portal hypertension	6	1	Mild_liver_disease	Alcohol_consumption	No death
+296	Female	[40; 50]	Ascites	12	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+296	Female	[40; 50]	Ascites	12	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+299	Female	[70; 80]	Hepatic encephalopathy	9	3	Moderate_severe_liver_disease	Cryptogenic	No death
+302	Male	[50; 60]	Ascites	9	4	Moderate_severe_liver_disease	Hepatitis_c	No death
+302	Male	[50; 60]	Ascites	9	4	Diabetes_with_without_complications	Hepatitis_c	No death
+303	Female	[70; 80]	Hepatic encephalopathy	7	3	Rheumatological_disease	Cryptogenic	No death
+303	Female	[70; 80]	Hepatic encephalopathy	7	3	Mild_liver_disease	Cryptogenic	No death
+303	Female	[70; 80]	Hepatic encephalopathy	7	3	Diabetes_with_without_complications	Cryptogenic	No death
+304	Male	[50; 60]	Ascites	10	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+307	Male	[70; 80]	Ascites	7	5	Chronic_pulmonary_disease	Alcohol_consumption	No death
+307	Male	[70; 80]	Ascites	7	5	Chronic_pulmonary_disease	Hepatitis_c	No death
+307	Male	[70; 80]	Ascites	7	5	Moderate_severe_liver_disease	Alcohol_consumption	No death
+307	Male	[70; 80]	Ascites	7	5	Moderate_severe_liver_disease	Hepatitis_c	No death
+307	Male	[70; 80]	Ascites	7	5	Diabetes_with_without_complications	Alcohol_consumption	No death
+307	Male	[70; 80]	Ascites	7	5	Diabetes_with_without_complications	Hepatitis_c	No death
+311	Male	[80; 90]	Hepatic encephalopathy	10	1	Mild_liver_disease	Alcohol_consumption	No death
+312	Female	[50; 60]	Ascites	11	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+313	Male	[60; 70]	SBP	7	2	Chronic_pulmonary_disease	Hepatitis_c	No death
+313	Male	[60; 70]	SBP	7	2	Mild_liver_disease	Hepatitis_c	No death
+315	Male	[50; 60]	Hepatic encephalopathy	8	2	Mild_liver_disease	Alcohol_consumption	No death
+315	Male	[50; 60]	Hepatic encephalopathy	8	2	Diabetes_with_without_complications	Alcohol_consumption	No death
+316	Male	[70; 80]	Ascites	9	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+319	Female	[60; 70]	Ascites	10	1	Mild_liver_disease	Alcohol_consumption	No death
+321	Male	[60; 70]	UGIB due to portal hypertension	14	5	Malignancy	Alcohol_consumption	Death_in_hospital
+321	Male	[60; 70]	UGIB due to portal hypertension	14	5	Malignancy	Hepatitis_c	Death_in_hospital
+321	Male	[60; 70]	UGIB due to portal hypertension	14	5	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_hospital
+321	Male	[60; 70]	UGIB due to portal hypertension	14	5	Moderate_severe_liver_disease	Hepatitis_c	Death_in_hospital
+323	Male	[40; 50]	Hepatic encephalopathy	9	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+324	Female	[60; 70]	UGIB due to portal hypertension	8	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+325	Female	[60; 70]	Hepatic encephalopathy	12	3	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_hospital
+325	Female	[60; 70]	Hepatic encephalopathy	12	3	Moderate_severe_liver_disease	Hepatitis_c	Death_in_hospital
+326	Male	[60; 70]	UGIB due to portal hypertension	7	1	Mild_liver_disease	Alcohol_consumption	No death
+326	Male	[60; 70]	UGIB due to portal hypertension	7	1	Mild_liver_disease	Hepatitis_c	No death
+327	Female	[60; 70]	Hepatic encephalopathy	8	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+327	Female	[60; 70]	Hepatic encephalopathy	8	4	Diabetes_with_without_complications	Alcohol_consumption	No death
+328	Female	[60; 70]	SBP	9	4	Moderate_severe_liver_disease	Hepatitis_c	No death
+328	Female	[60; 70]	SBP	9	4	Diabetes_with_without_complications	Hepatitis_c	No death
+329	Female	[60; 70]	UGIB due to portal hypertension	5	3	Chronic_pulmonary_disease	Non_alcoolic_fatty_LD	No death
+329	Female	[60; 70]	UGIB due to portal hypertension	5	3	Mild_liver_disease	Non_alcoolic_fatty_LD	No death
+329	Female	[60; 70]	UGIB due to portal hypertension	5	3	Diabetes_with_without_complications	Non_alcoolic_fatty_LD	No death
+333	Female	[50; 60]	Hepatic encephalopathy	9	6	Renal_disease	Non_alcoolic_fatty_LD	No death
+333	Female	[50; 60]	Hepatic encephalopathy	9	6	Moderate_severe_liver_disease	Non_alcoolic_fatty_LD	No death
+333	Female	[50; 60]	Hepatic encephalopathy	9	6	Diabetes_with_without_complications	Non_alcoolic_fatty_LD	No death
+335	Male	[50; 60]	Hepatic encephalopathy	14	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+335	Male	[50; 60]	Hepatic encephalopathy	14	4	Diabetes_with_without_complications	Alcohol_consumption	No death
+336	Female	[50; 60]	Ascites	12	1	Mild_liver_disease	Alcohol_consumption	Death_between_30_and_90_days
+337	Male	[70; 80]	UGIB due to portal hypertension	6	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+338	Male	[60; 70]	Ascites	11	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+339	Male	[40; 50]	UGIB due to portal hypertension	10	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+339	Male	[40; 50]	UGIB due to portal hypertension	10	4	Diabetes_with_without_complications	Alcohol_consumption	No death
+340	Male	[70; 80]	Ascites	6	3	Mild_liver_disease	Cryptogenic	No death
+340	Male	[70; 80]	Ascites	6	3	Renal_disease	Cryptogenic	No death
+341	Male	[40; 50]	Hepatic encephalopathy	13	3	Moderate_severe_liver_disease	Autoimmune_hepatitis	Death_in_hospital
+343	Male	[60; 70]	UGIB due to portal hypertension	9	1	Mild_liver_disease	Alcohol_consumption	No death
+343	Male	[60; 70]	UGIB due to portal hypertension	9	1	Mild_liver_disease	Hepatitis_c	No death
+344	Female	[60; 70]	Ascites	8	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+345	Male	[70; 80]	Ascites	9	4	Chronic_pulmonary_disease	Alcohol_consumption	No death
+345	Male	[70; 80]	Ascites	9	4	Chronic_pulmonary_disease	Hepatitis_c	No death
+345	Male	[70; 80]	Ascites	9	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+345	Male	[70; 80]	Ascites	9	4	Moderate_severe_liver_disease	Hepatitis_c	No death
+346	Male	[60; 70]	Ascites	7	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+346	Male	[60; 70]	Ascites	7	4	Diabetes_with_without_complications	Alcohol_consumption	No death
+347	Male	[60; 70]	Hepatic encephalopathy	10	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+347	Male	[60; 70]	Hepatic encephalopathy	10	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+348	Male	[50; 60]	UGIB due to portal hypertension	6	4	Pepticulcer_disease	Alcohol_consumption	No death
+348	Male	[50; 60]	UGIB due to portal hypertension	6	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+350	Female	[60; 70]	UGIB due to portal hypertension	6	5	Myocardial_infarction	Non_alcoolic_fatty_LD	No death
+350	Female	[60; 70]	UGIB due to portal hypertension	6	5	Moderate_severe_liver_disease	Non_alcoolic_fatty_LD	No death
+350	Female	[60; 70]	UGIB due to portal hypertension	6	5	Diabetes_with_without_complications	Non_alcoolic_fatty_LD	No death
+351	Male	[70; 80]	UGIB due to portal hypertension	11	4	Moderate_severe_liver_disease	Hepatitis_c	No death
+351	Male	[70; 80]	UGIB due to portal hypertension	11	4	Diabetes_with_without_complications	Hepatitis_c	No death
+352	Female	[40; 50]	Ascites	9	4	Moderate_severe_liver_disease	Non_alcoolic_fatty_LD	No death
+352	Female	[40; 50]	Ascites	9	4	Diabetes_with_without_complications	Non_alcoolic_fatty_LD	No death
+353	Male	[50; 60]	UGIB due to portal hypertension	9	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+353	Male	[50; 60]	UGIB due to portal hypertension	9	4	Diabetes_with_without_complications	Alcohol_consumption	No death
+354	Male	[70; 80]	SBP	9	4	Moderate_severe_liver_disease	Hepatitis_c	No death
+354	Male	[70; 80]	SBP	9	4	Diabetes_with_without_complications	Hepatitis_c	No death
+355	Female	[60; 70]	Ascites	9	1	Mild_liver_disease	Alcohol_consumption	No death
+357	Female	[70; 80]	Hepatic encephalopathy	9	4	Moderate_severe_liver_disease	Non_alcoolic_fatty_LD	No death
+357	Female	[70; 80]	Hepatic encephalopathy	9	4	Diabetes_with_without_complications	Non_alcoolic_fatty_LD	No death
+358	Male	[70; 80]	Hepatic encephalopathy	9	10	Myocardial_infarction	Alcohol_consumption	No death
+358	Male	[70; 80]	Hepatic encephalopathy	9	10	Moderate_severe_liver_disease	Alcohol_consumption	No death
+358	Male	[70; 80]	Hepatic encephalopathy	9	10	Metastatic_solid_tumor	Alcohol_consumption	No death
+360	Male	[50; 60]	UGIB due to portal hypertension	9	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+360	Male	[50; 60]	UGIB due to portal hypertension	9	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+363	Female	[60; 70]	Hepatic encephalopathy	9	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+365	Female	[60; 70]	Hepatic encephalopathy	8	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+366	Male	[50; 60]	Hepatic encephalopathy	13	11	Malignancy	Hepatitis_c	Death_in_hospital
+366	Male	[50; 60]	Hepatic encephalopathy	13	11	Malignancy	Hepatitis_b	Death_in_hospital
+366	Male	[50; 60]	Hepatic encephalopathy	13	11	Moderate_severe_liver_disease	Hepatitis_c	Death_in_hospital
+366	Male	[50; 60]	Hepatic encephalopathy	13	11	Moderate_severe_liver_disease	Hepatitis_b	Death_in_hospital
+366	Male	[50; 60]	Hepatic encephalopathy	13	11	AIDS	Hepatitis_c	Death_in_hospital
+366	Male	[50; 60]	Hepatic encephalopathy	13	11	AIDS	Hepatitis_b	Death_in_hospital
+367	Male	[60; 70]	Other fluid overload	11	3	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_hospital
+367	Male	[60; 70]	Other fluid overload	11	3	Moderate_severe_liver_disease	Hepatitis_c	Death_in_hospital
+369	Female	[80; 90]	Hepatic encephalopathy	9	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+372	Male	[50; 60]	Ascites	11	4	Chronic_pulmonary_disease	Alcohol_consumption	No death
+372	Male	[50; 60]	Ascites	11	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+373	Male	[60; 70]	Hepatic encephalopathy	7	0	None	Alcohol_consumption	No death
+374	Male	[60; 70]	Ascites	8	5	Renal_disease	Hepatitis_c	No death
+374	Male	[60; 70]	Ascites	8	5	Moderate_severe_liver_disease	Hepatitis_c	No death
+375	Male	[60; 70]	Ascites	7	5	Pepticulcer_disease	Alcohol_consumption	No death
+375	Male	[60; 70]	Ascites	7	5	Moderate_severe_liver_disease	Alcohol_consumption	No death
+375	Male	[60; 70]	Ascites	7	5	Diabetes_with_without_complications	Alcohol_consumption	No death
+376	Female	[40; 50]	Alcoholic hepatitis	12	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+377	Male	[40; 50]	UGIB due to portal hypertension	9	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+377	Male	[40; 50]	UGIB due to portal hypertension	9	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+378	Male	[60; 70]	AKI	10	6	Pepticulcer_disease	Alcohol_consumption	No death
+378	Male	[60; 70]	AKI	10	6	Renal_disease	Alcohol_consumption	No death
+378	Male	[60; 70]	AKI	10	6	Moderate_severe_liver_disease	Alcohol_consumption	No death
+381	Male	[60; 70]	UGIB due to portal hypertension	7	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+381	Male	[60; 70]	UGIB due to portal hypertension	7	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+382	Male	[50; 60]	Hepatic encephalopathy	7	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+383	Male	[60; 70]	Hepatic encephalopathy	9	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+384	Female	[60; 70]	UGIB due to portal hypertension	10	3	Moderate_severe_liver_disease	Cryptogenic	Death_in_hospital
+388	Male	[50; 60]	Ascites	8	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+388	Male	[50; 60]	Ascites	8	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+389	Male	[60; 70]	UGIB due to portal hypertension	10	4	Moderate_severe_liver_disease	Alcohol_consumption	Death_between_30_and_90_days
+389	Male	[60; 70]	UGIB due to portal hypertension	10	4	Diabetes_with_without_complications	Alcohol_consumption	Death_between_30_and_90_days
+392	Male	[60; 70]	SBP	8	9	Myocardial_infarction	Cryptogenic	No death
+392	Male	[60; 70]	SBP	8	9	Congestive_Heart_Failure	Cryptogenic	No death
+392	Male	[60; 70]	SBP	8	9	Renal_disease	Cryptogenic	No death
+392	Male	[60; 70]	SBP	8	9	Moderate_severe_liver_disease	Cryptogenic	No death
+392	Male	[60; 70]	SBP	8	9	Diabetes_with_without_complications	Cryptogenic	No death
+393	Male	[40; 50]	Alcoholic hepatitis	13	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+393	Male	[40; 50]	Alcoholic hepatitis	13	4	Diabetes_with_without_complications	Alcohol_consumption	No death
+394	Female	[60; 70]	Hepatic encephalopathy	8	4	Pepticulcer_disease	Alcohol_consumption	No death
+394	Female	[60; 70]	Hepatic encephalopathy	8	4	Pepticulcer_disease	Hepatitis_c	No death
+394	Female	[60; 70]	Hepatic encephalopathy	8	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+394	Female	[60; 70]	Hepatic encephalopathy	8	4	Moderate_severe_liver_disease	Hepatitis_c	No death
+395	Female	[60; 70]	Hepatic encephalopathy	8	4	Chronic_pulmonary_disease	Alcohol_consumption	No death
+395	Female	[60; 70]	Hepatic encephalopathy	8	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+396	Male	[60; 70]	Hepatic encephalopathy	11	5	Chronic_pulmonary_disease	Alcohol_consumption	Death_between_30_and_90_days
+396	Male	[60; 70]	Hepatic encephalopathy	11	5	Chronic_pulmonary_disease	Hepatitis_c	Death_between_30_and_90_days
+396	Male	[60; 70]	Hepatic encephalopathy	11	5	Moderate_severe_liver_disease	Alcohol_consumption	Death_between_30_and_90_days
+396	Male	[60; 70]	Hepatic encephalopathy	11	5	Moderate_severe_liver_disease	Hepatitis_c	Death_between_30_and_90_days
+396	Male	[60; 70]	Hepatic encephalopathy	11	5	Diabetes_with_without_complications	Alcohol_consumption	Death_between_30_and_90_days
+396	Male	[60; 70]	Hepatic encephalopathy	11	5	Diabetes_with_without_complications	Hepatitis_c	Death_between_30_and_90_days
+397	Female	[40; 50]	UGIB due to portal hypertension	8	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+398	Male	[50; 60]	UGIB due to portal hypertension	6	4	Myocardial_infarction	Alcohol_consumption	No death
+398	Male	[50; 60]	UGIB due to portal hypertension	6	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+399	Female	[60; 70]	UGIB due to portal hypertension	7	4	Chronic_pulmonary_disease	Alcohol_consumption	No death
+399	Female	[60; 70]	UGIB due to portal hypertension	7	4	Chronic_pulmonary_disease	Hepatitis_c	No death
+399	Female	[60; 70]	UGIB due to portal hypertension	7	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+399	Female	[60; 70]	UGIB due to portal hypertension	7	4	Moderate_severe_liver_disease	Hepatitis_c	No death
+400	Male	[70; 80]	Hepatic encephalopathy	11	5	Malignancy	Alcohol_consumption	Death_in_hospital
+400	Male	[70; 80]	Hepatic encephalopathy	11	5	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_hospital
+402	Female	[60; 70]	UGIB due to portal hypertension	7	4	Mild_liver_disease	Alcohol_consumption	Death_in_hospital
+402	Female	[60; 70]	UGIB due to portal hypertension	7	4	Mild_liver_disease	Hepatitis_c	Death_in_hospital
+402	Female	[60; 70]	UGIB due to portal hypertension	7	4	Malignancy	Alcohol_consumption	Death_in_hospital
+402	Female	[60; 70]	UGIB due to portal hypertension	7	4	Malignancy	Hepatitis_c	Death_in_hospital
+402	Female	[60; 70]	UGIB due to portal hypertension	7	4	Diabetes_with_without_complications	Alcohol_consumption	Death_in_hospital
+402	Female	[60; 70]	UGIB due to portal hypertension	7	4	Diabetes_with_without_complications	Hepatitis_c	Death_in_hospital
+403	Male	[60; 70]	Ascites	7	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+404	Male	[50; 60]	UGIB due to portal hypertension	7	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+405	Male	[60; 70]	Hepatic encephalopathy	9	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+405	Male	[60; 70]	Hepatic encephalopathy	9	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+406	Male	[60; 70]	Hepatic encephalopathy	8	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+406	Male	[60; 70]	Hepatic encephalopathy	8	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+408	Male	[60; 70]	Ascites	8	5	Congestive_Heart_Failure	Alcohol_consumption	No death
+408	Male	[60; 70]	Ascites	8	5	Congestive_Heart_Failure	Hepatitis_c	No death
+408	Male	[60; 70]	Ascites	8	5	Chronic_pulmonary_disease	Alcohol_consumption	No death
+408	Male	[60; 70]	Ascites	8	5	Chronic_pulmonary_disease	Hepatitis_c	No death
+408	Male	[60; 70]	Ascites	8	5	Moderate_severe_liver_disease	Alcohol_consumption	No death
+408	Male	[60; 70]	Ascites	8	5	Moderate_severe_liver_disease	Hepatitis_c	No death
+410	Male	[50; 60]	UGIB due to portal hypertension	6	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+410	Male	[50; 60]	UGIB due to portal hypertension	6	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+410	Male	[50; 60]	UGIB due to portal hypertension	6	3	Moderate_severe_liver_disease	Hepatitis_b	No death
+411	Female	[80; 90]	HCC or cholangioca.	9	6	Myocardial_infarction	Hepatitis_c	No death
+411	Female	[80; 90]	HCC or cholangioca.	9	6	Malignancy	Hepatitis_c	No death
+411	Female	[80; 90]	HCC or cholangioca.	9	6	Moderate_severe_liver_disease	Hepatitis_c	No death
+412	Female	[60; 70]	Hepato-hydrothorax	11	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+412	Female	[60; 70]	Hepato-hydrothorax	11	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+413	Male	[60; 70]	Alcoholic hepatitis	11	5	Renal_disease	Alcohol_consumption	No death
+413	Male	[60; 70]	Alcoholic hepatitis	11	5	Moderate_severe_liver_disease	Alcohol_consumption	No death
+414	Male	[50; 60]	Hepatic encephalopathy	9	3	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_hospital
+415	Female	[50; 60]	Hepatic encephalopathy	9	3	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_hospital
+415	Female	[50; 60]	Hepatic encephalopathy	9	3	Moderate_severe_liver_disease	Hepatitis_c	Death_in_hospital
+417	Female	[70; 80]	Ascites	7	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+418	Male	[70; 80]	Jaundice- as isolated presentation	11	6	Malignancy	Alcohol_consumption	Death_in_hospital
+418	Male	[70; 80]	Jaundice- as isolated presentation	11	6	Malignancy	Hepatitis_c	Death_in_hospital
+418	Male	[70; 80]	Jaundice- as isolated presentation	11	6	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_hospital
+418	Male	[70; 80]	Jaundice- as isolated presentation	11	6	Moderate_severe_liver_disease	Hepatitis_c	Death_in_hospital
+418	Male	[70; 80]	Jaundice- as isolated presentation	11	6	Diabetes_with_without_complications	Alcohol_consumption	Death_in_hospital
+418	Male	[70; 80]	Jaundice- as isolated presentation	11	6	Diabetes_with_without_complications	Hepatitis_c	Death_in_hospital
+420	Female	[50; 60]	Alcoholic hepatitis	11	3	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_hospital
+421	Female	[60; 70]	Ascites	7	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+422	Male	[60; 70]	SBP	11	3	Moderate_severe_liver_disease	Alcohol_consumption	Death_between_30_and_90_days
+424	Male	[40; 50]	Hepatic encephalopathy	6	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+427	Male	[50; 60]	Ascites	9	9	Myocardial_infarction	Alcohol_consumption	No death
+427	Male	[50; 60]	Ascites	9	9	Pepticulcer_disease	Alcohol_consumption	No death
+427	Male	[50; 60]	Ascites	9	9	Malignancy	Alcohol_consumption	No death
+427	Male	[50; 60]	Ascites	9	9	Moderate_severe_liver_disease	Alcohol_consumption	No death
+427	Male	[50; 60]	Ascites	9	9	Diabetes_with_without_complications	Alcohol_consumption	No death
+428	Male	[60; 70]	Other fluid overload	10	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+429	Female	[60; 70]	Ascites	11	1	Diabetes_with_without_complications	Hepatitis_c	No death
+430	Female	[60; 70]	Ascites	9	1	Mild_liver_disease	Alcohol_consumption	No death
+431	Male	[70; 80]	Ascites	9	10	Moderate_severe_liver_disease	Hepatitis_c	No death
+431	Male	[70; 80]	Ascites	9	10	Metastatic_solid_tumor	Hepatitis_c	No death
+431	Male	[70; 80]	Ascites	9	10	Diabetes_with_without_complications	Hepatitis_c	No death
+432	Male	[60; 70]	Ascites	10	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+432	Male	[60; 70]	Ascites	10	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+433	Female	[60; 70]	Ascites	9	10	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_first_30_days
+433	Female	[60; 70]	Ascites	9	10	Metastatic_solid_tumor	Alcohol_consumption	Death_in_first_30_days
+433	Female	[60; 70]	Ascites	9	10	Diabetes_with_without_complications	Alcohol_consumption	Death_in_first_30_days
+434	Male	[70; 80]	Hepatic encephalopathy	7	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+435	Male	[60; 70]	UGIB due to portal hypertension	9	4	Chronic_pulmonary_disease	Alcohol_consumption	No death
+435	Male	[60; 70]	UGIB due to portal hypertension	9	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+437	Male	[70; 80]	Hepatic encephalopathy	8	10	Cerebro_Vascular_disease	Alcohol_consumption	Death_in_hospital
+437	Male	[70; 80]	Hepatic encephalopathy	8	10	Cerebro_Vascular_disease	Hepatitis_c	Death_in_hospital
+437	Male	[70; 80]	Hepatic encephalopathy	8	10	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_hospital
+437	Male	[70; 80]	Hepatic encephalopathy	8	10	Moderate_severe_liver_disease	Hepatitis_c	Death_in_hospital
+437	Male	[70; 80]	Hepatic encephalopathy	8	10	Metastatic_solid_tumor	Alcohol_consumption	Death_in_hospital
+437	Male	[70; 80]	Hepatic encephalopathy	8	10	Metastatic_solid_tumor	Hepatitis_c	Death_in_hospital
+438	Male	[60; 70]	Alcoholic hepatitis	9	1	Mild_liver_disease	Alcohol_consumption	Death_in_hospital
+439	Male	[60; 70]	Ascites	6	2	Pepticulcer_disease	Alcohol_consumption	No death
+439	Male	[60; 70]	Ascites	6	2	Pepticulcer_disease	Hepatitis_c	No death
+439	Male	[60; 70]	Ascites	6	2	Mild_liver_disease	Alcohol_consumption	No death
+439	Male	[60; 70]	Ascites	6	2	Mild_liver_disease	Hepatitis_c	No death
+440	Female	[60; 70]	Hepatic encephalopathy	8	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+441	Male	[60; 70]	Alcoholic hepatitis	6	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+442	Female	[50; 60]	Ascites	7	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+442	Female	[50; 60]	Ascites	7	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+443	Female	[60; 70]	UGIB due to portal hypertension	9	4	Chronic_pulmonary_disease	Alcohol_consumption	Death_in_hospital
+443	Female	[60; 70]	UGIB due to portal hypertension	9	4	Chronic_pulmonary_disease	Hepatitis_c	Death_in_hospital
+443	Female	[60; 70]	UGIB due to portal hypertension	9	4	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_hospital
+443	Female	[60; 70]	UGIB due to portal hypertension	9	4	Moderate_severe_liver_disease	Hepatitis_c	Death_in_hospital
+444	Male	[60; 70]	Hepatic encephalopathy	8	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+445	Male	[70; 80]	Hepatic encephalopathy	6	1	Mild_liver_disease	Alcohol_consumption	Death_in_hospital
+445	Male	[70; 80]	Hepatic encephalopathy	6	1	Mild_liver_disease	Hepatitis_c	Death_in_hospital
+448	Female	[60; 70]	Hepatic encephalopathy	10	3	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_hospital
+449	Female	[70; 80]	Ascites	6	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+451	Male	[60; 70]	Ascites	10	6	Chronic_pulmonary_disease	Alcohol_consumption	Death_in_hospital
+451	Male	[60; 70]	Ascites	10	6	Chronic_pulmonary_disease	Hepatitis_c	Death_in_hospital
+451	Male	[60; 70]	Ascites	10	6	Malignancy	Alcohol_consumption	Death_in_hospital
+451	Male	[60; 70]	Ascites	10	6	Malignancy	Hepatitis_c	Death_in_hospital
+451	Male	[60; 70]	Ascites	10	6	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_hospital
+451	Male	[60; 70]	Ascites	10	6	Moderate_severe_liver_disease	Hepatitis_c	Death_in_hospital
+452	Male	[50; 60]	HCC or cholangioca.	6	4	Moderate_severe_liver_disease	Hepatitis_c	No death
+452	Male	[50; 60]	HCC or cholangioca.	6	4	Moderate_severe_liver_disease	Hepatitis_b	No death
+452	Male	[50; 60]	HCC or cholangioca.	6	4	Diabetes_with_without_complications	Hepatitis_c	No death
+452	Male	[50; 60]	HCC or cholangioca.	6	4	Diabetes_with_without_complications	Hepatitis_b	No death
+454	Female	[50; 60]	Hepatic encephalopathy	11	3	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_hospital
+454	Female	[50; 60]	Hepatic encephalopathy	11	3	Moderate_severe_liver_disease	Hepatitis_c	Death_in_hospital
+455	Male	[60; 70]	UGIB due to portal hypertension	5	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+456	Male	[60; 70]	Alcoholic hepatitis	12	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+457	Male	[60; 70]	Hepatic encephalopathy	7	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+457	Male	[60; 70]	Hepatic encephalopathy	7	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+458	Female	[60; 70]	UGIB due to portal hypertension	6	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+459	Male	[60; 70]	Ascites	8	3	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_hospital
+460	Male	[60; 70]	UGIB due to portal hypertension	5	5	Pepticulcer_disease	Alcohol_consumption	No death
+460	Male	[60; 70]	UGIB due to portal hypertension	5	5	Moderate_severe_liver_disease	Alcohol_consumption	No death
+460	Male	[60; 70]	UGIB due to portal hypertension	5	5	Diabetes_with_without_complications	Alcohol_consumption	No death
+462	Male	[50; 60]	UGIB due to portal hypertension	6	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+462	Male	[50; 60]	UGIB due to portal hypertension	6	4	Diabetes_with_without_complications	Alcohol_consumption	No death
+464	Male	[60; 70]	Hepatic encephalopathy	10	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+464	Male	[60; 70]	Hepatic encephalopathy	10	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+465	Male	[60; 70]	SBP	12	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+466	Male	[60; 70]	UGIB due to portal hypertension	8	4	Chronic_pulmonary_disease	Alcohol_consumption	No death
+466	Male	[60; 70]	UGIB due to portal hypertension	8	4	Chronic_pulmonary_disease	Hepatitis_c	No death
+466	Male	[60; 70]	UGIB due to portal hypertension	8	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+466	Male	[60; 70]	UGIB due to portal hypertension	8	4	Moderate_severe_liver_disease	Hepatitis_c	No death
+467	Female	[60; 70]	Hepatic encephalopathy	8	6	Malignancy	Non_alcoolic_fatty_LD	No death
+467	Female	[60; 70]	Hepatic encephalopathy	8	6	Moderate_severe_liver_disease	Non_alcoolic_fatty_LD	No death
+467	Female	[60; 70]	Hepatic encephalopathy	8	6	Diabetes_with_without_complications	Non_alcoolic_fatty_LD	No death
+468	Male	[60; 70]	UGIB due to portal hypertension	5	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+468	Male	[60; 70]	UGIB due to portal hypertension	5	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+469	Male	[70; 80]	UGIB due to portal hypertension	7	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+469	Male	[70; 80]	UGIB due to portal hypertension	7	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+470	Female	[70; 80]	Alcoholic hepatitis	11	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+470	Female	[70; 80]	Alcoholic hepatitis	11	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+471	Female	[50; 60]	SBP	8	4	Rheumatological_disease	Hepatitis_b	No death
+471	Female	[50; 60]	SBP	8	4	Moderate_severe_liver_disease	Hepatitis_b	No death
+472	Female	[50; 60]	UGIB due to portal hypertension	9	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+473	Male	[40; 50]	UGIB due to portal hypertension	6	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+474	Male	[60; 70]	Ascites	5	6	Congestive_Heart_Failure	Alcohol_consumption	No death
+474	Male	[60; 70]	Ascites	5	6	Chronic_pulmonary_disease	Alcohol_consumption	No death
+474	Male	[60; 70]	Ascites	5	6	Pepticulcer_disease	Alcohol_consumption	No death
+474	Male	[60; 70]	Ascites	5	6	Moderate_severe_liver_disease	Alcohol_consumption	No death
+475	Male	[60; 70]	UGIB due to portal hypertension	5	1	Mild_liver_disease	Alcohol_consumption	No death
+475	Male	[60; 70]	UGIB due to portal hypertension	5	1	Mild_liver_disease	Hepatitis_c	No death
+476	Female	[70; 80]	Ascites	10	5	Malignancy	Alcohol_consumption	No death
+476	Female	[70; 80]	Ascites	10	5	Moderate_severe_liver_disease	Alcohol_consumption	No death
+477	Male	[70; 80]	SBP	8	8	Congestive_Heart_Failure	Hepatitis_c	No death
+477	Male	[70; 80]	SBP	8	8	Renal_disease	Hepatitis_c	No death
+477	Male	[70; 80]	SBP	8	8	Moderate_severe_liver_disease	Hepatitis_c	No death
+477	Male	[70; 80]	SBP	8	8	Diabetes_with_without_complications	Hepatitis_c	No death
+479	Male	[50; 60]	Alcoholic hepatitis	10	0	None	Alcohol_consumption	No death
+480	Male	[60; 70]	SBP	9	4	Chronic_pulmonary_disease	Alcohol_consumption	No death
+480	Male	[60; 70]	SBP	9	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+481	Male	[60; 70]	Ascites	6	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+482	Male	[60; 70]	SBP	8	4	Myocardial_infarction	Alcohol_consumption	No death
+482	Male	[60; 70]	SBP	8	4	Myocardial_infarction	Hepatitis_c	No death
+482	Male	[60; 70]	SBP	8	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+482	Male	[60; 70]	SBP	8	4	Moderate_severe_liver_disease	Hepatitis_c	No death
+483	Male	[50; 60]	Hepatic encephalopathy	7	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+483	Male	[50; 60]	Hepatic encephalopathy	7	4	Moderate_severe_liver_disease	Hepatitis_c	No death
+483	Male	[50; 60]	Hepatic encephalopathy	7	4	Diabetes_with_without_complications	Alcohol_consumption	No death
+483	Male	[50; 60]	Hepatic encephalopathy	7	4	Diabetes_with_without_complications	Hepatitis_c	No death
+484	Female	[70; 80]	Hepatic encephalopathy	8	11	Chronic_pulmonary_disease	Alcohol_consumption	No death
+484	Female	[70; 80]	Hepatic encephalopathy	8	11	Pepticulcer_disease	Alcohol_consumption	No death
+484	Female	[70; 80]	Hepatic encephalopathy	8	11	Moderate_severe_liver_disease	Alcohol_consumption	No death
+484	Female	[70; 80]	Hepatic encephalopathy	8	11	Metastatic_solid_tumor	Alcohol_consumption	No death
+485	Male	[50; 60]	UGIB due to portal hypertension	6	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+485	Male	[50; 60]	UGIB due to portal hypertension	6	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+487	Male	[60; 70]	Hepatic encephalopathy	6	6	Cerebro_Vascular_disease	Alcohol_consumption	No death
+487	Male	[60; 70]	Hepatic encephalopathy	6	6	Cerebro_Vascular_disease	Hepatitis_c	No death
+487	Male	[60; 70]	Hepatic encephalopathy	6	6	Moderate_severe_liver_disease	Alcohol_consumption	No death
+487	Male	[60; 70]	Hepatic encephalopathy	6	6	Moderate_severe_liver_disease	Hepatitis_c	No death
+487	Male	[60; 70]	Hepatic encephalopathy	6	6	Diabetes_with_without_complications	Alcohol_consumption	No death
+487	Male	[60; 70]	Hepatic encephalopathy	6	6	Diabetes_with_without_complications	Hepatitis_c	No death
+488	Male	[60; 70]	Ascites	6	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+489	Male	[70; 80]	Hepatic encephalopathy	8	6	Renal_disease	Non_alcoolic_fatty_LD	No death
+489	Male	[70; 80]	Hepatic encephalopathy	8	6	Moderate_severe_liver_disease	Non_alcoolic_fatty_LD	No death
+489	Male	[70; 80]	Hepatic encephalopathy	8	6	Diabetes_with_without_complications	Non_alcoolic_fatty_LD	No death
+491	Male	[70; 80]	Ascites	8	7	Renal_disease	Alcohol_consumption	No death
+491	Male	[70; 80]	Ascites	8	7	Renal_disease	Hepatitis_c	No death
+491	Male	[70; 80]	Ascites	8	7	Moderate_severe_liver_disease	Alcohol_consumption	No death
+491	Male	[70; 80]	Ascites	8	7	Moderate_severe_liver_disease	Hepatitis_c	No death
+491	Male	[70; 80]	Ascites	8	7	Diabetes_with_without_complications	Alcohol_consumption	No death
+491	Male	[70; 80]	Ascites	8	7	Diabetes_with_without_complications	Hepatitis_c	No death
+492	Male	[50; 60]	Hepatic encephalopathy	9	5	Pepticulcer_disease	Hepatitis_c	No death
+492	Male	[50; 60]	Hepatic encephalopathy	9	5	Moderate_severe_liver_disease	Hepatitis_c	No death
+492	Male	[50; 60]	Hepatic encephalopathy	9	5	Diabetes_with_without_complications	Hepatitis_c	No death
+493	Female	[50; 60]	Alcoholic hepatitis	8	4	Chronic_pulmonary_disease	Alcohol_consumption	No death
+493	Female	[50; 60]	Alcoholic hepatitis	8	4	Chronic_pulmonary_disease	Hepatitis_c	No death
+493	Female	[50; 60]	Alcoholic hepatitis	8	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+493	Female	[50; 60]	Alcoholic hepatitis	8	4	Moderate_severe_liver_disease	Hepatitis_c	No death
+494	Male	[60; 70]	Hepatic encephalopathy	8	4	Pepticulcer_disease	Alcohol_consumption	No death
+494	Male	[60; 70]	Hepatic encephalopathy	8	4	Pepticulcer_disease	Hepatitis_c	No death
+494	Male	[60; 70]	Hepatic encephalopathy	8	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+494	Male	[60; 70]	Hepatic encephalopathy	8	4	Moderate_severe_liver_disease	Hepatitis_c	No death
+495	Male	[60; 70]	SBP	11	5	Malignancy	Alcohol_consumption	Death_between_30_and_90_days
+495	Male	[60; 70]	SBP	11	5	Malignancy	Hepatitis_c	Death_between_30_and_90_days
+495	Male	[60; 70]	SBP	11	5	Moderate_severe_liver_disease	Alcohol_consumption	Death_between_30_and_90_days
+495	Male	[60; 70]	SBP	11	5	Moderate_severe_liver_disease	Hepatitis_c	Death_between_30_and_90_days
+497	Female	[70; 80]	Hepatic encephalopathy	10	11	Cerebro_Vascular_disease	Alcohol_consumption	Death_in_first_30_days
+497	Female	[70; 80]	Hepatic encephalopathy	10	11	Pepticulcer_disease	Alcohol_consumption	Death_in_first_30_days
+497	Female	[70; 80]	Hepatic encephalopathy	10	11	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_first_30_days
+497	Female	[70; 80]	Hepatic encephalopathy	10	11	AIDS	Alcohol_consumption	Death_in_first_30_days
+498	Female	[50; 60]	Ascites	13	3	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_hospital
+500	Male	[60; 70]	Other fluid overload	11	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+501	Male	[50; 60]	AKI	6	6	Congestive_Heart_Failure	Hepatitis_c	No death
+501	Male	[50; 60]	AKI	6	6	Moderate_severe_liver_disease	Hepatitis_c	No death
+501	Male	[50; 60]	AKI	6	6	Diabetes_with_without_complications	Hepatitis_c	No death
+503	Female	[60; 70]	Ascites	9	9	Moderate_severe_liver_disease	Alcohol_consumption	No death
+503	Female	[60; 70]	Ascites	9	9	AIDS	Alcohol_consumption	No death
+504	Male	[60; 70]	Ascites	8	4	Congestive_Heart_Failure	Non_alcoolic_fatty_LD	No death
+504	Male	[60; 70]	Ascites	8	4	Moderate_severe_liver_disease	Non_alcoolic_fatty_LD	No death
+509	Male	[50; 60]	UGIB due to portal hypertension	5	1	Mild_liver_disease	Alcohol_consumption	No death
+510	Male	[60; 70]	Ascites	12	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+510	Male	[60; 70]	Ascites	12	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+513	Male	[70; 80]	Ascites	10	4	Myocardial_infarction	Hepatitis_c	No death
+513	Male	[70; 80]	Ascites	10	4	Moderate_severe_liver_disease	Hepatitis_c	No death
+515	Male	[40; 50]	Hepatic encephalopathy	10	9	Moderate_severe_liver_disease	Hepatitis_b	No death
+515	Male	[40; 50]	Hepatic encephalopathy	10	9	AIDS	Hepatitis_b	No death
+516	Male	[60; 70]	Ascites	10	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+517	Female	[70; 80]	Ascites	13	3	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_hospital
+519	Male	[50; 60]	UGIB due to portal hypertension	9	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+519	Male	[50; 60]	UGIB due to portal hypertension	9	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+520	Male	[40; 50]	Hepatic encephalopathy	12	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+521	Male	[60; 70]	Hepatic encephalopathy	11	5	Dementia	Alcohol_consumption	No death
+521	Male	[60; 70]	Hepatic encephalopathy	11	5	Renal_disease	Alcohol_consumption	No death
+521	Male	[60; 70]	Hepatic encephalopathy	11	5	Moderate_severe_liver_disease	Alcohol_consumption	No death
+528	Male	[50; 60]	AKI	11	4	Congestive_Heart_Failure	Alcohol_consumption	Death_in_hospital
+528	Male	[50; 60]	AKI	11	4	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_hospital
+530	Male	[50; 60]	Ascites	12	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+531	Female	[60; 70]	Ascites	8	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+534	Male	[70; 80]	HCC or cholangioca.	8	6	Malignancy	Alcohol_consumption	No death
+534	Male	[70; 80]	HCC or cholangioca.	8	6	Malignancy	Hepatitis_c	No death
+534	Male	[70; 80]	HCC or cholangioca.	8	6	Moderate_severe_liver_disease	Alcohol_consumption	No death
+534	Male	[70; 80]	HCC or cholangioca.	8	6	Moderate_severe_liver_disease	Hepatitis_c	No death
+534	Male	[70; 80]	HCC or cholangioca.	8	6	Diabetes_with_without_complications	Alcohol_consumption	No death
+534	Male	[70; 80]	HCC or cholangioca.	8	6	Diabetes_with_without_complications	Hepatitis_c	No death
+538	Male	[60; 70]	Ascites	11	3	Moderate_severe_liver_disease	Alcohol_consumption	Death_between_30_and_90_days
+538	Male	[60; 70]	Ascites	11	3	Moderate_severe_liver_disease	Hepatitis_c	Death_between_30_and_90_days
+538	Male	[60; 70]	Ascites	11	3	Moderate_severe_liver_disease	Hepatitis_b	Death_between_30_and_90_days
+539	Male	[70; 80]	SBP	12	3	Moderate_severe_liver_disease	Alcohol_consumption	Death_between_30_and_90_days
+540	Male	[60; 70]	HCC or cholangioca.	7	5	Malignancy	Alcohol_consumption	No death
+540	Male	[60; 70]	HCC or cholangioca.	7	5	Malignancy	Hepatitis_c	No death
+540	Male	[60; 70]	HCC or cholangioca.	7	5	Moderate_severe_liver_disease	Alcohol_consumption	No death
+540	Male	[60; 70]	HCC or cholangioca.	7	5	Moderate_severe_liver_disease	Hepatitis_c	No death
+541	Female	[40; 50]	Alcoholic hepatitis	10	3	Moderate_severe_liver_disease	Alcohol_consumption	Death_between_30_and_90_days
+545	Male	[40; 50]	Alcoholic hepatitis	9	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+546	Male	[60; 70]	Hepatic encephalopathy	11	5	Renal_disease	Alcohol_consumption	Death_in_hospital
+546	Male	[60; 70]	Hepatic encephalopathy	11	5	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_hospital
+552	Male	[50; 60]	UGIB due to portal hypertension	8	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+556	Female	[70; 80]	AKI	6	2	Chronic_pulmonary_disease	Alcohol_consumption	No death
+556	Female	[70; 80]	AKI	6	2	Mild_liver_disease	Alcohol_consumption	No death
+559	Male	[60; 70]	Ascites	6	4	Pepticulcer_disease	Alcohol_consumption	No death
+559	Male	[60; 70]	Ascites	6	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+562	Male	[70; 80]	AKI	6	1	Mild_liver_disease	Alcohol_consumption	No death
+563	Female	[60; 70]	Ascites	11	6	Renal_disease	Cryptogenic	No death
+563	Female	[60; 70]	Ascites	11	6	Moderate_severe_liver_disease	Cryptogenic	No death
+563	Female	[60; 70]	Ascites	11	6	Diabetes_with_without_complications	Cryptogenic	No death
+565	Male	[50; 60]	UGIB due to portal hypertension	7	6	Pepticulcer_disease	Alcohol_consumption	No death
+565	Male	[50; 60]	UGIB due to portal hypertension	7	6	Pepticulcer_disease	Non_alcoolic_fatty_LD	No death
+565	Male	[50; 60]	UGIB due to portal hypertension	7	6	Moderate_severe_liver_disease	Alcohol_consumption	No death
+565	Male	[50; 60]	UGIB due to portal hypertension	7	6	Moderate_severe_liver_disease	Non_alcoolic_fatty_LD	No death
+565	Male	[50; 60]	UGIB due to portal hypertension	7	6	Diabetes_with_without_complications	Alcohol_consumption	No death
+565	Male	[50; 60]	UGIB due to portal hypertension	7	6	Diabetes_with_without_complications	Non_alcoolic_fatty_LD	No death
+566	Male	[60; 70]	Ascites	8	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+567	Male	[70; 80]	Hepatic encephalopathy	14	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+567	Male	[70; 80]	Hepatic encephalopathy	14	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+571	Male	[60; 70]	Ascites	6	3	Congestive_Heart_Failure	Alcohol_consumption	No death
+571	Male	[60; 70]	Ascites	6	3	Chronic_pulmonary_disease	Alcohol_consumption	No death
+571	Male	[60; 70]	Ascites	6	3	Mild_liver_disease	Alcohol_consumption	No death
+584	Male	[50; 60]	Ascites	8	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+586	Male	[60; 70]	Ascites	9	5	Malignancy	Alcohol_consumption	Death_in_first_30_days
+586	Male	[60; 70]	Ascites	9	5	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_first_30_days
+588	Female	[40; 50]	Alcoholic hepatitis	10	1	Mild_liver_disease	Alcohol_consumption	Death_in_hospital
+588	Female	[40; 50]	Alcoholic hepatitis	10	1	Mild_liver_disease	Hepatitis_c	Death_in_hospital
+589	Female	[60; 70]	AKI	5	4	Moderate_severe_liver_disease	Hepatitis_c	No death
+589	Female	[60; 70]	AKI	5	4	Diabetes_with_without_complications	Hepatitis_c	No death
+592	Male	[70; 80]	Ascites	11	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+597	Female	[60; 70]	Hepatic encephalopathy	12	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+599	Male	[60; 70]	Ascites	6	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+599	Male	[60; 70]	Ascites	6	4	Moderate_severe_liver_disease	Hepatitis_c	No death
+599	Male	[60; 70]	Ascites	6	4	Moderate_severe_liver_disease	Hepatitis_b	No death
+599	Male	[60; 70]	Ascites	6	4	Diabetes_with_without_complications	Alcohol_consumption	No death
+599	Male	[60; 70]	Ascites	6	4	Diabetes_with_without_complications	Hepatitis_c	No death
+599	Male	[60; 70]	Ascites	6	4	Diabetes_with_without_complications	Hepatitis_b	No death
+606	Male	[50; 60]	SBP	7	11	Renal_disease	Alcohol_consumption	No death
+606	Male	[50; 60]	SBP	7	11	Renal_disease	Hepatitis_c	No death
+606	Male	[50; 60]	SBP	7	11	Moderate_severe_liver_disease	Alcohol_consumption	No death
+606	Male	[50; 60]	SBP	7	11	Moderate_severe_liver_disease	Hepatitis_c	No death
+606	Male	[50; 60]	SBP	7	11	AIDS	Alcohol_consumption	No death
+606	Male	[50; 60]	SBP	7	11	AIDS	Hepatitis_c	No death
+607	Female	[60; 70]	UGIB due to portal hypertension	5	4	Moderate_severe_liver_disease	Non_alcoolic_fatty_LD	No death
+607	Female	[60; 70]	UGIB due to portal hypertension	5	4	Diabetes_with_without_complications	Non_alcoolic_fatty_LD	No death
+608	Female	[80; 90]	Ascites	9	7	Renal_disease	Cryptogenic	Death_between_30_and_90_days
+608	Female	[80; 90]	Ascites	9	7	Moderate_severe_liver_disease	Cryptogenic	Death_between_30_and_90_days
+608	Female	[80; 90]	Ascites	9	7	Diabetes_with_without_complications	Cryptogenic	Death_between_30_and_90_days
+609	Male	[50; 60]	Ascites	9	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+610	Male	[50; 60]	AKI	8	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+616	Male	[50; 60]	Alcoholic hepatitis	9	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+618	Male	[70; 80]	Other fluid overload	7	2	Mild_liver_disease	Alcohol_consumption	No death
+618	Male	[70; 80]	Other fluid overload	7	2	Diabetes_with_without_complications	Alcohol_consumption	No death
+619	Male	[60; 70]	Hepatic encephalopathy	15	9	Moderate_severe_liver_disease	Alcohol_consumption	Death_between_30_and_90_days
+619	Male	[60; 70]	Hepatic encephalopathy	15	9	Moderate_severe_liver_disease	Hepatitis_c	Death_between_30_and_90_days
+619	Male	[60; 70]	Hepatic encephalopathy	15	9	Metastatic_solid_tumor	Alcohol_consumption	Death_between_30_and_90_days
+619	Male	[60; 70]	Hepatic encephalopathy	15	9	Metastatic_solid_tumor	Hepatitis_c	Death_between_30_and_90_days
+620	Male	[70; 80]	Hepatic encephalopathy	10	5	Malignancy	Alcohol_consumption	Death_in_first_30_days
+620	Male	[70; 80]	Hepatic encephalopathy	10	5	Malignancy	Hepatitis_c	Death_in_first_30_days
+620	Male	[70; 80]	Hepatic encephalopathy	10	5	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_first_30_days
+620	Male	[70; 80]	Hepatic encephalopathy	10	5	Moderate_severe_liver_disease	Hepatitis_c	Death_in_first_30_days
+621	Male	[40; 50]	UGIB due to portal hypertension	5	3	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_first_30_days
+623	Female	[60; 70]	Hepatic encephalopathy	10	3	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_hospital
+629	Male	[50; 60]	UGIB due to portal hypertension	14	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+635	Female	[70; 80]	UGIB due to portal hypertension	6	6	Malignancy	Non_alcoolic_fatty_LD	No death
+635	Female	[70; 80]	UGIB due to portal hypertension	6	6	Moderate_severe_liver_disease	Non_alcoolic_fatty_LD	No death
+635	Female	[70; 80]	UGIB due to portal hypertension	6	6	Diabetes_with_without_complications	Non_alcoolic_fatty_LD	No death
+636	Male	[40; 50]	Ascites	13	3	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_hospital
+637	Female	[70; 80]	Ascites	8	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+637	Female	[70; 80]	Ascites	8	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+639	Male	[60; 70]	Ascites	8	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+642	Male	[70; 80]	AKI	6	4	Congestive_Heart_Failure	Alcohol_consumption	No death
+642	Male	[70; 80]	AKI	6	4	Congestive_Heart_Failure	Hepatitis_c	No death
+642	Male	[70; 80]	AKI	6	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+642	Male	[70; 80]	AKI	6	4	Moderate_severe_liver_disease	Hepatitis_c	No death
+646	Male	[60; 70]	Hepatic encephalopathy	8	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+646	Male	[60; 70]	Hepatic encephalopathy	8	4	Diabetes_with_without_complications	Alcohol_consumption	No death
+650	Male	[60; 70]	Ascites	8	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+652	Male	[60; 70]	HCC or cholangioca.	9	5	Malignancy	Alcohol_consumption	Death_in_first_30_days
+652	Male	[60; 70]	HCC or cholangioca.	9	5	Malignancy	Hepatitis_c	Death_in_first_30_days
+652	Male	[60; 70]	HCC or cholangioca.	9	5	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_first_30_days
+652	Male	[60; 70]	HCC or cholangioca.	9	5	Moderate_severe_liver_disease	Hepatitis_c	Death_in_first_30_days
+657	Female	[50; 60]	Alcoholic hepatitis	10	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+658	Male	[50; 60]	Alcoholic hepatitis	9	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+660	Male	[70; 80]	Ascites	9	7	Renal_disease	Alcohol_consumption	No death
+660	Male	[70; 80]	Ascites	9	7	Renal_disease	Hepatitis_c	No death
+660	Male	[70; 80]	Ascites	9	7	Moderate_severe_liver_disease	Alcohol_consumption	No death
+660	Male	[70; 80]	Ascites	9	7	Moderate_severe_liver_disease	Hepatitis_c	No death
+660	Male	[70; 80]	Ascites	9	7	Diabetes_with_without_complications	Alcohol_consumption	No death
+660	Male	[70; 80]	Ascites	9	7	Diabetes_with_without_complications	Hepatitis_c	No death
+663	Male	[50; 60]	Ascites	12	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+667	Male	[60; 70]	Ascites	12	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+668	Male	[50; 60]	Ascites	12	3	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_hospital
+669	Male	[60; 70]	Ascites	7	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+669	Male	[60; 70]	Ascites	7	4	Diabetes_with_without_complications	Alcohol_consumption	No death
+674	Male	[60; 70]	Alcoholic hepatitis	5	1	Mild_liver_disease	Alcohol_consumption	No death
+678	Male	[60; 70]	Alcoholic hepatitis	8	2	Pepticulcer_disease	Alcohol_consumption	No death
+678	Male	[60; 70]	Alcoholic hepatitis	8	2	Mild_liver_disease	Alcohol_consumption	No death
+680	Female	[50; 60]	Alcoholic hepatitis	9	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+682	Male	[70; 80]	AKI	6	1	Mild_liver_disease	Alcohol_consumption	No death
+683	Male	[70; 80]	Ascites	13	3	Moderate_severe_liver_disease	Alcohol_consumption	Death_between_30_and_90_days
+685	Male	[60; 70]	UGIB due to portal hypertension	7	5	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_hospital
+685	Male	[60; 70]	UGIB due to portal hypertension	7	5	Diabetes_with_without_complications	Alcohol_consumption	Death_in_hospital
+686	Female	[70; 80]	Ascites	8	4	Moderate_severe_liver_disease	Autoimmune_hepatitis	No death
+686	Female	[70; 80]	Ascites	8	4	Diabetes_with_without_complications	Autoimmune_hepatitis	No death
+687	Male	[60; 70]	Jaundice- as isolated presentation	8	1	Mild_liver_disease	Alcohol_consumption	No death
+688	Male	[60; 70]	Ascites	9	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+688	Male	[60; 70]	Ascites	9	4	Diabetes_with_without_complications	Alcohol_consumption	No death
+689	Male	[70; 80]	Ascites	11	3	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_first_30_days
+692	Male	[70; 80]	Hepatic encephalopathy	8	4	Moderate_severe_liver_disease	Hepatitis_b	No death
+692	Male	[70; 80]	Hepatic encephalopathy	8	4	Diabetes_with_without_complications	Hepatitis_b	No death
+693	Male	[80; 90]	Hepatic encephalopathy	7	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+694	Male	[60; 70]	Ascites	11	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+695	Male	[70; 80]	AKI	5	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+695	Male	[70; 80]	AKI	5	4	Diabetes_with_without_complications	Alcohol_consumption	No death
+698	Female	[70; 80]	Ascites	12	5	Malignancy	Cryptogenic	No death
+698	Female	[70; 80]	Ascites	12	5	Moderate_severe_liver_disease	Cryptogenic	No death
+699	Male	[70; 80]	Alcoholic hepatitis	7	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+701	Female	[40; 50]	Ascites	10	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+703	Male	[70; 80]	Ascites	13	3	Moderate_severe_liver_disease	Alcohol_consumption	Death_between_30_and_90_days
+703	Male	[70; 80]	Ascites	13	3	Moderate_severe_liver_disease	Hepatitis_c	Death_between_30_and_90_days
+704	Male	[60; 70]	Ascites	7	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+704	Male	[60; 70]	Ascites	7	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+708	Female	[60; 70]	Alcoholic hepatitis	10	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+708	Female	[60; 70]	Alcoholic hepatitis	10	4	Diabetes_with_without_complications	Alcohol_consumption	No death
+710	Male	[60; 70]	Ascites	10	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+711	Female	[80; 90]	Ascites	10	4	Moderate_severe_liver_disease	Hepatitis_c	No death
+711	Female	[80; 90]	Ascites	10	4	Diabetes_with_without_complications	Hepatitis_c	No death
+712	Male	[70; 80]	UGIB due to portal hypertension	8	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+714	Female	[60; 70]	AKI	5	4	Chronic_pulmonary_disease	Alcohol_consumption	No death
+714	Female	[60; 70]	AKI	5	4	Chronic_pulmonary_disease	Hepatitis_c	No death
+714	Female	[60; 70]	AKI	5	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+714	Female	[60; 70]	AKI	5	4	Moderate_severe_liver_disease	Hepatitis_c	No death
+720	Male	[70; 80]	AKI	5	4	Pepticulcer_disease	Alcohol_consumption	No death
+720	Male	[70; 80]	AKI	5	4	Moderate_severe_liver_disease	Alcohol_consumption	No death
+721	Male	[60; 70]	Ascites	9	5	Malignancy	Alcohol_consumption	Death_between_30_and_90_days
+721	Male	[60; 70]	Ascites	9	5	Moderate_severe_liver_disease	Alcohol_consumption	Death_between_30_and_90_days
+723	Female	[80; 90]	HCC or cholangioca.	7	3	Moderate_severe_liver_disease	Alcohol_consumption	Death_in_first_30_days
+723	Female	[80; 90]	HCC or cholangioca.	7	3	Moderate_severe_liver_disease	Hepatitis_c	Death_in_first_30_days
+723	Female	[80; 90]	HCC or cholangioca.	7	3	Moderate_severe_liver_disease	Hepatitis_b	Death_in_first_30_days
+724	Male	[40; 50]	Alcoholic hepatitis	8	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+726	Male	[70; 80]	Hepatic encephalopathy	14	3	Moderate_severe_liver_disease	Alcohol_consumption	No death
+726	Male	[70; 80]	Hepatic encephalopathy	14	3	Moderate_severe_liver_disease	Hepatitis_c	No death
+732	Male	[60; 70]	Ascites	10	4	Chronic_pulmonary_disease	Hepatitis_c	Death_in_hospital
+732	Male	[60; 70]	Ascites	10	4	Moderate_severe_liver_disease	Hepatitis_c	Death_in_hospital
